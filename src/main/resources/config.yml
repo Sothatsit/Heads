@@ -1,0 +1,21 @@
+commands:
+   heads:
+      label: 'heads'
+      aliases:
+      - 'head'
+      description: 'Get cool heads'
+      sub-commands:
+         add: 'add'
+         hand: 'hand'
+         random: 'random'
+         remove: 'remove'
+         rename: 'rename'
+         get: 'get'
+         give: 'give'
+         # open menu is when no arguments are supplied
+         # help is shown whenever arguments are supplied but are not recognised
+economy:
+   enabled: false
+   # Use 0 for no cost
+   default-head-cost: 0
+hat-mode: false

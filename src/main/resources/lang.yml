@@ -1,0 +1,107 @@
+menu:
+   get:
+      open: '&7Opening Menu...'
+      added: ''
+      not-enough-money: '&cYou do not have enough money to purchase this head'
+      transaction-error: '&cError taking your money'
+      category-permission: '&cYou do not have permission to open the category &4%category%'
+   remove:
+      open: '&cSelect a head to remove it'
+      removed: '&cRemoved the head &4%name%'
+   rename:
+      open: '&7Select a head to rename it to &6%newname%'
+      renamed: '&7Renamed the head &6%name% &7to &6%newname%'
+   cost:
+      open: '&7Select a head to set its cost &6%newcost%'
+      set-cost: '&7Set the cost of head &6%name% &7to &6%newcost%'
+   id:
+      open: '&7Click a head to get its id'
+      clicked: '&7The head &6%name% &7has the id &6%id%'
+command:
+   errors:
+      must-be-player: '&cYou must be a player to run this command.'
+      no-permission: '&cYou do not have permission to run this command.'
+      invalid-arguments: '&4Invalid Arguments > &c%valid%'
+      integer: '&cYou must enter a whole number > You entered &4%number%'
+      number: '&cYou must enter a number > You entered &4%number%'
+      negative: '&cYou must enter a positive number > You entered &4%number%'
+   help:
+      header: '&7&m&l---------[&5&l Ez&d&lHeads &5&lHelp &7&m&l]---------'
+      line: '&6%command% &7- &5%description%'
+      help:
+         command: '/heads help'
+         description: 'Open this menu'
+   get:
+      head-name: '&7%name%s head'
+      old-method: '&cGetting head textures is not supported by spigot before 1.8, using old method'
+      adding: '&7Adding &6%name%&7s head to your inventory'
+      fetching: '&7Fetching textures, please wait...'
+      cant-find:
+      - '&cUnable to find texture of player &4%name%'
+      - '&4The authentication servers may be down, or the player does not exist.'
+      help:
+         command: '/heads get <player name>'
+         description: 'Get a players head'
+   random:
+      no-heads: '&cThere are no heads in the cache'
+      giving: '&7You have been given the head &6%name% &7from the category &6%category%'
+      help:
+         command: '/heads random'
+         description: 'Get a random head'
+   add:
+      not-supported: '&cGetting head textures is not supported by spigot before 1.8'
+      category-length:
+      - '&cThe category can only be a max of 32 characters long'
+      - '&cYou entered &4%category% &c(%length% characters)'
+      fetching: '&7Fetching textures, please wait...'
+      cant-find:
+      - '&cUnable to find texture of player &4%name%'
+      - '&4The authentication servers may be down, or the player does not exist.'
+      adding: '&7Adding &6%name%&7 head to category &6%category%'
+      help:
+         command: '/heads add <player-name> <category> <head name>'
+         description: 'Add a new head to the menu'
+   hand:
+      not-supported: '&cGetting head textures is not supported by spigot before 1.8'
+      no-texture-property: '&cNo texture property found, looking for a player name'
+      no-name-property: '&cNo name property found, unable to add head'
+      not-skull: '&cYou need to have a player skull in your hand to get its texture'
+      category-length:
+      - '&cThe category can only be a max of 32 characters long'
+      - '&cYou entered &4%category% &c(%length% characters)'
+      fetching: '&7Fetching textures, please wait...'
+      cant-find:
+      - '&cUnable to find texture of player &4%name%'
+      - '&4The authentication servers may be down, or the player does not exist.'
+      adding: '&7Adding &6%name%&7 head to category &6%category%'
+      help:
+         command: '/heads hand <category> <head name>'
+         description: 'Add a new head to the menu'
+   give:
+      cant-find-player: '&cCannot find the player &4%name%'
+      cant-find-head: '&cCannot find the head with the id &4%id%'
+      give: '&7Given &6%amount% &7of the head &6%head% &7to &6%name%'
+      invalid-amount: 'The amount must be greater than 0 > You entered &4%number%'
+      help:
+         command: '/heads give <head id> <player> <amount>'
+         description: 'Give a head to a player'
+   remove:
+      help:
+         command: '/heads remove'
+         description: 'Remove a head in the menu'
+   rename:
+      help:
+         command: '/heads rename <new name>'
+         description: 'Rename a head in the menu'
+   cost:
+      help:
+         command: '/heads cost <new cost>'
+         description: 'Set a heads cost in the menu'
+   open-menu:
+      help:
+         command: '/heads'
+         description: 'Open the heads menu'
+   id:
+      help:
+         command: '/heads id'
+         description: 'Open a menu to get a heads id'

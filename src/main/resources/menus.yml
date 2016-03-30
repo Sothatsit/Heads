@@ -1,0 +1,175 @@
+get-categories:
+   title: 'Categories'
+   head:
+      type: 397
+      data: 3
+      name: '&6%category%'
+get-heads:
+   title: '%category%'
+   head:
+      type: 397
+      data: 3
+      name: '&7%name%'
+      lore:
+      - '&6Cost: &e%cost%'
+   filler:
+      type: 160
+      data: 15
+      name: ' '
+   back:
+      type: 152
+      name: '&cBack to Main Menu'
+   forwards:
+      type: 262
+      name: '&7Forwards a Page'
+   backwards:
+      type: 262
+      name: '&7Backwards a Page'
+id-categories:
+   title: 'Categories'
+   head:
+      type: 397
+      data: 3
+      name: '&6%category%'
+id-heads:
+   title: '%category%'
+   head:
+      type: 397
+      data: 3
+      name: '&7%name%'
+      lore:
+      - '&6Id&8: &a%id%'
+   filler:
+      type: 160
+      data: 15
+      name: ' '
+   back:
+      type: 152
+      name: '&cBack to Main Menu'
+   forwards:
+      type: 262
+      name: '&7Forwards a Page'
+   backwards:
+      type: 262
+      name: '&7Backwards a Page'
+remove-categories:
+   title: 'Categories'
+   head:
+      type: 397
+      data: 3
+      name: '&6%category%'
+remove-heads:
+   title: '%category%'
+   head:
+      type: 397
+      data: 3
+      name: '&cRemove %name%'
+   filler:
+      type: 160
+      data: 15
+      name: ' '
+   back:
+      type: 152
+      name: '&cBack to Main Menu'
+   forwards:
+      type: 262
+      name: '&7Forwards a Page'
+   backwards:
+      type: 262
+      name: '&7Backwards a Page'
+remove-confirm:
+   title: 'Remove Head'
+   head:
+      type: 397
+      data: 3
+      name: '&cRemove %name%'
+   accept:
+      type: 159
+      data: 5
+      name: '&cRemove %name%'
+   deny:
+      type: 159
+      data: 14
+      name: '&aDont remove %name%'
+rename-categories:
+   title: 'Categories'
+   head:
+      type: 397
+      data: 3
+      name: '&6%category%'
+rename-heads:
+   title: '%category%'
+   head:
+      type: 397
+      data: 3
+      name: '&aRename %name%'
+   filler:
+      type: 160
+      data: 15
+      name: ' '
+   back:
+      type: 152
+      name: '&cBack to Main Menu'
+   forwards:
+      type: 262
+      name: '&7Forwards a Page'
+   backwards:
+      type: 262
+      name: '&7Backwards a Page'
+rename-confirm:
+   title: 'Rename Head'
+   head:
+      type: 397
+      data: 3
+      name: '&aRename %name% to %newname%'
+   accept:
+      type: 159
+      data: 5
+      name: '&aRename %name% to %newname%'
+   deny:
+      type: 159
+      data: 14
+      name: '&aDont rename %name%'
+cost-categories:
+   title: 'Categories'
+   head:
+      type: 397
+      data: 3
+      name: '&6%category%'
+cost-heads:
+   title: '%category%'
+   head:
+      type: 397
+      data: 3
+      name: '&aSet cost of %name%'
+   filler:
+      type: 160
+      data: 15
+      name: ' '
+   back:
+      type: 152
+      name: '&cBack to Main Menu'
+   forwards:
+      type: 262
+      name: '&7Forwards a Page'
+   backwards:
+      type: 262
+      name: '&7Backwards a Page'
+cost-confirm:
+   title: 'Set cost of Head'
+   head:
+      type: 397
+      data: 3
+      name: '&aSet cost of %name%'
+      lore:
+      - '&7to &6%newcost%'
+   accept:
+      type: 159
+      data: 5
+      name: '&aSet cost of %name%'
+      lore:
+      - '&7to &6%newcost%'
+   deny:
+      type: 159
+      data: 14
+      name: '&aDont set cost of %name%'

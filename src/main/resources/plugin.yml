@@ -1,0 +1,42 @@
+main: net.sothatsit.heads.Heads
+author: sothatsit
+name: Heads
+version: 1.5.1
+soft-depend: [Vault, BlockStore]
+permissions:
+   heads.menu:
+      description: 'Open the head menu'
+      default: op
+   heads.get:
+      description: 'Use the /head get <name> command'
+      default: op
+   heads.add:
+      description: 'Add heads to the cache'
+      default: op
+   heads.hand:
+      description: 'Add heads from your hand into the cache'
+      default: op
+   heads.random:
+      description: 'Get a random head from the cache'
+      default: op
+   heads.remove:
+      description: 'Remove heads from the cache'
+      default: op
+   heads.rename:
+      description: 'Rename heads in the cache'
+      default: op
+   heads.id:
+      description: 'Get a heads id'
+      default: op
+   heads.give:
+      description: 'Give players heads'
+      default: op
+   heads.cost:
+      description: 'Set heads costs'
+      default: op
+   heads.bypasscost:
+      description: 'Bypass paying for heads'
+      default: op
+   heads.category.*:
+      description: 'Permission for all categories'
+      default: true
