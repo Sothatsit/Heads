@@ -64,6 +64,30 @@ public class Lang {
             }
             
         }
+
+        public static class Search {
+
+            public static String key() {
+                return Menu.key() + ".get";
+            }
+
+            public static LangMessage added() {
+                return Lang.get(key() + ".added");
+            }
+
+            public static LangMessage notEnoughMoney() {
+                return Lang.get(key() + ".not-enough-money");
+            }
+
+            public static LangMessage transactionError() {
+                return Lang.get(key() + ".transaction-error");
+            }
+
+            public static LangMessage categoryPermission() {
+                return Lang.get(key() + ".category-permission");
+            }
+
+        }
         
         public static class Remove {
             
@@ -379,6 +403,26 @@ public class Lang {
                 return new HelpSection(key());
             }
             
+        }
+
+        public static class Search {
+
+            public static String key() {
+                return Command.key() + ".search";
+            }
+
+            public static LangMessage found() {
+                return Lang.get(key() + ".found");
+            }
+
+            public static LangMessage noneFound() {
+                return Lang.get(key() + ".none-found");
+            }
+
+            public static HelpSection help() {
+                return new HelpSection(key());
+            }
+
         }
         
         public static class Cost {

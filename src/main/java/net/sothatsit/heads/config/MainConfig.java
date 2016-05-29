@@ -26,6 +26,7 @@ public class MainConfig extends AbstractConfig {
     private String renameCommand;
     private String costCommand;
     private String idCommand;
+    private String searchCommand;
     
     public MainConfig(ConfigFile configFile) {
         this.configFile = configFile;
@@ -55,6 +56,7 @@ public class MainConfig extends AbstractConfig {
         save = checkString(config, "commands.heads.sub-commands.rename", "rename", save);
         save = checkString(config, "commands.heads.sub-commands.cost", "cost", save);
         save = checkString(config, "commands.heads.sub-commands.id", "id", save);
+        save = checkString(config, "commands.heads.sub-commands.search", "search", save);
         save = checkString(config, "commands.heads.label", "heads", save);
         save = checkString(config, "commands.heads.description", "Get a cool head", save);
         
@@ -67,6 +69,7 @@ public class MainConfig extends AbstractConfig {
         renameCommand = config.getString("commands.heads.sub-commands.rename");
         costCommand = config.getString("commands.heads.sub-commands.cost");
         idCommand = config.getString("commands.heads.sub-commands.id");
+        searchCommand = config.getString("commands.heads.sub-commands.search");
         headCommand = config.getString("commands.heads.label");
         headDescription = config.getString("commands.heads.description");
         
@@ -195,5 +198,9 @@ public class MainConfig extends AbstractConfig {
     
     public String getIdCommand() {
         return idCommand;
+    }
+
+    public String getSearchCommand() {
+        return searchCommand;
     }
 }

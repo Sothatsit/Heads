@@ -14,6 +14,10 @@ public abstract class BaseMode extends InvMode {
     public BaseMode(Player player) {
         super(player, InventoryType.CATEGORY);
     }
+
+    public BaseMode(Player player, InventoryType type, Object... args) {
+        super(player, type, args);
+    }
     
     @Override
     public void onClick(InventoryClickEvent e, InventoryType type) {

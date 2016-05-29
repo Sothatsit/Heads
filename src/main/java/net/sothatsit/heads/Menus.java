@@ -12,6 +12,7 @@ public class Menus {
     public static final String CONFIRM = "confirm";
     
     public static final MenusGroup GET = new MenusGroup("get");
+    public static final MenusGroup SEARCH = new MenusGroup("search");
     public static final MenusGroup PRICED = new MenusGroup("priced");
     public static final MenusGroup REMOVE = new MenusGroup("remove");
     public static final MenusGroup RENAME = new MenusGroup("rename");

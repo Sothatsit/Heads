@@ -10,42 +10,54 @@ import net.sothatsit.heads.lang.Lang;
 import net.sothatsit.heads.menu.ConfirmMenu;
 import net.sothatsit.heads.menu.HeadMenu;
 import net.sothatsit.heads.menu.InventoryType;
-
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
-public class GetMode extends BaseMode {
-    
-    public GetMode(Player player) {
-        super(player);
-        
-        Lang.Menu.Get.open().send(player);
+import java.util.List;
+
+public class SearchMode extends BaseMode {
+
+    public SearchMode(Player player, List<CachedHead> heads) {
+        super(player, InventoryType.HEADS, "Search", heads);
     }
     
     @Override
     public Menu getMenu(InventoryType type) {
-        return Menus.GET.fromType(type);
+        return Menus.SEARCH.heads();
+    }
+
+    public String getHeadId(CachedHead head) {
+        if(!getPlayer().hasPermission("heads.category." + head.getCategory().toLowerCase().replace(' ', '_'))) {
+            return "head-no-perms";
+        } else {
+            return (head.hasCost() && Heads.getMainConfig().isEconomyEnabled() ? "head-cost" : "head");
+        }
     }
     
     @Override
     public void onHeadSelect(InventoryClickEvent e, HeadMenu menu, CachedHead head) {
+        if (!getPlayer().hasPermission("heads.category." + head.getCategory().toLowerCase().replace(' ', '_'))) {
+            Lang.Menu.Search.categoryPermission().send(getPlayer(), new Placeholder("%category%", head.getCategory()));
+            return;
+        }
+
         if (Heads.getMainConfig().isEconomyEnabled() && !getPlayer().hasPermission("heads.bypasscost")) {
             double cost = head.getCost();
             
             if (cost > 0) {
                 if (!Economy.hasBalance(getPlayer(), cost)) {
-                    Lang.Menu.Get.notEnoughMoney().send(getPlayer(), head.getPlaceholders());
+                    Lang.Menu.Search.notEnoughMoney().send(getPlayer(), head.getPlaceholders());
                     return;
                 }
                 
                 if (!Economy.takeBalance(getPlayer(), cost)) {
-                    Lang.Menu.Get.transactionError().send(getPlayer(), head.getPlaceholders());
+                    Lang.Menu.Search.transactionError().send(getPlayer(), head.getPlaceholders());
                     return;
                 }
             }
         }
         
-        Lang.Menu.Get.added().send(getPlayer(), head.getPlaceholders());
+        Lang.Menu.Search.added().send(getPlayer(), head.getPlaceholders());
         
         if (Heads.isHatMode()) {
             e.getWhoClicked().getInventory().setHelmet(head.getItemStack());
@@ -61,12 +73,7 @@ public class GetMode extends BaseMode {
     
     @Override
     public boolean canOpenCategory(String category) {
-        if (getPlayer().hasPermission("heads.category." + category.toLowerCase().replace(' ', '_'))) {
-            return true;
-        } else {
-            Lang.Menu.Get.categoryPermission().send(getPlayer(), new Placeholder("%category%", category));
-            return false;
-        }
+        return true;
     }
     
 }

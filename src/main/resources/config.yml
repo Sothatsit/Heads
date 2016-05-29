@@ -12,6 +12,7 @@ commands:
          rename: 'rename'
          get: 'get'
          give: 'give'
+         search: 'search'
          # open menu is when no arguments are supplied
          # help is shown whenever arguments are supplied but are not recognised
 economy:

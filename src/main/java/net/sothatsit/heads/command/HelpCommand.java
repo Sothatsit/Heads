@@ -19,6 +19,7 @@ public class HelpCommand extends AbstractCommand {
                 create(Lang.Command.Get.help()),
                 create(Lang.Command.Id.help()),
                 create(Lang.Command.Help.help()),
+                create(Lang.Command.Search.help())
         };
         
         Lang.Command.Help.header().send(sender);

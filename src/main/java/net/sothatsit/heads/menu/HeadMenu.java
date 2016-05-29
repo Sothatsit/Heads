@@ -6,6 +6,7 @@ import net.sothatsit.heads.config.cache.CachedHead;
 import net.sothatsit.heads.config.menu.Menu;
 import net.sothatsit.heads.config.menu.Placeholder;
 import net.sothatsit.heads.menu.mode.InvMode;
+import net.sothatsit.heads.menu.mode.SearchMode;
 import net.sothatsit.heads.util.Arrays;
 
 import org.bukkit.inventory.ItemStack;
@@ -55,17 +56,26 @@ public class HeadMenu extends AbstractModedInventory {
             contents[53] = menu.getItemStack("forwards", placeholders);
         }
         
-        contents[49] = menu.getItemStack("back", placeholders);
+        if(!(getInvMode() instanceof SearchMode)) {
+            contents[49] = menu.getItemStack("back", placeholders);
+        }
         
         for (int i = page * 45; i < (page + 1) * 45; i++) {
             int index = i % 45;
             
             if (i < heads.size()) {
                 CachedHead head = heads.get(i);
-                
+
+                String id = "head";
+
+                if(getInvMode() instanceof SearchMode) {
+                    id = ((SearchMode) getInvMode()).getHeadId(head);
+                }
+
+                placeholders[0] = new Placeholder("%category%", head.getCategory());
                 Placeholder[] holders = Arrays.append(placeholders, head.getPlaceholders());
                 
-                contents[index] = head.applyTo(menu.getItemStack("head", holders));
+                contents[index] = head.applyTo(menu.getItemStack(id, holders));
             }
         }
         
@@ -129,7 +139,7 @@ public class HeadMenu extends AbstractModedInventory {
             backwardsPage();
         } else if (isForwards(slot)) {
             forwardsPage();
-        } else if (isBackToMenu(slot)) {
+        } else if (isBackToMenu(slot) && !(getInvMode() instanceof SearchMode)) {
             getInvMode().openInventory(InventoryType.CATEGORY);
         }
         

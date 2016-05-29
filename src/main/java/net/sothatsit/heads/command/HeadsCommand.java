@@ -2,6 +2,7 @@ package net.sothatsit.heads.command;
 
 import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.config.MainConfig;
+import net.sothatsit.heads.lang.Lang;
 import org.bukkit.ChatColor;
 
 import org.bukkit.command.Command;
@@ -21,6 +22,7 @@ public class HeadsCommand extends AbstractCommand {
     private CommandExecutor help;
     private CommandExecutor id;
     private CommandExecutor cost;
+    private CommandExecutor search;
     
     public HeadsCommand() {
         this.openMenu = new OpenMenuCommand();
@@ -34,6 +36,7 @@ public class HeadsCommand extends AbstractCommand {
         this.help = new HelpCommand();
         this.id = new IdCommand();
         this.cost = new CostCommand();
+        this.search = new SearchCommand();
     }
     
     @Override
@@ -78,6 +81,10 @@ public class HeadsCommand extends AbstractCommand {
         
         if (args[0].equalsIgnoreCase(config.getIdCommand())) {
             return runCommand(sender, command, label, args, id, "heads.id");
+        }
+
+        if (args[0].equalsIgnoreCase(config.getSearchCommand())) {
+            return runCommand(sender, command, label, args, search, "heads.search");
         }
         
         return help.onCommand(sender, command, label, args);

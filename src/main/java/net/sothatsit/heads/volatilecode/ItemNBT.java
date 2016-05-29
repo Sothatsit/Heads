@@ -2,6 +2,7 @@ package net.sothatsit.heads.volatilecode;
 
 import java.util.UUID;
 
+import net.sothatsit.heads.volatilecode.reflection.nms.nbt.NBTTagString;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 
@@ -61,6 +62,11 @@ public class ItemNBT {
         
         NBTTagCompound display = tag.getCompound("display");
         display.setString("Name", (name == null ? ChatColor.GRAY + head.getName() : name));
+
+        NBTTagList lore = new NBTTagList();
+        lore.add(new NBTTagString(ChatColor.DARK_GRAY + head.getCategory()));
+
+        display.set("Lore", lore);
         tag.set("display", display);
         
         itemstack.setTag(tag);

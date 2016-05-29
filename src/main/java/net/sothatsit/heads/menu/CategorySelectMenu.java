@@ -65,7 +65,7 @@ public class CategorySelectMenu extends AbstractModedInventory {
                 }
                 
                 CachedHead h = list.get(0);
-                ItemStack head = getMenu().getItemStack("head", new Placeholder("%category%", entry.getKey()));
+                ItemStack head = getMenu().getItemStack("head", new Placeholder("%category%", entry.getKey()), new Placeholder("%heads%", Integer.toString(list.size())));
                 contents[index] = h.applyTo(head);
                 
                 categories.add(entry.getKey());
@@ -93,7 +93,7 @@ public class CategorySelectMenu extends AbstractModedInventory {
                 int index = categories.size() * 2;
                 
                 CachedHead h = list.get(0);
-                ItemStack head = getMenu().getItemStack("head", new Placeholder("%category%", entry.getKey()));
+                ItemStack head = getMenu().getItemStack("head", new Placeholder("%category%", entry.getKey()), new Placeholder("%heads%", Integer.toString(list.size())));
                 contents[index] = h.applyTo(head);
                 
                 categories.add(entry.getKey());

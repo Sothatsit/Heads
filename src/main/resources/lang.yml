@@ -5,6 +5,11 @@ menu:
       not-enough-money: '&cYou do not have enough money to purchase this head'
       transaction-error: '&cError taking your money'
       category-permission: '&cYou do not have permission to open the category &4%category%'
+   search:
+      added: ''
+      not-enough-money: '&cYou do not have enough money to purchase this head'
+      transaction-error: '&cError taking your money'
+      category-permission: '&cYou do not have permission to get heads from the category &4%category%'
    remove:
       open: '&cSelect a head to remove it'
       removed: '&cRemoved the head &4%name%'
@@ -42,6 +47,12 @@ command:
       help:
          command: '/heads get <player name>'
          description: 'Get a players head'
+   search:
+      found: '&7Found &6%heads% heads &7matching &6%query%'
+      none-found: '&cFound no heads matching &4%query%'
+      help:
+         command: '/heads search <search query>'
+         description: 'Find useful heads'
    random:
       no-heads: '&cThere are no heads in the cache'
       giving: '&7You have been given the head &6%name% &7from the category &6%category%'

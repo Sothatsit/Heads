@@ -1,9 +1,49 @@
+search-heads:
+   title: 'Head Search'
+   head:
+      type: 397
+      data: 3
+      name: '&7%name%'
+      lore:
+      - '&8%category%'
+   head-cost:
+      type: 397
+      data: 3
+      name: '&7%name%'
+      lore:
+      - '&8%category%'
+      - ''
+      - '&6Cost: &e%cost%'
+   head-no-perms:
+      type: 397
+      data: 3
+      name: '&7%name%'
+      lore:
+      - '&8%category%'
+      - ''
+      - '&cYou do not have permission'
+      - '&cto use this head'
+   filler:
+      type: 160
+      data: 15
+      name: ' '
+   back:
+      type: 152
+      name: '&cBack to Main Menu'
+   forwards:
+      type: 262
+      name: '&7Forwards a Page'
+   backwards:
+      type: 262
+      name: '&7Backwards a Page'
 get-categories:
    title: 'Categories'
    head:
       type: 397
       data: 3
       name: '&6%category%'
+      lore:
+      - '&e%heads% heads'
 get-heads:
    title: '%category%'
    head:
@@ -31,6 +71,8 @@ id-categories:
       type: 397
       data: 3
       name: '&6%category%'
+      lore:
+      - '&e%heads% heads'
 id-heads:
    title: '%category%'
    head:
@@ -58,6 +100,8 @@ remove-categories:
       type: 397
       data: 3
       name: '&6%category%'
+      lore:
+      - '&e%heads% heads'
 remove-heads:
    title: '%category%'
    head:
@@ -97,6 +141,8 @@ rename-categories:
       type: 397
       data: 3
       name: '&6%category%'
+      lore:
+      - '&e%heads% heads'
 rename-heads:
    title: '%category%'
    head:
@@ -136,6 +182,8 @@ cost-categories:
       type: 397
       data: 3
       name: '&6%category%'
+      lore:
+      - '&e%heads% heads'
 cost-heads:
    title: '%category%'
    head:

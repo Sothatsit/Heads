@@ -1,14 +1,17 @@
 main: net.sothatsit.heads.Heads
 author: sothatsit
 name: Heads
-version: 1.5.1
+version: 1.6.1
 soft-depend: [Vault, BlockStore]
 permissions:
    heads.menu:
       description: 'Open the head menu'
       default: op
    heads.get:
-      description: 'Use the /head get <name> command'
+      description: 'Use the /heads get <name> command'
+      default: op
+   heads.search:
+      description: 'Use the /heads search <search query> command'
       default: op
    heads.add:
       description: 'Add heads to the cache'
