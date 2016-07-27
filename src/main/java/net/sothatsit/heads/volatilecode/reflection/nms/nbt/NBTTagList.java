@@ -1,5 +1,6 @@
 package net.sothatsit.heads.volatilecode.reflection.nms.nbt;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 import net.sothatsit.heads.volatilecode.reflection.ReflectObject;
@@ -11,6 +12,7 @@ public class NBTTagList extends ReflectObject {
     public static Method addMethod;
     public static Method sizeMethod;
     public static Method getMethod;
+    public static Field typeField;
     
     static {
         NBTTagListClass = ReflectionUtils.getNMSClass("NBTTagList");
@@ -18,6 +20,14 @@ public class NBTTagList extends ReflectObject {
         addMethod = ReflectionUtils.getMethod(NBTTagListClass, "add", void.class, NBTBase.NBTBaseClass);
         sizeMethod = ReflectionUtils.getMethod(NBTTagListClass, "size", int.class);
         getMethod = ReflectionUtils.getMethod(NBTTagListClass, "get", NBTTagCompound.NBTTagCompoundClass, int.class);
+
+        for(Field field : NBTTagListClass.getDeclaredFields()) {
+            if(field.getType().equals(byte.class)) {
+                typeField = field;
+                typeField.setAccessible(true);
+                break;
+            }
+        }
     }
     
     public NBTTagList(Object handle) {
@@ -48,6 +58,14 @@ public class NBTTagList extends ReflectObject {
         try {
             return new NBTTagCompound(getMethod.invoke(handle, index));
         } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public int getType() {
+        try {
+            return (int) (Byte) typeField.get(handle);
+        } catch(Exception e) {
             throw new RuntimeException(e);
         }
     }

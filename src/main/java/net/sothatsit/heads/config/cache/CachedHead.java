@@ -1,5 +1,7 @@
 package net.sothatsit.heads.config.cache;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.config.menu.Placeholder;
 import net.sothatsit.heads.volatilecode.ItemNBT;
@@ -7,6 +9,8 @@ import net.sothatsit.heads.volatilecode.ItemNBT;
 import org.bukkit.configuration.MemorySection;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+
+import java.util.Base64;
 
 public class CachedHead {
     
@@ -62,7 +66,22 @@ public class CachedHead {
     public String getTexture() {
         return texture;
     }
-    
+
+    public String getTextureURL() {
+        String decoded = this.texture;
+
+        try {
+            decoded = new String(Base64.getDecoder().decode(this.texture));
+            JsonObject json = new JsonParser().parse(decoded).getAsJsonObject();
+            JsonObject textures = json.getAsJsonObject("textures");
+            JsonObject skin = textures.getAsJsonObject("SKIN");
+            return skin.get("url").getAsString();
+        } catch(Exception e) {
+            new RuntimeException(this.id + " - " + decoded, e).printStackTrace();
+            return DEFAULT_TEXTURE;
+        }
+    }
+
     public String getPermission() {
         return "heads.category." + category;
     }

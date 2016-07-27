@@ -65,6 +65,20 @@ get-heads:
    backwards:
       type: 262
       name: '&7Backwards a Page'
+get-confirm:
+   title: 'Purchase Head'
+   head:
+      type: 397
+      data: 3
+      name: '&aPurchase %name% for $%cost%'
+   accept:
+      type: 159
+      data: 5
+      name: '&aPurchase %name% for $%cost%'
+   deny:
+      type: 159
+      data: 14
+      name: '&cCancel Purchase'
 id-categories:
    title: 'Categories'
    head:

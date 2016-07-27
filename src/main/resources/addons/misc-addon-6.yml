@@ -1,0 +1,301 @@
+addons: []
+Head-1:
+  id: 1
+  category: Animals
+  name: Turtle Shell
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjY0Njk4ZmVhNWVjM2YyZmQ3ZGI3YThlM2Y0ZTk4OWExNzE2MDM1YzJiZDM2NjY0MzRiYTFhZjU4MTU3In19fQ==
+  cost: -1.0
+Head-2:
+  id: 2
+  category: Animals
+  name: Rhino
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzM2NzNjZTA3MTllMWQ2NmMwZWM3MDYxZjAzNDc5ODZlZWQ5ZTk1OTgwMzdiODhkMjM3MTZlYTdlZjRhODYzMyJ9fX0=
+  cost: -1.0
+Head-3:
+  id: 3
+  category: Animals
+  name: Frog
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTE2NjdhNzVhMmUyNTgzZDg5YTMxZGIwODM4ZGMxZDg2MGY5ZWM1NjJmMDlkNTI2M2IzOWQwNzEzOGRjYzQifX19
+  cost: -1.0
+Head-4:
+  id: 4
+  category: Animals
+  name: beaver
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWM1ZTZjNWI5ZGY5ZTI3ZWU1NjdiNjU1ZDBlZThhNWFjOGUxMWUxZjQ1YWJjY2U0NjI2NWNjMjFhNzk5YWMifX19
+  cost: -1.0
+Head-5:
+  id: 5
+  category: Animals
+  name: Speckled Brown Egg
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRhYWNiOGEzNmUyMjdkODYxZWE0NDM2NmNlM2IzNTEwZWU3YzI3MjJjNGVhNTFiMmYyZTgzNzQ5YmYxMjQifX19
+  cost: -1.0
+Head-6:
+  id: 6
+  category: Animals
+  name: Lion
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2JkMzE0NTg1Y2NmNDc3NGM0ZWYzNTM2NTliZGMxZjJhZjI0ZGRlNmI0ZmI3NGI2OTUyMGE0ZWRmYzIxNDQifX19
+  cost: -1.0
+Head-7:
+  id: 7
+  category: Animals
+  name: Dark Snail
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmM1ODlhNGQ4MTI2ZWQ4NzM2MTQ1OTY3YjBlNGY4YmQ3NTc0ZWNlNzllZmY3ZjQ4ZWYyOWU3MmU1NmE0NmZmIn19fQ==
+  cost: -1.0
+Head-8:
+  id: 8
+  category: Animals
+  name: Snail
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTVmM2MwZjUzNjEyMzc0NjU5NjA2MzVjZWIzYWRjY2I2OGM0NWZkZTU2NjNiYzcyNTQ4Y2IzZGUyOTA0M2M4In19fQ==
+  cost: -1.0
+Head-9:
+  id: 9
+  category: Animals
+  name: Dead Mouse
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzMxYjRhZjk2MzdkN2QzODVlYzIzNGI1NWEzMTlkYzIyZGY0NzBjNDkyZTY5NTEyZGVmZTliN2E1ODhkYzI2In19fQ==
+  cost: -1.0
+Head-10:
+  id: 10
+  category: Animals
+  name: Cat
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTZlN2M1NzRiZTk3NzdjY2VlMWE5NzYwMWNlY2M1YmVkZDVlYTZkNjY3NjViNjQyNGQ2YjJlYmJmZTY2MjViMSJ9fX0=
+  cost: -1.0
+Head-11:
+  id: 11
+  category: Animals
+  name: Horse
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmU3OGM0NzYyNjc0ZGRlOGIxYTVhMWU4NzNiMzNmMjhlMTNlN2MxMDJiMTkzZjY4MzU0OWIzOGRjNzBlMCJ9fX0=
+  cost: -1.0
+Head-12:
+  id: 12
+  category: Animals
+  name: Fox
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmE4N2RjOTllM2IzZTFkZjIyODcyOWU0NjU3NDExNTRlNjg4ZGJmY2E2YTUzNzk0M2UyNzE0ZDhmMmJmIn19fQ==
+  cost: -1.0
+Head-13:
+  id: 13
+  category: Animals
+  name: Siamese Cat
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2E3ZTFjYzZhYzZmYmUyOWIyYWE2YzZmYmJlYzViZDc4NWIxMmRmM2RjNjU5MDQxYzA0NjRiODMyN2FkOTMzIn19fQ==
+  cost: -1.0
+Head-14:
+  id: 14
+  category: Animals
+  name: Rat
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTdjYzU2YzhmODUyNjM2OGY3MjM3YWFlMzg5NGYwZGY3MGE0NGE3M2I4NzIwYWM1MTcxYjM4OWM2NmIyMjJmIn19fQ==
+  cost: -1.0
+Head-15:
+  id: 15
+  category: Animals
+  name: Fox
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmE4NzczMTUzMzU3MDgwMmNjYmVjZTBjMGFiZWNkYTY2YjRlMzY5MGY3YTczMDFhZWQzYWVhYWFhNjcyMWIifX19
+  cost: -1.0
+Head-16:
+  id: 16
+  category: Animals
+  name: Cat
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzM2OTc1NTZiMTczYmU4ZDM5YmY5NzBmOGU4ZGRlYjE2MmE1NzY5Mzk1ZmEwNGEzZTI1MjY1MmM2YTQ5MmMyIn19fQ==
+  cost: -1.0
+Head-17:
+  id: 17
+  category: Animals
+  name: Eagle
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2MxOWJkZjVlYzE2ZmQ5MzgyNWQ3MzhjNjg5YzE5Njc1NDg1NzRjZTdkNjJmZmNkNzRiMzJlOWJmZDVhZTkifX19
+  cost: -1.0
+Head-18:
+  id: 18
+  category: Animals
+  name: White Turkey
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWJkM2VlZThmOWU5NGUzMDhjYzNjNjFkN2IzMzBmZWQ1ZGE4MzVjNjRhYWFhYzZhM2QyYTVkMTZkNDlmNDgifX19
+  cost: -1.0
+Head-19:
+  id: 19
+  category: Animals
+  name: Jerry The Mouse
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjZjZmQzZGFhOWVkYjBkZDgxZjFmNDFmMWFhYzVkYTMyYjQ1NDNmMTRiYTU0ZWNiMzg1YzI5Y2EyYTg0NTY4In19fQ==
+  cost: -1.0
+Head-20:
+  id: 20
+  category: Animals
+  name: Crab
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjc5N2ZlNTQ5OTE5MWRkZWM5NGY1MGZhNmFiOWNiYzE4YzljZDZmYTFiOTdlMzZiNGQ1MTliNjIzMTkzZDUifX19
+  cost: -1.0
+Head-21:
+  id: 21
+  category: Animals
+  name: Hedgehog
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmQ3ZDYzOWMzNDRiOWI5MGQ2ZGNiNzIyOTYzZDY5MWFlYjM1OGU4MTQ2MWVhMTY3ODhiYTEzMjYxODE3MyJ9fX0=
+  cost: -1.0
+Head-22:
+  id: 22
+  category: Animals
+  name: Lion
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDg1ZjE5NmVlMjJlYWM4YmNiNDJmZTRkMWYzMTRlZDYxNWJjZTlkYWVlMDJiNWE4Y2JkNzJlZjk4M2NjMjkzIn19fQ==
+  cost: -1.0
+Head-23:
+  id: 23
+  category: Animals
+  name: Bird
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjRhMjI0ZDE3NTNmZGRkMjVmNWJkNmI0YjZhYzg3OWVmZGI0ZTk3OGMwNDZlN2ZhODEyMGEwN2E4ZTRhYjRkOCJ9fX0=
+  cost: -1.0
+Head-24:
+  id: 24
+  category: Animals
+  name: Armadillo
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTNmNzdhY2ExNThjMjA1Y2FmY2RhOGNhYzU1ODVlZTIxZWRiNzhkNzI4YjhlMTUyYjhiODJhNjVmY2UxMmUifX19
+  cost: -1.0
+Head-25:
+  id: 25
+  category: Animals
+  name: Frog
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzI4MzQxMjE2OWQxZGJkMTUwMzJjMTFjNWEyMjVjZDExYmUzODc1ZDYxMmRhZDgxOGQxZDZmY2NmY2I5YmZhIn19fQ==
+  cost: -1.0
+Head-26:
+  id: 26
+  category: Animals
+  name: Fish
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGE3ODZlNGUzNWI1OWQ5MWViNjQ1NGVmMjZiN2IwNjgzNzYxZDZiMTFmMWQ2M2M3NzQwYWYxN2FhM2YifX19
+  cost: -1.0
+Head-27:
+  id: 27
+  category: Animals
+  name: Cracked Egg
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc4NGI3MTVjMGQyYjE1MGI1NTZmMTZhMjQ2NDBkYWZmMjk3YTRlYzFiZmQ4Nzc1MTk5MDY2MmFjMzZlYjIifX19
+  cost: -1.0
+Head-28:
+  id: 28
+  category: Animals
+  name: Blue Gecko
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWIzZDJkZDI3NTk2NjkxYzVmOWVhNzgxNzcyNWY5YjQxMDQyZWJkYjMyYzJlNGIwMzc3MTk1NjFkYmNhZTBhIn19fQ==
+  cost: -1.0
+Head-29:
+  id: 29
+  category: Animals
+  name: Wild Boar
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2E2N2JmYWRhMjZiZmRmOGI3YTUyYmIyOTJmZWRlOTgzZDY5YjRmMTc1YzA3OTIyNzkxNDk0N2U4YTVmODJmIn19fQ==
+  cost: -1.0
+Head-30:
+  id: 30
+  category: Animals
+  name: Dog
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTEyMTg4MjdmODI5NzhhYWIxMmVhYWQ0YjQ1N2JmMDRkYTllZmQwNGZkM2ExYWZiM2ZhZjdmNjdmZTViODUzIn19fQ==
+  cost: -1.0
+Head-31:
+  id: 31
+  category: Animals
+  name: Cat
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMThlZmE1YWM4NmVkYjdhYWQyNzFmYjE4YjRmNzg3ODVkMGY0OWFhOGZjNzMzM2FlMmRiY2JmY2E4NGIwOWI5ZiJ9fX0=
+  cost: -1.0
+Head-32:
+  id: 32
+  category: Animals
+  name: Red Egg
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDAyOWY4YTY2Zjg1NGUyMTFlNjAxYmYwMmYxZjJhNTc2ZGZiNmE3NmI1OTU4MTQ3ZGQ5NzNkZTdhMjM1In19fQ==
+  cost: -1.0
+Head-33:
+  id: 33
+  category: Animals
+  name: Snow Leopard
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmZjMzUwMjk0MjdlYTJjZDg4ZmNlYTFhOTA5YTY1NGVlNWJlNDc0NDJmNmMzZTA1ODRjNGRmYWQyMjIxYjQifX19
+  cost: -1.0
+Head-34:
+  id: 34
+  category: Animals
+  name: Otter
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTk3MGYyY2VhOWU3Y2I3YjZjOGQ4MjUyMDE2Yjc5YmRjYmZjYTQ5NWQ4YzdhMWM3NTI0MzRlN2FjMzUxMCJ9fX0=
+  cost: -1.0
+Head-35:
+  id: 35
+  category: Animals
+  name: Fox
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTE2NDMwYWM5N2FkOTI2ZWYzZDE1OTMyNWM5ZTNkNWVmN2E4ZGU5OWRlMTI5YzBmYzEzOTIyNDVkYzVhMSJ9fX0=
+  cost: -1.0
+Head-36:
+  id: 36
+  category: Animals
+  name: Golden Pig
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjk1NjUyZGRlMDRmNzQ1Zjk1NGI2OTgxMGUwMjBlYTZiOTNlYjJkMzM0YjlkYjczODBiYmZmNTJjMmIwZjQifX19
+  cost: -1.0
+Head-37:
+  id: 37
+  category: Animals
+  name: Parrot
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzA3ZGFiMmNiZWJlYTUzOWI2NGQ1YWQyNDZmOWNjYzFmY2RhN2FhOTRiODhlNTlmYzI4Mjk4NTJmNDYwNzEifX19
+  cost: -1.0
+Head-38:
+  id: 38
+  category: Animals
+  name: Tiger
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTA2MGYwMDI4N2UzNzY3Njk5ZWE3OTE5N2ViNDUzNDM0NTQ3OGZhZGYxY2Q1M2E3ZjgxMTAxZDkyIn19fQ==
+  cost: -1.0
+Head-39:
+  id: 39
+  category: Animals
+  name: Raccoon
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGVmMTE0ZTU2OGU0YTM1N2E4ZDM0M2UxNDhkYTE0YTI3ZjViZjM0OGM5MWQzZDEzMmNmZGM5NGYxZWY1MjYifX19
+  cost: -1.0
+Head-40:
+  id: 40
+  category: Animals
+  name: Tiger
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTM4MTM3ZWEzMTI4NmJiMGEyNGI4YTZkYjkxZmMwMWVlMGJiYWQ4NTFkNWUxOGFmMGViZTI5YTk3ZTcifX19
+  cost: -1.0
+Head-41:
+  id: 41
+  category: Animals
+  name: Goat
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzRkMGY1NDhmMDhlZjE1MTRmYTU1MjVjNjNkYWQ2NDk3MWUyZDFkY2E1ZjhjMTcyMmJjMzExZjIxYTYxMTQzOCJ9fX0=
+  cost: -1.0
+Head-42:
+  id: 42
+  category: Animals
+  name: Red Egg
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTNhOGIwZTlhMDZmMTk5MzFlYTU5N2JhNzY4MjNiNTk0MDQ4NDFkNTNiYzQ4MTEyN2JlOWY3MTBjNmI5OTgifX19
+  cost: -1.0
+Head-43:
+  id: 43
+  category: Animals
+  name: Owl
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzllMmUxM2ZiZTY2YzIzZDgwZTE0YmEwOGNjMjk1Y2QzNjQ0MWQ4ZmNmM2VjZWQzZWM4ODdjZTM5YjM5NTMifX19
+  cost: -1.0
+Head-44:
+  id: 44
+  category: Animals
+  name: Phoenix
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjNhYWY3YjFhNzc4OTQ5Njk2Y2I5OWQ0ZjA0YWQxYWE1MThjZWVlMjU2YzcyZTVlZDY1YmZhNWMyZDg4ZDllIn19fQ==
+  cost: -1.0
+Head-45:
+  id: 45
+  category: Animals
+  name: Frog
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDFlZjlmMWFlNGQyYmNiYmRmNzc4NDVmOWNiM2QzNTVjZGNhZGQ0ZGZiYmU5ZTdjYzNiNTI5OGRlMjZkYTZmIn19fQ==
+  cost: -1.0
+Head-46:
+  id: 46
+  category: Animals
+  name: Dog
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjQ5NmE5NGQ5ZjUxZWZmMTQ0MmMxYmJjNzk2Y2RhM2Q3YTNmMDIxOTk4NmMyZTljODFhODFhOWZiN2E5OGE2In19fQ==
+  cost: -1.0
+Head-47:
+  id: 47
+  category: Animals
+  name: Rat
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODA1NGJlYzVlMDliNjU5ZTYzYmU1MDk2ZGNhN2ZiZDExODhjYjE4M2FkODU3YzFlYzEwMzdjYzE4MTI5ODUifX19
+  cost: -1.0
+Head-48:
+  id: 48
+  category: Animals
+  name: Darkblue Bird
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjZkY2MwNjhmNjIwNmY5YjRjMmMzZDNjNjRjMDk1N2FjYjUxYjExZmNlNTEyYTZmNDk4NDgzNjg2OWYwIn19fQ==
+  cost: -1.0
+Head-49:
+  id: 49
+  category: Animals
+  name: Milka Cow
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2UxZmM2M2QzMDNlYjVmMzY2YWVjYWU2ZDI1MGQ0ZTJkNzc5YTlmNWVmOGRlYWZmNWIzYmM5NTMwN2ZmOSJ9fX0=
+  cost: -1.0
+Head-50:
+  id: 50
+  category: Animals
+  name: Bird
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGI1YmU2NDRlMmFmM2U0ZmU1NWNhZjNkMTg4ZGFjNmE1MTUxMWRjMmJhNGJmNWIwY2I0ODU5ZGU1NDQ4OSJ9fX0=
+  cost: -1.0

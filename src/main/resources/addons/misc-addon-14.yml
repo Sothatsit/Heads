@@ -1,0 +1,301 @@
+addons: []
+Head-1:
+  id: 1
+  category: Monsters
+  name: Orc
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmUxODNhMjYyYjI2NjNmMTlmMGYyYTA4NjQ0NGRhZWQ0OWI5NzczZmZiNTUyMTE1ZTNlZDlmZmZlMWJkYTEzIn19fQ==
+  cost: -1.0
+Head-2:
+  id: 2
+  category: Monsters
+  name: Dinosaur
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjM1NGY0ZmQ2OWI1N2YyZTU1ZDI5MDFmZmFkZTVmODAzOThjMmI1OGI1NTI0NzRlNDQ0ZjVjYjBkZTliYjk4NCJ9fX0=
+  cost: -1.0
+Head-3:
+  id: 3
+  category: Monsters
+  name: Dragon
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmJlMDIwZTY0NzM0ZjM3YzEwYWFiOTA0MTNlZTViOGUxNDJiYThlMjMzNTdmZmJiZTRjZTY3OTI4YWVhYjcifX19
+  cost: -1.0
+Head-4:
+  id: 4
+  category: Monsters
+  name: Skeleton King
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGM3OGQyMTAyZGI3NWYxYjM3NDRhNWU3ZTliYWNjZjg4ZmRhNGNjNDk3OWViYzBhODFiN2Q5ZWI1NzIxYzAifX19
+  cost: -1.0
+Head-5:
+  id: 5
+  category: Monsters
+  name: Dementor
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWNjNWNhMWRlZTgyYThmNjg2NzI2ZmM2M2MyMjFhZmZhMTNjZjg1YmJiYzg3YzNmZjU4NjFlMjI3NGIzNGYzIn19fQ==
+  cost: -1.0
+Head-6:
+  id: 6
+  category: Monsters
+  name: Dinosaur Egg
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTJiOWJlMzM3NWI5OThhYmFkZjI2ODdkYTBiMTQwZDM1NzY5MmRmZGUwOWJkMTdhN2M2OWFlYmZlNmRkNWJhNiJ9fX0=
+  cost: -1.0
+Head-7:
+  id: 7
+  category: Monsters
+  name: Desert Worm
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODRlYzUzZjM5ODVkYTVkNDgxMjhhOWZhNzUyYTFjZGVmYjRmNjhhZjc2MWQzNDZjNWFlODJlYTkzOGY4M2IifX19
+  cost: -1.0
+Head-8:
+  id: 8
+  category: Monsters
+  name: Minotaur
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGNhMGNiNjE1OWQyMzUwZDcyMGEyYmMyMDlhMjk1NDkyZjM4MGM3ZmU3NzYzOTFiMjg0MTRhZTIyOTU4OSJ9fX0=
+  cost: -1.0
+Head-9:
+  id: 9
+  category: Monsters
+  name: Alien
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODgzMTYyZWQxNTI2YjJmNjIzNDdlZmI0Mzc0OGRkNGQ4NmRlYzhiYWE2ZWZhOTg2ODc4ZTg3ZDJlMmM2In19fQ==
+  cost: -1.0
+Head-10:
+  id: 10
+  category: Monsters
+  name: Minotaur
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTE2ZjRkYWY1YWY2MjUzZGNkZDdlYWQ0MWJlNDRlYzc3OGRmYTAxYmRhNTdlMmVkOWVjMTEyN2UifX19
+  cost: -1.0
+Head-11:
+  id: 11
+  category: Monsters
+  name: Orc
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmYyMGE5M2EyMTIxZDk1M2Y5YTdjMDg1ZjYzZWQwYTNjNDlmYTNhZjEyZDljNzBkMjk5NDRiYzRhNmI3ZiJ9fX0=
+  cost: -1.0
+Head-12:
+  id: 12
+  category: Monsters
+  name: Orc
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkzY2Q3YzU5MTk2MmM3OWE0NjgzYmIxZmYxNGU3ZjcyYTE4YWE0M2Y4OGUyOTViOWY3NTRlMjkyYjQ5YjcifX19
+  cost: -1.0
+Head-13:
+  id: 13
+  category: Monsters
+  name: Earth Monster
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGNkMzY2YzdkOWFhMWY1NWZkODg2YjI3M2ZjMTMwNzRkMjlhZjQ2Mzc2MWMwYTcxYWRjMjFlYWRhYTI3In19fQ==
+  cost: -1.0
+Head-14:
+  id: 14
+  category: Monsters
+  name: Minotaur
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjY3NzlmODM5MDIwZjQ2YTNlZjZkOWNlYWMzZTUxN2FlZmRmN2FmMTE3NTdhNmY4NTZhNmQ2Njk4NzljIn19fQ==
+  cost: -1.0
+Head-15:
+  id: 15
+  category: Monsters
+  name: Monster
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWE5OWQ4MjAzMGJiY2IyZGNhOGU0Y2Y4OTNjMzZkZjY1Nzg0OGYzM2I0ZTdlY2MxMzFmM2U3NmVkM2RkZGYifX19
+  cost: -1.0
+Head-16:
+  id: 16
+  category: Monsters
+  name: Dragon
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2VlMGE4NjBjODk5NGQ1OTUwMzk1Yjg3ZmMxMDdkMmY2NDM0YWNlZTkyNDU3NTA5N2FiNWY5ZmNkZGJiNWU1In19fQ==
+  cost: -1.0
+Head-17:
+  id: 17
+  category: Monsters
+  name: Jabba The Hutt
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTIyNTkzZjM4ODkyNTdmZDVhZjliMzlkMGFmOTg4YmJkMzBlZDk0ZGIxYWNiNDY2NDIyMjY0YjZjMzM0NCJ9fX0=
+  cost: -1.0
+Head-18:
+  id: 18
+  category: Monsters
+  name: Swamp Monster
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGY3ZWRlOWM4OGYxYzMzYzk1NGJiYzgxYzhkYTg3MWNhYmZjYzIzZDU1ZjhiNDkzYTU4OWY4MjM5ZDZjMzkifX19
+  cost: -1.0
+Head-19:
+  id: 19
+  category: Monsters
+  name: Dinosaur
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTIyYjdkYmY0NzMzMTJmMmQzMTdjNTlmMGUyY2E4OWI3YmM5YjQ0Y2NiMzNkZmI3MDQ1MmIyZjViYjAifX19
+  cost: -1.0
+Head-20:
+  id: 20
+  category: Monsters
+  name: Dinosaur
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDU0NTBjYmI3OWU4MTAyYjMzMmRiYTM1YWFkZjlhOGFlNGRjYzNmOThkNTliYjM0NDgyZTc0N2RjZjhjZjgifX19
+  cost: -1.0
+Head-21:
+  id: 21
+  category: Monsters
+  name: Dinosaur
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTc1ODhhMTgzYWRmNjJjOTlhNjUzYjVjYjFiYTE3ZTEyNzI1NGU0ZDk1MjNlZWI3MjRjN2U3MmJjMjE2N2MifX19
+  cost: -1.0
+Head-22:
+  id: 22
+  category: Monsters
+  name: Slime
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODk1YWVlYzZiODQyYWRhODY2OWY4NDZkNjViYzQ5NzYyNTk3ODI0YWI5NDRmMjJmNDViZjNiYmI5NDFhYmU2YyJ9fX0=
+  cost: -1.0
+Head-23:
+  id: 23
+  category: Monsters
+  name: Chinese Dragon
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzQ1OGEzOTdhYWMyZmRiNWExYmI5YjQyMTg4ZDIzOGFmNGY4MjMwMThjYTQ5MWE4ZTRhZWIyOTZmZDlmODkifX19
+  cost: -1.0
+Head-24:
+  id: 24
+  category: Monsters
+  name: Lava Golem
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2M3NTM1NzFlYjVkZTFjYjM2YjU5M2E5MGY5OTcxZTI3OGFkMzdkZWVhN2Q5OGFjZmFhZWUyZTU5ZjNmYSJ9fX0=
+  cost: -1.0
+Head-25:
+  id: 25
+  category: Monsters
+  name: Demon Knight
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTQ2NGViOGU5OWUyODc4ZjM0MzgwM2E3NDJlZjU3Y2VhZmFjYzIyODNlNjdiODhlZGVjMTY4MjEzMTZmOWYifX19
+  cost: -1.0
+Head-26:
+  id: 26
+  category: Monsters
+  name: Ogre
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTI4YTU5YTVlZGEzZDFlNzFjMzcxMzliNGM5NTRkYWUyNmZlZTRhNGM1YWY2ZDUyNzZjYTEyYmZiM2NmYzgzIn19fQ==
+  cost: -1.0
+Head-27:
+  id: 27
+  category: Monsters
+  name: Zombie-Cow
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjdmNGFmOGQzNGU1NzhjODU1ZGU3MjUxOWQ5MjFkYzJhNDJjMjM0NjI3MTk4NmQwMzljZWZjODkwOGJkY2JhIn19fQ==
+  cost: -1.0
+Head-28:
+  id: 28
+  category: Monsters
+  name: Dinosaur
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTQ3ZGYwNTM5ODk2Y2U5NDZjNDMyMzYwYWVjNDUwZGNlNmE4NTg0ZDY1ODc0YzIyODg4ZjMxZTBmY2I0ZTExIn19fQ==
+  cost: -1.0
+Head-29:
+  id: 29
+  category: Monsters
+  name: Hydra
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDdlNjM3ZjFjYTczNWVmMzU0NjdhNjI3NTlkYWU0MWNmNGZmYjVjMmMxNGFhZDQyZWE4YWNlOWJjN2U2OGVjIn19fQ==
+  cost: -1.0
+Head-30:
+  id: 30
+  category: Monsters
+  name: Demon
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWMyOTc4NDRhNzIyY2M4MGM3NDcxNTJiMjk2Y2Q3NTEzMzhkMzYzMjcxOTQxZmI3ZmIzZWJiOTNjOWFjZjI3In19fQ==
+  cost: -1.0
+Head-31:
+  id: 31
+  category: Monsters
+  name: Goblin
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGJmNTZjNjU0MWMxMjY2ZmZjNDYzNTEwYmRiNTVhZWY5MzE1YWY1NDg4OThjZjVkM2NiYTFiNWI0YzAxIn19fQ==
+  cost: -1.0
+Head-32:
+  id: 32
+  category: Monsters
+  name: Orc
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTk4MTZkZTU0N2UxOWRlYmY2NmEwNThjOWFmMTkxZTc3OGZhN2JmM2I0M2QxZGIxZTY4ODNjMzk3MjUzZSJ9fX0=
+  cost: -1.0
+Head-33:
+  id: 33
+  category: Monsters
+  name: Dinosaur
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjI2MDJkNWIzNjJhYTE2MzZkMzVhZjIwZmM3MGQyZTc5NDEzMmVhNjRkNjJkMjNmNTVkYjg1MTVhMGM2MTljNyJ9fX0=
+  cost: -1.0
+Head-34:
+  id: 34
+  category: Monsters
+  name: Sea Monster Cthulhu
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjg3Mjc0MjFiYzEyNTljYjczMmY2OGMzOTVhNDVkYzg1ZTg0NzFhYjdjMDRjNTFjNzI3NWE1N2VmNjhjOGE2In19fQ==
+  cost: -1.0
+Head-35:
+  id: 35
+  category: Monsters
+  name: Godzilla
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjFiZmZjODdmOTYxNmJjNDNlMjgwOTlhNDhjY2E0MWYxYjg3OTZlNmQyN2I5ZGZhNDI4OGZjZGJlZTU3ODEifX19
+  cost: -1.0
+Head-36:
+  id: 36
+  category: Monsters
+  name: Orc
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmExY2ZkZDExOWY3ZTg2MmIwY2M0YWZhZGI3MTA5MmRmNWNmNDcwZmVjNDExOTYxYTBkMjVhMjNlMWViYmEifX19
+  cost: -1.0
+Head-37:
+  id: 37
+  category: Monsters
+  name: Golem
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTdhNWI1YjllOGI2ZmU1N2I2YWY0YTgzY2RiZTUwMTU4Mjg0ZTYzNWIxOWNjOWVlNzA3NDg1YTZkMmRkOGQ3OSJ9fX0=
+  cost: -1.0
+Head-38:
+  id: 38
+  category: Monsters
+  name: Burning Skull
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjBmZGRlZDcxN2Q3OWE3ZjljYTM3ZmQxODdkMGViNDM4ZTIyNGQzMjY5ZGUzOTJlZDRlOTgyYWNjMTlkMWQzIn19fQ==
+  cost: -1.0
+Head-39:
+  id: 39
+  category: Monsters
+  name: Fire Demon
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmQzNDhjZjM5YzY5N2M2MzM0Y2QzMmIxOTE5NjRjMzI2MThlYmUyODVkYmY1Y2I1ZDM5NzljNWVmZmU3MSJ9fX0=
+  cost: -1.0
+Head-40:
+  id: 40
+  category: Monsters
+  name: Orc
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWE1NzMyN2JhYTE0YTNjMTI2YTQyNzdkMzAxZjc1MjJkMjI1MWEzMWFhNjlhZGViYmJmMTkxZmRiOGY1In19fQ==
+  cost: -1.0
+Head-41:
+  id: 41
+  category: Monsters
+  name: Present
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjdlNmI3NDI5NzAyMDk3NWNkN2VjYWU1NDdlNWEwYmI5ZmVlYWM1ODk3NGE5NGNiYTY2ZDVmZmUifX19
+  cost: -1.0
+Head-42:
+  id: 42
+  category: Monsters
+  name: Orc
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTQzYTRiNmFkN2Y2NWFlYzdmNjZhOTRlN2Q0MTMzMmQxYTNmZmExYTljYTc2ZDU3OWM0MTA1NGExNTJiNzk0In19fQ==
+  cost: -1.0
+Head-43:
+  id: 43
+  category: Monsters
+  name: Dragon
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTZjMDgwZDg0MjFjYThjNTU5ZDEyYzIzMjhmMWI4OWM4MmZhMGY1YjY5OTYwMjIxYjg2MTNiYjhkOTU4ZDUifX19
+  cost: -1.0
+Head-44:
+  id: 44
+  category: Monsters
+  name: Orc
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjNmYzVmNjU0Y2E4ZTE0ODUyYTRiMTVkMzJjNmY4ZmFlMjA5YWZlYjU4NTQ3MWE4OTljNWYxNGI5Y2Q4ZDEifX19
+  cost: -1.0
+Head-45:
+  id: 45
+  category: Monsters
+  name: Golem
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmExZWM3OTc1MjQwZWJhZDFjY2VkZTM0MjZjZmJhYmEwYjA0YTViMmIyZWExZTI0MWNmMjYzZjNiZDIyYmU1In19fQ==
+  cost: -1.0
+Head-46:
+  id: 46
+  category: Monsters
+  name: Sea Monster Cthulhu
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjk2MzQzZGNjNTlkZjM1NTUyZjQ2ZDNmZmM1MGVhMmM0MjY5ZGFjMTM5ZGEyYTU4MTIyOGNiMzYwMWJmZSJ9fX0=
+  cost: -1.0
+Head-47:
+  id: 47
+  category: Monsters
+  name: Orc
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmYxYjUxZGEwZGUzZmY1Njg3NzVjZTU4Njk4Y2IyZGY3NjE1ZGU1OTU0MGIyYzA3M2EyOTRjZmNjMDQ3ZjMifX19
+  cost: -1.0
+Head-48:
+  id: 48
+  category: Monsters
+  name: Dinosaur
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzBlNWFlNTQwYWE2ODMzNThhY2MwMTQyNDU5ODc2NTU1NDY5M2Y1MGQ2ZmI0OGQ1ZThiYzYxZmFiYmY3NzUifX19
+  cost: -1.0
+Head-49:
+  id: 49
+  category: Monsters
+  name: Dark Creature
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTA5MTZiODU3YTY4MTUzYWI4YzFkZWM3NDU4YmQ1ZjdjZDQzMjY3ZDU2NDFkM2E4Y2Y0YWE1Mzk3ZmI0ZGQzIn19fQ==
+  cost: -1.0
+Head-50:
+  id: 50
+  category: Monsters
+  name: Orc
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODU4NmY2ZDMzMzlhYTVlZjA1OTI1MjgzNjUwNjU5ZmY3YzU1YmQyZWYyMzBmNWU4ZjcwYmVhYWFlYjE2YSJ9fX0=
+  cost: -1.0

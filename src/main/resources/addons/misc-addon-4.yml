@@ -1,0 +1,301 @@
+addons: []
+Head-1:
+  id: 1
+  category: Blocks
+  name: Stone Ball
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2IyYjVkNDhlNTc1Nzc1NjNhY2EzMTczNTUxOWNiNjIyMjE5YmMwNThiMWYzNDY0OGI2N2I4ZTcxYmMwZmEifX19
+  cost: -1.0
+Head-2:
+  id: 2
+  category: Blocks
+  name: Acacia Log
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDNiODVjNmVlNTMyMmZhOGE1MTNiODY2ZDExMzQ0YmQyMWZhNWZmYTFhY2NiMmIwNjU0OGY2NTQ4MGQxNTlmOSJ9fX0=
+  cost: -1.0
+Head-3:
+  id: 3
+  category: Blocks
+  name: Ironblock
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTI2Yjc3MjMyOWNmMzJmODY0M2M0OTI4NjI2YjZhMzI1MjMzZmY2MWFhOWM3NzI1ODczYTRiZDY2ZGIzZDY5MiJ9fX0=
+  cost: -1.0
+Head-4:
+  id: 4
+  category: Blocks
+  name: Water Filled Cauldron
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ4YTE5Y2RmNDJkNzQ4YjQxYjcyZmI0Mzc2YWUzZjYzYzExNjVkMmRjZTA2NTE3MzNkZjI2MzQ0NmM3N2JhNiJ9fX0=
+  cost: -1.0
+Head-5:
+  id: 5
+  category: Blocks
+  name: Birch Log
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTk5MWYzYjczZWJiOWRlYzkxZWRkYzgzNjFjYTJmZWNmNTI4MGQyYzczM2VkYTllY2I2OTVmODNkMTU4MCJ9fX0=
+  cost: -1.0
+Head-6:
+  id: 6
+  category: Blocks
+  name: Dark Oak Log (Rounded)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTc4YmM5ZTMxNzhiNTY4ZmU2ZjlmNGViOTQ5YTM2NzEzNjM5ZTIwZDBjMmRmYWI3NmFhNjNlMjVmYWYzOWVmIn19fQ==
+  cost: -1.0
+Head-7:
+  id: 7
+  category: Blocks
+  name: Sea Lantern
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTYyZGRiZWM4ZmE5ZDMyMjhjOTBjZjg3ZTRlN2JjMGE4ZWUyYmNmOGIxYzc3ODk2ZWI5N2YzODMwYTVkNmUifX19
+  cost: -1.0
+Head-8:
+  id: 8
+  category: Blocks
+  name: Redstone Ore
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTY5YTFmMTE0MTUxYjQ1MjEzNzNmMzRiYzE0YzI5NjNhNTAxMWNkYzI1YTY1NTRjNDhjNzA4Y2Q5NmViZmMifX19
+  cost: -1.0
+Head-9:
+  id: 9
+  category: Blocks
+  name: Purpur Pillar
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTQ1MjQ5OGJkOWJhNTFhMTQyNGQ5NmJmOTZiZTBjYjEwM2M5MzM4ZGVmZGYxNzJjYTEzZjVlMjRmNWY5ZDhmIn19fQ==
+  cost: -1.0
+Head-10:
+  id: 10
+  category: Blocks
+  name: Emeraldblock
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWM5MDZkNjg4ZTY1ODAyNTY5ZDk3MDViNTc5YmNlNTZlZGM4NmVhNWMzNmJkZDZkNmZjMzU1MTZhNzdkNCJ9fX0=
+  cost: -1.0
+Head-11:
+  id: 11
+  category: Blocks
+  name: Lava
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzY4MzYwMzQ4Yzk3MDg3ZjMxZWU5NzUxYTgxNTE4ZjI4NWRmZDU0Mzk3MDU4MWExM2YyYTJiNTg4ZWVmNCJ9fX0=
+  cost: -1.0
+Head-12:
+  id: 12
+  category: Blocks
+  name: Acacia Log (Rounded)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmRlZjFlZjc4ODFkYTQzOWUzM2ZjMTg3MzBjMzkxNWJhY2VlODVjNDEwNWU2OGQxYjQxMGEyNDk5ZDViYjJkYiJ9fX0=
+  cost: -1.0
+Head-13:
+  id: 13
+  category: Blocks
+  name: Goldblock
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTRiZjg5M2ZjNmRlZmFkMjE4Zjc4MzZlZmVmYmU2MzZmMWMyY2MxYmI2NTBjODJmY2NkOTlmMmMxZWU2In19fQ==
+  cost: -1.0
+Head-14:
+  id: 14
+  category: Blocks
+  name: Dark Oak Log
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjQ4MzcxZjUzMTNjZGRjMDY5NzZlODlkYjI4YWM2YmMxMTFkYmY5ODllZmZlZjMyYTc4NGQ1ZTM4MzI4Mjk1ZSJ9fX0=
+  cost: -1.0
+Head-15:
+  id: 15
+  category: Blocks
+  name: Emerald Ore
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDA1Mzg1MTUyN2M0YzllZjMwYTYxZmIwNjdlYmNlOTU3YzcyNmUxNjg3ZjhiNTMwZmI0YTZiZWViYTQzOGJkIn19fQ==
+  cost: -1.0
+Head-16:
+  id: 16
+  category: Blocks
+  name: Sponge
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWJkMGNmODc0ODk2YzQ5MzgwMzAyZGJjYTA1YTY1M2RhMjk5MzhlYmNmNGU1ZTA0MDczZjVjOTk2MmFkM2UifX19
+  cost: -1.0
+Head-17:
+  id: 17
+  category: Blocks
+  name: Jungle Log (Rounded)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWI0ZjZmNjg4ZTc3M2I0MjVmMjVhNzYzNDI3YzdlODViZTlkMjY1YWFhYjA0M2ZiN2NlNzRkZjhkMTE3ZGQ4YSJ9fX0=
+  cost: -1.0
+Head-18:
+  id: 18
+  category: Blocks
+  name: Chiseled Quartz
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmYwY2YxM2NiYjM2OGFmOWNlZTEyMzI5NzlhMTRiODRlNmViZjIyYzEzYjE0MjdmOTMxNmQ5NzRiY2UifX19
+  cost: -1.0
+Head-19:
+  id: 19
+  category: Blocks
+  name: Still Lava
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzA3OGYzZjI0YjE3NjBmOWQ0YWJiMDg1MWViOGY2YzdkZmZmODg1NTcwOGU2MDQ5ZDE1ZGMwMjA0MmJhODQzNiJ9fX0=
+  cost: -1.0
+Head-20:
+  id: 20
+  category: Blocks
+  name: Missing Texture
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2Q0ODdhNzlhMDExNzMzOGZlYWRkYmQyZjJhYzRlODk2NjQzZjliZDk2MTJhZDg2NWE4NGQ0MWVkOGY5ZjAifX19
+  cost: -1.0
+Head-21:
+  id: 21
+  category: Blocks
+  name: Enchanting Table
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjI2NzJjODdlZWY2ODE4ODI4OTE4ZGQzY2EwMzg1NmNjYjQzNjZlN2M5YWMyNjI0YTk0MmYwZGI3ZTk2YSJ9fX0=
+  cost: -1.0
+Head-22:
+  id: 22
+  category: Blocks
+  name: Glowstone
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWVlZjEwNTZkMTE0OWY0OTNiMzFkYWM0NDFkYzNlOTY0YzdkYzU1ZDdjMzIzZmVjZDc4NWVlMjYyMGFiZWZlIn19fQ==
+  cost: -1.0
+Head-23:
+  id: 23
+  category: Blocks
+  name: Minecart
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzQyMDcwYWNjODE0YmM5NDZlNTk4NzllYzdkYTQ1ZGU5ODRkM2VlOWExNTkzOTNkZWZiNTk4NTNhYmUzYjYifX19
+  cost: -1.0
+Head-24:
+  id: 24
+  category: Blocks
+  name: Oak Log
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTRhYWRhNGQ5ZmNlZGE5MDE4NjkxOGQ2Y2EzNWI5YTBlYWQ4ZTRiMTRjOWQ5NDI3MTU3ZWU5YjkzMzlkN2IxIn19fQ==
+  cost: -1.0
+Head-25:
+  id: 25
+  category: Blocks
+  name: Podzol
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWU2MTg3M2Q0N2ZhYTVlNjc5MzllOTY0NjQwYjQyNWZhYTc2OTBkNmI1ZGVhODUyOGIyNWNhNzExMGVkYTEifX19
+  cost: -1.0
+Head-26:
+  id: 26
+  category: Blocks
+  name: Chorus Plant
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmJjNThkMjg5M2MyNWFjMTNjZjliZTg3NjZkNzM5OGQ0MzQ1YWM4MGMyZTYyNWJhMTFiZGNlYjI0YzVmZDcifX19
+  cost: -1.0
+Head-27:
+  id: 27
+  category: Blocks
+  name: Spruce Log (Rounded)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzcxZGFkZWM1ZTc2NTY3YjQ4OTkzOWRmNmIyMjAyMjJmMzlkZGE2NmQ1MzRkYmExYWIyZDAzNmNkODRmOSJ9fX0=
+  cost: -1.0
+Head-28:
+  id: 28
+  category: Blocks
+  name: Chorus Plant
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzQwZjFkYjk3MTRmYTE0M2IyY2Q0YWI0YjFhMTM0ZGJmMmZlYzVjZTA0OTExYjIxZWVmZTc5MTEzNjFlYjkifX19
+  cost: -1.0
+Head-29:
+  id: 29
+  category: Blocks
+  name: Endportal Frame
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc3ZTNkMGY3ZGQ2NmEyNjFjZjk2MmFhMGMxMzMzYjQ5YmZjZjM2MzlmYWFlZWIxNzRkNTk1NzU3ZGY2MTEifX19
+  cost: -1.0
+Head-30:
+  id: 30
+  category: Blocks
+  name: Acacia Log (Rounded)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzg4NzI1MzdiNmNlNTc0NjU5ZGMxNzZhMWQ4ZGZlOWMxZTU5OWY2ZjE0MWMxODIyNjI4MzQ3ZGQ1MzhiOWUyIn19fQ==
+  cost: -1.0
+Head-31:
+  id: 31
+  category: Blocks
+  name: Netherquartz Ore
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDRmMzI3MmExMmQwYTU1MTUzODA2NzAzZDYyNzRjNjZkYTE5NzJjZjBjOWNlYWVlZmRjOThkZjNlYzJiNCJ9fX0=
+  cost: -1.0
+Head-32:
+  id: 32
+  category: Blocks
+  name: Oak Log (Rounded)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWFlODI2ZTdkYjg0NDdmYmQ2Mjk4OGZlZTBlODNiYmRkNjk0Mzc4YWVmMTJkMjU3MmU5NzVmMDU5YTU0OTkwIn19fQ==
+  cost: -1.0
+Head-33:
+  id: 33
+  category: Blocks
+  name: Iceblock
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTI2NDQwNzFiNmM3YmJhZTdiNWU0NWQ5ZjgyZjk2ZmZiNWVlOGUxNzdhMjNiODI1YTQ0NjU2MDdmMWM5YyJ9fX0=
+  cost: -1.0
+Head-34:
+  id: 34
+  category: Blocks
+  name: Stonebrick
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODhiNzY3YzhhMWVhOGU0MDRiM2NjYTg1MzQ5ZjY1M2I1N2IwYzNmNDY0MjdmYmVjZWFjY2YzNjAyYmMyOWUifX19
+  cost: -1.0
+Head-35:
+  id: 35
+  category: Blocks
+  name: Iron Ore
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTAxODQzZWM0M2YwODhjOTYzZmZjM2UyZjcxYzY2ZTMxNTU5NDNiMTc3YTFhMzU5ODJiMTIwZjZmNjQ4MjJiYyJ9fX0=
+  cost: -1.0
+Head-36:
+  id: 36
+  category: Blocks
+  name: Dirty Cobblestone
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjFlYTZmMWNhYzU1ZGUxOWFlNGM1NjU2ZTAxYzQxZjRhNjkyNWY2MWJkZjI1YjY2Yzk1OGFlMjZjNzk0Yjk4NyJ9fX0=
+  cost: -1.0
+Head-37:
+  id: 37
+  category: Blocks
+  name: White Mushroom
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODRkNTQxMjc1YzdmOTI0YmNiOWViMmRiYmY0Yjg2NmI3NjQ5YzMzMGE2YTAxM2I1M2Q1ODRmZDRkZGYxODZjYSJ9fX0=
+  cost: -1.0
+Head-38:
+  id: 38
+  category: Blocks
+  name: Netherrack
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTU2Y2E1YzY3OTMzNmRkNGYzMjYyZjRmYmMyM2MxYTJlZTBkODJhN2ZkODFlNmU2MjMzN2U1ZmQ1YzcifX19
+  cost: -1.0
+Head-39:
+  id: 39
+  category: Blocks
+  name: Mycellium
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWE0NWQxYjQxN2NiZGRjMjE3NjdiMDYwNDRlODk5YjI2NmJmNzhhNjZlMjE4NzZiZTNjMDUxNWFiNTVkNzEifX19
+  cost: -1.0
+Head-40:
+  id: 40
+  category: Blocks
+  name: Spruce Log (Rounded)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDI3ZWVhYjZiMDFjNjFjODBiNDQ0OWEwNWU5MmQzNWNiMDVkMzM2NTQ0YzljYmFmNDhjMTYxNGU4NDkyMCJ9fX0=
+  cost: -1.0
+Head-41:
+  id: 41
+  category: Blocks
+  name: Beacon
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2RlMzNjOTVmZWMxYjhkOTg4MjUwZjVmNWIzYTI0ODU3NDI0MzlmYWVhYTc1ZWQ1MDZlYTAxZDc1ZTE3ZjIxIn19fQ==
+  cost: -1.0
+Head-42:
+  id: 42
+  category: Blocks
+  name: Cobblestone
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGMxNzU0ODUxZTM2N2U4YmViYTJhNmQ4ZjdjMmZlZGU4N2FlNzkzYWM1NDZiMGYyOTlkNjczMjE1YjI5MyJ9fX0=
+  cost: -1.0
+Head-43:
+  id: 43
+  category: Blocks
+  name: Spruce Log
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDI2ZWVmZDg3MjYzY2M0ODVjMTdjYjVmODE4ZWUzYmFkOTNjYTc2OTEzODVjYjVlNWQ2OThhZmY3MzNhMyJ9fX0=
+  cost: -1.0
+Head-44:
+  id: 44
+  category: Blocks
+  name: Redstone Lamp
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTJjMmY2ZmE3ZWM1MzA0MzVjNDMxNTcyOTM4YjlmZWI5NTljNDIyOThlNTU1NDM0MDI2M2M2NTI3MSJ9fX0=
+  cost: -1.0
+Head-45:
+  id: 45
+  category: Blocks
+  name: Dark Oak Planks
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGZkOTE3ZmQ1OTNhN2FjNWJkZmUxZmM2NWQzMjBkZjQ2MTFkYTQzMWYzZWE0ZjM0YzdhMTkwMjBmNTEyIn19fQ==
+  cost: -1.0
+Head-46:
+  id: 46
+  category: Blocks
+  name: Jungle Log
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzljYTM1NDA2MjFjMWM3OWMzMmJmNDI0Mzg3MDhmZjFmNWY3ZDBhZjliMTRhMDc0NzMxMTA3ZWRmZWI2OTFjIn19fQ==
+  cost: -1.0
+Head-47:
+  id: 47
+  category: Blocks
+  name: Birch Log
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmNhMGFkOGY0MTFhYTMxYTY3YmI2ODU1NjliNTZjMzY3NmQ5YjRjMmEzYThjYWQzYWNhM2FhNWViYzU1YmJiZiJ9fX0=
+  cost: -1.0
+Head-48:
+  id: 48
+  category: Blocks
+  name: Furnace
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODdjMDc0ODM2MmU5YTYzZTA3YWEyYjA4YjVmN2QxMDFlNTM5NWFhMjE1MzJhNDc2NzIyZGJkZDk4YzJmMiJ9fX0=
+  cost: -1.0
+Head-49:
+  id: 49
+  category: Blocks
+  name: Soulsand
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTg3MDk1ZmFmMzMxNzgzMTJmNjEyOGI5Y2Q0YWZjNTIzMGRiNjA5Y2I2Mzk2M2ZmYmRlYmVmOTQ4MTdiMzM3MyJ9fX0=
+  cost: -1.0
+Head-50:
+  id: 50
+  category: Blocks
+  name: End Stone Brick
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjZkZTY1ZDE4OTY4MTI2ODExMDViYjNjMDE3ZmIzYWNkM2Y0ZGQ2M2IxM2IxOGRhMTRkNTliZTk4NGE2M2Q3In19fQ==
+  cost: -1.0

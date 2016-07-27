@@ -20,3 +20,4 @@ economy:
    # Use 0 for no cost
    default-head-cost: 0
 hat-mode: false
+world-updated: 0

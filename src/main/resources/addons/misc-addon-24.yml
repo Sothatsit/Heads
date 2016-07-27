@@ -1,0 +1,301 @@
+addons: []
+Head-1:
+  id: 1
+  category: Interior
+  name: Rainbow Nether Quartz Ore
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmRmMDk1MGE4MDdmZGQzNjNlOGNkMWJmZjE3ODIzYjJkMWNhM2E3ZWZiZTM3YWNiNmQ4MDk3NThhMzJkNjYifX19
+  cost: -1.0
+Head-2:
+  id: 2
+  category: Interior
+  name: Sapphire Ore
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjM4NzhkZDgxNjk4MTQ5M2VkODgxNjZiNzUyYjJiN2I5ZjRkMTNiZDk4ZWQzOTM4NDc3YjhhYjhlZWRjIn19fQ==
+  cost: -1.0
+Head-3:
+  id: 3
+  category: Interior
+  name: Chemical Bomb
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDFkNDc5MWYzYjlhNWVhNGJmYWFkY2Q3NzliNTE2NDJkNDkzMGEyMzU5OWI5MzQ3YTMzNzVkM2IyNzIxZCJ9fX0=
+  cost: -1.0
+Head-4:
+  id: 4
+  category: Interior
+  name: Spool of Thread (Gold)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmI5YTRkZmNjNzE1M2MzMTc2ZGM4Y2YzODg4N2QyZDgzODU1NDVmYTRjNWY4YzJmZjEzZjlkNjllOThlOSJ9fX0=
+  cost: -1.0
+Head-5:
+  id: 5
+  category: Interior
+  name: Present
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDczYmE1NDZhNjJiMzJjNTE1Mzc2ZGQ3ZjNjOTJmYjM1YTMzNTI0ZjMyM2JiYjJiNTk3OGUzOGM3ZTVmNjJhIn19fQ==
+  cost: -1.0
+Head-6:
+  id: 6
+  category: Interior
+  name: Truck
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjYzZTdjNjA2NmQzOGJiOGQ4OGRiZTFiZWI3MGUyM2I4MzU1NDZiMjlhMzFmNTc5ZDNkNzUxMzMyY2I5NDUifX19
+  cost: -1.0
+Head-7:
+  id: 7
+  category: Interior
+  name: TNT
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGVlYmI4YjAzY2QyN2QzNDM1ZTExNTYxNmI4ZWQzNWRjYjQyN2FmNWIwYjFjYzUyNmQzMjY1YTcyZDQ5M2UifX19
+  cost: -1.0
+Head-8:
+  id: 8
+  category: Interior
+  name: Rubik's Cube
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjQzYjgwYmExMjc1MzEyMjcxOWE3MWNhZTM4MjIyZTM0NTIyNWE2NWY4YWFkMTZhZTIxNDMwZmVjMWEzIn19fQ==
+  cost: -1.0
+Head-9:
+  id: 9
+  category: Interior
+  name: Bathroom Tissue
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTc0MmMyNGFmYTQ5Mjg1NzI2ZWZkNjNlZjRlMzQyNzlmNzE4ZGI4NGIzZDMzYTFmOGNlYWMxNjIyYmE3MyJ9fX0=
+  cost: -1.0
+Head-10:
+  id: 10
+  category: Interior
+  name: Green Stage Light
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzRlMjQ3YzA4ZjQwMWQ1NTQzOGM4ZDEyNTFmYjFhYTc3ZjdkOTc3NDI4NDM4ZjE3OGM4ZDg3OGIzZmEzYWRhYSJ9fX0=
+  cost: -1.0
+Head-11:
+  id: 11
+  category: Interior
+  name: Coloured Books
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTJmZWJhMWYzMDVmOTU4NDc2ZGYxOWNjZDg5Mzc3OGM2ZTM0YWExN2U4ZmZlZGU0MTMzYjNhNWYzNDRmZDhlIn19fQ==
+  cost: -1.0
+Head-12:
+  id: 12
+  category: Interior
+  name: Diamond Minecart
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmJjZDUxMjgzMDc0YzVkNmY5ZjczODBkMTYyOGUzMDIwZmQ2NTZhYjhjMzU2MmRjZmNkYmQyMmI5NmE5MSJ9fX0=
+  cost: -1.0
+Head-13:
+  id: 13
+  category: Interior
+  name: Old TV
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTlkYzZlYjUxMThiNGUzYWExODQwOGM0MjM5N2FjM2NhN2RhNjE3ZmM2OWZiMjY5N2IxNDE2NWE4ODQwMzQifX19
+  cost: -1.0
+Head-14:
+  id: 14
+  category: Interior
+  name: Wooden Chess Board
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzMxMTlhYzEyNjdjODk4NmUxZDMyODI1MTI1MzVlNTQzYjkxZGZiZjk1YmI0OTQ2NjE1YzU0YzVlZDdlYmViZiJ9fX0=
+  cost: -1.0
+Head-15:
+  id: 15
+  category: Interior
+  name: Green Treasurechest
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzhmODhiMTYxNzYzZjYyZTRjNTFmNWViMWQzOGZhZjNiODJjNDhhODM5YWMzMTcxMjI5NTU3YWRlNDI3NDM0In19fQ==
+  cost: -1.0
+Head-16:
+  id: 16
+  category: Interior
+  name: Backpack (Ender)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjEyYzBhMzljZjQ2YTcyYzE4ZmJhMzA3YjgxNTQ2MmQxOTk3NGZlZWU3YTA3ODY0MzU2OWRlY2JmNWI3In19fQ==
+  cost: -1.0
+Head-17:
+  id: 17
+  category: Interior
+  name: Stack O' Books
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzA1YzZjZmU2Yzc2Y2RhN2YxM2FmNDc3YWVhNDc5NjNjN2ZkMzVlNjk3MzY5ZWI5MTFjNDEyMWQ4ZmNjNCJ9fX0=
+  cost: -1.0
+Head-18:
+  id: 18
+  category: Interior
+  name: Spool of Thread (White)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTY0NmE2MmZlYzJkZDk3ZjVlNGFhMzI5YWU0NDZjNjAxMWE4ZThlMmQ4MTdhZWViOGZkYzExY2M1NGVjMmViZSJ9fX0=
+  cost: -1.0
+Head-19:
+  id: 19
+  category: Interior
+  name: Pink Mailbox
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjI4NDM1ZDc5MWEwMThmY2E3OTI2ODU0Zjc3ZWNkN2RmMmQxZGYwYjFjMWM3ZjlhNjM4YjhhOTMxZGI5NWEifX19
+  cost: -1.0
+Head-20:
+  id: 20
+  category: Interior
+  name: TNT
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTRlOGJhMGFiOWUzOTU0Yjc5NGZiMjlmOTNjNmY2ODk0NjEzNmJiY2Q0MDIzMDg3ZTM4YTk3ZjY4ODIzIn19fQ==
+  cost: -1.0
+Head-21:
+  id: 21
+  category: Interior
+  name: Golden Chalice
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmEzOGU4M2E1NTkxZDY3NDc5YzAxNzkzN2UxZDk4ZGRhZDA0MDhkNTMzYWUyZDhjNzljMzRhZmQ4NzE5OWE3In19fQ==
+  cost: -1.0
+Head-22:
+  id: 22
+  category: Interior
+  name: Stack Of Papers
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDg4M2Q2NTZlNDljMzhjNmI1Mzc4NTcyZjMxYzYzYzRjN2E1ZGQ0Mzc1YjZlY2JjYTQzZjU5NzFjMmNjNGZmIn19fQ==
+  cost: -1.0
+Head-23:
+  id: 23
+  category: Interior
+  name: Sadness Orb
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmYxN2MyN2Y2ZTU4MTk5ZDI0ODAzODY0YTBhOGY0OTIyNmYzMjdjNTlkOGQzMTQzNjQ3MzM0NTk5NTdhZWNlIn19fQ==
+  cost: -1.0
+Head-24:
+  id: 24
+  category: Interior
+  name: Roaring Fire
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDA4MGJiZWZjYTg3ZGMwZjM2NTM2YjY1MDg0MjVjZmM0Yjk1YmE2ZThmNWU2YTQ2ZmY5ZTljYjQ4OGE5ZWQifX19
+  cost: -1.0
+Head-25:
+  id: 25
+  category: Interior
+  name: Rope
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzFhNzk3M2YyNWNiYmIwNzhmNTk1YzA0MzQ5ZmM1NDFhYzFkZjlhNDRiOGMxYTE2YzUyODU4MWFhNDE3MCJ9fX0=
+  cost: -1.0
+Head-26:
+  id: 26
+  category: Interior
+  name: Tape
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmY1MjhhNjNjMWVjYjZhNzVjNjFlOGIzNzAwMjg1MjBmNTM2Yjk5ZDVhNzRkZTZlNjg2MzI0NzNhZWExOCJ9fX0=
+  cost: -1.0
+Head-27:
+  id: 27
+  category: Interior
+  name: Lettercube Green
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWFmNzgxZjNlMTI4YmE3NzFkY2ZkZDExNjgyNzU1YjQ5MGM2MWYxNzNiY2YzN2E5YzZiOGE0Nzg3ZTRmOSJ9fX0=
+  cost: -1.0
+Head-28:
+  id: 28
+  category: Interior
+  name: Blue Dice
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTVhNmFkYzFhZjNkOTc4NjNhZjBhNzA5MjhlYTVkYTZmNmQ2NjM5MTNjOGY4YWY0NTZmMzFlMWM5NjQifX19
+  cost: -1.0
+Head-29:
+  id: 29
+  category: Interior
+  name: Potted Dahlie Plant
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTJkZjExNzNiNGZjMWFmMzYzMzQ1MjMyN2NlMjhiNGZjNDg1ZDE2MTIwZTE2NWE1MTljMmY3ODQ2MjQxIn19fQ==
+  cost: -1.0
+Head-30:
+  id: 30
+  category: Interior
+  name: Lantern
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTk5OGUzNjY4YTZjYTYyZWI3NWYzNmZhNGJiN2Y1ZWNkYjI2YjE3MGFhY2QzMzc3ZGI1M2Y2MmYxODhiMzgifX19
+  cost: -1.0
+Head-31:
+  id: 31
+  category: Interior
+  name: Red Tissue
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2M1MGIyNDE3OTNmN2MzNjRjYTY5N2FmZjVkZTAxMjZmZDY0ZjNiZTAyMmYyNzBiZDhkZjMxYjVkMjBkZCJ9fX0=
+  cost: -1.0
+Head-32:
+  id: 32
+  category: Interior
+  name: Wii
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjYzYTM5NTljMjU5NjcxZjJkYjMzZTU1NDIyY2I5ZDM2NmZiYjRhMjQyOTFlNWZlZTVlYzUzZmRiMTVmNDNmZSJ9fX0=
+  cost: -1.0
+Head-33:
+  id: 33
+  category: Interior
+  name: Emerald Chest
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzA5MDEwMmMxNmMyYWVlZjkxZTNkNzdhNWEzNzUwOTZjYzgyNjVjMzRiZjllMTgyMGI4NzFmNDQ0OWZiNmUifX19
+  cost: -1.0
+Head-34:
+  id: 34
+  category: Interior
+  name: Honeycomb
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTJkMDVjNTQxYTg3Y2E0M2Y1OTdhZjQxMmUxOTQ4OTM0NGYzNWQwNmNmZDY3M2Y5NmRjY2I2YzhmY2U1MiJ9fX0=
+  cost: -1.0
+Head-35:
+  id: 35
+  category: Interior
+  name: Gear-Wheel
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTEyM2I4ODg0NmQ2NmUxY2ZlMmY2NjRhMzZhZDRhMjJiMWE0YzJmMmU0ZDI5NWY0MWZlNWU5MjliOWU3ZDgifX19
+  cost: -1.0
+Head-36:
+  id: 36
+  category: Interior
+  name: Napalm Bomb
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2ZhZDZhMTdhNTUzOWE5NmEyYWQzNzBmZjA3M2E2YzQxZTM4M2E1MzdhODRkYzRiODNiY2NjNmM5ZDhhZjIifX19
+  cost: -1.0
+Head-37:
+  id: 37
+  category: Interior
+  name: Saphir Block
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWRmMzEwNjg5MzhlNDBkMjc2NTdmNjI5NGI0MjQyZGRiZjE0NDliMjczZmFkNTkyNDZlZDk4YmFkZjg3NzEifX19
+  cost: -1.0
+Head-38:
+  id: 38
+  category: Interior
+  name: Potted Blue Orchid
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODliYzQ4MmFhZjU1MzZjN2VmZWE3ODUxZTM2Yzg1Y2YyY2VkYWU1NWFmY2YwZTA3NjFlZjI2MTk1NmRiYjAifX19
+  cost: -1.0
+Head-39:
+  id: 39
+  category: Interior
+  name: Speaker
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTM1OTZmZDdiZTZiNzQ2M2U3ZDJjYzQ1ODQ0NWU2YTBhOWExODNkOGY0Y2ZjYzgwMTE4YmE3MTNhN2RkMTgifX19
+  cost: -1.0
+Head-40:
+  id: 40
+  category: Interior
+  name: Christmas ball ornament (black)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDhjNTNiY2U4YWU1OGRjNjkyNDkzNDgxOTA5YjcwZTExYWI3ZTk0MjJkOWQ4NzYzNTEyM2QwNzZjNzEzM2UifX19
+  cost: -1.0
+Head-41:
+  id: 41
+  category: Interior
+  name: Flower Pot Pink
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDQ2MWM3NTMzN2RmNzZiNjRhYWM2ODYzYzMwMTVhZmM2ZTNkYTFlN2MzYjY4MWNjMzE3ODE5NGRkZTM4ZWEifX19
+  cost: -1.0
+Head-42:
+  id: 42
+  category: Interior
+  name: Brick Chest
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzNhMTE3OTJhYzc5ZjM4MjQ0OWFiZTFjNmI4ZGVmYjQwZGM1NjU0ZmM4ZjRlNDE4MDkyNzA5N2M2YTg2NCJ9fX0=
+  cost: -1.0
+Head-43:
+  id: 43
+  category: Interior
+  name: Axe on a Stumb
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQ3NDI4MzlkMzQxMjVkMTI4ZGY0ZTIzZWI2Mzc0OTgyYWM2N2Q3MmNiZjYzOTI1ZWQ2OTFlOTNjMjRlZmMzNyJ9fX0=
+  cost: -1.0
+Head-44:
+  id: 44
+  category: Interior
+  name: Aquarium
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmRkOGE5MjU4MDkyZjI2ZjExNzM1N2UxYjUyYmFjOGY0Y2VkYzU3NWI5ODJmNTJhODVkZjNhMzEzNjk2ZDg4ZiJ9fX0=
+  cost: -1.0
+Head-45:
+  id: 45
+  category: Interior
+  name: Purple Candle
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDk3YzI3OTc1NjY1ZDY2OTVmNDZiZWNlNWU0MTE2ZDhjNThlOWNhNzkxNmNmNTM2MzY0ZjFhODIxZjRjZjEifX19
+  cost: -1.0
+Head-46:
+  id: 46
+  category: Interior
+  name: Old Manuscript
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTgxOGQxY2M1M2MyNzVjMjk0ZjVkZmI1NTkxNzRkZDkzMWZjNTE2YTg1YWY2MWExZGUyNTZhZWQ4YmNhNWU3In19fQ==
+  cost: -1.0
+Head-47:
+  id: 47
+  category: Interior
+  name: Stack O' Bibles
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDkyZGRlOWZmZjMyZjdjNmQxMzgxODc1NGIzNjFlOTVjYjk4YTE5YzQ4MmQ1YzUzNWNjZmUwYzE4NWJjNiJ9fX0=
+  cost: -1.0
+Head-48:
+  id: 48
+  category: Interior
+  name: Open Chest
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjZhY2ZjNjQzZjYwOGUxNmRlMTkzMzVkZGNhNzFhODI4ZGZiOGRhY2E1NzkzZWI1YmJjYjBjN2QxNTU5MjQ5In19fQ==
+  cost: -1.0
+Head-49:
+  id: 49
+  category: Interior
+  name: Pink Easter Egg
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTViOGRjYmVhMjdmNDJmNWFlOTEwNDQ1ZTA1ZGFjODlkMzEwYWFmMjM2YTZjMjEyM2I4NTI4MTIwIn19fQ==
+  cost: -1.0
+Head-50:
+  id: 50
+  category: Interior
+  name: Void Charge
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzI2OTc5Mjk0NjU5NTBjY2QzYTQ5MjNhNWU2ZWIxNWI0ZmUyYmEyYjI4NzE1ZjRhNzk5Njc4NWQ3MDYxNTgifX19
+  cost: -1.0

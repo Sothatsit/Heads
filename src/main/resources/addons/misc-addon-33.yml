@@ -1,0 +1,139 @@
+addons: []
+Head-1:
+  id: 1
+  category: Food
+  name: Pumpkin
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjM5NzllOTYzOWExNGMzZDQ2Y2U0NmQ3MTRkNDIzY2IxNTkwOTE4MzlhNzYyY2Y5Mzk3MTZmMTUxMWZkMTUifX19
+  cost: -1.0
+Head-2:
+  id: 2
+  category: Food
+  name: Flour
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTk3YWY5NTc2MjAxZTEzNzRmYWI5MzhhMGE5ODFlYzM3YzI4ZmM0OGNmM2I5NDM4Njk1ZGJhMzJmYjhjIn19fQ==
+  cost: -1.0
+Head-3:
+  id: 3
+  category: Food
+  name: Hazelnut
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTNkNmNkMmMzNjY2NTUyNDM2YjhjN2FmYmE5MDhlMmM0YmMxNjFiZThiODY1M2U0NWU4MmY3OTViM2YxIn19fQ==
+  cost: -1.0
+Head-4:
+  id: 4
+  category: Food
+  name: Kakikori
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTdlOTE5OGNjZjZmY2Y3MzEyZTMyMWU3YTU1ZmI4NTAxZjNkY2VkNzFmNWY1NDY4ZWZjNTZhZDA5ZjY0OGQzNCJ9fX0=
+  cost: -1.0
+Head-5:
+  id: 5
+  category: Food
+  name: Mana Potion
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWI1ZGI4NDhkZWQ5YzM0ZmZiYzg1MzIzNmE0MTA5Y2UxNjY1ZGE1ZGZlMjk5OTFhM2NkNmVkYTU0ZDNlYzc3In19fQ==
+  cost: -1.0
+Head-6:
+  id: 6
+  category: Food
+  name: Lasagna
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNThkNTgzZDNmNmExMjQ3NjM1OWVmODI4OGI2MGJhMzU1ZTMyYTNhNGQ5N2JjODUyMzIzY2U3NGM4OWU0NTE0MyJ9fX0=
+  cost: -1.0
+Head-7:
+  id: 7
+  category: Food
+  name: Sushi Urchin
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ3YzI3N2I2OGM5YjI5Zjk3MWQ0NjVlMmM5NjI4NGM4ZjNkZWMzYTdkOWFhZjczZmM2N2QzYmQwZWNiOGE2In19fQ==
+  cost: -1.0
+Head-8:
+  id: 8
+  category: Food
+  name: Egg
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmU0N2Q3M2UxZjRkNmRlNmFmMjI1NjJhNWI0NDQ3OTIxYmQ4ODZlNTY4NWY0NGMxZGFhYzY4ZTliYzk2MSJ9fX0=
+  cost: -1.0
+Head-9:
+  id: 9
+  category: Food
+  name: Ramen
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzc2NjZjOGE3ODUxNjY2NDRiMDk3ZWJmNzViOTRjMTM1YmZlMDgwMmRmY2M2YzE5YzFlZjBkNzE1OTY3YiJ9fX0=
+  cost: -1.0
+Head-10:
+  id: 10
+  category: Food
+  name: Cup
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTMzZWE2ZmNmNGIyODkzOWEzZThlZDhjMjdmYjg5ODgyZGQ4MzA5YjJlMmE2NjlkOWQ5OGU0YjMzYTczNzRjIn19fQ==
+  cost: -1.0
+Head-11:
+  id: 11
+  category: Food
+  name: Salsa
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODBlYjhiMjFmMGM3ZDg1YzFkYWQzYjZkYjUzNmRkNmFhZGVhZWE2MmEyYjk0ODRhNjJhM2Q4ZDMzNmMyYTliIn19fQ==
+  cost: -1.0
+Head-12:
+  id: 12
+  category: Food
+  name: Pudding Cake
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzZjMzY1MjNjMmQxMWI4YzhlYTJlOTkyMjkxYzUyYTY1NDc2MGVjNzJkY2MzMmRhMmNiNjM2MTY0ODFlZSJ9fX0=
+  cost: -1.0
+Head-13:
+  id: 13
+  category: Food
+  name: Hazelnut
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzAyOTcyMjRiMjFhOTc3Y2FlYmZjZjU2NjFiN2M4ZTVhNmI3ZWIzYWIxNjg5NTI1NzI5ODIxNmRlMWFhNzMifX19
+  cost: -1.0
+Head-14:
+  id: 14
+  category: Food
+  name: Pink Juice
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzZlMWExZjNjNzcxNTNhYmZlMzhjZjgyZWVmMzZhOGJmN2VjMzJjM2M0MTc1NzZiMDU5YTVmMmU2ZGI0YmY3In19fQ==
+  cost: -1.0
+Head-15:
+  id: 15
+  category: Food
+  name: Picnic Basket
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDBjZTkxOWE0NDJjYWEzYmRkYmM0YTU3MmJiYWYxZDU5MTZlMjExZTBmNGNjMzhjMTVjYThjYzUzYTMxYzYzIn19fQ==
+  cost: -1.0
+Head-16:
+  id: 16
+  category: Food
+  name: Tree Mushroom
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODBmODg2NTAzZDI1ZmFkY2JlYTllZTc3Nzk4OTAyNTdkZTBlM2U5NGE0Y2FmN2E2N2M2ODg2MzFjZjJiNjY5In19fQ==
+  cost: -1.0
+Head-17:
+  id: 17
+  category: Food
+  name: Sushi Egg
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmVhZjVhNDM2YTg2NjYzYmVkYmQxNzk2NmNhNTU0NmJjYWI4ZTFhZTMwYWUyNGE0OGY5MzFiNjkxZTc5NWMyIn19fQ==
+  cost: -1.0
+Head-18:
+  id: 18
+  category: Food
+  name: Salad
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTk3OWZlN2IzMmZiN2ZjOTc0NmUxNTc0NzFmOTc1ZjMxYWZjYjU4ZmQ4YjVhY2I4YmY1M2VjMzUwZjRkNWMyIn19fQ==
+  cost: -1.0
+Head-19:
+  id: 19
+  category: Food
+  name: Barrel Leaves
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGUxN2Q5MzRiNDY1ZjUyNmE4Mzc2NmZhZmMwNGIyNzRkMmYxMTFhNDE2MThlMzY3OTcwNmJhODUxY2E4ZiJ9fX0=
+  cost: -1.0
+Head-20:
+  id: 20
+  category: Food
+  name: Cake
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjQ4YjExYTkyMWI4MjY1NGMyZjFkYjMzMzZiYmNhNmU1YzQ5MjRkMGNkYjYzZGMyMjZjZTdjNmNiZjllMmViNiJ9fX0=
+  cost: -1.0
+Head-21:
+  id: 21
+  category: Food
+  name: Lemon
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDM3OGI1ODJkMTljY2M1NWIwMjNlYjgyZWRhMjcxYmFjNDc0NGZhMjAwNmNmNWUxOTAyNDZlMmI0ZDVkIn19fQ==
+  cost: -1.0
+Head-22:
+  id: 22
+  category: Food
+  name: Cactus Flower
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWMzMDE0OTQ3Mzg5OWM4NzZhMWFlNjZlNWM2MTVlZmVlODU2YWExNmQyMmEzMzcyYWVkM2E0NjNmMjJhNjI1In19fQ==
+  cost: -1.0
+Head-23:
+  id: 23
+  category: Food
+  name: Medieval Beer
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDE2OGI5ODA5OGEwYzRhMjllMjA0NjcwNDYzMDkxZGI2MDcwZTc3ZDg2NzY5ZDk4NWY2YmVmNDA3NWU1In19fQ==
+  cost: -1.0

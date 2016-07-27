@@ -1,5 +1,6 @@
 package net.sothatsit.heads.config.cache;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import net.sothatsit.heads.config.FileConfigFile;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.MemorySection;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -28,6 +30,18 @@ public class CacheConfig {
         this.configFile = configFile;
         
         reload();
+    }
+
+    public CacheConfig(File file, Set<CachedHead> heads) {
+        this.log = false;
+        this.addons = new ArrayList<>();
+
+        this.configFile = new FileConfigFile(file);
+        this.heads = new HashMap<>();
+
+        heads.forEach(head -> add(head, false));
+
+        this.save();
     }
     
     private void info(String message) {
@@ -137,7 +151,7 @@ public class CacheConfig {
             
             if (head.isValid()) {
                 if (!heads.containsKey(head.getCategory())) {
-                    heads.put(head.getCategory(), new ArrayList<CachedHead>());
+                    heads.put(head.getCategory(), new ArrayList<>());
                 }
                 
                 heads.get(head.getCategory()).add(head);
@@ -187,13 +201,20 @@ public class CacheConfig {
         }
         
         AtomicInteger installed = new AtomicInteger(0);
-        
+
+        checkAddon("twitch", "Twitch", "addons/twitch-addon.yml", installed);
         checkAddon("easter", "Easter", "addons/easter-addon.yml", installed);
         checkAddon("christmas", "Christmas", "addons/christmas-addon.yml", installed);
         checkAddon("halloween", "Halloween", "addons/halloween-addon.yml", installed);
         checkAddon("animals", "Animals", "addons/animals-addon.yml", installed);
         checkAddon("lol", "League of Legends", "addons/lol-addon.yml", installed);
         checkAddon("humans", "Humans", "addons/humans-addon.yml", installed);
+
+        int miscAddonsEnabled = 5;
+
+        for(int i = 1; i <= miscAddonsEnabled; i++) {
+            checkAddon("misc" + i, "Miscellaneous " + i, "addons/misc-addon-" + i + ".yml", installed);
+        }
         
         if (installed.get() == 0) {
             info("No new addons found " + getTime(start));

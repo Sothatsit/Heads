@@ -268,7 +268,7 @@ public class Lang {
         public static class Add {
             
             public static String key() {
-                return Command.key() + ".get";
+                return Command.key() + ".add";
             }
             
             public static LangMessage notSupported() {

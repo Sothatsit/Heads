@@ -1,7 +1,7 @@
 main: net.sothatsit.heads.Heads
 author: sothatsit
 name: Heads
-version: 1.6.1
+version: 1.6.9
 soft-depend: [Vault, BlockStore]
 permissions:
    heads.menu:

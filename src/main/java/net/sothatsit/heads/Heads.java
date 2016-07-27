@@ -5,6 +5,7 @@ import net.sothatsit.heads.command.RuntimeCommand;
 import net.sothatsit.heads.config.FileConfigFile;
 import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.cache.CacheConfig;
+import net.sothatsit.heads.config.cache.CachedHead;
 import net.sothatsit.heads.config.lang.LangConfig;
 import net.sothatsit.heads.config.menu.MenuConfig;
 import net.sothatsit.heads.economy.Economy;
@@ -14,19 +15,24 @@ import net.sothatsit.heads.volatilecode.injection.ProtocolHackFixer;
 import net.sothatsit.heads.volatilecode.reflection.craftbukkit.CommandMap;
 import net.sothatsit.heads.volatilecode.reflection.craftbukkit.CraftServer;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.SimpleCommandMap;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryType;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
 
 public class Heads extends JavaPlugin implements Listener {
@@ -42,10 +48,10 @@ public class Heads extends JavaPlugin implements Listener {
     
     @Override
     public void onEnable() {
-        long start = System.currentTimeMillis();
-        
         instance = this;
-        
+
+        long start = System.currentTimeMillis();
+
         this.cacheConfig = new CacheConfig(true, new FileConfigFile(new File(getDataFolder(), "cache.yml")));
         this.cacheConfig.checkAddons();
         
@@ -158,13 +164,20 @@ public class Heads extends JavaPlugin implements Listener {
         instance = null;
     }
     
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onInventoryClick(InventoryClickEvent e) {
-        if (e.getInventory() != null && e.getInventory().getHolder() instanceof ClickInventory) {
+        ItemStack item = e.getCurrentItem();
+        if(isHatMode() && e.getClickedInventory() instanceof PlayerInventory && e.getSlotType() == InventoryType.SlotType.ARMOR && item != null && item.getType() == Material.SKULL_ITEM && ((SkullMeta) item.getItemMeta()).getOwner().equals("SpigotHeadPlugin")) {
+            e.setCancelled(true);
+
+            if(e.getWhoClicked() instanceof Player) {
+                Bukkit.getScheduler().scheduleSyncDelayedTask(this, () -> ((Player) e.getWhoClicked()).updateInventory(), 1);
+            }
+        } else if (e.getInventory() != null && e.getInventory().getHolder() instanceof ClickInventory) {
             ((ClickInventory) e.getInventory().getHolder()).onClick(e);
         }
     }
-    
+
     public static Heads getInstance() {
         return instance;
     }

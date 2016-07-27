@@ -1,0 +1,301 @@
+addons: []
+Head-1:
+  id: 1
+  category: Food
+  name: Empty Flask
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODU3MDY2ODc5Nzc4ZDk1YTJhNzk1OWM1ZjAyYTMzOWZlODRlOTZlOTQ2MjMzM2NjNzQxNTJhYTI5MzNjNWZiIn19fQ==
+  cost: -1.0
+Head-2:
+  id: 2
+  category: Food
+  name: Hot Chocolate
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmIyOGFhMzAzYjRjYWU4NzdkN2M2ZDI3YWE4Mzc2MWEyNjkxZjlkNzhhM2Q5Mjg5NTMwY2E2YWJiNWZkZjRjIn19fQ==
+  cost: -1.0
+Head-3:
+  id: 3
+  category: Food
+  name: Cup of Tea
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjM2OGJkM2Q2NjYwMzYyMTJlZTFkMWIxYzM5ZWQ4NWI4ZmY3ZDhiNTdhNjVkOGEyYjkxNDg5YTc1MGMyYmUifX19
+  cost: -1.0
+Head-4:
+  id: 4
+  category: Food
+  name: Melon
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTYzNmRlZTgwNmJhNDdhMmM0MGU5NWI1N2ExMmYzN2RlNmMyZTY3N2YyMTYwMTMyYTA3ZTI0ZWVmZmE2In19fQ==
+  cost: -1.0
+Head-5:
+  id: 5
+  category: Food
+  name: Pinacolada
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmE4ZjFmNzBlODU4MjU2MDdkMjhlZGNlMWEyYWQ0NTA2ZTczMmI0YTUzNDVhNWVhNmU4MDdjNGIzMTNlODgifX19
+  cost: -1.0
+Head-6:
+  id: 6
+  category: Food
+  name: Busters Bowl
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzRjODRlYWM2OGFlZGQxNjU1NDg1OTdlNTc2MThjMzg1ZmY2YzRmZWYxZTE2ZDllYzNiMzJmZTk0Mjk2YyJ9fX0=
+  cost: -1.0
+Head-7:
+  id: 7
+  category: Food
+  name: Mug of Beer
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2M2YjRhN2JkODI0NDE2MTliYmMxMWQ5YjhlMGU2NGFlOGI5NWYyZTQwYjM5MjEzNTVmY2M1NDM0MzI2MDE3In19fQ==
+  cost: -1.0
+Head-8:
+  id: 8
+  category: Food
+  name: Health Potion
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGQ3NGVmMTQ4NTU1ZmYxODUzNWMzN2Y5OWVlYjg4MzA3YmU5MTlkMDNkYzdjYjIzZDE4YThmZTI0MWM3YiJ9fX0=
+  cost: -1.0
+Head-9:
+  id: 9
+  category: Food
+  name: Popcorn
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2M5Y2M5YjU0OTcyODRjYTc1YTBjMGE2NzExMzE2MjUxZmI3YzYzYjcyODI5MDhiZmZlNjI1N2RkYzM0MSJ9fX0=
+  cost: -1.0
+Head-10:
+  id: 10
+  category: Food
+  name: Cherry
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTdjZTcyNWFhZDU5YTVhNjY2YWEwZjBlNzg3YTc3ZDhhYmI2NmE0YWZjYjc4YzE2OWJiODFjYmVjYjJmZCJ9fX0=
+  cost: -1.0
+Head-11:
+  id: 11
+  category: Food
+  name: Tomato
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDQyNDlmNDhjNWMwMjUzZGI2N2U5MWM3ZDJhNzc0NTVmOTMwOTM4OGJlNTBmOGQ4NWQ0NzE4ZTYyYzkifX19
+  cost: -1.0
+Head-12:
+  id: 12
+  category: Food
+  name: Peanut Butter
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGMyN2EwOWM0MzgyOWFmYzg5YjM2MjU4NmQ0M2M4NmRmNWQ5YWE0YzE0OWY4ZDU3NzVjZjEyOTM1NzU3NWQzIn19fQ==
+  cost: -1.0
+Head-13:
+  id: 13
+  category: Food
+  name: Blue Jar
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzRjZDk0NWM3MmViMzNmOGU2YzQyNzJkMmViMjY5ZmMyMjk5YjJlYTZiYmE4NDk5NGI1OWZlNTM3NzRmZjVlNiJ9fX0=
+  cost: -1.0
+Head-14:
+  id: 14
+  category: Food
+  name: Cake
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmVkODcwNDYxMGFlYzI5ZmVmOTc5ZWM3ZmNmNTEzZTE3YTczN2U1MWE2MWIyYjI2ZDc0YTVmZGM1ZGE3OSJ9fX0=
+  cost: -1.0
+Head-15:
+  id: 15
+  category: Food
+  name: Choco-Rasberry Cake
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTY0Y2ZlY2RjZDg2NDQ0Nzk2NTJjZmYzNTkyMjJhNjI0MDU3NzkyMmUzOWE5OTRhYjVjMGIxMmFkNTgyZjUifX19
+  cost: -1.0
+Head-16:
+  id: 16
+  category: Food
+  name: Oreo Cake
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmI2MDljYTBkMGM5YTE2NTI4NDk5YjY3ODcxZWY1YTNkYWQwZjg5OGU1MTY0OThjNzNhYzhlZTY3Y2Y5NDMyYiJ9fX0=
+  cost: -1.0
+Head-17:
+  id: 17
+  category: Food
+  name: Berry
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGNlNmJkMjg3YWRlMGExZDAxYWU5ZjFhMWMyOGUxNjkwZTE4ZmUxY2U4YmZkNWQxZjYxODRjZjY3ZDBlZiJ9fX0=
+  cost: -1.0
+Head-18:
+  id: 18
+  category: Food
+  name: Chocolate
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmFjZmM3ODY0NjllNjM2YmY0ZWFhYzJlZDQ5ZDlhNmM1MjEyYWY2ZDkwNzFkOTYxOTQ0YmU4YTkzNWY0NzhlIn19fQ==
+  cost: -1.0
+Head-19:
+  id: 19
+  category: Food
+  name: Taco
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWFkN2MwYTA0ZjE0ODVjN2EzZWYyNjFhNDhlZTgzYjJmMWFhNzAxYWIxMWYzZmM5MTFlMDM2NmE5Yjk3ZSJ9fX0=
+  cost: -1.0
+Head-20:
+  id: 20
+  category: Food
+  name: Green Juice
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjc2MmRmYjJmMjQ0YjU2NWVhZjY5Yzg1ZTkyNDY4M2E5ODU0MWVhODg2ZDkzZDFhMzA0NTEyYWEzZDM2NzY2MyJ9fX0=
+  cost: -1.0
+Head-21:
+  id: 21
+  category: Food
+  name: Glass of Wine
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjc1NTg0ZTZmZDU0Y2EwMWRmNGVmZmQ1Zjc0NmIyZDgzYTU4OWRlNjc3NzU1NzU2YmI1OGQ5ZWEyODQ1MTYifX19
+  cost: -1.0
+Head-22:
+  id: 22
+  category: Food
+  name: Red Jar
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTUzODE1MWMxNjdjOWU3MzgzYjNhMWY1ZDU2YjdmNzM2YTRiM2YyMDkzZDE2YzJkYTRkMTE5NWUyYWU5In19fQ==
+  cost: -1.0
+Head-23:
+  id: 23
+  category: Food
+  name: Potion
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGQxOGM1OGEwNDMxOTMyNjE3MmE0MDZiZDQ3MTQ3MTVhOTNmY2RhYWFkNDc0NjkxNjE0YTFiYmFkNzgzYmUifX19
+  cost: -1.0
+Head-24:
+  id: 24
+  category: Food
+  name: Green Can
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWRlZTMyMWRhNDJkNmM3MDNmMWUxNWUyNmVlZjE1ZjVjNDA0YTgzM2Q4MGFkY2Q1ZmQ0MTVlMTZlYTRlMCJ9fX0=
+  cost: -1.0
+Head-25:
+  id: 25
+  category: Food
+  name: Cake
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2IxNDIxNzgyMzUyYjkzNjg1YjU5ZjE0ZTUwNjk0OWJmN2EzM2VmZGQ4MWRkNjVlZDE3ZWE2ZGI0MjJmNTNmIn19fQ==
+  cost: -1.0
+Head-26:
+  id: 26
+  category: Food
+  name: Yellow Jar
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjVlZDcwYWJjNWM4NjI0MmQzMGQ2NDRiYWMxMTM4MDY3YWQ4N2RjMjk4NjBmNjhkZjZjMjg0ODgwNDJkZiJ9fX0=
+  cost: -1.0
+Head-27:
+  id: 27
+  category: Food
+  name: Brown Mushroom
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmVlMTIzMWRhZWU2YTFmY2ZjMzA4ZDM3M2JmZWE5Y2QyNGZjMzViNmYxZjQzNDk3M2E5ZGVjNDA1MjFmYTcifX19
+  cost: -1.0
+Head-28:
+  id: 28
+  category: Food
+  name: Grapes
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODRjZWRiOTY4NjQ1ZTI0M2U1YWRhZWIxODY4Njk2YTY3M2I5MDdhNjc4NDE4ODA3MWI2M2QxZmE5Y2Q3YjUifX19
+  cost: -1.0
+Head-29:
+  id: 29
+  category: Food
+  name: Compost Bin
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODM0NTk1ODE2NmJjYWJlNzE2MjkyZWY0NDc0YzkyYmVhZjNiYjRjYTZkZjFjMjkzZjg5NjI4MDJmY2U3NjUzIn19fQ==
+  cost: -1.0
+Head-30:
+  id: 30
+  category: Food
+  name: Garlic
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzA1MmQ5YzExODQ4ZWJjYzlmODM0MDMzMjU3N2JmMWQyMmI2NDNjMzRjNmFhOTFmZTRjMTZkNWE3M2Y2ZDgifX19
+  cost: -1.0
+Head-31:
+  id: 31
+  category: Food
+  name: Mug of Mead
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWRiOTEyYzFlZDQ2MDg4OTBhZTU5NGUxYmY3ZGQ3MDM0ODY2NzVjZjY0NzU0ZmY5MmVlM2U0YWQzYWRiYyJ9fX0=
+  cost: -1.0
+Head-32:
+  id: 32
+  category: Food
+  name: Kakikori
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWJkYzc1ZTRiNWZjMjk4ZjNkNDY2YTNjMjQyM2M4NzI0N2E1NDg3MzlhZDI5ZDIyMDgyYmFmZWRmZmViIn19fQ==
+  cost: -1.0
+Head-33:
+  id: 33
+  category: Food
+  name: Jam
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2U1ZWE1NjY4Yjc4ODA3MzY5NWI2N2RlMjlmMmNiOTE1ZjI2MDkzYmZmYWJhYWE1MGQyOTcyYWIyZTQifX19
+  cost: -1.0
+Head-34:
+  id: 34
+  category: Food
+  name: Blue Jam
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTE3MDhlZDM1MmUxN2NhODljMWM5NDg1Y2QxZGIwMTdjNGM4ODY4OTVhYjVjN2MyN2E5ZmY1NjRhZjIxNzJkIn19fQ==
+  cost: -1.0
+Head-35:
+  id: 35
+  category: Food
+  name: Orange Jam
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmYzNjM2MjgxMjNhZjExYWE2ZjRhODk5Y2ViZDA5NGYwNzQ1NTVhNDFlNmQzMzUyMTJlZTcyNjNhZDM5ZjYifX19
+  cost: -1.0
+Head-36:
+  id: 36
+  category: Food
+  name: Purple Potion Bottle
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDRhYTlhZWFiYWYyNTY4Yjk3YTJlOGNmYTlhNTNiYWNkNGM4ZDg5ZGFkNGJhMzg3ZjZjNGI3NjFhZTA0YTE4In19fQ==
+  cost: -1.0
+Head-37:
+  id: 37
+  category: Food
+  name: Bowl with Rice
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGE5MWYyNWI3ZTEwNTcxOGY5Zjk3OTljNjIxZjNiZWJkM2FhZWZjMThjMjAxOTA2MjMzOGE1MTExMjhjNDU2In19fQ==
+  cost: -1.0
+Head-38:
+  id: 38
+  category: Food
+  name: Mug Cider
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmViZjUxYTNhNTJiNzQ3MmEyODVjNjU4Mjg0Njg4YmNiZTU3Y2Q5ZjZmYWE3YTNlNGMyNmE2MTA1MjU0In19fQ==
+  cost: -1.0
+Head-39:
+  id: 39
+  category: Food
+  name: Bread
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTE5OTdkYTY0MDQzYjI4NDgyMjExNTY0M2E2NTRmZGM0ZThhNzIyNjY2NGI0OGE0ZTFkYmI1NTdiNWMwZmUxNCJ9fX0=
+  cost: -1.0
+Head-40:
+  id: 40
+  category: Food
+  name: Apple
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGNhZmVmMjhjNzQ1NjIzMGU2ZDI2MTgwMmJjNjI2ZTBkOTRhNjU5YmIyYmJmNTljMjdmZjZhNTU0ZWIxOWQ4NSJ9fX0=
+  cost: -1.0
+Head-41:
+  id: 41
+  category: Food
+  name: DrPepper
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzRjNzc2OTc1MjE1ZjQyOTNlZTc0MmIyNmM5MjViZWQyZTU0MjE0YTVjZjdhM2U1OTlhZTgwZWMyNDlmMjIzOCJ9fX0=
+  cost: -1.0
+Head-42:
+  id: 42
+  category: Food
+  name: Sushi Tuna
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTIzZGYzOGMzYjQwYjk3MzcxNTYyNGI3ZDJjMjFlYmJmMDRkMWM0OTZmZWEwYzU0MTNkZDZhNmRiMzIifX19
+  cost: -1.0
+Head-43:
+  id: 43
+  category: Food
+  name: Sushi
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTc5ZTQxYzE0NmI5NTQ5Nzg2YmRiNzEzOGYzNDlmZDdjMzk1MjkwMWY4N2NhOWMyMjU4OWNhMmFlNjQ4OCJ9fX0=
+  cost: -1.0
+Head-44:
+  id: 44
+  category: Food
+  name: Cauldron with Soup
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWJjOTgxZWI1ZDkyZjAzOTgyOTAxZmZjZjM3ZTkzZWQ4NzFjYTgzN2RlOTA4YjYwNmYyYzlkZmI4YTMzMCJ9fX0=
+  cost: -1.0
+Head-45:
+  id: 45
+  category: Food
+  name: Green Tea
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDIxNjhkZmM1MTNjMzFiMWUxYzJkODUzZTgxNjkwMTUzODFjODM3OGVlZTIyNGFlNmRiYjFlMTI0ODVlOWE5OCJ9fX0=
+  cost: -1.0
+Head-46:
+  id: 46
+  category: Food
+  name: Golden Apple
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2ZhM2ViYjcwYjVjNTVjYmM4M2NiY2QzNTJlZDQ1NTQ0YmRjMGEwNDlmZmRhNTFjNDY4NzdjMmYyZDAxZDUifX19
+  cost: -1.0
+Head-47:
+  id: 47
+  category: Food
+  name: Blue Potion Bottle
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2Y3MDgxY2VmNGUyOTUwNjM5ZTk4NTNlY2NmZDA3NDdlYWIzMmRmZGUxNzJlMGZhNGU1ZGViYjMzNzJiYiJ9fX0=
+  cost: -1.0
+Head-48:
+  id: 48
+  category: Food
+  name: Takoyaki
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmRiNzVjZGUzOWVlMjBlOGQ4YjQ3ZjNiYTMxNTdjYWVmNzdkNTYwOWI2ZGQxNGUxMDQzNGFkZjJiNGE1MjhiIn19fQ==
+  cost: -1.0
+Head-49:
+  id: 49
+  category: Food
+  name: Starbucks Coffee Cup
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDFkYWFmOGU3NGI0YTEzMjMwOTExMGVjOWMzOWM2YzBhMmU0NDM5MWVhYWRkYjFkY2NjMDhiOWY2ZDRiYzY3NCJ9fX0=
+  cost: -1.0
+Head-50:
+  id: 50
+  category: Food
+  name: Kakikori
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTJlNWNkM2E3YTM1MDdlMTkxNTZkY2FmODUyNWIyYzJiYjhkMGI2NzBmNWMzOWRiZDk2ZWI1MmUzOGQzNTcyIn19fQ==
+  cost: -1.0

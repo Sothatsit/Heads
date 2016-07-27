@@ -1,0 +1,301 @@
+addons: []
+Head-1:
+  id: 1
+  category: Humans
+  name: Prince
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWNiNzUxNmU3YzVkN2QzZDcxN2Y4Mzg2MTVjYmM4NjMzYmJiZmVjNGMwZjQ5YzYzZWVlNTRjMTlmZTU2Zjc2In19fQ==
+  cost: -1.0
+Head-2:
+  id: 2
+  category: Humans
+  name: Woman
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODdiNjg1MTRkYjExY2U0NGQyYjU1ZDc1MmRjYjIxZjQzNWMyODYwZGUxYmMzMTk2MWNhNGJlY2Y4YTE5MiJ9fX0=
+  cost: -1.0
+Head-3:
+  id: 3
+  category: Humans
+  name: Open Skull
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGIxYjc3YTY4NGJlNGZmYTIxMjE5YzNmYmZmMTYzZWFkYWFkY2M2MzA5Mzk5NjQ2YzE1ZDYxMWZmN2IyY2U0In19fQ==
+  cost: -1.0
+Head-4:
+  id: 4
+  category: Humans
+  name: Knight Helmet
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGRlOGNiM2E0OTI2ZWQ5ZTIyOGY4YmRjZjlkYzYyODQxOWUzOTRlOWIxNDZjNTIzZmRkNWJiN2UzMWNlNGQifX19
+  cost: -1.0
+Head-5:
+  id: 5
+  category: Humans
+  name: Man
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWZjZWUwMWQzNTMyNzM3YjBkODM3MzhlNjM5NjhmODNjYTdiZGI5MmFiZDQzYjkzYTZkYjE3ODc2MzEyMiJ9fX0=
+  cost: -1.0
+Head-6:
+  id: 6
+  category: Humans
+  name: Man
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDY5ZDQ5YTkxNjdkYjlmMDNiMTBjYTZkZjdiNGZiM2FiMjYwZDY1M2FkM2Q5ZTI5NzA2YmQ2MWQ4ZGY2MWI0In19fQ==
+  cost: -1.0
+Head-7:
+  id: 7
+  category: Humans
+  name: Miner
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDY4MmRiMmUyOGQ2YzlmZjcyNzI1ZmI4MGMyZGY4NDg4YzdlMzdkNTQ3YmE2YjY4ZDJmMTQyODg4NjBkNjgwIn19fQ==
+  cost: -1.0
+Head-8:
+  id: 8
+  category: Humans
+  name: Hooded Man
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTNkNTQwMjkyNDg2NTY0YThhMWIxYjc3NjNkOTEwYjZlMDVjY2ZjNWU3YWFmNGQ5MjcyYzVjZThiZmQzZmZlIn19fQ==
+  cost: -1.0
+Head-9:
+  id: 9
+  category: Humans
+  name: Female Soldier
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDUyYzI3YTdkZjRlOTM1MTk4NWU4ODhkODFiNzhkZjZkYjNkNWNmNjc4YzJjZjlkMmExNzc3MTZmNTMifX19
+  cost: -1.0
+Head-10:
+  id: 10
+  category: Humans
+  name: Wizard
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGM1Y2U1N2VkNGE3Y2U1MmY2Mjk4ZjZlMTQ5NmViOTRlNTY3ZDIxYzc5NjlkNzEyMjdmYTkzMjdjYjdjMSJ9fX0=
+  cost: -1.0
+Head-11:
+  id: 11
+  category: Humans
+  name: King
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2UxYjM0NjI0OWFlZjY1NWY4MWE4YmQ1OGNjNGIzNWYxMzlkMWU4NmI2MjE3YjExYjhlOTgxNDQ1Y2I1MTE4ZCJ9fX0=
+  cost: -1.0
+Head-12:
+  id: 12
+  category: Humans
+  name: Prince
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjg1ZTk4YWQzNTdlZThiYTg1YzcyYTFhNDY4ZmE3MTFmNzhjOTdmODUyMmI1ZDQwZmVhN2RhYmVjNTE1NCJ9fX0=
+  cost: -1.0
+Head-13:
+  id: 13
+  category: Humans
+  name: Queen
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWU2NjMxNjJkMzlkMzg1ZWRjYTg5YzE2MTA0MzczZmM0ODk1OTdiYmQ0NjQxNDdkMTg5YTEyZGMzNWEifX19
+  cost: -1.0
+Head-14:
+  id: 14
+  category: Humans
+  name: Woman
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmI4NzhmYzBmZmExMjBmMjExN2E3ODE0M2VmYjE5OTYyMTc0Y2JhNTU2ODg5MGVhN2M2MDg0MTlmOWI3N2EifX19
+  cost: -1.0
+Head-15:
+  id: 15
+  category: Humans
+  name: Woman
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTc2NDQ2ZDI4YmNjZWM3ZDA1NDM1MWY0YmViYThmYTI2YTJkNjI4OWRmY2M0OWFmMTIzYjNhM2Y3NGFhMTgifX19
+  cost: -1.0
+Head-16:
+  id: 16
+  category: Humans
+  name: Hooded Woman
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWY2ZTg3ZTA2ZjFjM2E4ZjRhYmUyOWE3MmE1MmIyMjhlNzA5NmIyZmNiMGYxNTg1Y2VjNjk5MzVmMDI2MzIifX19
+  cost: -1.0
+Head-17:
+  id: 17
+  category: Humans
+  name: Woman
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGY2MjU0YmM3Y2M0Mjk0MmNmYzhkYWY3MDRjYmUzYjMyNWY1MmYxN2NlY2U3YzRhZWFkMWQ0Nzk1ZDcifX19
+  cost: -1.0
+Head-18:
+  id: 18
+  category: Humans
+  name: Soldier
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjBlODc5OTdiMzRlZWQ2MTMyYzIyMTFhZDdjMmEzOWQxODE2NmFhYzdlZmJiY2U0NDVmYmYyMzZhYzcwIn19fQ==
+  cost: -1.0
+Head-19:
+  id: 19
+  category: Humans
+  name: Young Man
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmFkYzQ1OGRmYWJjMjBiOGQ1ODdiMDQ3NjI4MGRhMmZiMzI1ZmM2MTZhNTIxMjc4NDQ2NmE3OGI4NWZiN2U0ZCJ9fX0=
+  cost: -1.0
+Head-20:
+  id: 20
+  category: Humans
+  name: Hooded Villager
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTk3MTg0NjRkYWIwNDljMDY0OGE3MTYwYzZlMzRmMzc1MjIzN2NjMTlhMTljYzcyZDA0MDFiNTE3ZjZjMjQifX19
+  cost: -1.0
+Head-21:
+  id: 21
+  category: Humans
+  name: Woman
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTQyYjFlM2FkZWY5ZWIyOWZhY2NkNjU3Yzk4ZjVmYTM2MmJkMzU1OTdmZGE2ODgyNzViN2I5MmViNjcwYjY4NCJ9fX0=
+  cost: -1.0
+Head-22:
+  id: 22
+  category: Humans
+  name: Old Woman
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2VmZTNkOGMzODMyNzg2ZGY2OGViODVlNjhhNDEzMzNhZWU3Y2ZjODM2OTdjMjg2Mjk2NzM3YWE4ZjIzNDMifX19
+  cost: -1.0
+Head-23:
+  id: 23
+  category: Humans
+  name: Hooded Woman
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2NlZjVmYmUyNzNlZGI0NDA0ZmYzNGNkYzhiMTQ0OTYzOWIzZWE4MzkyNTU4OTdkNzFlOGUzMjFmYjg3NjYwIn19fQ==
+  cost: -1.0
+Head-24:
+  id: 24
+  category: Humans
+  name: Woman
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzFlMjU2MWViZWEwOTZjNjExMjE3M2ZhM2YxNDRiYjZhYjdmMWFkYzJjMDg3M2Y3Zjg3YWJhOGY2M2JlZGIifX19
+  cost: -1.0
+Head-25:
+  id: 25
+  category: Humans
+  name: Man
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzg1NDQzNzQ2ZDNkMWQ1ODVkOGRlNmNlNTFkYTEyOTc4ZTU0ZjM1ODY0NDdkYmJkMTE3NDQzMjRmMjVkOCJ9fX0=
+  cost: -1.0
+Head-26:
+  id: 26
+  category: Humans
+  name: Soldier
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTM2YjIyOTc1N2VjZDljMWYxZDg4MmQ1YWJlM2NmNTkxMGQ4NGQ4ODZkMTM4YTAxZTZhYTk4ZjkzZjViNiJ9fX0=
+  cost: -1.0
+Head-27:
+  id: 27
+  category: Humans
+  name: 1-4 Dice
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWUzNjQxZDQ3NzA0ZTNiNGI3NmFjNjU1MjMwODAyOGJmNmY1ZDM0YTdjZDc1YzljMWE2OWU5MGU1ZjJlZTc4In19fQ==
+  cost: -1.0
+Head-28:
+  id: 28
+  category: Humans
+  name: Roman Soldier
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjk0YjU1OGRiNDhhYjQ3M2JhN2M3YTc4ZTg0OTZhODZlNTFhNDVhMWEzZTFiYjM3ZjUwNDdmZTM0M2ZiZCJ9fX0=
+  cost: -1.0
+Head-29:
+  id: 29
+  category: Humans
+  name: Military Officer
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjEwYTE2NzYwNTk4YTg4NjgzMzJmZTdiYzA4MzVhOWRkNGJlNTc0MjM3NDI4YThhZTk4NmI1NTA5YmVlIn19fQ==
+  cost: -1.0
+Head-30:
+  id: 30
+  category: Humans
+  name: Man
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWNjN2VkNzY2N2ZiNWIyZmY0OGU5ZmMxNGVlY2JiMTdlN2IwZDE1OWY2ODNiNmVkY2QyOTY5Y2ViNTY4ZmMifX19
+  cost: -1.0
+Head-31:
+  id: 31
+  category: Humans
+  name: Captain
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDkxODc4NWIyNTZjODQ2ZGJhOTE2NTM0Y2ZkNTgwOGUxZGU0MzIxMTI0MTExODM1YmE0YTdjOWMxOGRkNDVlIn19fQ==
+  cost: -1.0
+Head-32:
+  id: 32
+  category: Humans
+  name: Soldier
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTJmMzU3YWI1OWUwNGU2NzY3MjRjNjNkNzA0YzNkMWYyZjlhZTFhZDQyODNlOTFkN2RhMjZlZmM2YzQ4MDgifX19
+  cost: -1.0
+Head-33:
+  id: 33
+  category: Humans
+  name: Young Monk
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmMzYjAzY2Y5YjRmYjg4Njk3YzgyOGZiYWE3YThiNTMyMTJkN2FlMDNjYjk1OGI3ZTA0NGQzNzQ5NWViOSJ9fX0=
+  cost: -1.0
+Head-34:
+  id: 34
+  category: Humans
+  name: Woman
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODMzNmRmZDFlOWI5MzMxYzk2Y2ZlMjIxZjkyOTUzOGI1NGU1Nzc1MjY5YmQyNjIzNzJjZTE0MGU5ZGNkYzdiIn19fQ==
+  cost: -1.0
+Head-35:
+  id: 35
+  category: Humans
+  name: Princess
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2ZlODgxZGNiY2Q4MWYyZGYxYmViMmUxNjlmOGM1MjYxMzE4YmIzYTM3ZDRjYjFhYWNiNTE3YTlmOTE4ZjYifX19
+  cost: -1.0
+Head-36:
+  id: 36
+  category: Humans
+  name: Man
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWM2MGQ0YjllMzg2Y2EwZGVmNzI0NzlmZGIwNjNlMzcyNGRkZjNjZDZhN2M5ZWNlOTE3NDYxZmM1Yzg0YzE5In19fQ==
+  cost: -1.0
+Head-37:
+  id: 37
+  category: Humans
+  name: Captain
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjIxYjY5NThkYTMyZjEzOGU0ZjU0YWViODg2YmE2YjU2ZGM2ZjI0ODg5ZTViMTM5MzY1YjVlOGYyMjQxMDFmIn19fQ==
+  cost: -1.0
+Head-38:
+  id: 38
+  category: Humans
+  name: Female Police Officer
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTdlYjg5YzZmMWU1ZTMzNjhkNmU5ZDgxZWNjZGQ0YjRmYTQ0Y2E5YTRlNzFjZmU2MWZmMWYzNDFjNDhkMTlmIn19fQ==
+  cost: -1.0
+Head-39:
+  id: 39
+  category: Humans
+  name: Old Man
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2FmMzNkN2VkMzMxMmJiZWQ3MWYxMmIxODMxZDJjNDY3OWVmZjgyMWQ1NjMyMzc2ZThmOWYwYmZjOTRlZWJmNCJ9fX0=
+  cost: -1.0
+Head-40:
+  id: 40
+  category: Humans
+  name: Young Man
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzAyN2Q5NzFhYmU5OGQxYjY3Nzg3MTlkNmZiNjU2MjQ3N2RiNjc4MmE0ZjNhYmIyOGQ3MTIzMTUyN2RmYzNkIn19fQ==
+  cost: -1.0
+Head-41:
+  id: 41
+  category: Humans
+  name: King
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2NjYTlkYmNlNmFlMTc5OTY4NzJhYmRkOTIzYmIyODA5NWQ2ZGRiODYwZmEyZGNjYmZmN2IxNWI4N2VhMWNkZSJ9fX0=
+  cost: -1.0
+Head-42:
+  id: 42
+  category: Humans
+  name: Pirate
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmZkNDMwODc2M2ZmZDVlMjYzMWM3NGQwYmUyZmY0OWE5MGJhYzQ5MDUzNjE4YzI4ODgyZTc1YzRkY2NlMjJhYyJ9fX0=
+  cost: -1.0
+Head-43:
+  id: 43
+  category: Humans
+  name: Sailor
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjJmOGViODVhOTQ5MTY0YzYyMTRkZmVmY2E1NGUyNzlhMDE5MjJmM2UxZTdjNTJmNmEyZDRjZTM4N2FhNTc4In19fQ==
+  cost: -1.0
+Head-44:
+  id: 44
+  category: Humans
+  name: Old Man
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODdiOTdmZTNmZWM3ZjFjYTJiMTZjMmNkZjE4NWRkNzYzMzMyY2MwNjlkMzE0MjVhNGI3MWJlOWU1MWQwMmMifX19
+  cost: -1.0
+Head-45:
+  id: 45
+  category: Humans
+  name: Jafar
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjU1MzE0MTc5Y2JhMWJkMWE2YTI3ZTM1MzZjNTliYjE2MTIzOGFkNGRhOWY3MWE4OTRhYTE5ZTgxODNhOTYifX19
+  cost: -1.0
+Head-46:
+  id: 46
+  category: Humans
+  name: Woman
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGZiMzIxYmJhN2YzOGFkZmFkMTViYjJmMDM2M2FlOTliNmM5MmE1YmMyODg0MjcyY2I4MGMzYjVlYTFmIn19fQ==
+  cost: -1.0
+Head-47:
+  id: 47
+  category: Humans
+  name: Gollum / Smeagol
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTE1ZjVlNGRiODNlY2Q5MDhhZjE5NmMxZjc4NTcyZWNhOGM2MzZmY2E1MTMyZjZmOTc2ZDg4MTM4MjNjYyJ9fX0=
+  cost: -1.0
+Head-48:
+  id: 48
+  category: Humans
+  name: Soldier
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzYzOTZkMTFkOTYzMThhM2E4NzRmODIzZmM4MTY3NWYwNjdkOTdmMzM0YjY5YzllYjkyNTk4OWY2NjcxOWUifX19
+  cost: -1.0
+Head-49:
+  id: 49
+  category: Humans
+  name: Captain
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGI2YmFlMzNhNWMzNDI1NjZmZmFmM2Q5N2Q2YjQzYzZjNzQ4MjY1NTU0Njk4ZTMzYWFmNzdlNWMyNjUxZGM0In19fQ==
+  cost: -1.0
+Head-50:
+  id: 50
+  category: Humans
+  name: Man
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTE0ZWMyZmIyNGMyZjY0YWU5YmFmYTFjNjk5ZGQxZTIzYjM0Mjc4OTQ5NTI1MTY2ZDVlN2EyZDY0MWY1ZDVhIn19fQ==
+  cost: -1.0

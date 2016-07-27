@@ -1,0 +1,301 @@
+addons: []
+Head-1:
+  id: 1
+  category: Alphabet
+  name: Dark Arrow Up
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDM5NzRjMjk3NDcxNzQ3NTNiYjQyOWM5OGU3NzZmN2Q1YjAxYmIzYzE4OGU0YmEyZmQ3ODgxYWM0ZTViMGFjIn19fQ==
+  cost: -1.0
+Head-2:
+  id: 2
+  category: Alphabet
+  name: Action Farm Down
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmQ0Mjk2YjMzM2QyNTMxOWFmM2YzMzA1MTc5N2Y5ZTZkODIxY2QxOWEwMTRmYjcxMzdiZWI4NmE0ZTllOTYifX19
+  cost: -1.0
+Head-3:
+  id: 3
+  category: Alphabet
+  name: Bracket
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODNiMTNmZjhlN2EzZmFiNWZmMWU5OGU4ZmQ5MzljYzA5N2I2YjQ1Yzg1MjQwZDMyNDUwOTk0Zjc2NzE0MzlkIn19fQ==
+  cost: -1.0
+Head-4:
+  id: 4
+  category: Alphabet
+  name: Minus
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQ4YTk5ZGIyYzM3ZWM3MWQ3MTk5Y2Q1MjYzOTk4MWE3NTEzY2U5Y2NhOTYyNmEzOTM2Zjk2NWIxMzExOTMifX19
+  cost: -1.0
+Head-5:
+  id: 5
+  category: Alphabet
+  name: Action Attack
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzdlNmM0MGY2OGI3NzVmMmVmY2Q3YmQ5OTE2YjMyNzg2OWRjZjI3ZTI0Yzg1NWQwYTE4ZTA3YWMwNGZlMSJ9fX0=
+  cost: -1.0
+Head-6:
+  id: 6
+  category: Alphabet
+  name: Display C
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzIzNDEwMzgyMWU3Y2M0NWNmZjlmNGNkYWJmMTViYjY3ODhiODI2NTVhYjAzNmYyYTBhMWY5ZDQ3MDEzYmUyZiJ9fX0=
+  cost: -1.0
+Head-7:
+  id: 7
+  category: Alphabet
+  name: Display Q
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDNjMWFjNmRjMGViZmJmNGUzYWQzZThlODgzNTU2Mzk3ZDZjY2E3N2UyZDVhOWE0MzdiYmM2MjY1ODA4NiJ9fX0=
+  cost: -1.0
+Head-8:
+  id: 8
+  category: Alphabet
+  name: Empty Block
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWRiNTMyYjVjY2VkNDZiNGI1MzVlY2UxNmVjZWQ3YmJjNWNhYzU1NTk0ZDYxZThiOGY4ZWFjNDI5OWM5ZmMifX19
+  cost: -1.0
+Head-9:
+  id: 9
+  category: Alphabet
+  name: Arrow Left
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzM3NjQ4YWU3YTU2NGE1Mjg3NzkyYjA1ZmFjNzljNmI2YmQ0N2Y2MTZhNTU5Y2U4YjU0M2U2OTQ3MjM1YmNlIn19fQ==
+  cost: -1.0
+Head-10:
+  id: 10
+  category: Alphabet
+  name: Green Exclamation Mark
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzJmZjJlNGZkNDE0Y2FiYTU5YzI0NmI5NzY2YjA0MDdjOWRlZWQ1Nzk3ZjQ2NGE1OTE0N2I4OGRmOTZmYzYifX19
+  cost: -1.0
+Head-11:
+  id: 11
+  category: Alphabet
+  name: Exclamation Mark
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWNhNmFiNzJlMDdiN2E1NTcwNGJkN2NjZjNkODJkYTBhNzM0NDNiZWViZGM1M2FjN2M5MDE0NDI3OWYwIn19fQ==
+  cost: -1.0
+Head-12:
+  id: 12
+  category: Alphabet
+  name: '3'
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmQ2ODliZmI0NmI0YzQ1MGMzZWY3ZDIyYzI4OWMzMjE0NDc0OGQzMDJmZmFkNmQwM2IxZDYwYWNkMWE0NjcyZiJ9fX0=
+  cost: -1.0
+Head-13:
+  id: 13
+  category: Alphabet
+  name: Display D
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzcyNWMzMmMzMzZmNzVmNzllNjYwYTZmZWViMzc1ZWNkNjFmYzhiY2M1ZTdhN2RlY2Y0ODU1Yzk5NTg5MCJ9fX0=
+  cost: -1.0
+Head-14:
+  id: 14
+  category: Alphabet
+  name: Square Bracket
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmNjNmJkMTNhNjFmY2JhNGEzODU5ZWMwNmJiOGM4MjM3MzliNmJlYWNiYThjZmEwMTUyZThjNjBkYjk0In19fQ==
+  cost: -1.0
+Head-15:
+  id: 15
+  category: Alphabet
+  name: Display R
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWRlY2E2ZjkxMTUwZDE4YzliNjhhMTRkNjNkMzgyZTljNDIxMzJlZWU0M2Q2YTc4NmExMTVmMjU1Y2ZkNyJ9fX0=
+  cost: -1.0
+Head-16:
+  id: 16
+  category: Alphabet
+  name: '5'
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzQ0MTFlNzI4MDY5ZjZmZDM4NTUwMTdkZDE4YjdjYmQ1N2FjMjE0MmIwMTczNjk5MjRhZTY4MzUyOTg0NmEifX19
+  cost: -1.0
+Head-17:
+  id: 17
+  category: Alphabet
+  name: Display M
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWFhNTRkNzQyNDkyOTg5ZjczOWRlYjcyMjJhMjNiY2ZjZjg1ZTZjNzgyZmUyY2UwY2RlZWUwZjNmMmIwZWIifX19
+  cost: -1.0
+Head-18:
+  id: 18
+  category: Alphabet
+  name: Colon
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2NiZWUyOGUyYzc5ZGIxMzhmMzk3N2JhNDcyZGZhZTZiMTFhOWJiODJkNWIzZDdmMjU0NzkzMzhmZmYxZmU5MiJ9fX0=
+  cost: -1.0
+Head-19:
+  id: 19
+  category: Alphabet
+  name: '11'
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjM5MzU4OWJlNjZiYzlkM2M1ZGI1NmJhMmQ1YzczMzJmYWI0NzkwODg2YTY5Y2IyZDgzZjE4Yjg2ZDg2MThjIn19fQ==
+  cost: -1.0
+Head-20:
+  id: 20
+  category: Alphabet
+  name: Wrong
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTZjNjBkYTQxNGJmMDM3MTU5YzhiZThkMDlhOGVjYjkxOWJmODlhMWEyMTUwMWI1YjJlYTc1OTYzOTE4YjdiIn19fQ==
+  cost: -1.0
+Head-21:
+  id: 21
+  category: Alphabet
+  name: Display V
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmQ0YjQ1MzExOGI3YWU5ZGRjYzc5YTgyODQxZDgxZWQzYWI3ZmE4N2ZmMjhlZmY0MWY0ODY3NWZkNGQifX19
+  cost: -1.0
+Head-22:
+  id: 22
+  category: Alphabet
+  name: Display X
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODliYTNiODM0NzU1ZGUyNGRhNmE4M2NlMWZiN2Y5NzFmN2FiYjIwNTU4NWVmODIzYjJmYzQ3YWJkNTAyOCJ9fX0=
+  cost: -1.0
+Head-23:
+  id: 23
+  category: Alphabet
+  name: Wooden Heart
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzM2ZmViZWNhN2M0ODhhNjY3MWRjMDcxNjU1ZGRlMmExYjY1YzNjY2IyMGI2ZThlYWY5YmZiMDhlNjRiODAifX19
+  cost: -1.0
+Head-24:
+  id: 24
+  category: Alphabet
+  name: Octothorpe
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWFlODVmNzRmOGUyYzA1NGI3ODFhMjlmYTliMjU5MzRiYTYzYmI3OWYxZGU4YTk1YjQzNmQ5YmZkY2FmNGNkIn19fQ==
+  cost: -1.0
+Head-25:
+  id: 25
+  category: Alphabet
+  name: Lucky Block
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjNiNzEwYjA4YjUyM2JiYTdlZmJhMDdjNjI5YmEwODk1YWQ2MTEyNmQyNmM4NmJlYjM4NDU2MDNhOTc0MjZjIn19fQ==
+  cost: -1.0
+Head-26:
+  id: 26
+  category: Alphabet
+  name: Display O
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjg5OWY0MzY4ZjYyMzZiOTlkNWY0NzkxODZlYTZhMzlkMTA4M2ZmMjA3ZWFjYTcxYWYxMDc0NWM0ZSJ9fX0=
+  cost: -1.0
+Head-27:
+  id: 27
+  category: Alphabet
+  name: Empty Display
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmNhZjQ0NzMzNzIzNjQ0MjY0NDRlNDk2NzZmNmUzMzcyNDM4YWZhM2E2ZWIwNGEzOGFmOGU0MTI5NjVjMWI4In19fQ==
+  cost: -1.0
+Head-28:
+  id: 28
+  category: Alphabet
+  name: Action Farm
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzMyMzVjOThkYjA3Zjk3NmRlZjI3Y2VhYWNhODljNzcxNzgzMWI0YmNjN2YyZjNhMTQ2MjJlNzhjMmRiZSJ9fX0=
+  cost: -1.0
+Head-29:
+  id: 29
+  category: Alphabet
+  name: Square Bracket
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTY1MDczMzZlMzUwNjZkYWE4ZTRlNmU2MjRmOTNmNjVlMzVlZTk3NGU5ZThiNjRkMmRkOTkwNGVjZWZkYTIifX19
+  cost: -1.0
+Head-30:
+  id: 30
+  category: Alphabet
+  name: Display T
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWY2Njc4MjA0NWZhYmQ0OTViOTdhODg2YTI2NmZkYTlmNjZhNTJiZTc5YWNlZGFiZGVhODcxMDM1OGUyMjg1In19fQ==
+  cost: -1.0
+Head-31:
+  id: 31
+  category: Alphabet
+  name: Action Mine Down
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDk2MWRmMzhkNTc1YjUzZDdhOTg0NjZhM2E1Yzc1NTI0Mzg4NDQ2YzdlYzlmZGIzMTIwZjdiNWY2MWYxMGM3In19fQ==
+  cost: -1.0
+Head-32:
+  id: 32
+  category: Alphabet
+  name: Display I
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTM3ODg5Yjk4ZjM1MWMyZGIxMmJmMWZmYTU3ZDA4Y2I2NDYwYzY0OWM5MDIxMzViMTMzZTI2OTYxYiJ9fX0=
+  cost: -1.0
+Head-33:
+  id: 33
+  category: Alphabet
+  name: Action Stop
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWMyZWI5MjE2MjhlNGUzOGM5ZDlkYTM5YmJhNTc3ZGE2ZGJmZTA4ZjEwOTkzZmVjOGM4MTU1YWFhZjk3NiJ9fX0=
+  cost: -1.0
+Head-34:
+  id: 34
+  category: Alphabet
+  name: '6'
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmM4ZjVkODRhNDQyNTM3ZjFhY2I5ZDU2MmZhZDFkMjY1YTlhODc1NzI0NWQ1M2E0YWViNTdiZjVmZGFiYiJ9fX0=
+  cost: -1.0
+Head-35:
+  id: 35
+  category: Alphabet
+  name: Action Start
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTAxYzdiNTcyNjE3ODk3NGIzYjNhMDFiNDJhNTkwZTU0MzY2MDI2ZmQ0MzgwOGYyYTc4NzY0ODg0M2E3ZjVhIn19fQ==
+  cost: -1.0
+Head-36:
+  id: 36
+  category: Alphabet
+  name: Display E
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWQ4MTE1YjFhZGJiMzljZGJjYmNkMDM0ZTk1NjBkZTdkYWI0MDI1YmI0YmM0M2M0OWI0M2QxNWRkOGE3NyJ9fX0=
+  cost: -1.0
+Head-37:
+  id: 37
+  category: Alphabet
+  name: Question Mark
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGNlYzg1YmM4MDYxYmRhM2UxZDQ5Zjc1NDQ2NDllNjVjODI3MmNhNTZmNzJkODM4Y2FmMmNjNDgxNmI2OSJ9fX0=
+  cost: -1.0
+Head-38:
+  id: 38
+  category: Alphabet
+  name: '12'
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTE5N2JiMmZmZmNlNWYxYjMwYTFiMzRiOGE1YTg2OWIzNjIzMjVjNDVmOGM4NWY3NzBkYzRlMmZmMWE4NTgifX19
+  cost: -1.0
+Head-39:
+  id: 39
+  category: Alphabet
+  name: Arrow Right Quartz
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzJmOTEwYzQ3ZGEwNDJlNGFhMjhhZjZjYzgxY2Y0OGFjNmNhZjM3ZGFiMzVmODhkYjk5M2FjY2I5ZGZlNTE2In19fQ==
+  cost: -1.0
+Head-40:
+  id: 40
+  category: Alphabet
+  name: Semicolon
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTcxZjRkMmJmZmI1OTRjMTU4YzZjZTFlZjlkOTgyYjZmZDI0NTgyNzVlN2Y4OTY1NWJiNzRlZGU3NjhkZWQifX19
+  cost: -1.0
+Head-41:
+  id: 41
+  category: Alphabet
+  name: '9'
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2YzOGQzYjY5NzVjN2NiZWMyNmE1NTZlN2FkNjJhYTE0NWM0YWIwMTcyOTc2YTA3ZWVlY2UxMzEzZDg0MmYzIn19fQ==
+  cost: -1.0
+Head-42:
+  id: 42
+  category: Alphabet
+  name: Display G
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2M0MjNhYjhkZjk3YmYxYjlhOWMxZDBlNDcxNjkwY2Y2NzdlNGZjYTEwYjM3NmM1ZTZjMDc2OTJiNTVkMTQifX19
+  cost: -1.0
+Head-43:
+  id: 43
+  category: Alphabet
+  name: Action Left
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTE4NWM5N2RiYjgzNTNkZTY1MjY5OGQyNGI2NDMyN2I3OTNhM2YzMmE5OGJlNjdiNzE5ZmJlZGFiMzVlIn19fQ==
+  cost: -1.0
+Head-44:
+  id: 44
+  category: Alphabet
+  name: Action Start
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGFlMjk0MjJkYjQwNDdlZmRiOWJhYzJjZGFlNWEwNzE5ZWI3NzJmY2NjODhhNjZkOTEyMzIwYjM0M2MzNDEifX19
+  cost: -1.0
+Head-45:
+  id: 45
+  category: Alphabet
+  name: Dark Arrow Left
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmE2ZGI2YjZkMTJiYjRkYzc2ODJhOTZiM2I5MzNlN2EyOTUxZDM1NzE4NzkxOGU4YmVkYzY1ZGU5ZDc5NiJ9fX0=
+  cost: -1.0
+Head-46:
+  id: 46
+  category: Alphabet
+  name: Ä
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTVjZDZkYjllYzNjN2Q5MTEzZTZkZDQ5YTE2Zjk5YTMyNmI5ZjU5NGNlOTg3ZjkxOTU1OWFjN2RiZDNiNTU1In19fQ==
+  cost: -1.0
+Head-47:
+  id: 47
+  category: Alphabet
+  name: Arrow Down
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzhjYTc2MTVjYjgzN2Y2OTRlNDk2ZmY4YTk4NTNjZDdkYjVmZDg1NTI5ZGNhZDk4Yzc4YmEyNmMzZTRmNjg3In19fQ==
+  cost: -1.0
+Head-48:
+  id: 48
+  category: Alphabet
+  name: Mining-Symbol (down)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGQ4NjIwMjQxMDhjNzg1YmMwZWY3MTk5ZWM3N2M0MDJkYmJmY2M2MjRlOWY0MWY4M2Q4YWVkOGIzOWZkMTMifX19
+  cost: -1.0
+Head-49:
+  id: 49
+  category: Alphabet
+  name: '10'
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjRhMDY1NGYyOGJjMzZjZjk5YmFkMjQyOGYyMWZhY2Y0NGU0ZWRlMTI5Njk0OTU4ZjIxOTdmZjQxOThlZmQ4In19fQ==
+  cost: -1.0
+Head-50:
+  id: 50
+  category: Alphabet
+  name: Display P
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWYyYWRjZTA5NTI0MTY4ZTg0YWM2YzhiN2YyOWM5ZTg3NDU3MTJjNzMxNThiOGQ1YTFjNmIxMmRmODdjY2UwIn19fQ==
+  cost: -1.0
