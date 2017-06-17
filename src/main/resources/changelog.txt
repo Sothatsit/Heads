@@ -1,8 +1,13 @@
-1.8.6
-+ Add 50 new heads
+1.9.1
+* Remove need for set of locations to block recursion
+* Fix NPE when loading config when no category costs are set
 
-1.8.5
-+ Add 50 new heads
+1.9
+* Improve efficiency of startup
+* Decrease amount of logging at startup
+
+1.8.6 -> 1.8.11
++ Add 50 new heads per update
 
 1.8.4
 + Add a /heads reload command
