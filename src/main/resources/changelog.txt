@@ -1,0 +1,16 @@
+1.8.6
++ Add 50 new heads
+
+1.8.5
++ Add 50 new heads
+
+1.8.4
++ Add a /heads reload command
++ Add a heads.reload permission to use the /heads reload command
++ Add pages to the help menu
+* Update the look of the help menu
+- Stop config files reloading automatically
+
+1.8.3
+* Allow running /heads add from console
+* Fixed error with the /heads add command

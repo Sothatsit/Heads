@@ -1,19 +1,21 @@
 package net.sothatsit.heads.config;
 
-import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 
 public interface ConfigFile {
     
-    public FileConfiguration getConfig();
+    public YamlConfiguration getConfig();
     
     public void save();
     
     public void reload();
+
+    public void clear();
     
     public boolean shouldReload();
     
     public void saveDefaults();
     
-    public FileConfiguration loadDefaults();
+    public YamlConfiguration loadDefaults();
     
 }

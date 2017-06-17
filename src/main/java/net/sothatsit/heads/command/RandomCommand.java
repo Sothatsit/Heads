@@ -5,9 +5,10 @@ import java.util.List;
 import java.util.Random;
 
 import net.sothatsit.heads.Heads;
+import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.cache.CachedHead;
-import net.sothatsit.heads.config.menu.Placeholder;
-import net.sothatsit.heads.lang.Lang;
+import net.sothatsit.heads.config.lang.Placeholder;
+import net.sothatsit.heads.config.lang.Lang;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -16,6 +17,21 @@ import org.bukkit.entity.Player;
 public class RandomCommand extends AbstractCommand {
     
     private static final Random rand = new Random();
+
+    @Override
+    public String getCommandLabel(MainConfig config) {
+        return config.getRandomCommand();
+    }
+
+    @Override
+    public String getPermission() {
+        return "heads.random";
+    }
+
+    @Override
+    public Lang.HelpSection getHelp() {
+        return Lang.Command.Random.help();
+    }
     
     @Override
     public boolean onCommand(final CommandSender sender, Command command, String label, String[] args) {
@@ -25,7 +41,7 @@ public class RandomCommand extends AbstractCommand {
         }
         
         if (args.length != 1) {
-            Lang.Command.Errors.invalidArgs().send(sender, Placeholder.valid(Lang.Command.Rename.help().command()));
+            sendInvalidArgs(sender);
             return true;
         }
         

@@ -6,13 +6,13 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import net.sothatsit.heads.Heads;
-import net.sothatsit.heads.config.AbstractConfig;
 import net.sothatsit.heads.config.ConfigFile;
 
+import net.sothatsit.heads.util.Clock;
 import org.bukkit.configuration.MemorySection;
 import org.bukkit.configuration.file.FileConfiguration;
 
-public class LangConfig extends AbstractConfig {
+public class LangConfig {
     
     private ConfigFile configFile;
     private Map<String, LangMessage> defaults;
@@ -23,78 +23,67 @@ public class LangConfig extends AbstractConfig {
         
         reload();
     }
-    
-    public ConfigFile getConfigFile() {
-        return configFile;
-    }
-    
+
     public void reload() {
-        Heads.info("Loading Lang File...");
-        long start = System.currentTimeMillis();
+        Clock timer = Clock.start();
         
-        configFile.saveDefaults();
-        configFile.reload();
+        this.configFile.saveDefaults();
+        this.configFile.reload();
         
-        FileConfiguration defaultConfig = configFile.loadDefaults();
+        FileConfiguration defaultConfig = this.configFile.loadDefaults();
         
         this.defaults = load(defaultConfig);
         
-        FileConfiguration config = configFile.getConfig();
+        FileConfiguration config = this.configFile.getConfig();
         
         this.messages = load(config);
         
         boolean save = false;
-        for (Entry<String, LangMessage> def : defaults.entrySet()) {
-            if (!messages.containsKey(def.getKey())) {
+
+        for (Entry<String, LangMessage> def : this.defaults.entrySet()) {
+            if (!this.messages.containsKey(def.getKey())) {
                 Heads.warning("\"lang.yml\" is missing key \"" + def.getKey() + "\", adding it");
                 
                 config.set(def.getKey(), def.getValue().getConfigValue());
-                messages.put(def.getKey(), def.getValue());
+                this.messages.put(def.getKey(), def.getValue());
                 save = true;
             }
         }
         
         if (save) {
-            configFile.save();
+            this.configFile.save();
         }
-        
-        Heads.info("Loaded Lang File with " + messages.size() + " messages " + getTime(start));
+
+        Heads.info("Loaded Lang File with " + this.messages.size() + " messages " + timer);
     }
     
-    public String getTime(long start) {
-        return "(" + (System.currentTimeMillis() - start) + " ms)";
-    }
-    
-    public Map<String, LangMessage> load(MemorySection sec) {
+    private Map<String, LangMessage> load(MemorySection sec) {
         Map<String, LangMessage> map = new HashMap<>();
         
         for (String key : sec.getKeys(false)) {
             if (sec.isConfigurationSection(key)) {
                 map.putAll(load((MemorySection) sec.getConfigurationSection(key)));
-            } else if (sec.isList(key)) {
-                List<String> list = sec.getStringList(key);
-                
-                if (list != null) {
-                    String secKey = sec.getCurrentPath();
-                    String trueKey = (secKey.isEmpty() ? key : secKey + "." + key);
-                    map.put(trueKey, new LangMessage(list.toArray(new String[0])));
-                }
+                continue;
+            }
+
+            String pathKey = (sec.getCurrentPath().isEmpty() ? key : sec.getCurrentPath() + "." + key);
+
+            if (sec.isList(key)) {
+                List<String> lines = sec.getStringList(key);
+
+                map.put(pathKey, new LangMessage(lines.toArray(new String[0])));
+            } else if(sec.isString(key)) {
+                map.put(pathKey, new LangMessage(sec.getString(key)));
             } else {
-                String str = sec.getString(key);
-                
-                if (str != null) {
-                    String secKey = sec.getCurrentPath();
-                    String trueKey = (secKey.isEmpty() ? key : secKey + "." + key);
-                    map.put(trueKey, new LangMessage(str.isEmpty() ? new String[0] : new String[] { str }));
-                }
+                Heads.warning("Unable to load message at \"" + pathKey + "\", was not text or a list of text.");
             }
         }
-        
+
         return map;
     }
     
     public LangMessage getMessage(String key) {
-        LangMessage message = messages.get(key);
-        return (message == null ? defaults.get(key) : message);
+        LangMessage message = this.messages.get(key);
+        return (message == null ? this.defaults.get(key) : message);
     }
 }

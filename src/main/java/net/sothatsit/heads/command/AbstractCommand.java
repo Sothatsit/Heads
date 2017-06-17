@@ -1,14 +1,21 @@
 package net.sothatsit.heads.command;
 
-import org.bukkit.ChatColor;
-
+import net.sothatsit.heads.config.MainConfig;
+import net.sothatsit.heads.config.lang.Lang;
+import net.sothatsit.heads.config.lang.Placeholder;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 public abstract class AbstractCommand implements CommandExecutor {
-    
-    public void sendMessage(CommandSender sender, String message) {
-        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
+
+    public abstract String getCommandLabel(MainConfig config);
+
+    public abstract String getPermission();
+
+    public abstract Lang.HelpSection getHelp();
+
+    public void sendInvalidArgs(CommandSender sender) {
+        Lang.Command.Errors.invalidArgs().send(sender, Placeholder.valid(getHelp().command()));
     }
     
 }

@@ -2,7 +2,7 @@ package net.sothatsit.heads.volatilecode.reflection;
 
 public abstract class ReflectObject {
     
-    protected Object handle;
+    protected final Object handle;
     
     public ReflectObject(Object handle) {
         this.handle = handle;
@@ -10,6 +10,10 @@ public abstract class ReflectObject {
     
     public Object getHandle() {
         return handle;
+    }
+
+    public boolean isNull() {
+        return handle == null;
     }
     
 }

@@ -2,7 +2,6 @@ package net.sothatsit.heads.config.lang;
 
 import java.util.Arrays;
 
-import net.sothatsit.heads.config.menu.Placeholder;
 import org.bukkit.ChatColor;
 
 import org.bukkit.command.CommandSender;

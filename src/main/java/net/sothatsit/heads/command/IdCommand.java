@@ -1,15 +1,30 @@
 package net.sothatsit.heads.command;
 
-import net.sothatsit.heads.config.menu.Placeholder;
-import net.sothatsit.heads.lang.Lang;
-import net.sothatsit.heads.menu.mode.InvModeType;
+import net.sothatsit.heads.config.MainConfig;
+import net.sothatsit.heads.config.lang.Lang;
+import net.sothatsit.heads.oldmenu.mode.InvModeType;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class IdCommand extends AbstractCommand {
-    
+
+    @Override
+    public String getCommandLabel(MainConfig config) {
+        return config.getIdCommand();
+    }
+
+    @Override
+    public String getPermission() {
+        return "heads.id";
+    }
+
+    @Override
+    public Lang.HelpSection getHelp() {
+        return Lang.Command.Id.help();
+    }
+
     @Override
     public boolean onCommand(final CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
@@ -18,7 +33,7 @@ public class IdCommand extends AbstractCommand {
         }
         
         if (args.length != 1) {
-            Lang.Command.Errors.invalidArgs().send(sender, Placeholder.valid(Lang.Command.Id.help().command()));
+            sendInvalidArgs(sender);
             return true;
         }
         

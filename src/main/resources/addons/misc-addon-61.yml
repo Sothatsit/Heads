@@ -1,0 +1,413 @@
+addons: []
+Head-1:
+  id: 23
+  category: Interior
+  name: Backpack (Cyan)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGY3MGZhYjMyNDZmZTAyN2NlMGJiYTg4NWE3M2M2ZTgyZDhmZjhmMzU4MjMxZTg0NjFmOTU2NTYwY2ZhNThmIn19fQ==
+  tags:
+  - ''
+  cost: -1.0
+Head-2:
+  id: 49
+  category: Interior
+  name: Ball of Wool (Orange)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTBmYjRlNmE2MTMyMmE0MTg1ZTdiNDFhNjQzZjZhNGNiNjlhMzE3ZWJlMzkzOTZmYjI3NjI3ZTM2MTRjNjkifX19
+  tags:
+  - Wool
+  cost: -1.0
+Head-3:
+  id: 15
+  category: Interior
+  name: Batman Signal Lamp
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWMyOTJiYWIxOTY2MDc3ZGNkMWY5OTdmOWVlZDg4MTA3N2I0N2VhNTExM2MxZTk0NWIzOGZiOTIxMGYwIn19fQ==
+  tags:
+  - Illumination
+  - DC
+  cost: -1.0
+Head-4:
+  id: 43
+  category: Interior
+  name: Black Glazed Terracotta Vase
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMThiMjZjOWFmZjdkMTk5NDRiMDRhYTRkZWM5NWFlZjQ4ZWUzZmE1OGY1NzE1Nzg4NjEzMzIxNmU3NDllODUifX19
+  tags:
+  - Flowerpot
+  cost: -1.0
+Head-5:
+  id: 11
+  category: Interior
+  name: Bucket With Yellow Color
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWUxNjJkYWEzMzFjNmNmOGQ2MTM4YjgzZmI4NDhiZDM1Yzc4ZDJmNWYyMTk5ZGU2ZTllMThhNDM4ODI2NWI3In19fQ==
+  tags:
+  - Bucket
+  cost: -1.0
+Head-6:
+  id: 31
+  category: Interior
+  name: Candle (Blue)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDFjOTQ0OGU5MGUxZmZhMjhmYTcyNDM0YTAyNTUxZjI1NzRjNjhmZTZhN2FhOGE5OTVjZDE2OTcxYWE4YTMyMyJ9fX0=
+  tags:
+  - Illumination
+  cost: -1.0
+Head-7:
+  id: 5
+  category: Interior
+  name: Candle (Pink)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDc5Nzg0Yjg4ZTFiMTRkZjZjMWVlNGVmNjA3MGIyYzViMGY1YWEzZWQ3MmM0ZmFjNjg0YTU0N2U3YTg2OTIifX19
+  tags:
+  - Illumination
+  cost: -1.0
+Head-8:
+  id: 35
+  category: Interior
+  name: Chimney
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWQ2ZTc3ZjgyNDhhZTY0ZDdiODk0ZDY2YjY1NmE4MzVhMzMzM2RkNjk0YmY2MjRjODhlNjMxMGNmMzc2MzVkIn19fQ==
+  tags:
+  - Stone
+  cost: -1.0
+Head-9:
+  id: 26
+  category: Interior
+  name: Christmas ball ornament (blue)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjdlMTFkYjhmMzkyNzI3YTFjNDU5ZWI1OTFkZDhhMGFhMzg2MWMyNzQ4N2UxMzg0YmIyMmY5MTU3M2JlNyJ9fX0=
+  tags:
+  - Christmas
+  cost: -1.0
+Head-10:
+  id: 45
+  category: Interior
+  name: 'Christmas Calendar #03'
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzQ3ZmRhNTk0NzQxOGY3OTE0NzVhMWE0ZGU0YTQ3ZDUzOWZhNmJkNWY0MjhhM2UzZDQ4Yjg2MjRhZDE1NTcifX19
+  tags:
+  - Present
+  - Christmas
+  - Christmas Calendar
+  - Number
+  cost: -1.0
+Head-11:
+  id: 28
+  category: Interior
+  name: Christmas Sock
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2RlZmVkODg1NTZiZGI1NmE4YzhjNDk3MzZmNjc3Njg2YWY2NDY0MzJhNTgxMzJhNmQ0NWEyZDhmYTlmNzgifX19
+  tags:
+  - Christmas
+  - Cloth
+  cost: -1.0
+Head-12:
+  id: 42
+  category: Interior
+  name: Conquest Barrel of Squid
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODZlYmU5Y2Y3NzFhNDNiOTYwYzVjZjMzYjdjZjgwNGU3OWFkZDhjYTExZjY1NmRjOGM1OWM2YzZmNzdjNSJ9fX0=
+  tags:
+  - Exclusive
+  - Medieval
+  cost: -1.0
+Head-13:
+  id: 50
+  category: Interior
+  name: Conquest Siding
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzUxZWZhZTExODEyYWVlNTg1NTg3YTE3MmE3MjgzNTYxMmRiNmMyZTEwYjNiMGM5YTZkN2M3YmY2ZWZlN2MzNyJ9fX0=
+  tags:
+  - Exclusive
+  cost: -1.0
+Head-14:
+  id: 36
+  category: Interior
+  name: Dawn Stone
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzBjNWNjNzI4Yzg2OWVjZjNjNmUwOTc5ZThhYTA5YzEwMTQ3ZWQ3NzA0MTdlNGJhNTQxYWFjMzgyZjAifX19
+  tags:
+  - Pokemon
+  - Gem
+  cost: -1.0
+Head-15:
+  id: 22
+  category: Interior
+  name: Dice (Red)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDFhMmMwODg2MzdmZWU5YWUzYTM2ZGQ0OTZlODc2ZTY1N2Y1MDlkZTU1OTcyZGQxN2MxODc2N2VhZTFmM2U5In19fQ==
+  tags:
+  - Toy
+  cost: -1.0
+Head-16:
+  id: 9
+  category: Interior
+  name: Dice (Yellow)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTAyZmM4NWY4MDhiM2ZkOWMxNTg0YzE4NjljMWVmY2RkM2JhZWFmZmUyYzY3ZDU0NGZjOTg1MjQ5ODRhYSJ9fX0=
+  tags:
+  - Toy
+  cost: -1.0
+Head-17:
+  id: 14
+  category: Interior
+  name: Drum
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTVjYzRhYTlkNTU4NDQ0ZGJlYzRkMDUyMjg3YzNjYzgxZGNiZTNlY2E1YTVhNGIyNDlkMTQ4MWU4ZjVlOSJ9fX0=
+  tags:
+  - Instrument
+  cost: -1.0
+Head-18:
+  id: 16
+  category: Interior
+  name: Easter Egg (Blue)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzQ3Mzc1YzBhYzNlMjdhZGUyMTkzMDJhZGExODhkZDgzOTkyMTUxYTJhYzhhNGY0OWVlZjQxODk1YWQzNzU2In19fQ==
+  tags:
+  - Egg
+  - Easter
+  cost: -1.0
+Head-19:
+  id: 27
+  category: Interior
+  name: Emerald Chest
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzA5MDEwMmMxNmMyYWVlZjkxZTNkNzdhNWEzNzUwOTZjYzgyNjVjMzRiZjllMTgyMGI4NzFmNDQ0OWZiNmUifX19
+  tags:
+  - Chest
+  - Gem
+  cost: -1.0
+Head-20:
+  id: 34
+  category: Interior
+  name: Empty Box
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2MxOGQ0ZTA0MTI2M2Y4Y2Y5YzRkODQ3YWVkMGU1MWEwNmY2M2M4MjhjYjQ3ZjhmZTM5MzY4MzRhNmI2ZjkifX19
+  tags: []
+  cost: -1.0
+Head-21:
+  id: 2
+  category: Interior
+  name: Expencive Bottle
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjU0OWJhN2Y5MTViNjhlZGUyMTBmYmNhYTRkNGI2OWUzMWUxM2Q3ZTg0NDliNzNiZjhkNThjMWIzNDcyYjMifX19
+  tags: []
+  cost: -1.0
+Head-22:
+  id: 8
+  category: Interior
+  name: Firework Rocket
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODNkNDlkZGU3NWUxMmI2MGViZTZlODk4MWVhNGZiMjY2YjIwNzUyYzJmNTVlOTZhZjExM2MyODdlZWQ2M2U4MSJ9fX0=
+  tags:
+  - ''
+  cost: -1.0
+Head-23:
+  id: 40
+  category: Interior
+  name: Golden Chalice
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWY4OGEwYzVmYTczNjY5MTE0NzIzNmM2Yjc4NmNlMzhkMTZmZmFkZWZmYmE1ZjllODllYThhMzUyZTNjNjlhIn19fQ==
+  tags:
+  - Treasure
+  cost: -1.0
+Head-24:
+  id: 33
+  category: Interior
+  name: Green Skull
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTJmYTczZWEyZjMyOWI0NjE2Y2Y0OGY0YzZlN2U2MjFkOWE1MzliNjQ4ZmNlN2JmYzAzMDJmNzY0MzEzZjUifX19
+  tags:
+  - Skull
+  cost: -1.0
+Head-25:
+  id: 7
+  category: Interior
+  name: Handbag (green)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWFmZWY0NTY0NTM0NDA2MTI2NTcyZTc0NDY3YzhhOTM3ZjU0YWU3MWI5MmNlYjY0ZTY0OTg0MjJmYTI3ZGI1In19fQ==
+  tags:
+  - Cloth
+  cost: -1.0
+Head-26:
+  id: 4
+  category: Interior
+  name: Honeycomb
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDE1NDkxMzJkYmM4NzVkNjM5ZDY3ZDkzY2M3MTNlOTQxYmIxNmM5NjRkMGE2MmU4YzY3OTRiZDNkZTZmZjgifX19
+  tags:
+  - Bee Keeping
+  cost: -1.0
+Head-27:
+  id: 10
+  category: Interior
+  name: Ice in a Glass
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzY5ZTBhYmEzNWQ2ODUzZWU1NGM4Njc5OWY3NTRhZTE2NjlkZDM5YTBlMmYzZDY5NzMxZjMzMWFkZWRlIn19fQ==
+  tags: []
+  cost: -1.0
+Head-28:
+  id: 20
+  category: Interior
+  name: Iron Steve
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGYyYzlkYzMxNGJlZmM4ZDEyZjJlODc4NmM5NDM1YmZkMjRkOTExNmZjOTRjNWVjNDVmZDgzYmQyZGM4NGE0ZiJ9fX0=
+  tags:
+  - Treasure
+  - Skull
+  cost: -1.0
+Head-29:
+  id: 47
+  category: Interior
+  name: Jukebox
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGQxZDhjNTA0ODY3OTMzNzAzZGEzNmVjMTFmNTM4ZjYyNjVmOTg0NDFkODgxZWFjNDhlZjJjNDkzNGMxYiJ9fX0=
+  tags:
+  - Vanilla
+  - Technical Device
+  cost: -1.0
+Head-30:
+  id: 39
+  category: Interior
+  name: Lime Glazed Terracotta Vase
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmY1MzM4N2E0ODkxZTE4MGM2N2RmMWI2NjJjZGFmODliNjU4YTg4OGUxZTcyMmIzMzllMTU5ZmMzYSJ9fX0=
+  tags:
+  - Flowerpot
+  cost: -1.0
+Head-31:
+  id: 37
+  category: Interior
+  name: Paint bucket (cyan)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzdhOGJmZmYwMjY5YzI1YTVhYzQ1NDI4YzQ2ZWZjZTkyODYwODI0YzE0ZDNjNTRjMjg0MmU1ZGUxODJjIn19fQ==
+  tags:
+  - Bucket
+  cost: -1.0
+Head-32:
+  id: 3
+  category: Interior
+  name: Paint bucket (light gray)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTk0YTE0NmY3ODViNmJmMzgxZTcyY2Q4YzI4MzhmMGU3ODkzNWZkZjUzNGRlYzliOTg4Zjc4N2Y5N2RiN2VkIn19fQ==
+  tags:
+  - Bucket
+  cost: -1.0
+Head-33:
+  id: 44
+  category: Interior
+  name: Pile of Shirts
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWU1NzdiYjMxYTUwYmViMzE5YjUxMGQwOWE4Yjc5M2VkZDE4NjdlNzU5OTVjN2JiYTE3OGFmMDMxOGRmMDg5In19fQ==
+  tags:
+  - Cloth
+  cost: -1.0
+Head-34:
+  id: 21
+  category: Interior
+  name: Potted Lavender Plant
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmM5MDhhNmRhNjhhZTlhNTc5MWEyNTg1NjBlYmJkNDJiODBmOTU2NDE0M2YxNWY2OWNhNDA2MTFhMjFlNTc4In19fQ==
+  tags:
+  - Flowerpot
+  cost: -1.0
+Head-35:
+  id: 18
+  category: Interior
+  name: Potted Marigold Plant
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2E0MDgwNDlhYjE5ZmE3ZTI4ZjM0NjZiZjBiOWEwMjc2NmMzMTkxODFhOWFiN2E0YjY5NzM4MTZmMzE4YTZhIn19fQ==
+  tags:
+  - Flowerpot
+  cost: -1.0
+Head-36:
+  id: 17
+  category: Interior
+  name: Present
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWI1OTQ2MjQ2MGZjMmI0NGY0ZTQ3NWU4ZjYyNmRlZTg5ZmI2ZTg4YjQ2ZDY1NWM4MThlZWJkYjUxYTJhNSJ9fX0=
+  tags:
+  - Present
+  - Christmas
+  cost: -1.0
+Head-37:
+  id: 25
+  category: Interior
+  name: Puppy
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjYzODFlODEzZWYzMmFhYWFiY2ZlMmE4NGY5MTNhNjU2OTFiYjMyYjdkODJkYzIyMjJkZDU4YTU1MzRjIn19fQ==
+  tags:
+  - Toy
+  cost: -1.0
+Head-38:
+  id: 46
+  category: Interior
+  name: Red Chest
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjFmODY4NzYxYTVjOTEzOWRhMWZlYzY3MjZlMTY1NTkyOTQyOWE0M2FiOTcyYzgxMThiYTI2YjkyNTVlN2MifX19
+  tags:
+  - Chest
+  cost: -1.0
+Head-39:
+  id: 29
+  category: Interior
+  name: Red Easter Egg
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjUwOTM3YjIxNTlmMGNlZWU0ZmFjZGQ0YWJmMzU4M2FjNTVkMjQ4NGNkMjUzNDc2MjE1MzU0ZDNkN2ZlNDUifX19
+  tags:
+  - Easter
+  - Egg
+  cost: -1.0
+Head-40:
+  id: 6
+  category: Interior
+  name: Redstone Sensor
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGVmNWM3YjY5OGJmZjEyZmRiZTY2Mjk4ZDEwYWQyYjQzYzFlMWMwYmZmZjkwZDlmNWViNmVjNjMxMzhjNjE4In19fQ==
+  tags:
+  - Technical Device
+  cost: -1.0
+Head-41:
+  id: 48
+  category: Interior
+  name: Rope
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjg5ZjRmOGYxMWNkNjA2YmNmZGU4MzQyZTIxNTM2YjFmYmMxNmY3YzU2MTFhN2ZlY2FiMzdjYWVlOGRiNWNhIn19fQ==
+  tags:
+  - Medieval
+  cost: -1.0
+Head-42:
+  id: 38
+  category: Interior
+  name: Sirene (Red)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzFlMDhkNTQ3Zjk5Mjk0OWYwMTNhMWUyYzdlM2NkMjI2YWI0ODVlM2JjOGMwYzBjMzljMTVkNWI3YzllODIwIn19fQ==
+  tags:
+  - Illumination
+  - Traffic
+  cost: -1.0
+Head-43:
+  id: 12
+  category: Interior
+  name: Snowglobe
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmRkNjYzMTM2Y2FmYTExODA2ZmRiY2E2YjU5NmFmZDg1MTY2YjRlYzAyMTQyYzhkNWFjODk0MWQ4OWFiNyJ9fX0=
+  tags:
+  - Toy
+  cost: -1.0
+Head-44:
+  id: 41
+  category: Interior
+  name: Stack of Bibles
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDkyZGRlOWZmZjMyZjdjNmQxMzgxODc1NGIzNjFlOTVjYjk4YTE5YzQ4MmQ1YzUzNWNjZmUwYzE4NWJjNiJ9fX0=
+  tags:
+  - Book
+  - Medieval
+  cost: -1.0
+Head-45:
+  id: 19
+  category: Interior
+  name: Statue
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzc3ZDE3NTUxNjc0NmY3NWE1MzljNDU2YTQzNjcyNDUyMDllZTBmMjg1ZDZmYzJjNDVlOGQxNjliNTk3NDU3NSJ9fX0=
+  tags:
+  - Skull
+  cost: -1.0
+Head-46:
+  id: 32
+  category: Interior
+  name: Target
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2MxZGYwZGI4ZDQ3NzNjYzI1NWE2M2I4ZjBiMGU0Y2RkN2Q3NGMzYjRjNjc1MzYyMTY4NDYwYmM2N2JiMzAyZSJ9fX0=
+  tags:
+  - ArmorstandDeco
+  cost: -1.0
+Head-47:
+  id: 1
+  category: Interior
+  name: Technical Device
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTQ2MTIwNDk5YjMyNDYzOWNkOWExNzc5OWVhMWRmZmYzNzNlNzlhZmUxZjBkOGI1MzI4Y2Y0Nzg5NmM0Nzc1In19fQ==
+  tags:
+  - Technical Device
+  cost: -1.0
+Head-48:
+  id: 24
+  category: Interior
+  name: TNT
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzVmZmMxMzFkY2Q0ZjAzYjcyZjNkMDVkZjhmYWExOTA1ODhjMmRiZWVhMmJkNDhkNTUzMzgyMjVlZmRhZGVjOSJ9fX0=
+  tags:
+  - Explosive
+  cost: -1.0
+Head-49:
+  id: 13
+  category: Interior
+  name: Traffic Cone
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2EyNjYxNmMxNWRhOGI0NDI4YzRmNmUzNDI5MDFhZDNjMWM5N2Q3MzdjY2E2NjZiNzY2YmQ1Mzc0NzhmOTIifX19
+  tags:
+  - Traffic
+  cost: -1.0
+Head-50:
+  id: 30
+  category: Interior
+  name: TV
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmZmMGZjMzkzOWFmZGU5OTcwYzQ2ODNmZTAzZGQwMmY3ZjIwOGNlMzFlNWFmNDdhNGM2MWExMmYzOGJmNmZlYyJ9fX0=
+  tags:
+  - Technical Device
+  cost: -1.0

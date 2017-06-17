@@ -3,52 +3,58 @@ package net.sothatsit.heads.config.cache;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import net.sothatsit.heads.Heads;
-import net.sothatsit.heads.config.menu.Placeholder;
+import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.volatilecode.ItemNBT;
 
-import org.bukkit.configuration.MemorySection;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+import javax.annotation.Nonnull;
+import java.util.Arrays;
 import java.util.Base64;
 
-public class CachedHead {
+public class CachedHead implements Comparable<CachedHead> {
     
-    public static final String DEFAULT_TEXTURE = "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTE2M2RhZmFjMWQ5MWE4YzkxZGI1NzZjYWFjNzg0MzM2NzkxYTZlMThkOGY3ZjYyNzc4ZmM0N2JmMTQ2YjYifX19";
+    private static final String DEFAULT_TEXTURE = "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTE2M2RhZmFjMWQ5MWE4YzkxZGI1NzZjYWFjNzg0MzM2NzkxYTZlMThkOGY3ZjYyNzc4ZmM0N2JmMTQ2YjYifX19";
     
     private int id;
     private String category;
     private String name;
     private String texture;
+    private String[] tags;
     private double cost;
     
     public CachedHead() {
         this.id = -1;
+        this.category = "";
         this.name = "";
+        this.tags = new String[0];
         this.texture = DEFAULT_TEXTURE;
     }
     
-    public CachedHead(int id, String category, String name, String texture) {
-        this(id, category, name, texture, -1d);
+    public CachedHead(int id, String category, String name, String texture, String[] tags) {
+        this(id, category, name, texture, tags, -1d);
     }
     
-    public CachedHead(int id, String category, String name, String texture, double cost) {
+    public CachedHead(int id, String category, String name, String texture, String[] tags, double cost) {
         this.category = category;
         this.name = name;
         this.texture = texture;
+        this.tags = tags;
         this.cost = cost;
     }
     
     public boolean isValid() {
-        return !name.isEmpty();
+        return !this.name.isEmpty();
     }
     
     public boolean hasId() {
-        return id > 0;
+        return this.id > 0;
     }
     
     public int getId() {
-        return id;
+        return this.id;
     }
     
     protected void setId(int id) {
@@ -56,15 +62,15 @@ public class CachedHead {
     }
     
     public String getCategory() {
-        return category;
+        return this.category;
     }
     
     public String getName() {
-        return name;
+        return this.name;
     }
     
     public String getTexture() {
-        return texture;
+        return this.texture;
     }
 
     public String getTextureURL() {
@@ -82,6 +88,10 @@ public class CachedHead {
         }
     }
 
+    public String[] getTags() {
+        return this.tags;
+    }
+
     public String getPermission() {
         return "heads.category." + category;
     }
@@ -91,7 +101,7 @@ public class CachedHead {
     }
     
     public double getCost() {
-        return (hasCost() ? cost : Heads.getMainConfig().getDefaultHeadCost());
+        return (hasCost() ? cost : Heads.getMainConfig().getCategoryCost(this.category));
     }
     
     public boolean hasCost() {
@@ -144,19 +154,26 @@ public class CachedHead {
         this.cost = -1d;
     }
     
-    public void load(MemorySection section) {
+    public void load(ConfigurationSection section) {
         this.id = section.getInt("id", -1);
         this.category = section.getString("category", "none");
         this.name = section.getString("name", "");
         this.texture = section.getString("texture", DEFAULT_TEXTURE);
         this.cost = section.getDouble("cost", -1d);
+
+        if(section.isSet("tags") && section.isString("tags")) {
+            this.tags = new String[] {section.getString("tags")};
+        } else if(section.isSet("tags") && section.isList("tags")) {
+            this.tags = section.getStringList("tags").toArray(new String[0]);
+        }
     }
     
-    public void save(MemorySection section) {
+    public void save(ConfigurationSection section) {
         section.set("id", id);
         section.set("category", category);
         section.set("name", name);
         section.set("texture", texture);
+        section.set("tags", Arrays.asList(tags));
         section.set("cost", cost);
     }
     
@@ -164,4 +181,10 @@ public class CachedHead {
     public String toString() {
         return "{\"name\":\"" + name + "\"}";
     }
+
+    @Override
+    public int compareTo(@Nonnull CachedHead other) {
+        return String.CASE_INSENSITIVE_ORDER.compare(this.name, other.name);
+    }
+
 }

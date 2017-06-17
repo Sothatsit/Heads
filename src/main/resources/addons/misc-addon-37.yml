@@ -1,0 +1,439 @@
+addons: []
+Head-1:
+  id: 48
+  category: Monsters
+  name: Absol
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWYxMGMwYWYyNmU3NjJlYmNkNzFiYmIwOTFhZmNmYTI2ODg1MjQ2Yzg3YzMyYWI1MTU1MzhiOGFiOGQ1ZDQ4MSJ9fX0=
+  tags:
+  - Pokemon
+  cost: -1.0
+Head-2:
+  id: 14
+  category: Monsters
+  name: Amumu
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmQxYTY3OWNkY2JlN2JkYzM5MmY2Zjk0ODU0N2Y1OTk1NWQ5MzY5OTc4YjRlYzI2N2RlYWY2NjRiNTI4NjNkIn19fQ==
+  tags:
+  - League of Legends
+  - Egypt
+  cost: -1.0
+Head-3:
+  id: 28
+  category: Monsters
+  name: Blue Shulker
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzg3ZmU2ZGNhOGVmMjU2NDY4NTJkMzhiYjY3ZGIxYzEzYWUxYjFhNmVkOTg2MTg3ODc5OWRmYmFhMSJ9fX0=
+  tags:
+  - End
+  cost: -1.0
+Head-4:
+  id: 47
+  category: Monsters
+  name: Bowser
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQzMDU5ZWJiOGE1YTcxZTIwYzBhYTc1MmIzZWE0MThhZmQwOGFhZjIxYzYzMzc0NGY5YzVkZTE1YzY5OWJjZSJ9fX0=
+  tags:
+  - Super Mario
+  - Celebrities
+  cost: -1.0
+Head-5:
+  id: 45
+  category: Monsters
+  name: Cyborg
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTg2YWQ4ZjIzZTFlYjc5YWJkZDliOTMzZmIxY2ZjZDAyNDBjNTZlODIxMmRkYzNmZmExYTk2NTk4MzYifX19
+  tags:
+  - Robot
+  cost: -1.0
+Head-6:
+  id: 31
+  category: Monsters
+  name: Dead Miner Skeleton
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWYzNmU1M2YzOTU1OTNlZGRjODFlNTExODc4NDU2ZDc3MjRlNTMzMzdhM2Y1YjFkMzI0ZmZiOWUxNjBmNjRjIn19fQ==
+  tags:
+  - Skeleton
+  - Helmet
+  cost: -1.0
+Head-7:
+  id: 42
+  category: Monsters
+  name: Dr. Doom
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzQ1YWUwZGI0NmEyODc4Yjg5YTRiODY5ZDc1YTAxY2Q2OGMzYzM3YWNjZTUzMzAzMTFjODhhMWU5Y2RhYWM0In19fQ==
+  tags:
+  - Man
+  - Marvel
+  - Celebrities
+  - Masked
+  - Hooded
+  cost: -1.0
+Head-8:
+  id: 10
+  category: Monsters
+  name: Dragon
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmE0NjUxZDY2Nzc5MjA4ZGExMDdkNmUyZmZkOTZjNjJlMDY3YzJlNzc1MzA3OWFhYTgzYWNlOGZiNDk4OTUifX19
+  tags:
+  - Dragon
+  cost: -1.0
+Head-9:
+  id: 16
+  category: Monsters
+  name: Dragon
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWUzNjhmNDgyOGIzZDRjODdkMWRlNjI5OTIxYzVjMmNkMTA4NGRlYTM1M2RkNTcyNTYxMWYxZDlmN2ZiZTdiIn19fQ==
+  tags:
+  - Dragon
+  cost: -1.0
+Head-10:
+  id: 37
+  category: Monsters
+  name: Dragon
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTIzZWM1NmFjMzRjMDdmYjZlMWVhNmE2MWZlYmZiNjY3YjUxMWQ3MzgyMjU3NDhiZTgwOTVhN2Q4NjQyIn19fQ==
+  tags:
+  - Dragon
+  cost: -1.0
+Head-11:
+  id: 46
+  category: Monsters
+  name: Dragon
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWEzMDU4ODRjZmIwYjE0YjMxNDc1M2M2ZTM0ZGE1MGMwNzIxYmYwOTI4OTg5ZWFhMjBiNzM0NWJmYjcwZjEifX19
+  tags:
+  - Dragon
+  cost: -1.0
+Head-12:
+  id: 6
+  category: Monsters
+  name: Evoker
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmRlYWVjMzQ0YWIwOTViNDhjZWFkNzUyN2Y3ZGVlNjFiMDYzZmY3OTFmNzZhOGZhNzY2NDJjODY3NmUyMTczIn19fQ==
+  tags:
+  - Vanilla
+  cost: -1.0
+Head-13:
+  id: 30
+  category: Monsters
+  name: Eye
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTZjMjIyMTUwNmRiMjA1MTc2MjcyZDQ4ZDgyNzVkOGRlYzE3NTc3YmMyMTE5ODM5OGE5ZTUxNTlhMDc0MzQifX19
+  tags:
+  - Eye
+  cost: -1.0
+Head-14:
+  id: 20
+  category: Monsters
+  name: Fire Demon
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjAyMGMzMzY5MjhkOTRmODhiZmNlYjUxODE4YTY0MDQwYjgyNjZkNDk3ZDM4ZWUxMjhlNDNhNGUwMmUyYTM2In19fQ==
+  tags:
+  - Nether
+  cost: -1.0
+Head-15:
+  id: 29
+  category: Monsters
+  name: Gold Armor Skeleton
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjgxNWEyM2UwNTNhNTNmMWM2ODEwODY1ODFjZTc0ZjNhYWZmYTI3OGFkMWViYjMyNDEyOTE3MmZhY2Q4ZWUifX19
+  tags:
+  - Skeleton
+  - Helmet
+  - Vanilla
+  cost: -1.0
+Head-16:
+  id: 2
+  category: Monsters
+  name: Golem
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGE3Y2Y0NDg1MDJjNWNiOGQ0YTlmODg3MTY0ODRkZmFmM2M3NGQyNjYyOGI3OTBlYjdlMjY4ZGU3ODZjMyJ9fX0=
+  tags:
+  - Golem
+  cost: -1.0
+Head-17:
+  id: 38
+  category: Monsters
+  name: Gollum
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWVhYTI0NmYxMWFkN2Y3YjhkZDU2MmVjYmQ4YTYzODllOGE5NDlkYjg3ODhhY2Q0MDg2YjhlZjc5N2E3NGQifX19
+  tags:
+  - Lord of the Rings
+  - Man
+  - Celebrities
+  - Old
+  cost: -1.0
+Head-18:
+  id: 21
+  category: Monsters
+  name: Grim Reaper
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTM5YjVkMmU2MjRjMTQ3ZWZlNDdiMTMwZTFjZGRiOGEzNzdjZGIzZTc3NDJiZDJjZjRkZGRmNjlhNjg5MjcyIn19fQ==
+  tags:
+  - Hooded
+  - Skull
+  cost: -1.0
+Head-19:
+  id: 12
+  category: Monsters
+  name: Groot
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTZlODVlMzJiNzVlOTcyZTEwYjI1NmQ1NDk2NGUxOWYxYThiMzk0MDk1YWQ5ZjMzMWI4ODg0MDlkZTIifX19
+  tags:
+  - Marvel
+  - Celebrities
+  cost: -1.0
+Head-20:
+  id: 36
+  category: Monsters
+  name: Guardian
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiMGE3NDMzNTY5NmIyYmY0Y2Y0NzgwYWNhNGEyODM1ZDQwMWVkYjkzNDY2OWRjYWVjNTZmYjk3YjY3MGE3In19fQ==
+  tags:
+  - Fish
+  - Aquatic
+  cost: -1.0
+Head-21:
+  id: 34
+  category: Monsters
+  name: Gundabad Ogre
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzJkMzNlZDZkNWJhYTI3NGZiYzVhYTM1NzFlODhjMzE3MjM2NDZmN2ExYTU3YWM5N2VmZTdmZGY5YTBlZjhjIn19fQ==
+  tags:
+  - Lord of the Rings
+  cost: -1.0
+Head-22:
+  id: 43
+  category: Monsters
+  name: Gundabad Ogre
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGVjMWRiOWYzYjJmNWJlMTg0NzZiYzFhNjgzMGU1N2I0MDZjZDNmNTEzZDZiZDk5ODAyY2U5OTQ1NjE4ZCJ9fX0=
+  tags:
+  - Lord of the Rings
+  cost: -1.0
+Head-23:
+  id: 1
+  category: Monsters
+  name: Gundabad Orc
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWYyMGFjMjZmNmI1NTJjYTkxMjk4Njg0ZmQ1YmQ2MmNjY2U1NjBhNDg4NGU5MWM3NjM1MzVjNzNkZWE0ZTBmMyJ9fX0=
+  tags:
+  - Orc
+  - Lord of the Rings
+  - Helmet
+  cost: -1.0
+Head-24:
+  id: 40
+  category: Monsters
+  name: Hecarim
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRlZmU4YTVkMWFiMzAzMjlkZjhkZGM3OTllM2E3NTViYzQ4ZjljNTM4YWRjZGJhOGM1ODE2YTc1ZjU5NyJ9fX0=
+  tags:
+  - League of Legends
+  cost: -1.0
+Head-25:
+  id: 13
+  category: Monsters
+  name: Iron Golem
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTQzNzllYTNlODFkOWQzYjk5Yzk5YmMzNzIyMzRkMmJhYjQ5MzFlNzU4NGVkMzc5N2M0ZWE4OGU3ZGQ4NmExNSJ9fX0=
+  tags:
+  - Headgear
+  - Golem
+  cost: -1.0
+Head-26:
+  id: 26
+  category: Monsters
+  name: Jar Jar Bings
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjMzODFhZmI2ZTUzYWRlZTRjMjZiNzE0YjlmNGVkNjg5N2U2NjYxNGVhNjMyNDhhYmUxNThhZjVmN2IyOTQyIn19fQ==
+  tags:
+  - Star Wars
+  - Celebrities
+  cost: -1.0
+Head-27:
+  id: 41
+  category: Monsters
+  name: Kirby
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGZhMzFmYmEyNjRiYzdmNDcwZmJlMGVjZjA1NmIwM2I2MGNjMjQ2ZjdhYzU0YTNkYmM4ODJhNjUzMDljNmUifX19
+  tags: []
+  cost: -1.0
+Head-28:
+  id: 7
+  category: Monsters
+  name: Kratos
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2Y0M2VmYTFmMmI5OGQ1ZGY3Yzg0NzRiZGY2YmE2MmU5OTNlNmRlNGZjNDFjYTg1YWE5MmU4OTZiN2I4MTZiIn19fQ==
+  tags:
+  - Man
+  - God
+  - Celebrities
+  cost: -1.0
+Head-29:
+  id: 39
+  category: Monsters
+  name: Lava Monster
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmYxMTExNThhNDgxZmE2Y2FkNmUyY2UyOThmYTNiNWZkYjQ0OGMwNThiMDljZDU3YzI4YWIxZWE5YmQ4ODcifX19
+  tags:
+  - Nether
+  cost: -1.0
+Head-30:
+  id: 11
+  category: Monsters
+  name: Minotaur
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjEyZGI0NTQxNmUzNWFlZDM2ZjVjNWM1NTE2NTQ3NDgzNWVmNTNiYmRhNTkzZTI3M2M1Y2Q1NTJkNDM2NDQzIn19fQ==
+  tags:
+  - Mystic Creature
+  cost: -1.0
+Head-31:
+  id: 22
+  category: Monsters
+  name: Mummy
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2U1ZWMzNjFlOTMwOTViMzRkZGRkZWRhY2I2ZmNlNjA4NDNkNzUzZDlkYmUzOTYzNjViNGUyNTRlM2Y5MyJ9fX0=
+  tags:
+  - Egypt
+  cost: -1.0
+Head-32:
+  id: 32
+  category: Monsters
+  name: Mummy
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGYxNDllYThjYmE0MWY3YjVjNTIxZDNjZWM1OGY0ZGEzN2RiODZlNzE5NmM1Nzg3YmZmMjc4Njk3MTA5ZjQ4In19fQ==
+  tags:
+  - Egypt
+  cost: -1.0
+Head-33:
+  id: 35
+  category: Monsters
+  name: Ninja Turtles - Raphael
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU5Yzc3NjQzN2U5OTRhYWNmYWI2MWNkYjVkZmQ2ZTdiOTNiZDkyZjUxMzUzMzk4ZjRhYmNmNzU2ZmEifX19
+  tags:
+  - Masked
+  - Warfare
+  - Celebrities
+  cost: -1.0
+Head-34:
+  id: 15
+  category: Monsters
+  name: Orange Shulker
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDcyYWZiNzQ4NDFkODU0ZDY0OGEyNTkyZWJjOTQ3ZjQxOWZhNTliNTZiMzY3YTNmNGJlNGRlMzZkNTUzM2JiIn19fQ==
+  tags:
+  - End
+  cost: -1.0
+Head-35:
+  id: 50
+  category: Monsters
+  name: Orc
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWY5OTEwOTE5MmNiNmE0NzU1YTAyZWYwNzFhY2UxOGVhMDczZjQ2NDdlOGI3ZjY4NjZiZDM5YTk0YzRlZSJ9fX0=
+  tags:
+  - Orc
+  cost: -1.0
+Head-36:
+  id: 24
+  category: Monsters
+  name: Osiris
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWNiOGUxYjY2N2Y0YjJhODVhOWIyZTdmYWYxZjNmMWU2NGJlOWJiMWNjZmEwNmE2NzFkYjE4OTVjNTNhIn19fQ==
+  tags:
+  - Man
+  - God
+  - Celebrities
+  - Headgear
+  - Egypt
+  cost: -1.0
+Head-37:
+  id: 5
+  category: Monsters
+  name: Pink Shulker
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTQ2MWUyZTJmNWNlNGRiNjlkZTdmMDMzMDg3NTc0ODQ1NGYzMGEwZWY0OGEzNzY5ZDcyMTFlOGYzNGNkOWMifX19
+  tags:
+  - End
+  cost: -1.0
+Head-38:
+  id: 49
+  category: Monsters
+  name: Poro
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWY4MDdlOWM1Yjg0NDMwOTVkODgwZmE4YzliNGY0MWI2YTBmMmJlNGYxZGJkMjQ5MjdhYjg1MTZiYzUyYTlkIn19fQ==
+  tags:
+  - League of Legends
+  cost: -1.0
+Head-39:
+  id: 3
+  category: Monsters
+  name: Projector
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjJjMzFiNTFiNjU2ODdjMWQxYzM5YzJmYjRkZjEwNmY0N2NkNjRkZWM1M2ExOWRiNjI1Yzc3NGUwMzFiMTRlIn19fQ==
+  tags:
+  - Technical Device
+  cost: -1.0
+Head-40:
+  id: 33
+  category: Monsters
+  name: Quilava
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGQ1M2JkODI2ZjFjMWYzMzFiNmI4ZWQ4MzgzYjIyYjVlODIxYzU0NThlOWJhNjcxZGRhZWM0ZWQwYzhkMTMifX19
+  tags:
+  - Pokemon
+  cost: -1.0
+Head-41:
+  id: 17
+  category: Monsters
+  name: Raccoon 'Rocket'
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmUyZDg5ODVkMTEzZjk5NzM1YWIzMDFmMmQ3NmU2ZmNjN2VmNzE5ZjRmYmVjNWRkMzIyMmE3YjhiZTQ3ZiJ9fX0=
+  tags:
+  - Marvel
+  - Celebrities
+  cost: -1.0
+Head-42:
+  id: 19
+  category: Monsters
+  name: RoboCop
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOThjMDYyOTYyMWQ0OWYzZmNhYjM2ZmJmNjlmMTkxNWZmNWMxNWU0MzM2OGUwNmY3MjM2NmIyOGNjODU2YWMifX19
+  tags:
+  - Celebrities
+  - Helmet
+  - Robot
+  cost: -1.0
+Head-43:
+  id: 27
+  category: Monsters
+  name: Stone Creeper
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjdhNjYzNmQ5NmQwOGY2MTkzOWE2MGY1N2VlMGQwMjk5YzBiZDI3M2IyYmQzMGMxZWZlNGY3NGU0MzNhIn19fQ==
+  tags:
+  - Stone
+  cost: -1.0
+Head-44:
+  id: 4
+  category: Monsters
+  name: Swamp Monster
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2Q0NjhjYmVmNjg2Y2ZiOTZiOWQ4OGYxM2IyNTQyNDRlZDFhMzI1OWNkM2JjNWZmZWE4NDBjZjlhNmQ2ODliIn19fQ==
+  tags:
+  - Aquatic
+  cost: -1.0
+Head-45:
+  id: 23
+  category: Monsters
+  name: Vex
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWU3MzMwYzdkNWNkOGEwYTU1YWI5ZTk1MzIxNTM1YWM3YWUzMGZlODM3YzM3ZWE5ZTUzYmVhN2JhMmRlODZiIn19fQ==
+  tags:
+  - Vanilla
+  - Villager
+  cost: -1.0
+Head-46:
+  id: 9
+  category: Monsters
+  name: Vindicator
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGY2ZmI4OWQxYzYzMWJkN2U3OWZlMTg1YmExYTY3MDU0MjVmNWMzMWE1ZmY2MjY1MjFlMzk1ZDRhNmY3ZTIifX19
+  tags:
+  - Vanilla
+  cost: -1.0
+Head-47:
+  id: 8
+  category: Monsters
+  name: Water Golem
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWI3ZmM4ZWY5NmYyYzI5MGEwNjhhYzk5NmNiOGU5NDMyMTYzNjgwNTM1ZjQyZjEyZDc5ZGM1MzdmOGFhNiJ9fX0=
+  tags:
+  - Golem
+  - Aquatic
+  cost: -1.0
+Head-48:
+  id: 44
+  category: Monsters
+  name: Water Golem
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjIyZTNhNTY5ZThkNTgxNDM3YzUwM2UyYWQxZDRiNTkxYmNiODI5MWE3MWVmN2IzNzM4OGVlYTNiMDhlNzIifX19
+  tags:
+  - Golem
+  - Aquatic
+  cost: -1.0
+Head-49:
+  id: 18
+  category: Monsters
+  name: Wither Skeleton
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzk1M2I2YzY4NDQ4ZTdlNmI2YmY4ZmIyNzNkNzIwM2FjZDhlMWJlMTllODE0ODFlYWQ1MWY0NWRlNTlhOCJ9fX0=
+  tags:
+  - Skeleton
+  - Nether
+  cost: -1.0
+Head-50:
+  id: 25
+  category: Monsters
+  name: Wolverine
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjY3MjlkZmEwN2YzOWVjOTI0ZjFlNTNlMDE1NzUyNTg4ZmU1NjM2MzRkNDQ2ZGYxNzVmYWViM2Q0M2RiZTdiIn19fQ==
+  tags:
+  - Man
+  - Modern People
+  - Marvel
+  - Celebrities
+  - XMen
+  - Masked
+  cost: -1.0

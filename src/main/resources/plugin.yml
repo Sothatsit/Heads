@@ -1,9 +1,12 @@
 main: net.sothatsit.heads.Heads
 author: sothatsit
 name: Heads
-version: 1.6.9
+version: 1.9.1
 soft-depend: [Vault, BlockStore]
 permissions:
+   heads.reload:
+      description: 'Reload the config files'
+      default: op
    heads.menu:
       description: 'Open the head menu'
       default: op
@@ -36,6 +39,9 @@ permissions:
       default: op
    heads.cost:
       description: 'Set heads costs'
+      default: op
+   heads.category-cost:
+      description: 'Set heads costs by category'
       default: op
    heads.bypasscost:
       description: 'Bypass paying for heads'

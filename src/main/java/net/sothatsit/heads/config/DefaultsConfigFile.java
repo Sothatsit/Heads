@@ -9,34 +9,45 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 public class DefaultsConfigFile implements ConfigFile {
     
-    private String name;
-    private FileConfiguration config;
+    private final String name;
+    private YamlConfiguration config;
     
     public DefaultsConfigFile(String name) {
         this.name = name;
     }
-    
-    public FileConfiguration getConfig() {
+
+    @Override
+    public YamlConfiguration getConfig() {
         return config;
     }
-    
+
+    @Override
     public void save() {
         
     }
-    
+
+    @Override
     public void reload() {
         config = loadDefaults();
     }
-    
+
+    @Override
+    public void clear() {
+        config = new YamlConfiguration();
+    }
+
+    @Override
     public boolean shouldReload() {
         return false;
     }
-    
+
+    @Override
     public void saveDefaults() {
         
     }
-    
-    public FileConfiguration loadDefaults() {
+
+    @Override
+    public YamlConfiguration loadDefaults() {
         return YamlConfiguration.loadConfiguration(new InputStreamReader(Heads.getInstance().getResource(name)));
     }
     

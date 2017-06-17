@@ -11,6 +11,9 @@ import net.sothatsit.heads.volatilecode.reflection.ReflectObject;
 import net.sothatsit.heads.volatilecode.reflection.ReflectionUtils;
 import net.sothatsit.heads.volatilecode.reflection.authlib.GameProfile;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
 public class TileEntitySkull extends ReflectObject {
     
     public static Class<?> TileEntitySkullClass;
@@ -57,9 +60,11 @@ public class TileEntitySkull extends ReflectObject {
         }
     }
     
-    public static void resolveTexture(GameProfile profile, Predicate<?> callback) {
+    public static void resolveTexture(GameProfile profile, Predicate<GameProfile> callback) {
         try {
-            resolveTextureMethod.invoke(null, profile.getHandle(), callback);
+            resolveTextureMethod.invoke(null, profile.getHandle(), (Predicate) gameProfileHandle -> {
+                return callback.apply(new GameProfile(gameProfileHandle));
+            });
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

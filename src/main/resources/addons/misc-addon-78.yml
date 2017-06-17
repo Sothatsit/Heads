@@ -1,0 +1,426 @@
+addons: []
+Head-1:
+  id: 21
+  category: Food
+  name: Bacon
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2I4MTcyYzJkZmUzZjk0ZTkyZWVhZjcyZjc4ZmNmNjM0ZTk5NjY1N2ZmNzRkNzNkOTNlNTc4MTUyOGI0NTgzIn19fQ==
+  tags:
+  - Meat
+  cost: -1.0
+Head-2:
+  id: 4
+  category: Food
+  name: Blackberry
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc2OWY4Yjc4YzQyZTI3MmE2NjlkNmU2ZDE5YmE4NjUxYjcxMGFiNzZmNmI0NmQ5MDlkNmEzZDQ4Mjc1NCJ9fX0=
+  tags:
+  - Berry
+  cost: -1.0
+Head-3:
+  id: 33
+  category: Food
+  name: Bottle of Wine
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMDZkOGU2NWFkOTVkZGJhMzQ3MWI1MmMxMzk5MzU0NjIyYmIwMzQyZjE2ZTg4YzlkY2ZjYjRiODc5NWUifX19
+  tags:
+  - Drink
+  cost: -1.0
+Head-4:
+  id: 11
+  category: Food
+  name: Bowl of Noodles
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjk1OTU3MzU5YTMyZGM4NmJlZjllYTJlNWFmNGY0OWQ3ZWE3MjM4ZDBmNGNkMmRiZDk3NWNiYzVjYmYyNzQ5In19fQ==
+  tags:
+  - Asian
+  - Meal
+  cost: -1.0
+Head-5:
+  id: 25
+  category: Food
+  name: Bowl with Soup
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmMwN2VhY2M2Y2U5ZmQ0ODk5ZGIyYjRmN2E4OTY5YTE4NTFmZGM3M2FhMDdhZjk2MzNiMzBkNDY1YTE1In19fQ==
+  tags:
+  - Soup
+  - Meal
+  cost: -1.0
+Head-6:
+  id: 43
+  category: Food
+  name: Bowl with Soup
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTAzZDY1OTdjYTQ0Y2JiYmRlZTdhMTM1NzRhNGNiNzkyYTc1YmU2ZWQ1OWE4OGY5OTUyMTYyZmQ5M2EyNTY3ZSJ9fX0=
+  tags:
+  - Soup
+  - Meal
+  cost: -1.0
+Head-7:
+  id: 28
+  category: Food
+  name: Brown Mushroom
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTZlMjU3OTlhMmYzOTFhMjM2YTc4MmM2MmU1NDhkZWM5ZmZmZjY4ZDU1NWM5YmExM2ViOTY1MmI3NTkyMjkzIn19fQ==
+  tags:
+  - Mushroom
+  - Vanilla
+  cost: -1.0
+Head-8:
+  id: 34
+  category: Food
+  name: Bubblegum
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjI3NGE4YTVjYTY2YWZlYjJjN2YxNjIyNTNhNmM0NjFkNTZiODUxMTQyN2E1NTg1Nzg4MmExZjc3YWFjOCJ9fX0=
+  tags:
+  - Sweets
+  cost: -1.0
+Head-9:
+  id: 5
+  category: Food
+  name: Burger
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmI5MGM5Y2M4MzI3ZTlkZGY4ZDljN2ZmNmUzZjY4YWIzMGQ1YjdlMzRiMTM1MzdjNWE5Yjk2MzY1NjRmZGNlOCJ9fX0=
+  tags:
+  - Fast Food
+  - Meal
+  cost: -1.0
+Head-10:
+  id: 22
+  category: Food
+  name: Bush
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzcwMzE0ZjJmZDZlNzhhZWY5N2E4OThkNjliZGM0NWNhNDQ3NWY3N2I2NjIyYjJhYmY4ZTYxZjVlMzE3MTAifX19
+  tags: []
+  cost: -1.0
+Head-11:
+  id: 9
+  category: Food
+  name: Cake
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzU4NzM5YzRmMzQ4Y2Q2NjQyMzc5ZjlhZDY1NzhmYzE2YWZkNGU5MmQ1MjhiZWFiMDUzNWVjNzgyMjVjOTI3In19fQ==
+  tags:
+  - Pastries
+  cost: -1.0
+Head-12:
+  id: 41
+  category: Food
+  name: Cake
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjQ4YjExYTkyMWI4MjY1NGMyZjFkYjMzMzZiYmNhNmU1YzQ5MjRkMGNkYjYzZGMyMjZjZTdjNmNiZjllMmViNiJ9fX0=
+  tags:
+  - Pastries
+  cost: -1.0
+Head-13:
+  id: 50
+  category: Food
+  name: Cake
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2IxNDIxNzgyMzUyYjkzNjg1YjU5ZjE0ZTUwNjk0OWJmN2EzM2VmZGQ4MWRkNjVlZDE3ZWE2ZGI0MjJmNTNmIn19fQ==
+  tags:
+  - Pastries
+  cost: -1.0
+Head-14:
+  id: 12
+  category: Food
+  name: Can (Arizona)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTlkODM2ZTU5MjMwNDY5ZDhhZTQ2MWFjNWMwNWIxYTJlZGIxMGI0NDUxYTliZGY5ZjZkOTRjZWJhNjYwMSJ9fX0=
+  tags:
+  - Can
+  cost: -1.0
+Head-15:
+  id: 44
+  category: Food
+  name: Candy Cane
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmIyMTYxN2QyNzU1YmMyMGY4ZjdlMzg4ZjQ5ZTQ4NTgyNzQ1ZmVjMTZiYjE0Yzc3NmY3MTE4Zjk4YzU1ZTgifX19
+  tags:
+  - Sweets
+  cost: -1.0
+Head-16:
+  id: 15
+  category: Food
+  name: Carved Pumpkin
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmRmMDU3YTU1ODc1NGJiMjNhMThlMWM1ZTJjNDFjMjI4NDFjYTU2Njc3NjQxZDMzZTlhYTVlOGZmYTIxZTcifX19
+  tags:
+  - Pumpkin
+  - Halloween
+  cost: -1.0
+Head-17:
+  id: 30
+  category: Food
+  name: Carved Pumpkin
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDY2ZmMzNTg4NGZkYjRjYjRhYTRjNjkyNzg4Y2ZiNDg2NWEzZjAxNDhlNzYyOTFhM2RmYjM3NTYzYzYzOGIifX19
+  tags:
+  - Pumpkin
+  - Halloween
+  cost: -1.0
+Head-18:
+  id: 48
+  category: Food
+  name: Carved Pumpkin
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDU5NTU3MTE2NDFkMTZmMTVhYTRiZjhiNDllYTg4M2IwM2M5ZTU4MmQ1Mjg5OWM3YTVjOGQ3YzgyMjI4OWQ2In19fQ==
+  tags:
+  - Pumpkin
+  - Halloween
+  cost: -1.0
+Head-19:
+  id: 49
+  category: Food
+  name: Carved Pumpkin
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGEyM2ExNzUyNzkyNGY1NGU4Zjc5NmFjOTU2YjBkZWRkMTE0NjcyNzEwNDRhY2ZjOTNmNmU1OTFiMGQ0NjMifX19
+  tags:
+  - Pumpkin
+  - Halloween
+  cost: -1.0
+Head-20:
+  id: 8
+  category: Food
+  name: Cheeseburger
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjJlNmFhYjgzMTFkZTFiNDdiOTQ1NWI4YjhhOGE0OWY3NDU2ODBkODI5ZjU1ODYxOTA4ODQ5ZDJhMjI1OTMifX19
+  tags:
+  - Fast Food
+  - Meal
+  cost: -1.0
+Head-21:
+  id: 24
+  category: Food
+  name: Chocolate Heart on table
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzBkMDU4M2RlYjIxYWU0ZjIyYzU4ZWQ1OWE4NWJjNzM2ODliM2FkYTc0MjEzNzU1NWNlNGRkZDM0Nzk4ZTAifX19
+  tags:
+  - ArmorstandDeco
+  - Pastries
+  - Valentine's Day
+  cost: -1.0
+Head-22:
+  id: 16
+  category: Food
+  name: Cupcake
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGVhZjZkMjY3ZTNhYjNjMGE5ZjUyNjUwM2E0MjFlNmNhMmE2M2RiZmE5YzZhZGEzYmM5ZjhhOWI1NTYzNyJ9fX0=
+  tags:
+  - Pastries
+  cost: -1.0
+Head-23:
+  id: 27
+  category: Food
+  name: Golden Apple
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGFiZDcwM2U1YjhjODhkNGIxZmNmYTk0YTkzNmEwZDZhNGY2YWJhNDQ1Njk2NjNkMzM5MWQ0ODgzMjIzYzUifX19
+  tags:
+  - Fruit
+  - Apple
+  cost: -1.0
+Head-24:
+  id: 40
+  category: Food
+  name: Hamburger
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTQxMWNiNTRhYWExZTNkYjU1NWM3ODVmNmI3NWJlMWJmOGU2OGIyOGU1Y2ZjNTljOWE4NzY4OTRmNjFjZGMxNyJ9fX0=
+  tags:
+  - Fast Food
+  - Meal
+  cost: -1.0
+Head-25:
+  id: 29
+  category: Food
+  name: Hazelnut
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTNkNmNkMmMzNjY2NTUyNDM2YjhjN2FmYmE5MDhlMmM0YmMxNjFiZThiODY1M2U0NWU4MmY3OTViM2YxIn19fQ==
+  tags: []
+  cost: -1.0
+Head-26:
+  id: 35
+  category: Food
+  name: Hazelnut
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjc4Nzg0NzAzZmE1OWNkMTUzZmNhYmUzY2NkOWQ0NGM0NjlhOGQ2M2U2ZDQzODYyNmFkOWViYzcwNzA3ZmMzIn19fQ==
+  tags: []
+  cost: -1.0
+Head-27:
+  id: 38
+  category: Food
+  name: Hot Chocolate
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjVhZmEyMmY1YzdlNTdhYmFhNWRkM2EzYzYzMWVmNTljNjljOWNkMDM3MjBhZTliMjE5NDMwMjE2Zjk2MzM3In19fQ==
+  tags:
+  - Drink
+  cost: -1.0
+Head-28:
+  id: 47
+  category: Food
+  name: Jack O'Lantern
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDE0NGFhYzJhMmE0NTkyNzdiMjBkMGY0MmM1ZThiNWY2NjVjZGRiZWVkNmFiNmViMThmMGQ5MjJhNDZkZTM5MiJ9fX0=
+  tags:
+  - Pumpkin
+  - Halloween
+  - Illumination
+  cost: -1.0
+Head-29:
+  id: 19
+  category: Food
+  name: Jack O'Lantern (White)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDRlODRiZGUxN2Y5NzA0YjUxMTg0MzMxYjdmM2MxODMzM2UzYzY2NGY3Yzc4MmNjMjQyN2UzYzk4ZDAzZTdlIn19fQ==
+  tags:
+  - Halloween
+  - Pumpkin
+  cost: -1.0
+Head-30:
+  id: 39
+  category: Food
+  name: Kakikori
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTJlNWNkM2E3YTM1MDdlMTkxNTZkY2FmODUyNWIyYzJiYjhkMGI2NzBmNWMzOWRiZDk2ZWI1MmUzOGQzNTcyIn19fQ==
+  tags:
+  - Ice cream
+  - Asian
+  cost: -1.0
+Head-31:
+  id: 2
+  category: Food
+  name: Kiwi (Sliced)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjAxNTVkNDFlNjg2NTc3M2YyYWQyZTlmZTRjZjgyZjJmODgwZTU0YWZlNzFhMTNiYmUyMzkwZDRhYTgxZjRmNCJ9fX0=
+  tags:
+  - Fruit
+  - Sliced
+  cost: -1.0
+Head-32:
+  id: 7
+  category: Food
+  name: Medieval Beer
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDE2OGI5ODA5OGEwYzRhMjllMjA0NjcwNDYzMDkxZGI2MDcwZTc3ZDg2NzY5ZDk4NWY2YmVmNDA3NWU1In19fQ==
+  tags:
+  - Drink
+  - Medieval
+  cost: -1.0
+Head-33:
+  id: 23
+  category: Food
+  name: Mug of Beer
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2M2YjRhN2JkODI0NDE2MTliYmMxMWQ5YjhlMGU2NGFlOGI5NWYyZTQwYjM5MjEzNTVmY2M1NDM0MzI2MDE3In19fQ==
+  tags:
+  - Drink
+  - Medieval
+  cost: -1.0
+Head-34:
+  id: 26
+  category: Food
+  name: Pear
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjgzMzcwZTA3MTc0YWJiN2M3YWYxOGM0ZWNkN2RhMWQ4MTNhYTM5NGYxNjEwODU0Mjk3YmQ1ZGU3ZDJmNDg5In19fQ==
+  tags:
+  - Fruit
+  cost: -1.0
+Head-35:
+  id: 14
+  category: Food
+  name: Pink Bread
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWM3ZDljYjI0OTVhMzI4NzEwY2QyMTNlMWVlNWJiYTc3YWY2NzRiODk2ZTNiY2JjMzg3ODljYTZiODEyZWUxIn19fQ==
+  tags:
+  - Pastries
+  cost: -1.0
+Head-36:
+  id: 31
+  category: Food
+  name: Piranha Plant
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTNkYTNmMzg0NTE5M2UxNzU1NDgyNWEwMTNiN2I0MTdhZWNiZDUyODVkNTk1NGUyNzUxY2YyYjhlNzdjOTQ2NyJ9fX0=
+  tags:
+  - Super Mario
+  cost: -1.0
+Head-37:
+  id: 37
+  category: Food
+  name: Pizzabox (Opened with Pizza)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjBiNzNhMjY1NTQzMjRkZmM5OGMxZDk5MzYyNTIwOGMzZDA3ODRlYTVmMmUxNjVmYjZkOTY0OTg2NTBmYzFhIn19fQ==
+  tags:
+  - ArmorstandDeco
+  - Pizza
+  - Meal
+  cost: -1.0
+Head-38:
+  id: 3
+  category: Food
+  name: Potion (Blue)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGQxOGM1OGEwNDMxOTMyNjE3MmE0MDZiZDQ3MTQ3MTVhOTNmY2RhYWFkNDc0NjkxNjE0YTFiYmFkNzgzYmUifX19
+  tags:
+  - Potion
+  cost: -1.0
+Head-39:
+  id: 46
+  category: Food
+  name: Potion (Blue)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGQxYWQ3NGZmY2I2OTc5OGEwYmI0YTNhMGY3YjJiMzUzZDgxMWQxMWM4MjhiMzQxOTc4OTRkYTg1ZjQ5ZSJ9fX0=
+  tags:
+  - Potion
+  cost: -1.0
+Head-40:
+  id: 17
+  category: Food
+  name: Potion (Brown)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2E3MjZhM2Y0MDU2ZGMyOWJkNGNkMjkwNGQ2YWQ0Y2Y3ZTI1MWU4NmY4NTJlM2UyMDU0OGQ3OGVkOGQ3ZiJ9fX0=
+  tags:
+  - Potion
+  cost: -1.0
+Head-41:
+  id: 10
+  category: Food
+  name: Pudding Cake
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzZjMzY1MjNjMmQxMWI4YzhlYTJlOTkyMjkxYzUyYTY1NDc2MGVjNzJkY2MzMmRhMmNiNjM2MTY0ODFlZSJ9fX0=
+  tags:
+  - Pastries
+  cost: -1.0
+Head-42:
+  id: 1
+  category: Food
+  name: Ramen (Red Bowl)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzY0MTE4NzBkOTgzMmM4ODE4ODY2OWM4NmRkOGM2ODA2OGI4NDY2YjM4ZTk4Y2VkY2Y4ZWViNzVjZmIzIn19fQ==
+  tags:
+  - Asian
+  - Meal
+  - Soup
+  cost: -1.0
+Head-43:
+  id: 13
+  category: Food
+  name: Red Mushroom
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDQzMjIzYjZjMjllZjY1MmMzNjM2YWY3NzZkODk0NjZlOWY2OTdmMjU2NWI5Njc0YWE4ZGUwZTljMzZkNyJ9fX0=
+  tags:
+  - Mushroom
+  cost: -1.0
+Head-44:
+  id: 18
+  category: Food
+  name: Spring Roll
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGIxYTQ3OTU3MjNjOTA5ZTgyOGYyYzI4YTNiYjQwNzViMmJiYTljMWFhYjU4NGI3YWYyODVjM2I3OThlNSJ9fX0=
+  tags:
+  - Meat
+  cost: -1.0
+Head-45:
+  id: 32
+  category: Food
+  name: Sundae
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTBjODcxOWI2YjFmZGFlZTU5YTc4OTU1NTI2N2FkY2ZhMWU0MjYwODg5ZmRmNzA4ZTdjYTg3M2MwNTUxZDkifX19
+  tags:
+  - Ice cream
+  cost: -1.0
+Head-46:
+  id: 6
+  category: Food
+  name: Sushi (Egg)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmVhZjVhNDM2YTg2NjYzYmVkYmQxNzk2NmNhNTU0NmJjYWI4ZTFhZTMwYWUyNGE0OGY5MzFiNjkxZTc5NWMyIn19fQ==
+  tags:
+  - Sushi
+  - Asian
+  cost: -1.0
+Head-47:
+  id: 42
+  category: Food
+  name: Tomato
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDQyNDlmNDhjNWMwMjUzZGI2N2U5MWM3ZDJhNzc0NTVmOTMwOTM4OGJlNTBmOGQ4NWQ0NzE4ZTYyYzkifX19
+  tags:
+  - Vegetable
+  cost: -1.0
+Head-48:
+  id: 45
+  category: Food
+  name: Veggie Pizza
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDVjNDQxY2JhNGQ2YjU3ZGVkNTRjODM2OTIxNmE2YzcxNTZmYjg4N2Q0YjU2MzllZTkzNGYxYmI2Y2JmZGIifX19
+  tags:
+  - ArmorstandDeco
+  - Pizza
+  - Meal
+  cost: -1.0
+Head-49:
+  id: 36
+  category: Food
+  name: Violet Berry
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmZiMGIwOWU4Y2E5ZWI3ZDUwMTA5YmE5MjA5MjM1ZTQxMTczZDhkMGY4MTZiMzgxOTM1ZDNkMjk1MWIzZTMifX19
+  tags:
+  - Berry
+  cost: -1.0
+Head-50:
+  id: 20
+  category: Food
+  name: White Cake
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2ZkNTU4M2ZkODU4MWJlZGFmODRiZjdhMTFlZDM5YzFjMGIzZDg1N2YyN2ZkZWMxZmUzMmQ3ZTAxZTNlYmU4YiJ9fX0=
+  tags:
+  - Pastries
+  cost: -1.0

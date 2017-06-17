@@ -1,301 +1,422 @@
 addons: []
 Head-1:
-  id: 9
-  category: Monsters
-  name: Endereye
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGFhOGZjOGRlNjQxN2I0OGQ0OGM4MGI0NDNjZjUzMjZlM2Q5ZGE0ZGJlOWIyNWZjZDQ5NTQ5ZDk2MTY4ZmMwIn19fQ==
+  id: 24
+  category: Alphabet
+  name: Lucky Block
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2RkMWU2YmQyMTVhZmE1ZTY3MzI4NWFmYWNiODVlYjhkMGY3OWE1YjQ2YzU0MzJkNmZlZWQ2NjA5N2M1MTI0OCJ9fX0=
+  tags:
+  - Punctuation Mark
   cost: -1.0
 Head-2:
-  id: 10
-  category: Monsters
-  name: Minotaur
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjEyZGI0NTQxNmUzNWFlZDM2ZjVjNWM1NTE2NTQ3NDgzNWVmNTNiYmRhNTkzZTI3M2M1Y2Q1NTJkNDM2NDQzIn19fQ==
+  id: 35
+  category: Alphabet
+  name: Lucky Block
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDdjMWZhMzYxNjE1ZDhkYjM3MTgzYTUyNWFkOWJjZWY1NWUxMWU0NjVmNGRiZTE5YTcxOTYwYWQzNjY5NGUifX19
+  tags:
+  - Punctuation Mark
   cost: -1.0
 Head-3:
-  id: 12
-  category: Monsters
-  name: Elder Guardian
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWM3OTc0ODJhMTRiZmNiODc3MjU3Y2IyY2ZmMWI2ZTZhOGI4NDEzMzM2ZmZiNGMyOWE2MTM5Mjc4YjQzNmIifX19
+  id: 13
+  category: Alphabet
+  name: Monitor Smilie
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzlmZjVmN2Y5Mzc2YTY5N2Q4Mjc3NDJlYzNiYWFkZGJiODc2MzYyMmRhZGFhYWZhOWFiZGQ3ODg5MTlhODc0YiJ9fX0=
+  tags:
+  - Computer
   cost: -1.0
 Head-4:
-  id: 15
-  category: Monsters
-  name: Dinosaur Egg
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGIxOTQ5YTRiNjY4YWFiZDFhYjE4OGY1NTMzNTM3NGRkZjY5NjE0MmY2YmNjMDg5N2VhODhlYzM5YzdiYmIifX19
+  id: 47
+  category: Alphabet
+  name: Monitor Smilie
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzQ1NWFlYWU1MzQ4OGJkYzhiZDczZmMwNzc2YzM4NmI2Zjk4MTljM2M1NTZiODJkOTRhZDIwZGRhYjljMmE0In19fQ==
+  tags:
+  - Computer
   cost: -1.0
 Head-5:
-  id: 16
-  category: Monsters
-  name: Guardian
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiMGE3NDMzNTY5NmIyYmY0Y2Y0NzgwYWNhNGEyODM1ZDQwMWVkYjkzNDY2OWRjYWVjNTZmYjk3YjY3MGE3In19fQ==
+  id: 21
+  category: Alphabet
+  name: Monitor Unknown
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGY1YjZmOWRiOGIyMzdiNWVjNjdiNThhMWVmYmY4YTFhNWRjZjgxM2QzZDg2OWIyMzI4NDdmMjFjMjk4OTQ4In19fQ==
+  tags:
+  - Computer
   cost: -1.0
 Head-6:
-  id: 20
-  category: Monsters
-  name: Wookie
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2E5ZGIwODY2N2FhMmM5Mzg3OTE4ZjgzNzA0YmY4YzQxM2VlZDZmNDcxMjRhMTU5YTM2NDhkMTQ3ZTQ2YmYxIn19fQ==
+  id: 22
+  category: Alphabet
+  name: Quartz A
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWRiNWYxYTlmNThjODUyYjQ3M2IzODU1ZGNlMjdmOGJmNDBkYjdlNGJkMjk1MWU2MmYyOGQ2MWMzNjk0ZmYifX19
+  tags:
+  - Quartz
   cost: -1.0
 Head-7:
-  id: 22
-  category: Monsters
-  name: Dinosaur
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjM3OGYwODFhNzc2OGQ3M2NmZWM5MzE1MzYwNmZiZmIyODVmNDE1YzY5NWE3YzMxMWFlODljM2U2YTAyZmMifX19
+  id: 29
+  category: Alphabet
+  name: Quartz D
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjY3MDkwMjRjZDljOGRmMGNiNTE5YmFiZWE5OWQxODQyYzI5ZGIzNjQwZjQxYjM3NGY3ZjZhYmY0YjZhMTY1In19fQ==
+  tags:
+  - Quartz
   cost: -1.0
 Head-8:
-  id: 23
-  category: Monsters
-  name: Sun Creature
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTg1MWQ5ZGRhOGJlMzgzZDc3NDFkOTk2MmZjNzM0NDE5ZWE3YTJiM2IyOGI1ODU4NTQxM2JjNmJhOTQ3YmEifX19
+  id: 46
+  category: Alphabet
+  name: Quartz K
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjMzMWNjOTEzZjE5MWFlOWJkYTRjZTk4ZDA1OTI5YTZmY2M0MTYyMmVhYThhN2VkNTJjNmM3MjQ5MTliMzEifX19
+  tags:
+  - Quartz
   cost: -1.0
 Head-9:
-  id: 25
-  category: Monsters
-  name: Sea Monster Cthulhu
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTM1NTQxNTIzZjE0Yzc4ZDhkZTk4Y2MyOTZjNzk4ZjBiODY3YmE4NTM0NGVkNzdmNmRhZTEyNDU1YTE3NCJ9fX0=
+  id: 49
+  category: Alphabet
+  name: Quartz M
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ4ZWIyMThhNTljNjc2YmE0ZmY2NGVmM2NhZDM1ZmJjNTViODk4ZGQ2MzEyN2Y2NDc5ZTk1ZDk5NjE3ZiJ9fX0=
+  tags:
+  - Quartz
   cost: -1.0
 Head-10:
-  id: 26
-  category: Monsters
-  name: Golem
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGE3Y2Y0NDg1MDJjNWNiOGQ0YTlmODg3MTY0ODRkZmFmM2M3NGQyNjYyOGI3OTBlYjdlMjY4ZGU3ODZjMyJ9fX0=
+  id: 1
+  category: Alphabet
+  name: Quartz N
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzg1YjhjOGFlNWVhZTE4ZmE1ZmNhZTg4ZDViY2EzNTFjOTMxNDQzODRmOWM0YTIyZjc1Y2Q2NDJkNTc5NiJ9fX0=
+  tags:
+  - Quartz
   cost: -1.0
 Head-11:
-  id: 27
-  category: Monsters
-  name: Water Golem
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMDQxNjQ2YzAzZjhiNGNkYmJmODFmNzE2NGRkNjNhMjljOTYzYTZjNmNlYmZlMWNhZjE5YTJlZTkyYyJ9fX0=
+  id: 14
+  category: Alphabet
+  name: Quartz R
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWFmZGIxYjFjMzNkNzE5OTQzNmUxZWJmNjdjZDQzMDZkYzc2NDk1ZWIxOTJlYjkzZDkwMThhN2FmM2M3OSJ9fX0=
+  tags:
+  - Quartz
   cost: -1.0
 Head-12:
-  id: 28
-  category: Monsters
-  name: Lava Monster
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmYxMTExNThhNDgxZmE2Y2FkNmUyY2UyOThmYTNiNWZkYjQ0OGMwNThiMDljZDU3YzI4YWIxZWE5YmQ4ODcifX19
+  id: 32
+  category: Alphabet
+  name: Quartz S
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2JlMzk4YmQzNDM4ZjM0NTRhZDY2Y2Q4ZDYxMDY2MjNhZjYzNDI2YTZjODkyYjM3MmJkYWNhNzE4Zjc1In19fQ==
+  tags:
+  - Quartz
   cost: -1.0
 Head-13:
-  id: 29
-  category: Monsters
-  name: Beheaded Spider
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWQ3YmVlNDJmZGE1ZmUyYjhhZTI2ZmNmNDE0MGNhNTRkNWQzMzRiMmFlMWZlZDlmMWMwOGJhZWI2M2E3ZiJ9fX0=
+  id: 33
+  category: Alphabet
+  name: Quartz T
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjNmYzRkMTc2M2IyODM0YTg5YTY0ZWJkYjJjMDgxMzc1NTk0OGJmMGFhNWQyOGYwZjI3NzhkNjI5YTU5N2IifX19
+  tags:
+  - Quartz
   cost: -1.0
 Head-14:
-  id: 30
-  category: Monsters
-  name: Sea-Creeper
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTI1NzViYzk0NzY0OGI3ZmU2OGYxYjYyM2ZlYjdmNzcyODZmOTZhMTc5ODk1ZDcyZDI3MThmOTRiODljNjMifX19
+  id: 8
+  category: Alphabet
+  name: Quartz X
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjk2Mzc2ZjhkNWJiYjE2NzMxZTM2MmY2ZTk1MjczOGFjYzUwNzMyNDllZjBjNDExNGY2OWQ3MzYxZTQzNjY2OSJ9fX0=
+  tags:
+  - Quartz
   cost: -1.0
 Head-15:
-  id: 31
-  category: Monsters
-  name: Zombie Decapitate
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjY3YjI3ZmI3ZTI5ZWM5OGUxY2Q0YThmODQ2Njg1NmQ5ZWYzZjJlOWZiZDlhZWQ2MzExZjhhYmU1NGI2YWIyIn19fQ==
+  id: 17
+  category: Alphabet
+  name: Question Mark
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2YzY2E0ZjdjOTJkZGUzYTc3ZWM1MTBhNzRiYThjMmU4ZDBlYzdiODBmMGUzNDhjYzZkZGRkNmI0NThiZCJ9fX0=
+  tags:
+  - Punctuation Mark
   cost: -1.0
 Head-16:
-  id: 32
-  category: Monsters
-  name: Ogre
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2IzOWI1YWFkNWVjZmY5NDY3M2NjYTRmOTFmZTc0ZWQyYTQyODhjZjY3M2E3NzAxMGY3NTcwZjFhNTc1MjAifX19
+  id: 18
+  category: Alphabet
+  name: Question Mark
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTM1OWQ5MTI3NzI0MmZjMDFjMzA5YWNjYjg3YjUzM2YxOTI5YmUxNzZlY2JhMmNkZTYzYmY2MzVlMDVlNjk5YiJ9fX0=
+  tags:
+  - Punctuation Mark
   cost: -1.0
 Head-17:
-  id: 33
-  category: Monsters
-  name: Orc
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTI3YWY5NDFjOGIzM2U2MzNhYTdlY2Y3Y2ZjMjVlOWZhZmI2Zjg2YzUxYTE3MWM1ZTg1NWE5ZWZjMmFkNzBkYyJ9fX0=
+  id: 43
+  category: Alphabet
+  name: Question Mark
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWNjNThjYjU1YjFhMTFlNmQ4OGMyZDRkMWE2MzY2YzIzODg3ZGVlMjYzMDRiZGE0MTJjNGE1MTgyNWYxOTkifX19
+  tags:
+  - Punctuation Mark
   cost: -1.0
 Head-18:
-  id: 34
-  category: Monsters
-  name: Dinosaur
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjJlZWU4MTZmYTcxMjdhYzlkMjY3OTVmNWIyMmQ4N2IxMmUyNDE2ZWUwMTFhNTg1ODU3ZjEwOTA1YjMxIn19fQ==
+  id: 6
+  category: Alphabet
+  name: Rune
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTQ3ZjhmYmE4ZWVmMTRhMmI5YmQyNmRlNjFiNGVhNWI4N2Y4Njg0NjRlODRiOTgyYzY5MmNmNzBhMGZiMSJ9fX0=
+  tags:
+  - Rune
+  - Stone
   cost: -1.0
 Head-19:
-  id: 35
-  category: Monsters
-  name: Golem
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTk3ZjI4NmRmZTg3YzkyY2VhMjkyODgxNTcxZTgyNjEyNTg2NDM4Y2FiNWMwZjg0N2ZmZTBjOTFhYjlkYmUxIn19fQ==
+  id: 10
+  category: Alphabet
+  name: Rune
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTI0NGMwYzdlYTljNzI0Mzc2ZmE2Y2Y1YWVjMTVlOGYxZDJiNjAxZGVhOWJiYjVkYjZlOTFhODUwOTIxYjJjIn19fQ==
+  tags:
+  - Rune
+  - Stone
   cost: -1.0
 Head-20:
-  id: 36
-  category: Monsters
-  name: Dinosaur
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzcxYjk2ZTczOTEwMzVmOWJlNzlhZTY3ZDllOTRhMTE2ZDIyZDAxZTRjNTFkOWY3ODFjODQ5YWRkZTQ2NjIwIn19fQ==
+  id: 41
+  category: Alphabet
+  name: Rune
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGFmOTc1MWIzMDZlNzlhMzliYmI1OTRmOWU0MDQ4YzE0NTdiODhjMjJlZWY1MWYwZTk0ZTMzNmRlYTM5ZDFhYSJ9fX0=
+  tags:
+  - Rune
+  - Stone
   cost: -1.0
 Head-21:
-  id: 37
-  category: Monsters
-  name: Dragon
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjE3M2Q4ZGE2Y2U4OGNlODYxYzU5Nzg0YzgxZGU0NmUxZWFiOTFmYzA1NDg5MWVlOGVkZTIxZDNkODdkMyJ9fX0=
+  id: 20
+  category: Alphabet
+  name: Rune (Ber)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzQ3ZWIzOTAyOWZiMTJhMmNhYjE3NWNmNTUyNTQ1NDVjYTQ0MDczZjIzZGYxODZlYjk4NTg3OGQ0YTNkNGIifX19
+  tags:
+  - Rune
   cost: -1.0
 Head-22:
-  id: 38
-  category: Monsters
-  name: Orc
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzY2OWZiNjFmNDQ4OTFhYmFmNGY3OTgzN2Y4YjY2YzBhZmIwNzY2NzQ2NTRjMmRmZmFhNjdhMWEyMWU5M2YifX19
+  id: 42
+  category: Alphabet
+  name: Rune (Cham)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTNlMTVkZjI3ODAzN2E4MDMxYTUyYTg2ZmVlOWQ4ODcwMjQ5YWU1NjQxMjhkOThhMzYzNzY0YjYxNjRhIn19fQ==
+  tags:
+  - Rune
   cost: -1.0
 Head-23:
-  id: 39
-  category: Monsters
-  name: Dinosaur
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTJmY2YwODE0MTk1YTQzNWIxYTdiYzhlMDU1NDFiYmI0ZWFmMThkZWJlZGEyNTVlYmRiMzhjMjM0OGNiMWUzIn19fQ==
+  id: 19
+  category: Alphabet
+  name: Rune (El)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWQ1MDJmODM0OTEzNjIxZGJlNTI0YmY0MGNlYzMxMTE3YzExMjdmNzJjMTU3YjQ5MTVkNDZkZGE5YTNmIn19fQ==
+  tags:
+  - Rune
   cost: -1.0
 Head-24:
-  id: 40
-  category: Monsters
-  name: Fire Demon
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDVjNGViNGQxMGQ4NzdjYmJmMjFmYTRkNjc3Mzg1YjI0ZGQ1MWQwYjgxYzEwNmJmODY3M2YxOTk5ZWE5In19fQ==
+  id: 37
+  category: Alphabet
+  name: Rune (Eth)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzMxYTM0M2Y1NTc4ODRjMjdmMWI2OTZhM2JmNDZjMWExMzQ2NjJkMWI0YTMzNmE3NTIzMTgyYTg3MDliNDkifX19
+  tags:
+  - Rune
   cost: -1.0
 Head-25:
-  id: 41
-  category: Monsters
-  name: Golem
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2U0MzU5ZGNhMjU0MjcyOTc1MzY2MWI0NGI3OWJjZDI1Nzc1ZDg0MzJjNzI3NDU1NDdjZjRjNWFmNThlM2EifX19
+  id: 48
+  category: Alphabet
+  name: Rune (Gul)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmE0ZGZlNGYzYTU0MDQwM2RkNzQxODM5ZjU2YzY2OTNkMDQ4MTY1NWI5YTE0MjJkNTkyM2JkYjVmNjE5YiJ9fX0=
+  tags:
+  - Rune
   cost: -1.0
 Head-26:
-  id: 42
-  category: Monsters
-  name: Shulker
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTQzM2E0YjczMjczYTY0YzhhYjI4MzBiMGZmZjc3N2E2MWE0ODhjOTJmNjBmODNiZmIzZTQyMWY0MjhhNDQifX19
+  id: 3
+  category: Alphabet
+  name: Rune (Jah)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWIzZjNhMzg2ZDM1OTRkYjIwN2NiODc3ZWZlMTA4ZDk4N2JjZTlhZTczMGVlYTAxMTU1ZWZkMmZmYjlmM2UifX19
+  tags:
+  - Rune
   cost: -1.0
 Head-27:
-  id: 43
-  category: Monsters
-  name: Chinese Dragon
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTUzZmM0Mzg0OTc5MmMyNGI1M2M3ZGU3NzJlYzVjYjQ2MjZiODZhMTQ2Yzc5MTc4NjhkZTVmZmExNTgyMWEifX19
+  id: 45
+  category: Alphabet
+  name: Rune (Ko)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzI1NjgzZmE0NjA1YjM4ZTBlZDFlNGI1N2ZkOGJjYjY1OTFkNDYwNmZhNGRiNTFiNzA5NDUyNDIyZTlmMWEifX19
+  tags:
+  - Rune
   cost: -1.0
 Head-28:
-  id: 44
-  category: Monsters
-  name: Minotaur
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTI0NThmYWQzMmIxZjM0MjY0NTg5MjY3MTFjODJiNjYxYTAxYjIwZDE2MzNjMmE4ZDQyZmMzNzNkMTQ5ZGRjIn19fQ==
+  id: 11
+  category: Alphabet
+  name: Rune (Sol)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTBlMzU2NzY0MTQwNDI2NDgzNjJkZjY4M2Y4YTk4NGMzNDRiYWYyNGE5NWRiZTg4Y2IzM2U4OTI3YTZmNDQifX19
+  tags:
+  - Rune
   cost: -1.0
 Head-29:
-  id: 45
-  category: Monsters
-  name: Mummy
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2U1ZWMzNjFlOTMwOTViMzRkZGRkZWRhY2I2ZmNlNjA4NDNkNzUzZDlkYmUzOTYzNjViNGUyNTRlM2Y5MyJ9fX0=
+  id: 38
+  category: Alphabet
+  name: Rune (Sur)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmIxNzg2NjkyNzU5NDZmZmEwYTc4MDc0ZGQ3NDY4MzQ3MTQxZDBhMjg1NGMzOTliYTc5ZTU0OGFmYjQ2YyJ9fX0=
+  tags:
+  - Rune
   cost: -1.0
 Head-30:
-  id: 46
-  category: Monsters
-  name: Werewolf
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDI3OThjZDA4ZDJiODhlMDlhNGJkNjhlY2E2MzNkN2YzYzMzZGE0NDJiM2M4NzI1MWNkZTlmN2Q4NzM1NiJ9fX0=
+  id: 34
+  category: Alphabet
+  name: Rune (Tal)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWRkYzk5Yjg2OTVjMjkwNmE0Mzc0YTg2OGFhMWU1OGYwZjcxMTdlMWE4YTlmZWEyNzNhOTFhODk1ZDY2YTQifX19
+  tags:
+  - Rune
   cost: -1.0
 Head-31:
-  id: 47
-  category: Monsters
-  name: Swamp Monster
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2Q0NjhjYmVmNjg2Y2ZiOTZiOWQ4OGYxM2IyNTQyNDRlZDFhMzI1OWNkM2JjNWZmZWE4NDBjZjlhNmQ2ODliIn19fQ==
+  id: 23
+  category: Alphabet
+  name: Rune (Thul)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjRhMDZiYWNkYmM5YWI4ZDljYzgzZGQ4MzYyMjM3YjRkMzk3MTUxNDI5N2JhNjQ1ZWVmODIyOGE3NjE0MzEifX19
+  tags:
+  - Rune
   cost: -1.0
 Head-32:
-  id: 48
-  category: Monsters
-  name: Guardian
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzI1YWY5NjZhMzI2ZjlkOTg0NjZhN2JmODU4MmNhNGRhNjQ1M2RlMjcxYjNiYzllNTlmNTdhOTliNjM1MTFjNiJ9fX0=
+  id: 28
+  category: Alphabet
+  name: Rune (Tir)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjI5NWFmZTNhOGM4ZGUzYjUxODAxMThkOTQ0ZjFiYTI3ZTIyZjg4YmE0NTY0YWYzMzk0OTg2NTljMWRiYWYifX19
+  tags:
+  - Rune
   cost: -1.0
 Head-33:
-  id: 49
-  category: Monsters
-  name: Evil Eye
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjE0MmEzNWFjMGIwNTVlZDUwYTVjYmY4NzBiNmVmMWNjMWY5NGUyNjQyYjliYTY1MGM5ZTAzODVlNmNiZTM2In19fQ==
+  id: 16
+  category: Alphabet
+  name: Wooden A (Cyrillic)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzI1ZDUxYjg5ODI2ZTk4ZGU1ZTc4NzQ3ZjAwZThkZTZhYTgyNWQ0ZDhiNjkyMDQ4MjUyZjRkM2Y0NTE4In19fQ==
+  tags:
+  - Cyrillic
+  - Wood
   cost: -1.0
 Head-34:
-  id: 50
-  category: Monsters
-  name: Dinosaur
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWUzMTQzYTA4MDZhY2NkZjc0YjFjNGU1MjM1Y2UzNzMxOWU4ODQzZDNiMmQ4MTcwZDBmMjk3OGY1NDI1Y2VhNCJ9fX0=
+  id: 36
+  category: Alphabet
+  name: Wooden Backward
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWY3YjdhNjk0OWVlNjk0NmVhNjFiZDY5OTg3YjhhYTM5YTUwYTFkYzVjY2FjZTg1YmVlYzU4NmUzMmM1NWVjMyJ9fX0=
+  tags:
+  - Wood
+  - Actions
   cost: -1.0
 Head-35:
-  id: 1
-  category: Misc
-  name: Water Cube
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODEzZmYwZmJjODE3MWEzMDYyYjZiZDVjYWNmN2FhMmVmZGZlOGRlMzk5NDYyYjJlMDMwYzlkYzljNjAifX19
+  id: 40
+  category: Alphabet
+  name: Wooden Backward II
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzAzMGZmODM1OWY1YjA5OTRkZWQ4MWE1ZjU5MDg2NTVkZTkxOTc2Y2QzZTRkNjFiMTRiNWI1NzI1ZjExYzcifX19
+  tags:
+  - Wood
+  - Actions
   cost: -1.0
 Head-36:
-  id: 2
-  category: Misc
-  name: Youtube
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDJmNmMwN2EzMjZkZWY5ODRlNzJmNzcyZWQ2NDU0NDlmNWVjOTZjNmNhMjU2NDk5YjVkMmI4NGE4ZGNlIn19fQ==
+  id: 25
+  category: Alphabet
+  name: Wooden Be (Cyrillic)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2VkOTg2MWZmMDFhN2MzZDc1YzcwNTdjZTM1Y2Y4NWU5MTJiM2M2OWI1N2FjM2RmYzJmMjk1ZDNjY2NjNTcifX19
+  tags:
+  - Cyrillic
+  - Wood
   cost: -1.0
 Head-37:
-  id: 3
-  category: Misc
-  name: Fancy Cube
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGQyZjc4ZDAxNTE5OTc3NjhlZDBjNTM0Yjc2YzI0YjMyOGViZTg0NDg2YjQzYzA4M2JiYzUyODM0MGUyIn19fQ==
+  id: 26
+  category: Alphabet
+  name: Wooden Che (Cyrillic)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjAyOGNmNDE0NDZhNmUzYWY2NzllN2E5OGQ4YmI3MTM0ZjkzMjQ1N2QwOWI1NWJkMTE3Y2Y0ZWVjYjkzMTgifX19
+  tags:
+  - Cyrillic
+  - Wood
   cost: -1.0
 Head-38:
-  id: 4
-  category: Misc
-  name: Belgium
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDhmNDZhNjFmNDJhMzM1NzdmZjczOWU2Yzc0OGUyNWJlMjBkOTFmODhmYjVmZTY5YWUzYjM2MDlmNTc1NTcifX19
+  id: 50
+  category: Alphabet
+  name: Wooden Ef (Cyrillic)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGNkNTY5M2MzZjg3Yjc3M2M2ZDI0ODhhNGE5ZTFhZDhkZWVhNTlmN2IwOGY4ZjViZmUyY2ZiZDNjMjc3YjgifX19
+  tags:
+  - Cyrillic
+  - Wood
   cost: -1.0
 Head-39:
-  id: 5
-  category: Misc
-  name: Purple Fancy Cube
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMGUyYzQ4MWEzOTdiN2E4OWI2YjQ1ZmQwZTEzMDE3NjhhZTE0OTdhY2YxYTljNzJjNzI0MjRhZDk0N2YzYSJ9fX0=
+  id: 4
+  category: Alphabet
+  name: Wooden Em (Cyrillic)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTYzOTI1MDkxNjhmYTcxYjVjYWI4MWJhODIyN2I1YjBjNjIxMTE5OGQ4NGNmNGFhMmQ5MWU0OTUzZjU4NCJ9fX0=
+  tags:
+  - Cyrillic
+  - Wood
   cost: -1.0
 Head-40:
-  id: 6
-  category: Misc
-  name: Rainbow
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDY5ZmZmNTRmMGNmYTZjYjdkYTkxZDc4YmJiOGVhNTY3NzYzYzNmOTM3ZDc2MDE3NTgzYTJhNmVlZWU4ZmUxIn19fQ==
+  id: 39
+  category: Alphabet
+  name: Wooden Er (Cyrillic)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjVlMzRhZGZkZWY0NzUyOGRjZmRjMjFiOTFhYmMzZTM5N2JiMTdjZjM2MTEzNDlmZjZmOWRmNGMwOTk1ZmEwIn19fQ==
+  tags:
+  - Cyrillic
+  - Wood
   cost: -1.0
 Head-41:
   id: 7
-  category: Misc
-  name: Fancy Cube
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTE1NjNmMzQ4NjZiOTI4YzFhYzVlMWFlNGIwZThhYTg4OTliNTY5ODRiOTE3OGZjNGE0MjE4YzU4Yzk5YyJ9fX0=
+  category: Alphabet
+  name: Wooden Forward
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjIxYmIxNTNhYTgyN2FiYjM3ODgyYzFmOThmOWVlN2RiYmE4Zjc1YWIxOWMzM2RlZjE2NDZmOWY1OGVmYmY2MyJ9fX0=
+  tags:
+  - Wood
+  - Actions
   cost: -1.0
 Head-42:
-  id: 8
-  category: Misc
-  name: Burning Cube
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzMzMDUyZTZiN2E4NzkyM2JkYjg4Zjk0MTg1ZTg0YjU2MmRjNWI4NTRiN2JiMDFjYzAxN2YyMmM1YThhNCJ9fX0=
+  id: 27
+  category: Alphabet
+  name: Wooden I Kratkoya (Cyrillic)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmI0OTQ2YjI2NzdkM2RiZTMxZjM0NjY4MThiOTM2OTc1OGUxMjhjMjVlYzhlYjc2YjVhNWRlY2U4NWNkY2YifX19
+  tags:
+  - Cyrillic
+  - Wood
   cost: -1.0
 Head-43:
-  id: 11
-  category: Misc
-  name: Burning Cube
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmViY2I4NjFlZTRlYzFjYjg3ZDU1NzUxOWU1MTM3NzYyZjcyNzYzZmM5ZmYzYjM3NTEyNjFjZTNkZmMyMmM1ZSJ9fX0=
+  id: 9
+  category: Alphabet
+  name: Wooden Ka (Cyrillic)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWE1YjVkNmUxOWNlY2Q2MzQ1OTYyMzUwNWM0MWJhNDAxMmJhM2QxNmRhMmVlYmFkZjg5OGM1NmM0ODlmMGEzIn19fQ==
+  tags:
+  - Cyrillic
+  - Wood
   cost: -1.0
 Head-44:
-  id: 13
-  category: Misc
-  name: Romania
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2M1YjFiZDkzMzQwMTVmNzRkMmQ4OGZkMjM3MTJmMWViMzgzN2E5ZThmZTRlMGI2MDIwNDRjMzc5ZWUyIn19fQ==
+  id: 30
+  category: Alphabet
+  name: Wooden Kha (Cyrillic)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWE1ZmU4ODM3MWUxZGMyMmU2NmIzNDVmMmMzZGM0ZmJlMjg4ODIxZmQxMTJkNWM2NTM5YmQ5YTQ0NjZiOTQifX19
+  tags:
+  - Cyrillic
+  - Wood
   cost: -1.0
 Head-45:
-  id: 14
-  category: Misc
-  name: Rainbow Cube
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2ZmYzk3N2NjN2UxMGU1NjRhMDk2MzhhNTNiYmM0YzU0YzljOGRhYzc0NTBiYTNkZmEzYzkwOTlkOTRmNSJ9fX0=
+  id: 12
+  category: Alphabet
+  name: Wooden Te (Cyrillic)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGQxOGI5MjNkMTMyMzlmNjM3ODg1MTRhYjBhMGE3MWE0MmU1MTIzMDM0MmY5NjRmODM1ODE5NmU2ZDc4N2MxZSJ9fX0=
+  tags:
+  - Cyrillic
+  - Wood
   cost: -1.0
 Head-46:
-  id: 17
-  category: Misc
-  name: Rainbow
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzA3Y2U0MzczNGNiZWZiYjNkYTAzZjlhYzFmMDFhM2RmNDU2Y2VlMjMxNTUwYmQyZGQ0MjU4NTU5NGY5In19fQ==
+  id: 2
+  category: Alphabet
+  name: Wooden Tvyordiy Znak (Cyrillic)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWY3MjYxMWYyMmFhNGRhY2RiNTdjM2ZlZmQzZTc4NTk1ODFjZmU1MWFmNTFhY2U2OGIyODRiNzg2M2Q5ZjEifX19
+  tags:
+  - Cyrillic
+  - Wood
   cost: -1.0
 Head-47:
-  id: 18
-  category: Misc
-  name: Google Chrome
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTY5MzZkNGYwZDFiOTNmZWY3NzViMWZiZDE5MjgxYjcwYzZmODg0NzViYjVhNDFiZjM3MmMxMmYxZjhhMjIifX19
+  id: 15
+  category: Alphabet
+  name: Wooden U (Cyrillic)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjdhYzNmOTc0ZjMzZDA3OGIyYWJkYWJkMTRmMDRlNmZmZWQyOTFiMWM4ZjcxYzBiZDczZTY0YTVmMjQ5ZSJ9fX0=
+  tags:
+  - Cyrillic
+  - Wood
   cost: -1.0
 Head-48:
-  id: 19
-  category: Misc
-  name: Fancy Cube
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTA0MWY2YjJiNmExYzNkMzc1ZDNjZTllNGMxNjg2MmE5NDI2OWUyYjIxODIyNGE0NmJiZTZjMjRlNiJ9fX0=
+  id: 44
+  category: Alphabet
+  name: Wooden Ya (Cyrillic)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzI1NGM0NTgxOWQ2Nzg3NGFmMmMxNjRlOGEwNDA2NjhkMTkzY2NmMTNjNGVkZTFlMGNmMTM1ZDk5Y2MzIn19fQ==
+  tags:
+  - Cyrillic
+  - Wood
   cost: -1.0
 Head-49:
-  id: 21
-  category: Misc
-  name: Fancy Cube
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDNkYTY2MmUyZGZlNGU0ZDE5Mzg2OGU0ZjkyMGY3Y2E1ZjNkMGMzYjJjYTk1YmFkNDU1Yjk2NWYyZjNkYSJ9fX0=
+  id: 5
+  category: Alphabet
+  name: Wooden Yo (Cyrillic)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTFlZGQxNDZlOGM2YjQ0NGY0ODIxYTM5MDFiNzE2OWExYjE2NTQ0OWZiZDVlYTkwYjQ0NjM3YzQxZGM1ZGEifX19
+  tags:
+  - Cyrillic
+  - Wood
   cost: -1.0
 Head-50:
-  id: 24
-  category: Misc
-  name: Heart Block
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGIyNTA1MjcwOWYyYjVlNTFmODcyYzYwNTdjMjc2NmNjNTMyMDZjMTIzNGI3MWVjYTMzOWIzM2Y1YSJ9fX0=
+  id: 31
+  category: Alphabet
+  name: Wooden Zhe (Cyrillic)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTY5ZmViOWMyYWUxY2RhZTljNjgxNTc0NTE3MTE2M2ZiZDZkNWNlZGZmZmI5MzQ2MmQwZjM1M2M0OTkyMTgifX19
+  tags:
+  - Cyrillic
+  - Wood
   cost: -1.0

@@ -235,3 +235,55 @@ cost-confirm:
       type: 159
       data: 14
       name: '&aDont set cost of %name%'
+category-cost-categories:
+   title: 'Categories'
+   head:
+      type: 397
+      data: 3
+      name: '&7Set cost of &6%category%'
+      lore:
+      - '&e%heads% heads'
+category-cost-confirm:
+   title: 'Set cost for Category'
+   head:
+      type: 397
+      data: 3
+      name: '&aSet cost of %category%'
+      lore:
+      - '&7to &6%newcost%'
+   accept:
+      type: 159
+      data: 5
+      name: '&aSet cost of %category%'
+      lore:
+      - '&7to &6%newcost%'
+   deny:
+      type: 159
+      data: 14
+      name: '&aDont set cost of %category%'
+category-cost-remove-categories:
+   title: 'Categories'
+   head:
+      type: 397
+      data: 3
+      name: '&7Reset cost of &6%category%'
+      lore:
+      - '&e%heads% heads'
+category-cost-remove-confirm:
+   title: 'Set cost for Category'
+   head:
+      type: 397
+      data: 3
+      name: '&aReset cost of %category%'
+      lore:
+      - '&7to &6%newcost%'
+   accept:
+      type: 159
+      data: 5
+      name: '&aReset cost of %category%'
+      lore:
+      - '&7to &6%newcost%'
+   deny:
+      type: 159
+      data: 14
+      name: '&aDont reset cost of %category%'

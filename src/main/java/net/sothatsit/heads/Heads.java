@@ -5,11 +5,11 @@ import net.sothatsit.heads.command.RuntimeCommand;
 import net.sothatsit.heads.config.FileConfigFile;
 import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.cache.CacheConfig;
-import net.sothatsit.heads.config.cache.CachedHead;
 import net.sothatsit.heads.config.lang.LangConfig;
 import net.sothatsit.heads.config.menu.MenuConfig;
-import net.sothatsit.heads.economy.Economy;
-import net.sothatsit.heads.menu.ClickInventory;
+import net.sothatsit.heads.menu.ui.InventoryMenu;
+import net.sothatsit.heads.oldmenu.ClickInventory;
+import net.sothatsit.heads.util.Clock;
 import net.sothatsit.heads.volatilecode.TextureGetter;
 import net.sothatsit.heads.volatilecode.injection.ProtocolHackFixer;
 import net.sothatsit.heads.volatilecode.reflection.craftbukkit.CommandMap;
@@ -18,25 +18,24 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.SimpleCommandMap;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryType;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.scheduler.BukkitRunnable;
 
 import java.io.File;
-import java.util.*;
-import java.util.Map.Entry;
+import java.util.Arrays;
+import java.util.Map;
 
 public class Heads extends JavaPlugin implements Listener {
-    
+
     private static Heads instance;
     private CacheConfig cacheConfig;
     private MenuConfig menuConfig;
@@ -44,79 +43,74 @@ public class Heads extends JavaPlugin implements Listener {
     private LangConfig langConfig;
     private TextureGetter textureGetter;
     private boolean commandsRegistered = false;
-    private boolean enabled = false;
     
     @Override
     public void onEnable() {
         instance = this;
 
-        long start = System.currentTimeMillis();
+        Clock timer = Clock.start();
 
         this.cacheConfig = new CacheConfig(true, new FileConfigFile(new File(getDataFolder(), "cache.yml")));
-        this.cacheConfig.checkAddons();
-        
+        this.cacheConfig.installAddons();
+        this.cacheConfig.saveIfRequired();
+
         this.menuConfig = new MenuConfig(new FileConfigFile(new File(getDataFolder(), "menus.yml")));
         this.langConfig = new LangConfig(new FileConfigFile(new File(getDataFolder(), "lang.yml")));
         this.mainConfig = new MainConfig(new FileConfigFile(new File(getDataFolder(), "config.yml")));
         this.textureGetter = new TextureGetter();
-        
-        Bukkit.getPluginManager().registerEvents(this, this);
-        
+
         ProtocolHackFixer.fix();
-        
-        if (Economy.hookEconomy()) {
-            info("Hooked Vault Economy");
-        } else {
-            info("Unable to Hook Vault Economy");
-            
-            if (mainConfig.isEconomyEnabled()) {
-                severe("Vault Economy not hooked, but economy enabled in config");
-                severe("Users will not be able to obtain heads");
-            }
-        }
-        
-        new BukkitRunnable() {
-            @Override
-            public void run() {
-                menuConfig.checkReload();
-                mainConfig.checkReload();
-                langConfig.checkReload();
-            }
-        }.runTaskTimer(this, 20, 20);
-        
-        enabled = true;
-        
+
         registerCommands();
-        
+        hookPlugins();
+
+        Bukkit.getPluginManager().registerEvents(this, this);
+
+        info("Heads Plugin Enabled with " + cacheConfig.getTotalHeads() + " heads " + timer);
+    }
+
+    @Override
+    public void onDisable() {
+        instance = null;
+
+        unregisterCommands();
+    }
+
+    private void hookPlugins() {
+        boolean ecoHooked = false;
+
+        try {
+            if (EconomyHook.hookEconomy()) {
+                info("Hooked Vault Economy");
+                ecoHooked = true;
+            }
+        } catch(Exception exception) {
+            warning("There was an error hooking Vault Economy");
+            exception.printStackTrace();
+        }
+
+        if (!ecoHooked && mainConfig.isEconomyEnabled()) {
+            severe("Unable to hook Vault Economy and economy is enabled in config");
+            severe("Users will not be able to purchase heads");
+        }
+
         if (Bukkit.getPluginManager().getPlugin("BlockStore") != null) {
-            info("Attemping to hook BlockStore");
-            long start2 = System.currentTimeMillis();
-            
             try {
-                new net.sothatsit.heads.blockstore.BlockStoreHook();
+                new BlockStoreHook();
             } catch (Exception e) {
                 e.printStackTrace();
-                severe("Error hooking BlockStore, please report this error to the author");
+                severe("Error hooking BlockStore, please report this error to the author.");
             }
-            
-            info("Hooked BlockStore " + getTime(start2));
+
+            info("Hooked BlockStore");
         }
-        
-        info("Heads Plugin Enabled " + getTime(start));
     }
     
-    public void registerCommands() {
-        if (!enabled) {
-            return;
-        }
-        
+    private void registerCommands() {
         if (commandsRegistered) {
             unregisterCommands();
         }
-        
-        info("Registering Commands...");
-        long start = System.currentTimeMillis();
-        
+
         SimpleCommandMap commandMap = CraftServer.get().getCommandMap();
         
         RuntimeCommand heads = new RuntimeCommand(mainConfig.getHeadCommand());
@@ -127,55 +121,61 @@ public class Heads extends JavaPlugin implements Listener {
         commandMap.register("heads", heads);
         
         commandsRegistered = true;
-        
-        info("Registered Commands " + getTime(start));
     }
     
-    public void unregisterCommands() {
-        info("Unregistering Commands...");
-        long start = System.currentTimeMillis();
-        
+    private void unregisterCommands() {
         SimpleCommandMap commandMap = CraftServer.get().getCommandMap();
         Map<String, Command> map = CommandMap.getCommandMap(commandMap);
-        
-        List<String> remove = new ArrayList<>();
-        
-        for (Entry<String, Command> entry : map.entrySet()) {
-            if (entry.getValue() instanceof RuntimeCommand) {
-                remove.add(entry.getKey());
-            }
-        }
-        
-        for (String key : remove) {
-            map.remove(key);
-        }
+
+        map.values().removeIf(command -> command instanceof RuntimeCommand);
         
         commandsRegistered = false;
-        
-        info("Unregistered Commands " + getTime(start));
     }
-    
-    public String getTime(long start) {
-        return "(" + (System.currentTimeMillis() - start) + " ms)";
+
+    public void reloadConfigs() {
+        cacheConfig.reload();
+        langConfig.reload();
+        mainConfig.reload();
+
+        registerCommands();
     }
-    
-    @Override
-    public void onDisable() {
-        instance = null;
-    }
-    
+
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onInventoryClick(InventoryClickEvent e) {
+        Inventory inventory = e.getInventory();
         ItemStack item = e.getCurrentItem();
-        if(isHatMode() && e.getClickedInventory() instanceof PlayerInventory && e.getSlotType() == InventoryType.SlotType.ARMOR && item != null && item.getType() == Material.SKULL_ITEM && ((SkullMeta) item.getItemMeta()).getOwner().equals("SpigotHeadPlugin")) {
+
+        if(e.getSlotType() == InventoryType.SlotType.ARMOR && isHatMode() && isHeadsItem(item)) {
             e.setCancelled(true);
 
             if(e.getWhoClicked() instanceof Player) {
-                Bukkit.getScheduler().scheduleSyncDelayedTask(this, () -> ((Player) e.getWhoClicked()).updateInventory(), 1);
+                Player player = (Player) e.getWhoClicked();
+
+                Bukkit.getScheduler().scheduleSyncDelayedTask(this, player::updateInventory, 1);
             }
-        } else if (e.getInventory() != null && e.getInventory().getHolder() instanceof ClickInventory) {
-            ((ClickInventory) e.getInventory().getHolder()).onClick(e);
+
+            return;
         }
+
+        if(inventory == null)
+            return;
+
+        InventoryHolder holder = inventory.getHolder();
+
+        if (holder instanceof ClickInventory) {
+            ((ClickInventory) holder).onClick(e);
+        } else if (holder instanceof InventoryMenu) {
+            ((InventoryMenu) holder).onClick(e);
+        }
+    }
+
+    public static boolean isHeadsItem(ItemStack item) {
+        if(item == null || item.getType() != Material.SKULL_ITEM)
+            return false;
+
+        SkullMeta meta = (SkullMeta) item.getItemMeta();
+
+        return meta.hasOwner() && meta.getOwner().equals("SpigotHeadPlugin");
     }
 
     public static Heads getInstance() {
@@ -216,6 +216,18 @@ public class Heads extends JavaPlugin implements Listener {
     
     public static void severe(String severe) {
         instance.getLogger().severe(severe);
+    }
+
+    public static void sync(Runnable task) {
+        Bukkit.getScheduler().runTask(instance, task);
+    }
+
+    public static void sync(Runnable task, int delay) {
+        Bukkit.getScheduler().runTaskLater(instance, task, delay);
+    }
+
+    public static void async(Runnable task) {
+        Bukkit.getScheduler().runTaskAsynchronously(instance, task);
     }
     
 }

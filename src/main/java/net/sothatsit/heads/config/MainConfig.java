@@ -1,206 +1,282 @@
 package net.sothatsit.heads.config;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import net.sothatsit.heads.Heads;
 
+import net.sothatsit.heads.util.Clock;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 
-public class MainConfig extends AbstractConfig {
+public class MainConfig {
     
-    private ConfigFile configFile;
+    private final ConfigFile configFile;
+
     private double defaultHeadCost;
     private boolean economyEnabled;
     private boolean hatMode;
+    private boolean hideNoPermCategories;
+
+    private Map<String, Double> categoryCosts;
     
-    private String headCommand;
+    private String headLabel;
     private String[] headAliases;
     private String headDescription;
-    
-    private String addCommand;
-    private String handCommand;
-    private String getCommand;
-    private String giveCommand;
-    private String randomCommand;
-    private String removeCommand;
-    private String renameCommand;
-    private String costCommand;
-    private String idCommand;
-    private String searchCommand;
+
+    private String reloadLabel;
+    private String addLabel;
+    private String handLabel;
+    private String getLabel;
+    private String giveLabel;
+    private String randomLabel;
+    private String removeLabel;
+    private String renameLabel;
+    private String costLabel;
+    private String categoryCostLabel;
+    private String idLabel;
+    private String searchLabel;
     
     public MainConfig(ConfigFile configFile) {
         this.configFile = configFile;
         
         reload();
     }
-    
-    public ConfigFile getConfigFile() {
-        return configFile;
-    }
-    
+
     public void reload() {
-        Heads.info("Loading Main Config...");
-        long start = System.currentTimeMillis();
-        
+        Clock timer = Clock.start();
+
         configFile.saveDefaults();
         configFile.reload();
         
         FileConfiguration config = configFile.getConfig();
-        
-        boolean save = checkString(config, "commands.heads.sub-commands.add", "add", false);
-        save = checkString(config, "commands.heads.sub-commands.hand", "hand", save);
-        save = checkString(config, "commands.heads.sub-commands.get", "get", save);
-        save = checkString(config, "commands.heads.sub-commands.give", "give", save);
-        save = checkString(config, "commands.heads.sub-commands.random", "random", save);
-        save = checkString(config, "commands.heads.sub-commands.remove", "remove", save);
-        save = checkString(config, "commands.heads.sub-commands.rename", "rename", save);
-        save = checkString(config, "commands.heads.sub-commands.cost", "cost", save);
-        save = checkString(config, "commands.heads.sub-commands.id", "id", save);
-        save = checkString(config, "commands.heads.sub-commands.search", "search", save);
-        save = checkString(config, "commands.heads.label", "heads", save);
-        save = checkString(config, "commands.heads.description", "Get a cool head", save);
-        
-        addCommand = config.getString("commands.heads.sub-commands.add");
-        handCommand = config.getString("commands.heads.sub-commands.hand");
-        getCommand = config.getString("commands.heads.sub-commands.get");
-        giveCommand = config.getString("commands.heads.sub-commands.give");
-        randomCommand = config.getString("commands.heads.sub-commands.random");
-        removeCommand = config.getString("commands.heads.sub-commands.remove");
-        renameCommand = config.getString("commands.heads.sub-commands.rename");
-        costCommand = config.getString("commands.heads.sub-commands.cost");
-        idCommand = config.getString("commands.heads.sub-commands.id");
-        searchCommand = config.getString("commands.heads.sub-commands.search");
-        headCommand = config.getString("commands.heads.label");
-        headDescription = config.getString("commands.heads.description");
-        
-        if (!config.isSet("commands.heads.aliases") || !config.isList("commands.heads.aliases")) {
-            Heads.warning("\"commands.heads.aliases\" not set or invalid in config.yml, resetting to \"head\"");
-            config.set("commands.heads.aliases", Arrays.asList("head"));
-        }
-        
-        headAliases = config.getStringList("commands.heads.aliases").toArray(new String[0]);
-        
-        if (!config.isSet("economy.default-head-cost") || (!config.isInt("economy.default-head-cost") && !config.isDouble("economy.default-head-cost"))) {
-            Heads.warning("\"economy.default-head-cost\" not set or invalid in config.yml, defaulting to 0");
-            
-            config.set("economy.default-head-cost", 0);
+
+        AtomicBoolean shouldSave = new AtomicBoolean(false);
+
+        loadCommandInfo(config, shouldSave);
+        loadCategoryCosts(config, shouldSave);
+
+        economyEnabled       = loadBoolean(config, "economy.enabled", false, shouldSave);
+        hatMode              = loadBoolean(config, "hat-mode", false, shouldSave);
+        hideNoPermCategories = loadBoolean(config, "hide-no-perm-categories", true, shouldSave);
+        defaultHeadCost      = loadDouble(config, "economy.default-head-cost", 0, shouldSave);
+
+        if (defaultHeadCost < 0) {
+            Heads.info("\"economy.default-head-cost\" cannot be less than 0 in config.yml, defaulting to 0");
             defaultHeadCost = 0;
-            
-            save = true;
-        } else {
-            defaultHeadCost = config.getDouble("economy.default-head-cost");
-            
-            if (defaultHeadCost < 0) {
-                Heads.info("\"economy.default-head-cost\" cannot be less than 0 in config.yml, defaulting to 0");
-                defaultHeadCost = 0;
-            }
         }
-        
-        if (!config.isSet("economy.enabled") || !config.isBoolean("economy.enabled")) {
-            Heads.warning("\"economy.enabled\" not set or invalid in config.yml, defaulting to False");
-            
-            config.set("economy.enabled", false);
-            economyEnabled = false;
-            
-            save = true;
-        } else {
-            economyEnabled = config.getBoolean("economy.enabled");
-        }
-        
-        if (!config.isSet("hat-mode") || !config.isBoolean("hat-mode")) {
-            Heads.warning("\"hat-mode\" not set or invalid in config.yml, defaulting to False");
-            
-            config.set("hat-mode", false);
-            hatMode = false;
-            
-            save = true;
-        } else {
-            hatMode = config.getBoolean("hat-mode");
-        }
-        
-        if (save) {
+
+        if (shouldSave.get()) {
             configFile.save();
         }
         
-        Heads.info("Loaded Main Config " + getTime(start));
-        
-        Heads.getInstance().registerCommands();
+        Heads.info("Loaded Main Config " + timer);
     }
-    
-    public boolean checkString(FileConfiguration config, String key, String defaultVal, boolean save) {
-        if (!config.isSet(key) || !config.isString(key) || config.getString(key).isEmpty()) {
-            Heads.warning("\"key\" not set or invalid in config, resetting to \"" + defaultVal + "\"");
-            config.set(key, defaultVal);
-            return true;
+
+    private void loadCommandInfo(FileConfiguration config, AtomicBoolean shouldSave) {
+        reloadLabel       = loadString(config, "commands.heads.sub-commands.reload", "reload", shouldSave);
+        addLabel          = loadString(config, "commands.heads.sub-commands.add", "add", shouldSave);
+        handLabel         = loadString(config, "commands.heads.sub-commands.hand", "hand", shouldSave);
+        getLabel          = loadString(config, "commands.heads.sub-commands.get", "get", shouldSave);
+        giveLabel         = loadString(config, "commands.heads.sub-commands.give", "give", shouldSave);
+        randomLabel       = loadString(config, "commands.heads.sub-commands.random", "random", shouldSave);
+        removeLabel       = loadString(config, "commands.heads.sub-commands.remove", "remove", shouldSave);
+        renameLabel       = loadString(config, "commands.heads.sub-commands.rename", "rename", shouldSave);
+        costLabel         = loadString(config, "commands.heads.sub-commands.cost", "cost", shouldSave);
+        categoryCostLabel = loadString(config, "commands.heads.sub-commands.category-cost", "categorycost", shouldSave);
+        idLabel           = loadString(config, "commands.heads.sub-commands.id", "id", shouldSave);
+        searchLabel       = loadString(config, "commands.heads.sub-commands.search", "search", shouldSave);
+
+        headLabel         = loadString(config, "commands.heads.label", "heads", shouldSave);
+        headDescription   = loadString(config, "commands.heads.description", "Get a cool head", shouldSave);
+        headAliases       = loadStringArray(config, "commands.heads.aliases", new String[] {"head"}, shouldSave);
+    }
+
+    private void loadCategoryCosts(FileConfiguration config, AtomicBoolean shouldSave) {
+        categoryCosts = new HashMap<>();
+
+        if(!config.isSet("economy.categories") || !config.isConfigurationSection("economy.categories"))
+            return;
+
+        ConfigurationSection categories = config.getConfigurationSection("economy.categories");
+
+        for(String key : categories.getKeys(false)) {
+            double cost = categories.getDouble(key, -1);
+
+            if(cost < 0)
+                continue;
+
+            categoryCosts.put(key.toLowerCase(), cost);
         }
-        return save;
     }
     
-    public String getTime(long start) {
-        return "(" + (System.currentTimeMillis() - start) + " ms)";
+    private String loadString(FileConfiguration config, String key, String defaultVal, AtomicBoolean shouldSave) {
+        if (config.isSet(key) && config.isString(key) && !config.getString(key).isEmpty())
+            return config.getString(key);
+
+        Heads.warning("\"" + key + "\" not set or invalid in config, resetting to \"" + defaultVal + "\"");
+
+        config.set(key, defaultVal);
+        shouldSave.set(true);
+
+        return defaultVal;
+    }
+
+    private String[] loadStringArray(FileConfiguration config, String key, String[] defaultVal, AtomicBoolean shouldSave) {
+        if(config.isSet(key) && config.isList(key))
+            return config.getStringList(key).toArray(new String[0]);
+
+        Heads.warning("\"" + key + "\" not set or invalid in config, resetting to " + Arrays.toString(defaultVal));
+
+        config.set(key, Arrays.asList(defaultVal));
+        shouldSave.set(true);
+
+        return defaultVal;
+    }
+
+    private boolean loadBoolean(FileConfiguration config, String key, boolean defaultVal, AtomicBoolean shouldSave) {
+        if(config.isSet(key) && config.isBoolean(key))
+            return config.getBoolean(key);
+
+        Heads.warning("\"" + key + "\" not set or invalid in config, resetting to " + defaultVal);
+
+        config.set(key, defaultVal);
+        shouldSave.set(true);
+
+        return defaultVal;
+    }
+
+    private double loadDouble(FileConfiguration config, String key, double defaultVal, AtomicBoolean shouldSave) {
+        if(config.isSet(key) && (config.isInt(key) || config.isDouble(key)))
+            return config.getDouble(key);
+
+        Heads.warning("\"" + key + "\" not set or invalid in config, resetting to " + defaultVal);
+
+        config.set(key, defaultVal);
+        shouldSave.set(true);
+
+        return defaultVal;
     }
     
     public boolean isEconomyEnabled() {
         return economyEnabled;
     }
-    
+
+    private String getPlainCategoryName(String category) {
+        return category.toLowerCase().replace(" ", "");
+    }
+
+    public boolean hasCategoryCost(String category) {
+        return categoryCosts.containsKey(getPlainCategoryName(category));
+    }
+
+    public double getCategoryCost(String category) {
+        return categoryCosts.getOrDefault(getPlainCategoryName(category), defaultHeadCost);
+    }
+
+    public void setCategoryCost(String category, double cost) {
+        categoryCosts.put(getPlainCategoryName(category), cost);
+
+        saveCategoryCosts();
+    }
+
+    public void removeCategoryCost(String category) {
+        categoryCosts.remove(getPlainCategoryName(category));
+
+        saveCategoryCosts();
+    }
+
+    private void saveCategoryCosts() {
+        Clock timer = Clock.start();
+
+        FileConfiguration config = this.configFile.getConfig();
+
+        config.set("economy.categories", null);
+
+        if(categoryCosts.size() > 0) {
+            ConfigurationSection section = config.createSection("economy.categories");
+
+            for(Map.Entry<String, Double> entry : categoryCosts.entrySet()) {
+                section.set(entry.getKey(), entry.getValue());
+            }
+        }
+
+        configFile.save();
+
+        Heads.info("Saved Main Config " + timer);
+    }
+
     public double getDefaultHeadCost() {
-        return defaultHeadCost;
+        return this.defaultHeadCost;
     }
     
     public boolean isHatMode() {
-        return hatMode;
+        return this.hatMode;
+    }
+
+    public boolean shouldHideNoPermCategories() {
+        return this.hideNoPermCategories;
     }
     
     public String getHeadCommand() {
-        return headCommand;
+        return this.headLabel;
     }
     
     public String[] getHeadAliases() {
-        return headAliases;
+        return this.headAliases;
     }
     
     public String getHeadDescription() {
-        return headDescription;
+        return this.headDescription;
     }
-    
+
+    public String getReloadCommand() {
+        return this.reloadLabel;
+    }
+
     public String getAddCommand() {
-        return addCommand;
+        return this.addLabel;
     }
     
     public String getHandCommand() {
-        return handCommand;
+        return this.handLabel;
     }
     
     public String getGetCommand() {
-        return getCommand;
+        return this.getLabel;
     }
     
     public String getGiveCommand() {
-        return giveCommand;
+        return this.giveLabel;
     }
     
     public String getRandomCommand() {
-        return randomCommand;
+        return this.randomLabel;
     }
     
     public String getRemoveCommand() {
-        return removeCommand;
+        return this.removeLabel;
     }
     
     public String getRenameCommand() {
-        return renameCommand;
+        return this.renameLabel;
     }
     
     public String getCostCommand() {
-        return costCommand;
+        return this.costLabel;
+    }
+
+    public String getCategoryCostCommand() {
+        return this.categoryCostLabel;
     }
     
     public String getIdCommand() {
-        return idCommand;
+        return this.idLabel;
     }
 
     public String getSearchCommand() {
-        return searchCommand;
+        return this.searchLabel;
     }
 }

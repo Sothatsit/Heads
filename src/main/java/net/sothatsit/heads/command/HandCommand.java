@@ -1,10 +1,10 @@
 package net.sothatsit.heads.command;
 
 import net.sothatsit.heads.Heads;
+import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.cache.CachedHead;
-import net.sothatsit.heads.config.menu.Placeholder;
-import net.sothatsit.heads.lang.Lang;
-import net.sothatsit.heads.util.Callback;
+import net.sothatsit.heads.config.lang.Placeholder;
+import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.volatilecode.ItemNBT;
 import net.sothatsit.heads.volatilecode.reflection.Version;
 
@@ -16,7 +16,22 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 
 public class HandCommand extends AbstractCommand {
-    
+
+    @Override
+    public String getCommandLabel(MainConfig config) {
+        return config.getHandCommand();
+    }
+
+    @Override
+    public String getPermission() {
+        return "heads.hand";
+    }
+
+    @Override
+    public Lang.HelpSection getHelp() {
+        return Lang.Command.Hand.help();
+    }
+
     @Override
     public boolean onCommand(final CommandSender sender, Command command, String label, final String[] args) {
         if (!(sender instanceof Player)) {
@@ -25,7 +40,8 @@ public class HandCommand extends AbstractCommand {
         }
         
         if (args.length < 3) {
-            Lang.Command.Errors.invalidArgs().send(sender, Placeholder.valid(Lang.Command.Hand.help().command()));
+            sendInvalidArgs(sender);
+            return true;
         }
         
         Player player = (Player) sender;
@@ -60,16 +76,13 @@ public class HandCommand extends AbstractCommand {
             
             if (texture == null || texture.isEmpty()) {
                 Lang.Command.Hand.fetching().send(sender);
-                Heads.getTextureGetter().getTexture(owner, new Callback<String>() {
-                    @Override
-                    public void call(String texture) {
-                        if (texture == null || texture.isEmpty()) {
-                            Lang.Command.Hand.cantFind().send(sender, Placeholder.name(owner));
-                            return;
-                        }
-                        
-                        add(sender, args, texture);
+                Heads.getTextureGetter().getTexture(owner, (resolvedTexture) -> {
+                    if (resolvedTexture == null || resolvedTexture.isEmpty()) {
+                        Lang.Command.Hand.cantFind().send(sender, Placeholder.name(owner));
+                        return;
                     }
+
+                    add(sender, args, resolvedTexture);
                 });
                 return true;
             }
@@ -90,7 +103,7 @@ public class HandCommand extends AbstractCommand {
         
         String name = nameBuilder.toString().substring(1);
         
-        CachedHead head = new CachedHead(-1, category, name, texture);
+        CachedHead head = new CachedHead(-1, category, name, texture, new String[0]);
         
         Heads.getCacheConfig().add(head);
         

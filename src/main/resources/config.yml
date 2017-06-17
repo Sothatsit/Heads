@@ -5,6 +5,7 @@ commands:
       - 'head'
       description: 'Get cool heads'
       sub-commands:
+         reload: 'reload'
          add: 'add'
          hand: 'hand'
          random: 'random'
@@ -13,6 +14,9 @@ commands:
          get: 'get'
          give: 'give'
          search: 'search'
+         cost: 'cost'
+         category-cost: 'categorycost'
+         id: 'id'
          # open menu is when no arguments are supplied
          # help is shown whenever arguments are supplied but are not recognised
 economy:
@@ -20,4 +24,4 @@ economy:
    # Use 0 for no cost
    default-head-cost: 0
 hat-mode: false
-world-updated: 0
+hide-no-perm-categories: true

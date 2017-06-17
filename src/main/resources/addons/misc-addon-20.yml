@@ -1,301 +1,420 @@
 addons: []
 Head-1:
-  id: 1
-  category: Interior
-  name: Battery 75%
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTU4NDQzMmFmNmYzODIxNjcxMjAyNThkMWVlZThjODdjNmU3NWQ5ZTQ3OWU3YjBkNGM3YjZhZDQ4Y2ZlZWYifX19
+  id: 10
+  category: Blocks
+  name: Bronze Block
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDhlMGE0NDAxNTg5ZDI5NTRlM2U1YzdlNjE1NTVlZjljZTFmZDI4OWNmNWM4NGFlZDE1YzMyMjBlYWY1ZDM5MCJ9fX0=
+  tags:
+  - Gem
   cost: -1.0
 Head-2:
-  id: 2
-  category: Interior
-  name: Bucket With Blue Color
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmFhMDE2M2ZiODAyYWIxOGE5ZWVjZjljOTk2Nzk3NmJiMTc5NDFjMjMxZTU1Y2IyNTZkM2RmNGNlZjlhMSJ9fX0=
+  id: 6
+  category: Blocks
+  name: Conquest Jungle Log
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmFmNDMzNGMzNjVhNDczNTY3N2M0NDJmZTEyODhkYWQzNWRiZDZjODJjNmMyNTZhYmQ1NTk2NDQ2NDdjIn19fQ==
+  tags:
+  - Wood
+  - Exclusive
   cost: -1.0
 Head-3:
-  id: 3
-  category: Interior
-  name: Nether Globe
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDgzNTcxZmY1ODlmMWE1OWJiMDJiODA4MDBmYzczNjExNmUyN2MzZGNmOWVmZWJlZGU4Y2YxZmRkZSJ9fX0=
+  id: 4
+  category: Blocks
+  name: Conquest Spruce Log
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzNkYTYwNDE2YWQ1NGYzMTc5MzgyNmQ1ZmJlYjk1M2RiZmVjMTJkZjAyOGFiZGI2NzE2YTM3MTA5Y2I5NGQifX19
+  tags:
+  - Wood
+  - Exclusive
   cost: -1.0
 Head-4:
-  id: 4
-  category: Interior
-  name: Bookshelf
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjUyMzZmZmYzODUxZGY5ZmFiOGRmYmU2YjhmMmE5ODAxNTdhNDE4ZTVjZTdjM2Q1NTRlZmE5YjBkY2IzNGQifX19
+  id: 9
+  category: Blocks
+  name: Copper Block
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzA3MmU0MmM1OGM2ZTljODhjZmI0ZGFhNmM2ZjRkMzdiNWE2YTg2NGMxMzU1MDhmOGY0ZmZiYzcyN2UxYTcifX19
+  tags:
+  - Gem
   cost: -1.0
 Head-5:
-  id: 5
-  category: Interior
-  name: Warning Lamp
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWY0NDZhOGY5Mjg0YzYyY2Y4ZDQ5MWZiZGIzMzhmZDM5ZWJiZWJlMzVlOTU5YzJmYzRmNzg2YzY3NTIyZWZiIn19fQ==
+  id: 3
+  category: Blocks
+  name: Lapis Block
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmYxN2MyN2Y2ZTU4MTk5ZDI0ODAzODY0YTBhOGY0OTIyNmYzMjdjNTlkOGQzMTQzNjQ3MzM0NTk5NTdhZWNlIn19fQ==
+  tags: []
   cost: -1.0
 Head-6:
-  id: 6
-  category: Interior
-  name: Projector
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTJjNDE1NjNjNmIyNjMyOWYyYTVkMGU3ZWU5ZDc5Nzk3NDY3N2U0MGZmMTQzOTQ1ZjgwYmRiZmUzMWVlIn19fQ==
+  id: 2
+  category: Blocks
+  name: Rainbow Nether Quartz Ore
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmRmMDk1MGE4MDdmZGQzNjNlOGNkMWJmZjE3ODIzYjJkMWNhM2E3ZWZiZTM3YWNiNmQ4MDk3NThhMzJkNjYifX19
+  tags:
+  - Ore
   cost: -1.0
 Head-7:
   id: 7
-  category: Interior
-  name: Command Block Present
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjBlZDg3NmFiYzRhZWIyMThkYzUxZTZlY2E0NGNjZjUxY2YwYmQ2NmM2ZDc1Y2JiYjBkYjlhZDNkNmYwOTMifX19
+  category: Blocks
+  name: Ruby Ore
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTUzZGQxMWE0NWM3ZTY3NzMxZWFlOWZmNmRkNThkMzA5MmY0N2VkMGJkYTcyYzc5OTE0MTlkMTNjMWE2NDQifX19
+  tags:
+  - Ore
   cost: -1.0
 Head-8:
   id: 8
-  category: Interior
-  name: Present
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWNhNjQzYTUzOWMyNzU3NTU3MzcwOGM1YTQyNmFkNjIwM2JjNTE5NzQ5ZmIxNDllZjdmMWIyYTY4MzM5OCJ9fX0=
+  category: Blocks
+  name: Silver Block
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzU5MmVjOWFhOTgwYzY4NTQ4ZDhiMzk2ZjYxZGY5ZGY1MTZkMDRiZmMyNjdjMzQ4NGQ1ZjJkYzg2OTkxZSJ9fX0=
+  tags:
+  - Gem
   cost: -1.0
 Head-9:
-  id: 9
-  category: Interior
-  name: Lava Chest
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTQ5ODg2YTU3YjVlNWIxMzZkZGIyYTk0NzkxZjliN2U3MzE2ZTVkODY0NmYxN2EwNDdkNWY5NWE3NDg0Y2IifX19
+  id: 5
+  category: Blocks
+  name: Stone Slabs
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWVjZTM2OWE0YTE0YzdiOGU3ZWNhYmJjOWQ4MzIzOGI1ZjU1YzQ3Mzg0NjNmNjY4NzhjOTZiNGM3MjE1M2UifX19
+  tags:
+  - Stone
   cost: -1.0
 Head-10:
-  id: 10
-  category: Interior
-  name: Crystal Water Block
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGRhNzcwYjY4NzRmYWJkMjhhNzM0NTI2YzU3MzlmMGNkNmI2YTk1NDhjYjlkZGI1NmZiMmRjMjVmODQ5NWMxIn19fQ==
+  id: 1
+  category: Blocks
+  name: Woman
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjczMWI4ZTQ1N2ZlN2EzMWMyNmUxZjk0OTNhY2NiYWQxYmFmYmU2OGQyODgyYmQ5YTFkMWJjZTE0OGJjNjdmIn19fQ==
+  tags:
+  - Woman
+  - Headgear
   cost: -1.0
 Head-11:
-  id: 11
-  category: Interior
-  name: Blue Core
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGM5MzY1NjQyYzZlZGRjZmVkZjViNWUxNGUyYmM3MTI1N2Q5ZTRhMzM2M2QxMjNjNmYzM2M1NWNhZmJmNmQifX19
+  id: 19
+  category: Animals
+  name: Armadillo
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDM4N2NiNzRjYTIxM2I2NDc3ZDg3NmNkYmQzOTFhN2EyMmNjNmNhNzJhNzdkOGMyNTUzOGQ4NmVkZThiOSJ9fX0=
+  tags: []
   cost: -1.0
 Head-12:
-  id: 12
-  category: Interior
-  name: Bronze Block
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDhlMGE0NDAxNTg5ZDI5NTRlM2U1YzdlNjE1NTVlZjljZTFmZDI4OWNmNWM4NGFlZDE1YzMyMjBlYWY1ZDM5MCJ9fX0=
+  id: 20
+  category: Animals
+  name: Armadillo
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTFlNmEyMmRlOTkxOTNiMGJmNDkxMmU5MjcyY2ZlNzdmZjJmMGMwOGVkM2MyM2RhZDZiNzM4ZWJiM2Q4OWQifX19
+  tags: []
   cost: -1.0
 Head-13:
-  id: 13
-  category: Interior
-  name: Battery 25%
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTEzNjFlNTc2YjQ5M2NiZmRmYWUzMjg2NjFjZWRkMWFkZDU1ZmFiNGU1ZWI0MThiOTJjZWJmNjI3NWY4YmI0In19fQ==
+  id: 34
+  category: Animals
+  name: Bat
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjZjZmFiMWQyZjc2M2YzMzNiNWUxYmRjZDFhZDE2MmM3ZjEyYTFhYzIyMjQ0NjNhMTQ0NjQzZWMyM2Y5OCJ9fX0=
+  tags:
+  - Bird
+  - ArmorstandDeco
   cost: -1.0
 Head-14:
-  id: 14
-  category: Interior
-  name: Mercury
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTdmYjI3YTFhMTFiYTQ1NmMwYTEzZjkwOTAxMzY0Y2VkOWVjYWQ4ZmU5Yzk5YjY4MzhmZjVmNGRhYjFmNjE5MSJ9fX0=
+  id: 49
+  category: Animals
+  name: Bear
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWZlZjcxNTljZDYwYWIyNjM2ZTZmN2I2OTIzZjc3M2NmZGMzYjdlYzE5YTg0ZjhkMzVlNDZhNzMxMWQ1NjkifX19
+  tags:
+  - Bear
   cost: -1.0
 Head-15:
-  id: 15
-  category: Interior
-  name: Fire Bomb
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODAyMjQ2ZmY4YjZjNjE3MTY4ZWRhZWMzOTY2MDYxMmU3MmE1NGFiMmVhY2MyN2M1ZTgxNWU0YWM3MDIzOWUzYSJ9fX0=
+  id: 50
+  category: Animals
+  name: Bird
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTlkOTM2ZDU0MTMxMzdlMzY1NGZkNzViN2VmNjZlOTNlMWQ1YjVmOWQ0ZWVkYTA0MDM0NjdmZjYwN2M3OCJ9fX0=
+  tags:
+  - Bird
   cost: -1.0
 Head-16:
-  id: 16
-  category: Interior
-  name: Letter Box Blue
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWIyODE1Yjk5YzEzYmZjNTViNGM1YzI5NTlkMTU3YTYyMzNhYjA2MTg2NDU5MjMzYmMxZTRkNGY3ODc5MmM2OSJ9fX0=
+  id: 47
+  category: Animals
+  name: Capricorn
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTk5NWU4NjFjMzM3MjU4N2I0NDIxM2Q1NWJiYzk3OGRjMTkzNmE4OGI5ZmI0NDY1MjU1NTRlZTIzMmVlMTgifX19
+  tags: []
   cost: -1.0
 Head-17:
-  id: 17
-  category: Interior
-  name: Lapis Chest
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDc4YWJkZjk4MmY5MDllYWI1ZGU5YmY5NjljZjE0ZjY2NGRiNGM0NDc3Mzg0NTllYTQwMTYyYjM3ZDEyNCJ9fX0=
+  id: 29
+  category: Animals
+  name: Cat
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTczOGZkZmZhY2M2ZWVhYjBiMWU2ZWNmOWQ3Y2NmODUzM2M5NTdiNzZlNTQ2NzBlZTc4M2ZlZTIxYzk0ZGI4In19fQ==
+  tags:
+  - Cat
   cost: -1.0
 Head-18:
-  id: 18
-  category: Interior
-  name: Green Core
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmYThmMzhjN2IyMjA5NjYxOWMzYTZkNjQ5OGI0MDU1MzBlNDhkNWQ0ZjkxZTJhYWNlYTU3ODg0NGQ1YzY3In19fQ==
+  id: 12
+  category: Animals
+  name: Chick
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTRkODE2YTQ3NWIzZjMxM2I2MjBkNjViZjkzNTg5MzFiNDZhZjljOGY0ZTdjOWFlNjQ3MDg4ODBiZWE2YmUifX19
+  tags:
+  - Bird
+  - Farm
+  - Easter
   cost: -1.0
 Head-19:
-  id: 19
-  category: Interior
-  name: Green Chest
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWYyM2YxMTVjYjk1MjBkZDRkNGNiMjkxMjRkYWJhYzVlNjg0NGY5NmNjZTI0MWEzZWM5Y2E2ZjdhMjk2MjQ3In19fQ==
+  id: 24
+  category: Animals
+  name: Chick
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWRkYmYyNmRiMGE5NmNjNTU4ZWI2ODcxMmNjN2U3ZTI5ZTFiNWI3ZjI4YTM0OWU2MzFiMzI4YzNhMjc2ZDIyOCJ9fX0=
+  tags:
+  - Farm
+  - Easter
+  - Exclusive
+  - Bird
   cost: -1.0
 Head-20:
-  id: 20
-  category: Interior
-  name: Red Cooler
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjk2NmFmMzc2MGUyODMzOGMwNjU3ZjlmMzhjYzU4ZDhjY2ZhM2VlYTM2NDg2M2Q4N2JlOTljODc2ZDVmMzMwIn19fQ==
+  id: 17
+  category: Animals
+  name: Chicken
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWQ4MDcxNWVhNmUzODM3OTllYWEwNWYzZWM2ZjgxYTk0NWE1YTI1YzRhN2E5YzhhYTgyZDBkZjhiZGVmZjY0In19fQ==
+  tags:
+  - Bird
+  - Farm
   cost: -1.0
 Head-21:
-  id: 21
-  category: Interior
-  name: Diamond Chest
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWI4ZmUxYzQ0YWNiZWViOTE4ZDM4YmM0MmQ1NTBiZWRkNWMzZGQwNDk4ODlmZDllZWVhMTE2MGFiOGI2YSJ9fX0=
+  id: 37
+  category: Animals
+  name: Crab
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmM3NTU1MzYxNDU4NzExYzllOGIzZDVlM2VkODJkNTY3YWZjNGZkODU3YmMxM2JjNjRjMTk1NDlmMDgyNTkifX19
+  tags:
+  - Aquatic
   cost: -1.0
 Head-22:
-  id: 22
-  category: Interior
-  name: Stool
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGZiNjQ5NDhlZjNiYmJkMzhmOTg0MDU2YmJhNDI5NmJhY2ZhNWVkYjhkYzhmOTQ1NmRhMzFlMThhYzMxMWU2YyJ9fX0=
+  id: 31
+  category: Animals
+  name: Cute Frog
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzJlNmU5ZGYzMjM5YzZhMDg0NzUyNDcxMzU1ODBjOGQ5N2FhYjIwMWM1OGFkN2EwYzk1ZGIyODlhNjE2OTQifX19
+  tags:
+  - Toy
+  - Aquatic
+  - Exclusive
   cost: -1.0
 Head-23:
-  id: 23
-  category: Interior
-  name: Red Present
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjczYTIxMTQxMzZiOGVlNDkyNmNhYTUxNzg1NDE0MDM2YTJiNzZlNGYxNjY4Y2I4OWQ5OTcxNmM0MjEifX19
+  id: 15
+  category: Animals
+  name: Cute Rabbit
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTJhYTdhNzVkZmZmZmNhMWUzOTBmMzdmN2ViNDY4OWJmZTIzZjFhY2IzNTdmMzRlN2MzNGZlYmZkYmNhNTQ2NCJ9fX0=
+  tags:
+  - Toy
+  - Exclusive
   cost: -1.0
 Head-24:
-  id: 24
-  category: Interior
-  name: Backpack (Light Lime)
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTk5MDlhOTc3OWI5NDZiOTc4NzQ0MmZhNDgzYWY0ZGU0YjJmMTlmZDQwZGMyMzcwZjdhOWI4ZjUyMWYyMWRkYyJ9fX0=
+  id: 21
+  category: Animals
+  name: Dead Armadillo
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDY4ZmI2YTU4NDc4NzYzMWE2MzZlNGJkNjZkMTg3NmNiYjVkY2ZjZDA5NWMxOTAxNDliYzcxY2FjYTBiY2UxIn19fQ==
+  tags:
+  - Injured or Dead
   cost: -1.0
 Head-25:
-  id: 25
-  category: Interior
-  name: Drum
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTVjYzRhYTlkNTU4NDQ0ZGJlYzRkMDUyMjg3YzNjYzgxZGNiZTNlY2E1YTVhNGIyNDlkMTQ4MWU4ZjVlOSJ9fX0=
+  id: 38
+  category: Animals
+  name: Dog
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTM3NGZkNmQxNDQ4ZmExMzBlOTI0OWFmMTk5MDIzODQ2YjhmYzg3N2YxMTdmM2FjMWM0MzQwM2JhN2ZlZjMifX19
+  tags:
+  - Dog
   cost: -1.0
 Head-26:
-  id: 26
-  category: Interior
-  name: Red Chest
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjFmODY4NzYxYTVjOTEzOWRhMWZlYzY3MjZlMTY1NTkyOTQyOWE0M2FiOTcyYzgxMThiYTI2YjkyNTVlN2MifX19
+  id: 25
+  category: Animals
+  name: Frog
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODg3NDFkMmQxOGNjZWZiZDYyZThlNzEwNzYyNzJjNjRkNDhiMzRkMjgyOTcxODg4MmMxMjRhZDdlNGM3MzYifX19
+  tags:
+  - Aquatic
   cost: -1.0
 Head-27:
   id: 27
-  category: Interior
-  name: Chest
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjBiMDY4NzA5NzkwZDQxYjg5MjdiODQyMmQyMWJiNTI0MDRiNTViNGNhMzUyY2RiN2M2OGU0YjM2NTkyNzIxIn19fQ==
+  category: Animals
+  name: Frog
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDJjM2I5OGFkYTE5OTU3ZjhkODNhN2Q0MmZhZjgxYTI5MGZhZTdkMDhkYmY2YzFmODk5MmExYWRhNDRiMzEifX19
+  tags:
+  - Aquatic
   cost: -1.0
 Head-28:
-  id: 28
-  category: Interior
-  name: Blue Chest
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTc4NDRhNDU1NGY5MzYzZDY1OTkwNmQ2MzEyODE4YTExMjJhMWY5YTkyYTIzMjYyYjFlNjc3MDIyMzJiYjcifX19
+  id: 41
+  category: Animals
+  name: Giraffe
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjQ0YzhiN2UzNTUzZTczYzJhNzNjYTk0NmVlZWQxNzQ2M2IxZTdjYWIwY2Y1NjI5NTFiNzhjZDlkNGNkZDUifX19
+  tags:
+  - Africa
   cost: -1.0
 Head-29:
-  id: 29
-  category: Interior
-  name: Blue Present
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmExYzQ1MjMzY2JmODA4ZGJiYzFjMzY3MDkyOGMyNDFjNTRjZjJiNGMxZTY1ZmFhNzZkMWVhNGU1YWVmMWNmIn19fQ==
+  id: 40
+  category: Animals
+  name: Green Sheep
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTAxNzIxNWM3ZjhkYjgyMDQwYWEyYzQ3Mjk4YjY2NTQxYzJlYjVmN2Y5MzA0MGE1ZDIzZDg4ZjA2ODdkNGIzNCJ9fX0=
+  tags:
+  - Vanilla
   cost: -1.0
 Head-30:
-  id: 30
-  category: Interior
-  name: Nether Chimney
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjIzNmVmYzNiM2NlNDQyMDJmYTg4ZmMyN2FiMzAxNzZmZDM5NTM0ZDM1OGI1ZWEwZGZiOWM2MzQyNDE0ZSJ9fX0=
+  id: 32
+  category: Animals
+  name: Hamster
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2E1NGU4MjViNjhkMzk5YWYyYWFiMjM0YWFhNzcyZjViOTdhOWQ2MGM1ZDA5YzIyYmE2YzU5NGNmZTczYTM5In19fQ==
+  tags: []
   cost: -1.0
 Head-31:
-  id: 31
-  category: Interior
-  name: Violet Bowlingball
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDUzYzZiODczYzJkN2FlYTdhM2I1ZjMwYWZhMzU5ZjcyYjE1Nzk4Y2JlNDI0YWQwYjY5Y2RjZTY0NTYxIn19fQ==
+  id: 33
+  category: Animals
+  name: Hippo
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmE5NGY2OTc0NWQ5YmQ1NTFmYTg3YjQ3NzQ1YjM5MmUzM2I2Y2JkNDNkOTM4ZGEyZWZlZDlmY2FjYzFhYjMifX19
+  tags:
+  - Aquatic
+  - Africa
   cost: -1.0
 Head-32:
-  id: 32
-  category: Interior
-  name: Gold Ball
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzU5NGNhNWRjNWM4NWRiM2I0YTkwZDQ4NTkzMmJlZGU1ZmJkZjQwMjNmYzRmYmZmNmZlMTRiZTQwOWMxZjk3In19fQ==
+  id: 18
+  category: Animals
+  name: Horse
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjBhMmRiMmYxZWI5M2U1OTc4ZDJkYzkxYTc0ZGY0M2Q3Yjc1ZDllYzBlNjk0ZmQ3ZjJhNjUyZmJkMTUifX19
+  tags:
+  - Horse
+  - Farm
   cost: -1.0
 Head-33:
-  id: 33
-  category: Interior
-  name: Bronze-wrapped Bag
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjg5MDNiNTkyYmE1MzFhNjFjNWYzZjRmNTY2NWViZmU4MDNkMzUyM2RlZGE4MGYxMzQzYzI0NDYxODJkYjIifX19
+  id: 48
+  category: Animals
+  name: Ice Bear
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjA3MDFiZGYzYjg4ZjZlMWQ3YzZlNTljYTJhM2UyN2VkMDcwZDZmYjNiYzY4MDU3ZjNjMTJkNTQ4ZDEyOThmIn19fQ==
+  tags:
+  - Bear
+  - Winter
   cost: -1.0
 Head-34:
-  id: 34
-  category: Interior
-  name: Bomb
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2U0ZWNjYjE3YThlOTI2MDFhNTE5MTdjYjVhNmZjMTdlYWYyYWRjMjdlODM3MzIzNmIyMzIzZjQ3NGVmNDhmMSJ9fX0=
+  id: 16
+  category: Animals
+  name: Lion
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmIzYThjZTY2ZGMzOTI3YmI1NDgyYjI5ZTkzNmIzOWQyNDU4OWY5MWU5OTdiYjNkZmQ1NjczOTZlODcxMTIwIn19fQ==
+  tags:
+  - Cat
+  - Africa
   cost: -1.0
 Head-35:
-  id: 35
-  category: Interior
-  name: Ocular
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzk5Mjk2M2MxYjVhY2JjNGNjY2VkZjNhZjgwYjcxODFiY2QzM2Q1NTFjMzMzOTNiMWY5OWRjMzE3N2QxNDZmIn19fQ==
+  id: 44
+  category: Animals
+  name: Magenta Sheep
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTgzNjU2NWM3ODk3ZDQ5YTcxYmMxODk4NmQxZWE2NTYxMzIxYTBiYmY3MTFkNDFhNTZjZTNiYjJjMjE3ZTdhIn19fQ==
+  tags:
+  - Vanilla
   cost: -1.0
 Head-36:
-  id: 36
-  category: Interior
-  name: Ball of Wool (Cyan)
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThkMTE1NDVjYzc2YzRmOTI2NmQwM2IxOWYzNTcxNWI2ZDE4YmM1NTY4ZTM1ZjM4NGMzMDE1NTBhMDdiIn19fQ==
+  id: 28
+  category: Animals
+  name: Mouse
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTZkNjlmMjY0YjZhYWE0ZDM3NmQ2YmJhNTA1NGYwYTNmODgyZWQ3YjZlMTY4ZTg1MWM5ODhiZWJmMWU5ZDZhIn19fQ==
+  tags: []
   cost: -1.0
 Head-37:
-  id: 37
-  category: Interior
-  name: Water Bucket
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTQ2ZmVlN2JiYjJhODI2YzY4ZjZhMzZjY2JkNzY5MzJjZGNkOWU2ZjIzNDMxYzQ3N2E2ZDMwZGU0ZjNhNiJ9fX0=
+  id: 30
+  category: Animals
+  name: Owl
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzI4YmRiZjZiN2M3OThiODNmN2U1YmFjOTdlZTIzNzE3Zjc3MmM0NDZhOTM4MjRmN2I3OWZhM2Q5ZmYxYWQifX19
+  tags:
+  - Bird
   cost: -1.0
 Head-38:
-  id: 38
-  category: Interior
-  name: Venus
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMGVmMTQ3ZGRjOTA4ZTY4MjVjMjI5OTk3YWE1Mjk3NjFmNTE2OTFhMTFjOTU1MTI5YTIzMzYzMmQ1NTQ4NzVlIn19fQ==
+  id: 42
+  category: Animals
+  name: Parrot
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWJjNmQ4NDE2OGVjZmMzZTE4ZmI4MGYxMzRhMmIxYTczMjRlYTYxMWJkNmQyODY3MDYxZjlhMzg5NDEzMCJ9fX0=
+  tags:
+  - Bird
   cost: -1.0
 Head-39:
-  id: 39
-  category: Interior
-  name: Bird House Green
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmZiM2EwZTVkZWE5MTVhMjI0Zjg2YzUyOGQ0MTRlYzBmMWRiNmY0N2NkYjk3MTg3NzVhZDNhOTM0MThmZTI0In19fQ==
+  id: 22
+  category: Animals
+  name: Parrot (Red)
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzM4Nzk2ZjYyZGI1ZjkzOTQ5YWUyNmEyZjdhM2M1Zjc5N2EzMWQyNjk0YmNlNGM0OGVlODQzZWU4NWY3In19fQ==
+  tags:
+  - Bird
   cost: -1.0
 Head-40:
-  id: 40
-  category: Interior
-  name: Galaxy
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWQzZDI1MGUyNWJiY2EzYTYyYmU1YjNlZjAyY2ZjYWI2ZGNkYzQyNDg4NGM5YTdkNWNjOTVjOWQwIn19fQ==
+  id: 35
+  category: Animals
+  name: Pink Sheep
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWU3MzhmNTZlYWZlNmZmYzE1ODNkZTgxMWFlMDU3ZmYzMDQ5MWM0MTc0OTA1OGJjNTI3NTMxN2U3MmU2NjkifX19
+  tags:
+  - Vanilla
   cost: -1.0
 Head-41:
-  id: 41
-  category: Interior
-  name: TV
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGVlZTQ0NmE4ZmE3MTA2Yjc2NDIxZjUzNTE3MGEyMmIzOWJhYzhiNzQwNjBjODNkMjg3YjMwNzJlNTQzYTkifX19
+  id: 43
+  category: Animals
+  name: Poro
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDYxY2IwMmY5OGI2NzBmMDE1MWRjOTQzNDYyOTc2YmFlM2JkYWNiM2E1ZTFmOTNjM2I0YjRhYmY4MmExIn19fQ==
+  tags:
+  - League of Legends
   cost: -1.0
 Head-42:
-  id: 42
-  category: Interior
-  name: Green Traffic Light
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjQ1YzlhY2VhOGRhNzFiNGYyNTJjZDRkZWI1OTQzZjQ5ZTdkYmMwNzY0Mjc0YjI1YTZhNmY1ODc1YmFlYTMifX19
+  id: 13
+  category: Animals
+  name: Rabbit
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmZlY2M2YjVlNmVhNWNlZDc0YzQ2ZTc2MjdiZTNmMDgyNjMyN2ZiYTI2Mzg2YzZjYzc4NjMzNzJlOWJjIn19fQ==
+  tags:
+  - Farm
+  - Easter
+  - Vanilla
   cost: -1.0
 Head-43:
-  id: 43
-  category: Interior
-  name: Diamond Chest
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjU4MDdjYzRjM2I2OTU4YWVhNjE1NmU4NDUxOGQ5MWE0OWM1ZjMyOTcxZTZlYjI2OWEyM2EyNWEyNzE0NSJ9fX0=
+  id: 39
+  category: Animals
+  name: Rabbit
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWVmNmVkNzY2MzY4YTllMDdiM2IzMTZhODllZmNiOTM3MThjODY2ZmE5MmI5YWFhYTRlYjY4ZGZlNDc2YjFkNSJ9fX0=
+  tags:
+  - Farm
+  - Easter
   cost: -1.0
 Head-44:
-  id: 44
-  category: Interior
-  name: Brown Foot Stool
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjI2OTIxY2JhMTZmMWZlYmYxNjU0MjRjYWQ5ZDUzNThlODE1Njg0MjJkNDlkNDc3MWQ2MmE1YTVjNTEwYTMifX19
+  id: 26
+  category: Animals
+  name: Raccoon
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWM4MDczYzE5YzgzMTFhZTdmMjNjM2RkN2U0MTFjNzUxMjUwNzg1ZDY5YmY4MzViMzk2MzM5NzM3MTkxMmEifX19
+  tags: []
   cost: -1.0
 Head-45:
   id: 45
-  category: Interior
-  name: TV
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWM5MDE0ODg1ZWEzM2JkNjY3NWIzYzhmY2VmZWM0YWU3MmUzY2RlMzMyYTQ4ZTcxZjBkMGY0NTQ0ZjBhMiJ9fX0=
+  category: Animals
+  name: Rotten Mushroom Cow
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFkY2IxZjJhNjlkZTFkNjU5ZTdjZWViN2M2NGJhYzY2NzU5ODg2MDRiN2ExNDE1ZGRkMDIwYzdmYTRkM2QifX19
+  tags:
+  - Mushroom
+  - Skull
+  - Injured or Dead
   cost: -1.0
 Head-46:
-  id: 46
-  category: Interior
-  name: Engine Part
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjQ3NmEyNDdhM2I0NGQ4NDFiNTIzNDdhNDNkNTEwZDkyYWFmNjYyNTU4MTM0OGU0YWQyODU4MzI2ZjZmNiJ9fX0=
+  id: 11
+  category: Animals
+  name: Scary Shark
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWJhNDcyZmMxOGQyYzc3OGQzNmViNTMxYjU4NmZiYWUwYzNlM2Q2NWJhNDg2YWE4NzE2NzU1MzkzYmEwNjYifX19
+  tags:
+  - Aquatic
   cost: -1.0
 Head-47:
-  id: 47
-  category: Interior
-  name: Bird House Blue
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGYxN2E2YTlhZmFhN2IwN2U0MjE4ZmU1NTVmMjgyM2IwMjg0Y2Q2OWI0OWI2OWI5N2ZhZTY3ZWIyOTc2M2IifX19
+  id: 14
+  category: Animals
+  name: Snow Leopard
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODE4ZjYzNmQ0ZjRhNmM4N2EzZTI4MDg0YzcyMWRjNzNkY2U1NjhiM2QxNTgxYjc5ODY3YWY3YjM3NzI3YWIifX19
+  tags:
+  - Cat
+  - Winter
   cost: -1.0
 Head-48:
-  id: 48
-  category: Interior
-  name: Spool of Thread (Grey)
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWM5OTFhMzQ1M2RmYjNhZTc0NDU2NWQ5ZjM0NzExNTgwMjRlMTE3ZDJjOWJhZDBjNjNkMjQ5MTEzMzFjY2VhIn19fQ==
+  id: 36
+  category: Animals
+  name: Tiger
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmE4OTlhNTQzMTRjODkzYzk2ZWJkNGIxNzU3ODVlODgzNThhMjZhNGU5NzNkM2U1MzgyMTM4NDM1YzEyZSJ9fX0=
+  tags:
+  - Cat
+  - Africa
   cost: -1.0
 Head-49:
-  id: 49
-  category: Interior
-  name: Lantern
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2RmYWMwMTRiMjJjNmY5Njg1YTM2NGYzMTY3M2I4Zjc3MmRiNDc1Mzk1NWFjM2Y1Nzc0MTg2MDJmZjNiZDgifX19
+  id: 46
+  category: Animals
+  name: Yellow Sheep
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjZhNDExMmRmMWU0YmNlMmE1ZTI4NDE3ZjNhYWZmNzljZDY2ZTg4NWMzNzI0NTU0MTAyY2VmOGViOCJ9fX0=
+  tags:
+  - Vanilla
   cost: -1.0
 Head-50:
-  id: 50
-  category: Interior
-  name: Earth
-  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmUyY2M0MjAxNWU2Njc4ZjhmZDQ5Y2NjMDFmYmY3ODdmMWJhMmMzMmJjZjU1OWEwMTUzMzJmYzVkYjUwIn19fQ==
+  id: 23
+  category: Animals
+  name: Zombie Hippo
+  texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2Q1NGQ4Y2M1ZmNjZTMwZmFlZDYwMjFjODcyY2I3ZjE0MjJhMTg0ZTliZmJhNjNlZjA2ZWYzMTVhMTRjZDAifX19
+  tags:
+  - Aquatic
+  - Zombie
+  - Africa
   cost: -1.0

@@ -1,26 +1,36 @@
 package net.sothatsit.heads.command;
 
 import net.sothatsit.heads.Heads;
+import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.cache.CachedHead;
-import net.sothatsit.heads.config.menu.Placeholder;
-import net.sothatsit.heads.lang.Lang;
-import net.sothatsit.heads.menu.mode.SearchMode;
-import net.sothatsit.heads.util.Callback;
-import net.sothatsit.heads.volatilecode.reflection.Version;
-import org.bukkit.Bukkit;
-import org.bukkit.Material;
+import net.sothatsit.heads.config.lang.Placeholder;
+import net.sothatsit.heads.config.lang.Lang;
+import net.sothatsit.heads.oldmenu.mode.SearchMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.SkullMeta;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.UUID;
 
 public class SearchCommand extends AbstractCommand {
-    
+
+    @Override
+    public String getCommandLabel(MainConfig config) {
+        return config.getSearchCommand();
+    }
+
+    @Override
+    public String getPermission() {
+        return "heads.search";
+    }
+
+    @Override
+    public Lang.HelpSection getHelp() {
+        return Lang.Command.Search.help();
+    }
+
     @Override
     public boolean onCommand(final CommandSender sender, final Command command, final String label, final String[] args) {
         if (!(sender instanceof Player)) {
@@ -28,8 +38,8 @@ public class SearchCommand extends AbstractCommand {
             return true;
         }
         
-        if (args.length == 1) {
-            Lang.Command.Errors.invalidArgs().send(sender, Placeholder.valid(Lang.Command.Search.help().command()));
+        if (args.length <= 1) {
+            sendInvalidArgs(sender);
             return true;
         }
 
@@ -48,9 +58,19 @@ public class SearchCommand extends AbstractCommand {
             for(CachedHead head : list) {
                 if(head.getName().toLowerCase().contains(query)) {
                     matches.add(head);
+                    continue;
+                }
+
+                for(String tag : head.getTags()) {
+                    if(tag.toLowerCase().contains(query)) {
+                        matches.add(head);
+                        break;
+                    }
                 }
             }
         }
+
+        Collections.sort(matches);
 
         if(matches.size() == 0) {
             Lang.Command.Search.noneFound().send(sender, new Placeholder("%query%", builder.toString().trim()), new Placeholder("%heads%", "0"));

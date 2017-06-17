@@ -3,10 +3,10 @@ package net.sothatsit.heads.command;
 import java.util.UUID;
 
 import net.sothatsit.heads.Heads;
+import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.cache.CachedHead;
-import net.sothatsit.heads.config.menu.Placeholder;
-import net.sothatsit.heads.lang.Lang;
-import net.sothatsit.heads.util.Callback;
+import net.sothatsit.heads.config.lang.Placeholder;
+import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.volatilecode.reflection.Version;
 
 import org.bukkit.Bukkit;
@@ -18,7 +18,22 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 
 public class GetCommand extends AbstractCommand {
-    
+
+    @Override
+    public String getCommandLabel(MainConfig config) {
+        return config.getGetCommand();
+    }
+
+    @Override
+    public String getPermission() {
+        return "heads.get";
+    }
+
+    @Override
+    public Lang.HelpSection getHelp() {
+        return Lang.Command.Get.help();
+    }
+
     @Override
     public boolean onCommand(final CommandSender sender, final Command command, final String label, final String[] args) {
         if (!(sender instanceof Player)) {
@@ -27,7 +42,7 @@ public class GetCommand extends AbstractCommand {
         }
         
         if (args.length != 2) {
-            Lang.Command.Errors.invalidArgs().send(sender, Placeholder.valid(Lang.Command.Get.help().command()));
+            sendInvalidArgs(sender);
             return true;
         }
         
@@ -60,11 +75,8 @@ public class GetCommand extends AbstractCommand {
         final UUID uuid = ((Player) sender).getUniqueId();
         final String name = args[1];
         
-        Heads.getTextureGetter().getTexture(name, new Callback<String>() {
-            @Override
-            public void call(String texture) {
-                giveHead(Bukkit.getPlayer(uuid), name, texture);
-            }
+        Heads.getTextureGetter().getTexture(name, (resolvedTexture) -> {
+            giveHead(Bukkit.getPlayer(uuid), name, resolvedTexture);
         });
         return true;
     }
@@ -76,7 +88,7 @@ public class GetCommand extends AbstractCommand {
                 return;
             }
             
-            CachedHead head = new CachedHead(-1, "getcommand", name, texture);
+            CachedHead head = new CachedHead(-1, "getcommand", name, texture, new String[0]);
             
             Lang.Command.Get.adding().send(player, Placeholder.name(name));
             

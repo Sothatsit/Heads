@@ -1,9 +1,10 @@
 package net.sothatsit.heads.command;
 
 import net.sothatsit.heads.Heads;
+import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.cache.CachedHead;
-import net.sothatsit.heads.config.menu.Placeholder;
-import net.sothatsit.heads.lang.Lang;
+import net.sothatsit.heads.config.lang.Placeholder;
+import net.sothatsit.heads.config.lang.Lang;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -13,11 +14,26 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 public class GiveCommand extends AbstractCommand {
-    
+
+    @Override
+    public String getCommandLabel(MainConfig config) {
+        return config.getGiveCommand();
+    }
+
+    @Override
+    public String getPermission() {
+        return "heads.give";
+    }
+
+    @Override
+    public Lang.HelpSection getHelp() {
+        return Lang.Command.Give.help();
+    }
+
     @Override
     public boolean onCommand(final CommandSender sender, final Command command, final String label, final String[] args) {
         if (args.length != 4) {
-            Lang.Command.Errors.invalidArgs().send(sender, Placeholder.valid(Lang.Command.Give.help().command()));
+            sendInvalidArgs(sender);
             return true;
         }
         
@@ -84,7 +100,7 @@ public class GiveCommand extends AbstractCommand {
                 return;
             }
             
-            CachedHead head = new CachedHead(-1, "givecommand", name, texture);
+            CachedHead head = new CachedHead(-1, "givecommand", name, texture, new String[0]);
             
             Lang.Command.Get.adding().send(player, Placeholder.name(name));
             

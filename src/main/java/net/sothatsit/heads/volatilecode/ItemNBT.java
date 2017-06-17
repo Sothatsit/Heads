@@ -1,10 +1,9 @@
 package net.sothatsit.heads.volatilecode;
 
-import java.util.Base64;
 import java.util.UUID;
 
-import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.volatilecode.reflection.nms.nbt.NBTTagString;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 
@@ -18,7 +17,27 @@ import net.sothatsit.heads.volatilecode.reflection.nms.nbt.NBTTagCompound;
 import net.sothatsit.heads.volatilecode.reflection.nms.nbt.NBTTagList;
 
 public class ItemNBT {
-    
+
+    public static org.bukkit.inventory.ItemStack addGlow(org.bukkit.inventory.ItemStack item) {
+        ItemStack itemStack = CraftItemStack.asNMSCopy(item);
+
+        addGlow(itemStack);
+
+        return CraftItemStack.asBukkitCopy(itemStack);
+    }
+
+    public static void addGlow(ItemStack item) {
+        NBTTagCompound tag = item.getTag();
+
+        if (tag.getHandle() == null) {
+            tag = new NBTTagCompound();
+        }
+
+        tag.set("ench", new NBTTagList());
+
+        item.setTag(tag);
+    }
+
     public static String getTextureProperty(org.bukkit.inventory.ItemStack item) {
         return getTextureProperty(CraftItemStack.asNMSCopy(item));
     }
@@ -146,7 +165,10 @@ public class ItemNBT {
 
         NBTTagCompound value = new NBTTagCompound();
         value.setString("Value", head.getTexture());
-        value.setString("Signature", "");
+
+        if(Bukkit.getPluginManager().getPlugin("SkinsRestorer") == null) {
+            value.setString("Signature", "");
+        }
 
         textures.add(value);
 
@@ -170,51 +192,4 @@ public class ItemNBT {
         return itemstack;
     }
 
-    public static org.bukkit.inventory.ItemStack fix(org.bukkit.inventory.ItemStack itemstack) {
-        ItemStack nmsItem = CraftItemStack.asNMSCopy(itemstack);
-
-        fix(nmsItem);
-
-        return CraftItemStack.asBukkitCopy(nmsItem);
-    }
-
-    public static void fix(ItemStack itemstack) {
-        NBTTagCompound tag = itemstack.getTag();
-
-        if (tag.getHandle() == null) {
-            return;
-        }
-
-        fix(tag);
-
-        itemstack.setTag(tag);
-    }
-
-    public static void fix(NBTTagCompound tag) {
-        if(!tag.hasKey("SkullOwner")) {
-            return;
-        }
-
-        NBTTagCompound skullOwner = tag.getCompound("SkullOwner");
-
-        if(!skullOwner.hasKey("Properties")) {
-            return;
-        }
-
-        NBTTagCompound properties = skullOwner.getCompound("Properties");
-
-        if(!properties.hasKey("textures")) {
-            return;
-        }
-
-        NBTTagList textures = properties.getList("textures", 10); // 10 = id for tag compound
-
-        for(int i=0; i < textures.size(); i++) {
-            NBTTagCompound compound = textures.get(i);
-
-            if(!compound.hasKey("Signature")) {
-                compound.setString("Signature", "");
-            }
-        }
-    }
 }

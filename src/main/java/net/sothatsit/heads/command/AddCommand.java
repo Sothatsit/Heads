@@ -1,32 +1,41 @@
 package net.sothatsit.heads.command;
 
 import net.sothatsit.heads.Heads;
+import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.cache.CachedHead;
-import net.sothatsit.heads.config.menu.Placeholder;
-import net.sothatsit.heads.lang.Lang;
-import net.sothatsit.heads.util.Callback;
+import net.sothatsit.heads.config.lang.Placeholder;
+import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.volatilecode.reflection.Version;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
 public class AddCommand extends AbstractCommand {
-    
+
+    @Override
+    public String getCommandLabel(MainConfig config) {
+        return config.getAddCommand();
+    }
+
+    @Override
+    public String getPermission() {
+        return "heads.add";
+    }
+
+    @Override
+    public Lang.HelpSection getHelp() {
+        return Lang.Command.Add.help();
+    }
+
     @Override
     public boolean onCommand(final CommandSender sender, Command command, String label, String[] args) {
-        if (!(sender instanceof Player)) {
-            Lang.Command.Errors.mustBePlayer().send(sender);
-            return true;
-        }
-        
         if (Version.v1_8.higherThan(Version.getVersion())) {
             Lang.Command.Add.notSupported().send(sender);
             return true;
         }
         
         if (args.length < 4) {
-            Lang.Command.Errors.invalidArgs().send(sender, Placeholder.valid(Lang.Command.Add.help().command()));
+            sendInvalidArgs(sender);
             return true;
         }
         
@@ -52,11 +61,8 @@ public class AddCommand extends AbstractCommand {
             add(sender, category, name, playerName, texture);
         } else {
             Lang.Command.Add.fetching().send(sender);
-            Heads.getTextureGetter().getTexture(playerName, new Callback<String>() {
-                @Override
-                public void call(String texture) {
-                    add(sender, category, name, playerName, texture);
-                }
+            Heads.getTextureGetter().getTexture(playerName, (resolvedTexture) -> {
+                add(sender, category, name, playerName, resolvedTexture);
             });
         }
         return true;
@@ -67,12 +73,12 @@ public class AddCommand extends AbstractCommand {
             Lang.Command.Add.cantFind().send(sender, Placeholder.name(playerName));
             return;
         }
-        
-        CachedHead head = new CachedHead(-1, category, name, texture);
+
+        CachedHead head = new CachedHead(-1, category, name, texture, new String[0]);
         
         Heads.getCacheConfig().add(head);
         
-        Lang.Command.Add.adding().send(sender, Placeholder.name(name), Placeholder.category(category));
+        Lang.Command.Add.added().send(sender, Placeholder.name(name), Placeholder.category(category));
     }
     
 }

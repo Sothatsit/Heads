@@ -1,7 +1,7 @@
 package net.sothatsit.heads;
 
 import net.sothatsit.heads.config.menu.Menu;
-import net.sothatsit.heads.menu.InventoryType;
+import net.sothatsit.heads.oldmenu.InventoryType;
 
 public class Menus {
     
@@ -13,10 +13,11 @@ public class Menus {
     
     public static final MenusGroup GET = new MenusGroup("get");
     public static final MenusGroup SEARCH = new MenusGroup("search");
-    public static final MenusGroup PRICED = new MenusGroup("priced");
     public static final MenusGroup REMOVE = new MenusGroup("remove");
     public static final MenusGroup RENAME = new MenusGroup("rename");
     public static final MenusGroup COST = new MenusGroup("cost");
+    public static final MenusGroup CATEGORY_COST = new MenusGroup("category-cost");
+    public static final MenusGroup CATEGORY_COST_REMOVE = new MenusGroup("category-cost-remove");
     public static final MenusGroup ID = new MenusGroup("id");
     
     public static Menu get(String name) {
