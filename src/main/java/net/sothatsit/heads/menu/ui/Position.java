@@ -1,6 +1,7 @@
 package net.sothatsit.heads.menu.ui;
 
 import net.sothatsit.heads.util.Checks;
+import net.sothatsit.heads.util.Stringify;
 
 public final class Position {
 
@@ -31,6 +32,13 @@ public final class Position {
 
     public int toSerialIndex(int width) {
         return x + y * width;
+    }
+
+    @Override
+    public String toString() {
+        return Stringify.builder()
+                .entry("x", x)
+                .entry("y", y).toString();
     }
 
 }

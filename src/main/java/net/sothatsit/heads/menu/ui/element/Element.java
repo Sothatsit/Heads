@@ -3,6 +3,7 @@ package net.sothatsit.heads.menu.ui.element;
 import net.sothatsit.heads.menu.ui.Bounds;
 import net.sothatsit.heads.menu.ui.item.MenuItem;
 import net.sothatsit.heads.util.Checks;
+import net.sothatsit.heads.util.Stringify;
 
 public abstract class Element {
 
@@ -27,18 +28,23 @@ public abstract class Element {
     protected abstract MenuItem[] getItems();
 
     public void updateElement() {
-        if(container == null)
-            return;
 
-        container.setElement(this);
-        container.updateElement();
     }
 
-    public void updateInventory() {
+    public void updateInContainer() {
+        updateElement();
+
         if(container == null)
             return;
 
-        container.updateInventory();
+        container.addElement(this);
+        container.updateInContainer();
+    }
+
+    @Override
+    public String toString() {
+        return Stringify.builder()
+                .entry("bounds", bounds).toString();
     }
 
 }

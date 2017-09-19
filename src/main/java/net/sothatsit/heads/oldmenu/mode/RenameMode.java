@@ -2,14 +2,14 @@ package net.sothatsit.heads.oldmenu.mode;
 
 import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.Menus;
-import net.sothatsit.heads.config.cache.CachedHead;
+import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.menu.Menu;
 import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.oldmenu.ConfirmMenu;
 import net.sothatsit.heads.oldmenu.HeadMenu;
 import net.sothatsit.heads.oldmenu.InventoryType;
-import net.sothatsit.heads.util.Arrays;
+import net.sothatsit.heads.util.ArrayUtils;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -38,17 +38,19 @@ public class RenameMode extends BaseMode {
     }
     
     @Override
-    public void onHeadSelect(InventoryClickEvent e, HeadMenu menu, CachedHead head) {
-        openInventory(InventoryType.CONFIRM, new Object[] { head, Arrays.create(new Placeholder("%newname%", name)) });
+    public void onHeadSelect(InventoryClickEvent e, HeadMenu menu, CacheHead head) {
+        openInventory(InventoryType.CONFIRM,
+                head,
+                ArrayUtils.create(new Placeholder("%newname%", name)));
     }
     
     @Override
-    public void onConfirm(InventoryClickEvent e, ConfirmMenu menu, CachedHead head) {
-        Placeholder[] placeholders = Arrays.append(head.getPlaceholders(), new Placeholder("%newname%", name));
+    public void onConfirm(InventoryClickEvent e, ConfirmMenu menu, CacheHead head) {
+        Placeholder[] placeholders = ArrayUtils.append(head.getPlaceholders(), new Placeholder("%newname%", name));
         Lang.Menu.Rename.renamed().send(e.getWhoClicked(), placeholders);
         
         head.setName(name);
-        Heads.getCacheConfig().save();
+        Heads.getInstance().saveCache();
     }
     
     @Override

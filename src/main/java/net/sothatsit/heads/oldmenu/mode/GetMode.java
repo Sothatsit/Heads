@@ -2,7 +2,7 @@ package net.sothatsit.heads.oldmenu.mode;
 
 import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.Menus;
-import net.sothatsit.heads.config.cache.CachedHead;
+import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.menu.Menu;
 import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.EconomyHook;
@@ -28,7 +28,7 @@ public class GetMode extends BaseMode {
     }
     
     @Override
-    public void onHeadSelect(InventoryClickEvent e, HeadMenu menu, CachedHead head) {
+    public void onHeadSelect(InventoryClickEvent e, HeadMenu menu, CacheHead head) {
         if (Heads.getMainConfig().isEconomyEnabled() && !getPlayer().hasPermission("heads.bypasscost")) {
             double cost = head.getCost();
             
@@ -57,7 +57,7 @@ public class GetMode extends BaseMode {
     }
     
     @Override
-    public void onConfirm(InventoryClickEvent e, ConfirmMenu menu, CachedHead head) {
+    public void onConfirm(InventoryClickEvent e, ConfirmMenu menu, CacheHead head) {
         // should not be reached
     }
     

@@ -27,7 +27,7 @@ public class BlockStoreHook implements Listener {
         Bukkit.getPluginManager().registerEvents(this, Heads.getInstance());
     }
     
-    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = false)
+    @EventHandler(priority = EventPriority.MONITOR)
     public void onBlockPlace(BlockPlaceEvent e) {
         ItemStack item = e.getItemInHand();
 

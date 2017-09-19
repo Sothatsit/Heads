@@ -1,8 +1,8 @@
 package net.sothatsit.heads.command;
 
 import net.sothatsit.heads.Heads;
+import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.MainConfig;
-import net.sothatsit.heads.config.cache.CachedHead;
 import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.volatilecode.ItemNBT;
@@ -103,9 +103,9 @@ public class HandCommand extends AbstractCommand {
         
         String name = nameBuilder.toString().substring(1);
         
-        CachedHead head = new CachedHead(-1, category, name, texture, new String[0]);
+        CacheHead head = new CacheHead(name, category, texture);
         
-        Heads.getCacheConfig().add(head);
+        Heads.getCache().addHead(head);
         
         Lang.Command.Hand.adding().send(sender, Placeholder.name(name), Placeholder.category(category));
     }

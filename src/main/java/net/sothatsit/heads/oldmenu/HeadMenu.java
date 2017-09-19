@@ -1,23 +1,23 @@
 package net.sothatsit.heads.oldmenu;
 
-import java.util.List;
-
-import net.sothatsit.heads.config.cache.CachedHead;
+import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.menu.Menu;
 import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.oldmenu.mode.InvMode;
 import net.sothatsit.heads.oldmenu.mode.SearchMode;
-import net.sothatsit.heads.util.Arrays;
+import net.sothatsit.heads.util.ArrayUtils;
 
 import org.bukkit.inventory.ItemStack;
+
+import java.util.List;
 
 public class HeadMenu extends AbstractModedInventory {
     
     private String category;
-    private List<CachedHead> heads;
+    private List<CacheHead> heads;
     private int page;
     
-    public HeadMenu(InvMode mode, String category, List<CachedHead> heads) {
+    public HeadMenu(InvMode mode, String category, List<CacheHead> heads) {
         super(InventoryType.HEADS, 54, new Placeholder[] { new Placeholder("%category%", category) }, mode);
         
         this.category = category;
@@ -64,7 +64,7 @@ public class HeadMenu extends AbstractModedInventory {
             int index = i % 45;
             
             if (i < heads.size()) {
-                CachedHead head = heads.get(i);
+                CacheHead head = heads.get(i);
 
                 String id = "head";
 
@@ -73,9 +73,9 @@ public class HeadMenu extends AbstractModedInventory {
                 }
 
                 placeholders[0] = new Placeholder("%category%", head.getCategory());
-                Placeholder[] holders = Arrays.append(placeholders, head.getPlaceholders());
+                Placeholder[] holders = ArrayUtils.append(placeholders, head.getPlaceholders());
                 
-                contents[index] = head.applyTo(menu.getItemStack(id, holders));
+                contents[index] = head.addTexture(menu.getItemStack(id, holders));
             }
         }
         
@@ -110,7 +110,7 @@ public class HeadMenu extends AbstractModedInventory {
         return slot < 45 && (page * 45 + slot) < heads.size();
     }
     
-    public CachedHead getHead(int slot) {
+    public CacheHead getHead(int slot) {
         return (isHead(slot) ? heads.get(page * 45 + slot) : null);
     }
     

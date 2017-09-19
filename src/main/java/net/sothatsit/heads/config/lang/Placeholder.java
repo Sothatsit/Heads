@@ -5,6 +5,7 @@ import org.bukkit.ChatColor;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Function;
 
 public final class Placeholder {
@@ -20,8 +21,8 @@ public final class Placeholder {
         this.with = with;
     }
 
-    public Placeholder(String replace, int with) {
-        this(replace, Integer.toString(with));
+    public Placeholder(String replace, Object with) {
+        this(replace, Objects.toString(with));
     }
     
     public String getReplace() {

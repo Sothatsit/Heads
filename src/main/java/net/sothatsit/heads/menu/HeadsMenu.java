@@ -1,40 +1,39 @@
 package net.sothatsit.heads.menu;
 
+import net.md_5.bungee.api.ChatColor;
 import net.sothatsit.heads.Heads;
-import net.sothatsit.heads.config.cache.CacheConfig;
-import net.sothatsit.heads.config.cache.CachedHead;
+import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.menu.ui.*;
 import net.sothatsit.heads.menu.ui.element.Container;
 import net.sothatsit.heads.menu.ui.item.MenuItem;
-import net.sothatsit.heads.menu.ui.item.button.Button;
-import net.sothatsit.heads.menu.ui.item.button.ButtonGroup;
-import net.sothatsit.heads.menu.ui.item.button.SelectableButton;
-import net.sothatsit.heads.menu.ui.element.HorizontalScrollbar;
+import net.sothatsit.heads.menu.ui.item.Button;
 import net.sothatsit.heads.menu.ui.element.PagedBox;
 import net.sothatsit.heads.util.Checks;
+import net.sothatsit.heads.util.Item;
 import net.sothatsit.heads.util.SafeCall;
+import net.sothatsit.heads.util.Stringify;
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.List;
-import java.util.Map;
 import java.util.function.Function;
 
 public class HeadsMenu extends Container {
 
-    public static final Template DEFAULT_TEMPLATE = new Template(HorizontalScrollbar.DEFAULT_TEMPLATE, PagedBox.DEFAULT_TEMPLATE);
-
-    private final Function<CachedHead, MenuResponse> onHeadSelect;
-
-    private final HorizontalScrollbar categoriesScrollbar;
-    private final PagedBox headsPagedBox;
+    public static final Template DEFAULT_TEMPLATE = new Template(PagedBox.DEFAULT_TEMPLATE);
 
     private Template template;
 
-    public HeadsMenu(Bounds bounds, Function<CachedHead, MenuResponse> onHeadSelect) {
+    private final Function<CacheHead, MenuResponse> onHeadSelect;
+    private final PagedBox headsPagedBox;
+
+    public HeadsMenu(Bounds bounds, Function<CacheHead, MenuResponse> onHeadSelect) {
         this(null, bounds, onHeadSelect);
     }
 
-    public HeadsMenu(Container container, Bounds bounds, Function<CachedHead, MenuResponse> onHeadSelect) {
+    public HeadsMenu(Container container, Bounds bounds, Function<CacheHead, MenuResponse> onHeadSelect) {
         super(container, bounds);
 
         Checks.ensureNonNull(onHeadSelect, "onHeadSelect");
@@ -42,56 +41,46 @@ public class HeadsMenu extends Container {
 
         this.onHeadSelect = SafeCall.nonNullFunction("onHeadSelect", onHeadSelect);
 
-        this.categoriesScrollbar = new HorizontalScrollbar(this, new Bounds(Position.ZERO, bounds.width, 1));
-        this.headsPagedBox = new PagedBox(this, new Bounds(0, 1, bounds.width, bounds.height - 1));
+        ItemStack backItem = Item.create(Material.REDSTONE_BLOCK).name(ChatColor.RED + "Back to Categories").build();
+        Button backButton = new Button(backItem, this::onBack);
+
+        ItemStack searchItem = Item.create(Material.COMPASS).name(ChatColor.GRAY + "Search Heads").build();
+        Button searchButton = new Button(searchItem, this::onSearch);
+
+        this.headsPagedBox = new PagedBox(this, bounds, backButton, searchButton);
 
         this.template = DEFAULT_TEMPLATE;
         this.template.init(this);
 
-        initCategories();
+        initHeads(Heads.getCache().getHeads());
+    }
+
+    public MenuResponse onBack() {
+        Bukkit.broadcastMessage("back");
+
+        return MenuResponse.NONE;
+    }
+
+    public MenuResponse onSearch() {
+        Bukkit.broadcastMessage("search");
+
+        return MenuResponse.NONE;
     }
 
     @Override
     public MenuItem[] getItems() {
         clear();
 
-        setElement(categoriesScrollbar);
-        setElement(headsPagedBox);
+        addElement(headsPagedBox);
 
         return super.getItems();
     }
 
-    private void initCategories() {
-        CacheConfig cacheConfig = Heads.getCacheConfig();
-        Map<String, List<CachedHead>> heads = cacheConfig.getHeads();
-
-        ButtonGroup categories = new ButtonGroup();
-
-        MenuItem[] categoryButtons = new MenuItem[heads.size()];
-
-        int index = 0;
-        for(Map.Entry<String, List<CachedHead>> entry : heads.entrySet()) {
-            final List<CachedHead> categoryHeads = entry.getValue();
-            final ItemStack categoryIcon = categoryHeads.get(0).getItemStack();
-
-            categoryButtons[index] = new SelectableButton(categories, categoryIcon, () -> {
-                initHeads(categoryHeads);
-                return MenuResponse.NONE;
-            });
-
-            index++;
-        }
-
-        categoriesScrollbar.setItems(categoryButtons);
-
-        categoryButtons[0].handleClick();
-    }
-
-    private void initHeads(List<CachedHead> heads) {
+    private void initHeads(List<CacheHead> heads) {
         MenuItem[] headItems = new MenuItem[heads.size()];
 
         for(int index = 0; index < heads.size(); index++) {
-            final CachedHead head = heads.get(index);
+            CacheHead head = heads.get(index);
 
             headItems[index] = new Button(head.getItemStack(), () -> onHeadSelect.apply(head));
         }
@@ -108,24 +97,46 @@ public class HeadsMenu extends Container {
         updateElement();
     }
 
+    @Override
+    public String toString() {
+        return Stringify.builder()
+                .entry("template", template)
+                .entry("onHeadSelect", onHeadSelect)
+                .entry("headsPagedBox", headsPagedBox).toString();
+    }
+
     public static final class Template {
 
-        private final HorizontalScrollbar.Template categoriesTemplate;
         private final PagedBox.Template headsTemplate;
 
-        public Template(HorizontalScrollbar.Template categoriesTemplate, PagedBox.Template headsTemplate) {
-            Checks.ensureNonNull(categoriesTemplate, "categoriesTemplate");
+        public Template(PagedBox.Template headsTemplate) {
             Checks.ensureNonNull(headsTemplate, "headsTemplate");
 
-            this.categoriesTemplate = categoriesTemplate;
             this.headsTemplate = headsTemplate;
         }
 
         private void init(HeadsMenu headsMenu) {
-            headsMenu.categoriesScrollbar.setTemplate(categoriesTemplate);
             headsMenu.headsPagedBox.setTemplate(headsTemplate);
         }
 
+        @Override
+        public String toString() {
+            return Stringify.builder()
+                    .entry("headsTemplate", headsTemplate).toString();
+        }
+
+    }
+
+    public static void openHeadsMenu(Player player) {
+        InventoryMenu inventory = new InventoryMenu(player, "Heads", 6);
+
+        HeadsMenu menu = new HeadsMenu(inventory, inventory.bounds, head -> {
+            player.sendMessage(head.getName());
+            return MenuResponse.NONE;
+        });
+
+        inventory.addElement(menu);
+        inventory.open();
     }
 
 }

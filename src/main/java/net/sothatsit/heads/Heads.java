@@ -1,10 +1,14 @@
 package net.sothatsit.heads;
 
+import net.sothatsit.heads.cache.AddonsFile;
+import net.sothatsit.heads.cache.AddonsFileHeader;
+import net.sothatsit.heads.cache.CacheFile;
+import net.sothatsit.heads.cache.legacy.CacheFileConverter;
 import net.sothatsit.heads.command.HeadsCommand;
 import net.sothatsit.heads.command.RuntimeCommand;
 import net.sothatsit.heads.config.FileConfigFile;
 import net.sothatsit.heads.config.MainConfig;
-import net.sothatsit.heads.config.cache.CacheConfig;
+import net.sothatsit.heads.cache.legacy.LegacyCacheConfig;
 import net.sothatsit.heads.config.lang.LangConfig;
 import net.sothatsit.heads.config.menu.MenuConfig;
 import net.sothatsit.heads.menu.ui.InventoryMenu;
@@ -31,13 +35,14 @@ import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Map;
 
 public class Heads extends JavaPlugin implements Listener {
 
     private static Heads instance;
-    private CacheConfig cacheConfig;
+    private CacheFile cache;
     private MenuConfig menuConfig;
     private MainConfig mainConfig;
     private LangConfig langConfig;
@@ -50,9 +55,7 @@ public class Heads extends JavaPlugin implements Listener {
 
         Clock timer = Clock.start();
 
-        this.cacheConfig = new CacheConfig(true, new FileConfigFile(new File(getDataFolder(), "cache.yml")));
-        this.cacheConfig.installAddons();
-        this.cacheConfig.saveIfRequired();
+        loadCache();
 
         this.menuConfig = new MenuConfig(new FileConfigFile(new File(getDataFolder(), "menus.yml")));
         this.langConfig = new LangConfig(new FileConfigFile(new File(getDataFolder(), "lang.yml")));
@@ -66,7 +69,7 @@ public class Heads extends JavaPlugin implements Listener {
 
         Bukkit.getPluginManager().registerEvents(this, this);
 
-        info("Heads Plugin Enabled with " + cacheConfig.getTotalHeads() + " heads " + timer);
+        info("Heads plugin enabled with " + cache.getHeadCount() + " heads " + timer);
     }
 
     @Override
@@ -74,6 +77,110 @@ public class Heads extends JavaPlugin implements Listener {
         instance = null;
 
         unregisterCommands();
+    }
+
+    private File getCacheFile() {
+        if(!getDataFolder().exists() && !getDataFolder().mkdirs())
+            throw new RuntimeException("Unable to create the data folder to save plugin files");
+
+        if(!getDataFolder().isDirectory())
+            throw new RuntimeException("plugins/Heads should be a directory, yet there is a file with the same name");
+
+        return new File(getDataFolder(), "heads.cache");
+    }
+
+    private CacheFile loadCache() {
+        File file = getCacheFile();
+        File legacyConfigFile = new File(getDataFolder(), "cache.yml");
+
+        boolean requiresWrite = false;
+
+        if(!file.exists()) {
+            requiresWrite = true;
+
+            if(legacyConfigFile.exists()) {
+                Clock timer = Clock.start();
+
+                FileConfigFile config = new FileConfigFile(legacyConfigFile);
+                LegacyCacheConfig legacy = new LegacyCacheConfig(config);
+                cache = CacheFileConverter.convertToCacheFile("main-cache", legacy);
+
+                info("Converted legacy yaml cache file to new binary file " + timer);
+            } else {
+                cache = new CacheFile("main-cache");
+            }
+        } else {
+            try {
+                Clock timer = Clock.start();
+
+                cache = CacheFile.read(file);
+
+                info("Loaded cache file " + timer);
+            } catch (IOException e) {
+                severe("Unable to read heads.cache file");
+                throw new RuntimeException("There was an exception reading the heads.cache file", e);
+            }
+        }
+
+        if(installAddons() || requiresWrite) {
+            saveCache();
+        }
+
+        if(legacyConfigFile.exists() && !legacyConfigFile.delete()) {
+            severe("Unable to delete legacy yaml cache file");
+        }
+
+        return cache;
+    }
+
+    public void saveCache() {
+        File file = getCacheFile();
+
+        try {
+            Clock timer = Clock.start();
+
+            cache.write(file);
+
+            info("Saved cache file " + timer);
+        } catch (IOException e) {
+            severe("Unable to save the cache to heads.cache");
+            throw new RuntimeException("There was an exception saving the legacy", e);
+        }
+    }
+
+    private AddonsFileHeader readAddonsFileHeader() {
+        try {
+            return AddonsFileHeader.readResource("addons.caches");
+        } catch (IOException e) {
+            severe("Unable to read header of addons.cache");
+            throw new RuntimeException("Unable to read header of addons.caches", e);
+        }
+    }
+
+    private AddonsFile readAddonsFile() {
+        try {
+            return AddonsFile.readResource("addons.caches");
+        } catch (IOException e) {
+            severe("Unable to read addons from addons.cache");
+            throw new RuntimeException("Unable to read addons from addons.cache", e);
+        }
+    }
+
+    private boolean installAddons() {
+        Clock timer = Clock.start();
+
+        AddonsFileHeader header = readAddonsFileHeader();
+        int newAddons = header.getUninstalledAddons(cache);
+
+        if(newAddons <= 0)
+            return false;
+
+        AddonsFile addons = readAddonsFile();
+        int newHeads = addons.installAddons(cache);
+
+        info("Added " + newHeads + " new heads from " + newAddons + " addons " + timer);
+
+        return true;
     }
 
     private void hookPlugins() {
@@ -90,7 +197,7 @@ public class Heads extends JavaPlugin implements Listener {
         }
 
         if (!ecoHooked && mainConfig.isEconomyEnabled()) {
-            severe("Unable to hook Vault Economy and economy is enabled in config");
+            severe("Unable to hook Vault Economy and economy is enabled in legacy");
             severe("Users will not be able to purchase heads");
         }
 
@@ -133,7 +240,6 @@ public class Heads extends JavaPlugin implements Listener {
     }
 
     public void reloadConfigs() {
-        cacheConfig.reload();
         langConfig.reload();
         mainConfig.reload();
 
@@ -178,6 +284,10 @@ public class Heads extends JavaPlugin implements Listener {
         return meta.hasOwner() && meta.getOwner().equals("SpigotHeadPlugin");
     }
 
+    public static String getCategoryPermission(String category) {
+        return "heads.category." + category.toLowerCase().replace(' ', '_');
+    }
+
     public static Heads getInstance() {
         return instance;
     }
@@ -190,8 +300,8 @@ public class Heads extends JavaPlugin implements Listener {
         return instance.mainConfig.isHatMode();
     }
     
-    public static CacheConfig getCacheConfig() {
-        return instance.cacheConfig;
+    public static CacheFile getCache() {
+        return instance.cache;
     }
     
     public static MenuConfig getMenuConfig() {
@@ -205,7 +315,7 @@ public class Heads extends JavaPlugin implements Listener {
     public static TextureGetter getTextureGetter() {
         return instance.textureGetter;
     }
-    
+
     public static void info(String info) {
         instance.getLogger().info(info);
     }
@@ -229,5 +339,5 @@ public class Heads extends JavaPlugin implements Listener {
     public static void async(Runnable task) {
         Bukkit.getScheduler().runTaskAsynchronously(instance, task);
     }
-    
+
 }

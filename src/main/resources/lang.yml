@@ -1,3 +1,6 @@
+currency:
+  zero: "Free"
+  non-zero: "%amount%"
 menu:
    get:
       open: '&7Opening Menu...'
@@ -51,7 +54,7 @@ command:
       reloaded: '&7Config Reloaded'
       help:
          command: '/heads reload'
-         description: 'Reload the Heads config files'
+         description: 'Reload the Heads legacy files'
    get:
       head-name: '&7%name%s head'
       old-method: '&cGetting head textures is not supported by spigot before 1.8, using old method'
@@ -70,7 +73,7 @@ command:
          command: '/heads search <search query>'
          description: 'Find useful heads'
    random:
-      no-heads: '&cThere are no heads in the cache'
+      no-heads: '&cThere are no heads in the legacy'
       giving: '&7You have been given the head &6%name% &7from the category &6%category%'
       help:
          command: '/heads random'

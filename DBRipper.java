@@ -1,6 +1,5 @@
 package net.sothatsit.heads;
 
-import net.sothatsit.heads.config.cache.CachedHead;
 import net.sothatsit.heads.volatilecode.reflection.authlib.GameProfile;
 import net.sothatsit.heads.volatilecode.reflection.authlib.Property;
 import org.bukkit.Bukkit;

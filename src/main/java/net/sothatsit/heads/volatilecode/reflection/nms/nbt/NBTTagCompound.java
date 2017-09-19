@@ -61,6 +61,7 @@ public class NBTTagCompound extends ReflectObject {
         return new NBTTagList(get(key).getHandle());
     }
 
+    @SuppressWarnings("unchecked")
     public Set<String> getKeys() {
         try {
             return (Set<String>) getKeysMethod.invoke(handle);

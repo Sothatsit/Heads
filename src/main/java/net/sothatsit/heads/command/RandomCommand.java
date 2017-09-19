@@ -1,12 +1,10 @@
 package net.sothatsit.heads.command;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 import net.sothatsit.heads.Heads;
+import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.MainConfig;
-import net.sothatsit.heads.config.cache.CachedHead;
 import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.config.lang.Lang;
 
@@ -16,7 +14,7 @@ import org.bukkit.entity.Player;
 
 public class RandomCommand extends AbstractCommand {
     
-    private static final Random rand = new Random();
+    private static final Random RANDOM = new Random();
 
     @Override
     public String getCommandLabel(MainConfig config) {
@@ -45,18 +43,12 @@ public class RandomCommand extends AbstractCommand {
             return true;
         }
         
-        List<CachedHead> heads = new ArrayList<>();
-        
-        for (List<CachedHead> list : Heads.getCacheConfig().getHeads().values()) {
-            heads.addAll(list);
-        }
-        
-        if (heads.size() == 0) {
+        if (Heads.getCache().getHeadCount() == 0) {
             Lang.Command.Random.noHeads().send(sender);
             return true;
         }
         
-        CachedHead random = heads.get(rand.nextInt(heads.size()));
+        CacheHead random = Heads.getCache().getRandomHead(RANDOM);
         
         Lang.Command.Random.giving().send(sender, Placeholder.name(random.getName()), Placeholder.category(random.getCategory()));
         

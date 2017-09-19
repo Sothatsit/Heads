@@ -4,7 +4,6 @@ import net.sothatsit.heads.volatilecode.reflection.ReflectObject;
 import net.sothatsit.heads.volatilecode.reflection.ReflectionUtils;
 
 import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
 
 public class NBTTagString extends ReflectObject {
 

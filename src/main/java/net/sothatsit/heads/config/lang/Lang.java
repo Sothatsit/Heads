@@ -2,6 +2,7 @@ package net.sothatsit.heads.config.lang;
 
 import net.sothatsit.heads.Heads;
 
+// TODO: Accept arguments for messages in methods for natural documentation and ease of use
 public class Lang {
     
     public static LangMessage get(String key) {
@@ -28,6 +29,22 @@ public class Lang {
             return get(key() + ".description").getSingle();
         }
         
+    }
+
+    public static class Currency {
+
+        public static String key() {
+            return "currency";
+        }
+
+        public static LangMessage zero() {
+            return Lang.get(key() + ".zero");
+        }
+
+        public static LangMessage nonZero() {
+            return Lang.get(key() + ".non-zero");
+        }
+
     }
     
     public static class Menu {

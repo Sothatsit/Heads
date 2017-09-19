@@ -1,6 +1,6 @@
 package net.sothatsit.heads.oldmenu.mode;
 
-import net.sothatsit.heads.config.cache.CachedHead;
+import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.oldmenu.CategorySelectMenu;
 import net.sothatsit.heads.oldmenu.ConfirmMenu;
 import net.sothatsit.heads.oldmenu.HeadMenu;
@@ -71,7 +71,7 @@ public abstract class BaseMode extends InvMode {
         int slot = e.getRawSlot();
         
         if (!menu.handleToolbar(slot)) {
-            CachedHead head = menu.getHead(slot);
+            CacheHead head = menu.getHead(slot);
             
             if (head != null) {
                 onHeadSelect(e, menu, head);
@@ -79,7 +79,7 @@ public abstract class BaseMode extends InvMode {
         }
     }
     
-    public abstract void onHeadSelect(InventoryClickEvent e, HeadMenu menu, CachedHead head);
+    public abstract void onHeadSelect(InventoryClickEvent e, HeadMenu menu, CacheHead head);
     
     public void onConfirmClick(InventoryClickEvent e) {
         ConfirmMenu menu = getInventory(ConfirmMenu.class);
@@ -94,6 +94,6 @@ public abstract class BaseMode extends InvMode {
         }
     }
     
-    public abstract void onConfirm(InventoryClickEvent e, ConfirmMenu menu, CachedHead head);
+    public abstract void onConfirm(InventoryClickEvent e, ConfirmMenu menu, CacheHead head);
     
 }

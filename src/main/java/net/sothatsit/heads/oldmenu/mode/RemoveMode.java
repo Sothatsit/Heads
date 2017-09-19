@@ -2,7 +2,7 @@ package net.sothatsit.heads.oldmenu.mode;
 
 import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.Menus;
-import net.sothatsit.heads.config.cache.CachedHead;
+import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.menu.Menu;
 import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.oldmenu.ConfirmMenu;
@@ -26,13 +26,14 @@ public class RemoveMode extends BaseMode {
     }
     
     @Override
-    public void onHeadSelect(InventoryClickEvent e, HeadMenu menu, CachedHead head) {
-        openInventory(InventoryType.CONFIRM, new Object[] { head });
+    public void onHeadSelect(InventoryClickEvent e, HeadMenu menu, CacheHead head) {
+        openInventory(InventoryType.CONFIRM, head);
     }
     
     @Override
-    public void onConfirm(InventoryClickEvent e, ConfirmMenu menu, CachedHead head) {
-        Heads.getCacheConfig().remove(head);
+    public void onConfirm(InventoryClickEvent e, ConfirmMenu menu, CacheHead head) {
+        Heads.getCache().removeHead(head);
+        Heads.getInstance().saveCache();
         
         Lang.Menu.Remove.removed().send(e.getWhoClicked(), head.getPlaceholders());
     }

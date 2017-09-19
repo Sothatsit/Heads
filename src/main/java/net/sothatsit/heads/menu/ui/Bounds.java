@@ -1,6 +1,7 @@
 package net.sothatsit.heads.menu.ui;
 
 import net.sothatsit.heads.util.Checks;
+import net.sothatsit.heads.util.Stringify;
 
 public final class Bounds {
 
@@ -59,6 +60,14 @@ public final class Bounds {
         }
 
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return Stringify.builder()
+                .entry("position", position)
+                .entry("width", width)
+                .entry("height", height).toString();
     }
 
 }

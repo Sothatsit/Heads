@@ -45,7 +45,7 @@ public class MenuConfig {
 
         for (String key : config.getKeys(false)) {
             if (!config.isConfigurationSection(key)) {
-                Heads.warning("Unknown use of value \"" + key + "\" in the menu config");
+                Heads.warning("Unknown use of value \"" + key + "\" in the menu legacy");
                 continue;
             }
 
@@ -63,7 +63,7 @@ public class MenuConfig {
 
             config.set(key, defaults.getConfigurationSection(key));
 
-            Heads.warning("\"" + key + "\" was missing in the menu config, creating it");
+            Heads.warning("\"" + key + "\" was missing in the menu legacy, creating it");
             save = true;
         }
         

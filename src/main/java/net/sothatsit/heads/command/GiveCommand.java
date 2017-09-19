@@ -1,8 +1,8 @@
 package net.sothatsit.heads.command;
 
 import net.sothatsit.heads.Heads;
+import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.MainConfig;
-import net.sothatsit.heads.config.cache.CachedHead;
 import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.config.lang.Lang;
 
@@ -71,9 +71,9 @@ public class GiveCommand extends AbstractCommand {
             Lang.Command.Give.cantFindPlayer().send(sender, Placeholder.name(playerStr));
             return true;
         }
-        
-        CachedHead head = Heads.getCacheConfig().getHead(id);
-        
+
+        CacheHead head = Heads.getCache().findHead(id);
+
         if (head == null) {
             Lang.Command.Give.cantFindHead().send(sender, Placeholder.id(idStr));
             return true;
@@ -91,24 +91,5 @@ public class GiveCommand extends AbstractCommand {
         
         Lang.Command.Give.give().send(sender, Placeholder.amount(amountStr), Placeholder.head(head.getName()), Placeholder.name(player.getName()));
         return true;
-    }
-    
-    public void giveHead(Player player, String name, String texture) {
-        if (player != null) {
-            if (texture == null || texture.isEmpty()) {
-                Lang.Command.Get.cantFind().send(player, Placeholder.name(name));
-                return;
-            }
-            
-            CachedHead head = new CachedHead(-1, "givecommand", name, texture, new String[0]);
-            
-            Lang.Command.Get.adding().send(player, Placeholder.name(name));
-            
-            if (Heads.isHatMode()) {
-                player.getInventory().setHelmet(head.getItemStack());
-            } else {
-                player.getInventory().addItem(head.getItemStack());
-            }
-        }
     }
 }

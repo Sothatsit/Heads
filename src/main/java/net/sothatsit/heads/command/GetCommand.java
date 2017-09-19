@@ -3,8 +3,8 @@ package net.sothatsit.heads.command;
 import java.util.UUID;
 
 import net.sothatsit.heads.Heads;
+import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.MainConfig;
-import net.sothatsit.heads.config.cache.CachedHead;
 import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.volatilecode.reflection.Version;
@@ -87,9 +87,9 @@ public class GetCommand extends AbstractCommand {
                 Lang.Command.Get.cantFind().send(player, Placeholder.name(name));
                 return;
             }
-            
-            CachedHead head = new CachedHead(-1, "getcommand", name, texture, new String[0]);
-            
+
+            CacheHead head = new CacheHead(name, "getcommand", texture);
+
             Lang.Command.Get.adding().send(player, Placeholder.name(name));
             
             if (Heads.isHatMode()) {

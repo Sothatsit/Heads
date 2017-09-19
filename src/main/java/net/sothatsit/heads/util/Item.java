@@ -36,11 +36,15 @@ public class Item {
         Checks.ensureTrue(durability >= 0, "durability must be greater than 0");
         Checks.ensureTrue(amount > 0, "amount must be greater than 0");
 
+        if(lore != null) {
+            Checks.ensureArrayNonNull(lore, "lore");
+        }
+
         this.type = type;
         this.data = durability;
         this.amount = amount;
         this.name = name;
-        this.lore = (lore != null && lore.length > 0 ? lore : null);
+        this.lore = (lore != null && lore.length > 0 ? Placeholder.colourAll(lore) : null);
         this.enchanted = enchanted;
     }
 
@@ -98,12 +102,22 @@ public class Item {
         return item;
     }
 
+    @Override
+    public String toString() {
+        return Stringify.itemToString(build());
+    }
+
     public static Item create(Material type) {
         return new Item(type);
     }
 
+    @SuppressWarnings("deprecation")
+    public static Material getMaterialById(int typeId) {
+        return Material.getMaterial(typeId);
+    }
+
     public static Item create(int typeId) {
-        Material type = Material.getMaterial(typeId);
+        Material type = getMaterialById(typeId);
 
         Checks.ensureTrue(type != null, "typeId does not match to a Material");
 

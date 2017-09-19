@@ -4,6 +4,7 @@ import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.menu.ui.element.Container;
 import net.sothatsit.heads.menu.ui.item.MenuItem;
 import net.sothatsit.heads.util.Checks;
+import net.sothatsit.heads.util.Stringify;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -62,14 +63,7 @@ public class InventoryMenu extends Container implements InventoryHolder {
         updateMenu();
     }
 
-    @Override
-    public void updateInventory() {
-        super.updateInventory();
-
-        updateMenu();
-    }
-
-    public void updateMenu() {
+    private void updateMenu() {
         MenuItem[] items = getItems();
         ItemStack[] contents = new ItemStack[items.length];
 
@@ -103,6 +97,14 @@ public class InventoryMenu extends Container implements InventoryHolder {
             default:
                 throw new IllegalStateException("Unknown MenuResponse value " + response);
         }
+    }
+
+    @Override
+    public String toString() {
+        return Stringify.builder()
+                .previous(super.toString())
+                .entry("inventory", inventory)
+                .entry("player", player).toString();
     }
 
 }

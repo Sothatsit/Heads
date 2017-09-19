@@ -2,6 +2,7 @@ package net.sothatsit.heads.volatilecode.reflection.craftbukkit;
 
 import java.lang.reflect.Field;
 
+import net.sothatsit.heads.util.Checks;
 import net.sothatsit.heads.volatilecode.reflection.ReflectObject;
 import net.sothatsit.heads.volatilecode.reflection.ReflectionUtils;
 import net.sothatsit.heads.volatilecode.reflection.nms.nbt.NBTTagCompound;
@@ -14,6 +15,7 @@ public class CraftMetaSkullSub1 extends ReflectObject {
     
     static {
         CraftMetaSkullSub1Class = ReflectionUtils.getCraftBukkitClass("inventory.CraftMetaSkull$1");
+        Checks.ensureNonNull(CraftMetaSkullSub1Class, "CraftMetaSkullSub1Class");
         
         try {
             tagField = CraftMetaSkullSub1Class.getDeclaredField("val$tag");

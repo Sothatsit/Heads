@@ -27,7 +27,7 @@ public class Container extends Element {
         return items;
     }
 
-    public void setElement(Element element) {
+    public void addElement(Element element) {
         setItems(element.bounds, element.getItems());
     }
 
@@ -40,9 +40,9 @@ public class Container extends Element {
         for(int x = 0; x < bounds.width; x++) {
             for(int y = 0; y < bounds.height; y++) {
                 Position fromPos = new Position(x, y);
-                Position toPos = fromPos.add(this.bounds.position);
+                Position toPos = fromPos.add(bounds.position);
 
-                items[toPos.toSerialIndex(this.bounds.width)] = items[fromPos.toSerialIndex(bounds.width)];
+                this.items[toPos.toSerialIndex(this.bounds.width)] = items[fromPos.toSerialIndex(bounds.width)];
             }
         }
 

@@ -1,8 +1,8 @@
 package net.sothatsit.heads.command;
 
 import net.sothatsit.heads.Heads;
+import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.MainConfig;
-import net.sothatsit.heads.config.cache.CachedHead;
 import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.volatilecode.reflection.Version;
@@ -74,9 +74,9 @@ public class AddCommand extends AbstractCommand {
             return;
         }
 
-        CachedHead head = new CachedHead(-1, category, name, texture, new String[0]);
-        
-        Heads.getCacheConfig().add(head);
+        CacheHead head = new CacheHead(name, category, texture);
+
+        Heads.getCache().addHead(head);
         
         Lang.Command.Add.added().send(sender, Placeholder.name(name), Placeholder.category(category));
     }

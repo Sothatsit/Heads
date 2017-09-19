@@ -22,6 +22,7 @@ public abstract class InvMode {
         return this.player;
     }
 
+    @SuppressWarnings("unchecked")
     public <T extends InvMode> T asType(Class<T> clazz) {
         return (T) this;
     }
@@ -30,6 +31,7 @@ public abstract class InvMode {
         return this.inventory;
     }
 
+    @SuppressWarnings("unchecked")
     public <T extends AbstractModedInventory> T getInventory(Class<T> clazz) {
         return (T) this.inventory;
     }

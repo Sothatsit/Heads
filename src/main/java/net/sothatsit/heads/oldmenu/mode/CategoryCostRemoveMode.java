@@ -3,19 +3,18 @@ package net.sothatsit.heads.oldmenu.mode;
 import net.md_5.bungee.api.ChatColor;
 import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.Menus;
-import net.sothatsit.heads.config.cache.CachedHead;
+import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.menu.Menu;
 import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.oldmenu.ConfirmMenu;
 import net.sothatsit.heads.oldmenu.HeadMenu;
 import net.sothatsit.heads.oldmenu.InventoryType;
-import net.sothatsit.heads.util.Arrays;
+import net.sothatsit.heads.util.ArrayUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
 import java.util.List;
-import java.util.Map;
 
 public class CategoryCostRemoveMode extends BaseMode {
 
@@ -24,7 +23,7 @@ public class CategoryCostRemoveMode extends BaseMode {
     public CategoryCostRemoveMode(Player player) {
         super(player);
 
-        this.costString = CachedHead.getCostString(Heads.getMainConfig().getDefaultHeadCost());
+        this.costString = CacheHead.getCostString(Heads.getMainConfig().getDefaultHeadCost());
 
         Lang.Menu.CategoryCost.openRemove().send(getPlayer(), new Placeholder("%newcost%", this.costString));
     }
@@ -34,38 +33,29 @@ public class CategoryCostRemoveMode extends BaseMode {
         return Menus.CATEGORY_COST_REMOVE.fromType(type);
     }
 
-    public CachedHead getCategoryHead(String category) {
-        category = category.toLowerCase().replace(" ", "");
+    public CacheHead getCategoryHead(String category) {
+        List<CacheHead> heads = Heads.getCache().getCategoryHeads(category);
 
-        for(Map.Entry<String, List<CachedHead>> entry : Heads.getCacheConfig().getHeads().entrySet()) {
-            String key = entry.getKey().toLowerCase().replace(" ", "");
-
-            if(key.equalsIgnoreCase(category)) {
-                return entry.getValue().get(0);
-            }
-        }
-
-        return null;
+        return (heads.size() > 0 ? heads.get(0) : null);
     }
 
     @Override
     public void onCategorySelect(String category) {
-        CachedHead head = this.getCategoryHead(category);
+        CacheHead head = this.getCategoryHead(category);
 
         if(head == null) {
             this.getPlayer().sendMessage(ChatColor.RED + "Invalid category");
             return;
         }
 
-        openInventory(InventoryType.CONFIRM, new Object[] {
+        openInventory(InventoryType.CONFIRM,
                 head,
-                Arrays.create(new Placeholder("%newcost%", this.costString))
-        });
+                ArrayUtils.create(new Placeholder("%newcost%", this.costString)));
     }
 
     @Override
-    public void onConfirm(InventoryClickEvent e, ConfirmMenu menu, CachedHead head) {
-        Placeholder[] placeholders = Arrays.append(
+    public void onConfirm(InventoryClickEvent e, ConfirmMenu menu, CacheHead head) {
+        Placeholder[] placeholders = ArrayUtils.append(
                 head.getPlaceholders(),
                 new Placeholder("%newcost%", this.costString));
 
@@ -80,6 +70,6 @@ public class CategoryCostRemoveMode extends BaseMode {
     }
 
     @Override
-    public void onHeadSelect(InventoryClickEvent e, HeadMenu menu, CachedHead head) {}
+    public void onHeadSelect(InventoryClickEvent e, HeadMenu menu, CacheHead head) {}
     
 }

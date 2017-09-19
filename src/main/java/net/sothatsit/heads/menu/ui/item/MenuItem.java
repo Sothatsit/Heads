@@ -3,6 +3,7 @@ package net.sothatsit.heads.menu.ui.item;
 import net.sothatsit.heads.menu.ui.MenuResponse;
 import net.sothatsit.heads.menu.ui.element.Element;
 import net.sothatsit.heads.util.Checks;
+import net.sothatsit.heads.util.Stringify;
 import org.bukkit.inventory.ItemStack;
 
 public class MenuItem {
@@ -41,7 +42,13 @@ public class MenuItem {
         if(parent == null)
             return;
 
-        parent.updateInventory();
+        parent.updateInContainer();
+    }
+
+    @Override
+    public String toString() {
+        return Stringify.builder()
+                .entry("item", item).toString();
     }
 
 }

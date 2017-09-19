@@ -10,6 +10,7 @@ import net.sothatsit.heads.volatilecode.reflection.nms.MinecraftServer;
 import net.sothatsit.heads.volatilecode.reflection.nms.TileEntitySkull;
 
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.function.Consumer;
 
 public class TextureGetter {
@@ -18,9 +19,9 @@ public class TextureGetter {
         GameProfile profile = MinecraftServer.getServer().getUserCache().getProfile(name);
         
         if (!profile.isNull() && profile.isComplete() && profile.getProperties() != null && profile.getProperties().containsKey("textures")) {
-            for (Property p : profile.getProperties().get("textures")) {
-                return p.getValue();
-            }
+            Iterator<Property> iterator = profile.getProperties().get("textures").iterator();
+
+            return iterator.hasNext() ? iterator.next().getValue() : null;
         }
         
         return null;

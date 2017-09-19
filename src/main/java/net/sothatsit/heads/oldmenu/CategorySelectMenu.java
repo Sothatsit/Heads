@@ -2,6 +2,8 @@ package net.sothatsit.heads.oldmenu;
 
 import java.util.*;
 
+import net.sothatsit.heads.cache.CacheFile;
+import net.sothatsit.heads.cache.CacheHead;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -10,15 +12,13 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import net.sothatsit.heads.Heads;
-import net.sothatsit.heads.config.cache.CacheConfig;
-import net.sothatsit.heads.config.cache.CachedHead;
 import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.oldmenu.mode.InvMode;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public class CategorySelectMenu extends AbstractModedInventory {
     
-    private Map<String, List<CachedHead>> heads;
+    private Map<String, List<CacheHead>> heads;
     private List<String> categories;
     private double offset;
     
@@ -30,7 +30,7 @@ public class CategorySelectMenu extends AbstractModedInventory {
     
     @Override
     public void recreate() {
-        CacheConfig cache = Heads.getCacheConfig();
+        CacheFile cache = Heads.getCache();
 
         this.heads = new HashMap<>();
         this.categories = new ArrayList<>();
@@ -66,7 +66,7 @@ public class CategorySelectMenu extends AbstractModedInventory {
             String lore =    "&cto view any head categories";
 
             meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', message));
-            meta.setLore(Arrays.asList(ChatColor.translateAlternateColorCodes('&', lore)));
+            meta.setLore(Collections.singletonList(ChatColor.translateAlternateColorCodes('&', lore)));
 
             red.setItemMeta(meta);
 
@@ -102,7 +102,7 @@ public class CategorySelectMenu extends AbstractModedInventory {
 
             for (int index = 0; index < this.categories.size(); index++) {
                 String category = this.categories.get(index);
-                List<CachedHead> heads = new ArrayList<>(cache.getHeads(category));
+                List<CacheHead> heads = new ArrayList<>(cache.getCategoryHeads(category));
 
                 this.heads.put(category, heads);
                 
@@ -116,13 +116,13 @@ public class CategorySelectMenu extends AbstractModedInventory {
                     }
                 }
                 
-                CachedHead head = heads.get(0);
+                CacheHead head = heads.get(0);
 
                 ItemStack item = getMenu().getItemStack("head",
                         new Placeholder("%category%", category),
                         new Placeholder("%heads%", Integer.toString(heads.size())));
 
-                contents[slot] = head.applyTo(item);
+                contents[slot] = head.addTexture(item);
             }
         } else {
         	int rows = (int) Math.ceil(numHeads / 9d);
@@ -141,17 +141,17 @@ public class CategorySelectMenu extends AbstractModedInventory {
         	
         	for (int index = 0; index < this.categories.size(); index++) {
                 String category = this.categories.get(index);
-                List<CachedHead> heads = new ArrayList<>(cache.getHeads(category));
+                List<CacheHead> heads = new ArrayList<>(cache.getCategoryHeads(category));
 
                 this.heads.put(category, heads);
                 
-                CachedHead head = heads.get(0);
+                CacheHead head = heads.get(0);
 
                 ItemStack item = getMenu().getItemStack("head",
                         new Placeholder("%category%", category),
                         new Placeholder("%heads%", Integer.toString(heads.size())));
 
-                contents[index * 2] = head.applyTo(item);
+                contents[index * 2] = head.addTexture(item);
             }
         }
         
@@ -161,12 +161,11 @@ public class CategorySelectMenu extends AbstractModedInventory {
     public String getCategory(int slot) {
         Inventory inv = getInventory();
         int size = inv.getSize();
-        
-        if(this.categories.size() > 27) {
-        	if (slot < 0 || slot >= size || inv.getItem(slot) == null) {
-                return null;
-            }
 
+        if (slot < 0 || slot >= size || inv.getItem(slot) == null)
+            return null;
+
+        if(this.categories.size() > 27) {
             int index;
 
             if (slot >= size - 9) {
@@ -181,11 +180,11 @@ public class CategorySelectMenu extends AbstractModedInventory {
             
             return this.categories.get(index);
         } else {
-        	return (slot % 2 == 0 ? this.categories.get(slot / 2) : null);
+        	return this.categories.get(slot / 2);
         }
     }
     
-    public List<CachedHead> getHeads(String category) {
+    public List<CacheHead> getHeads(String category) {
         return heads.get(category);
     }
     

@@ -2,12 +2,13 @@ package net.sothatsit.heads.volatilecode;
 
 import java.util.UUID;
 
+import net.sothatsit.heads.cache.CacheHead;
+import net.sothatsit.heads.volatilecode.reflection.Version;
 import net.sothatsit.heads.volatilecode.reflection.nms.nbt.NBTTagString;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 
-import net.sothatsit.heads.config.cache.CachedHead;
 import net.sothatsit.heads.volatilecode.reflection.authlib.GameProfile;
 import net.sothatsit.heads.volatilecode.reflection.authlib.Property;
 import net.sothatsit.heads.volatilecode.reflection.craftbukkit.CraftItemStack;
@@ -15,27 +16,37 @@ import net.sothatsit.heads.volatilecode.reflection.nms.ItemStack;
 import net.sothatsit.heads.volatilecode.reflection.nms.Items;
 import net.sothatsit.heads.volatilecode.reflection.nms.nbt.NBTTagCompound;
 import net.sothatsit.heads.volatilecode.reflection.nms.nbt.NBTTagList;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemFlag;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public class ItemNBT {
 
-    public static org.bukkit.inventory.ItemStack addGlow(org.bukkit.inventory.ItemStack item) {
-        ItemStack itemStack = CraftItemStack.asNMSCopy(item);
+    public static org.bukkit.inventory.ItemStack addGlow(org.bukkit.inventory.ItemStack itemstack) {
+        itemstack = itemstack.clone();
 
-        addGlow(itemStack);
+        if(Version.getVersion().higherThan(Version.v1_10)) {
+            itemstack.addUnsafeEnchantment(Enchantment.LURE, 1);
 
-        return CraftItemStack.asBukkitCopy(itemStack);
-    }
+            ItemMeta meta = itemstack.getItemMeta();
+            meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+            itemstack.setItemMeta(meta);
 
-    public static void addGlow(ItemStack item) {
-        NBTTagCompound tag = item.getTag();
+            return itemstack;
+        } else {
+            ItemStack item = CraftItemStack.asNMSCopy(itemstack);
 
-        if (tag.getHandle() == null) {
-            tag = new NBTTagCompound();
+            NBTTagCompound tag = item.getTag();
+
+            if (tag.isNull())
+                tag = new NBTTagCompound();
+
+            tag.set("ench", new NBTTagList());
+
+            item.setTag(tag);
+
+            return CraftItemStack.asBukkitCopy(item);
         }
-
-        tag.set("ench", new NBTTagList());
-
-        item.setTag(tag);
     }
 
     public static String getTextureProperty(org.bukkit.inventory.ItemStack item) {
@@ -70,7 +81,7 @@ public class ItemNBT {
         return textures.get(0).getString("Value");
     }
     
-    public static org.bukkit.inventory.ItemStack createHead(CachedHead head, String name) {
+    public static org.bukkit.inventory.ItemStack createHead(CacheHead head, String name) {
         ItemStack itemstack = new ItemStack(Items.getItem("SKULL"), 1, 3);
         
         NBTTagCompound tag = itemstack.getTag();
@@ -92,7 +103,7 @@ public class ItemNBT {
         
         itemstack.setTag(tag);
         
-        return CraftItemStack.asBukkitCopy(apply(head, itemstack));
+        return CraftItemStack.asBukkitCopy(applyNBT(head, itemstack));
     }
     
     public static org.bukkit.inventory.ItemStack createHead(GameProfile profile, String name) {
@@ -137,17 +148,17 @@ public class ItemNBT {
         return CraftItemStack.asBukkitCopy(itemstack);
     }
     
-    public static org.bukkit.inventory.ItemStack applyHead(CachedHead head, org.bukkit.inventory.ItemStack item) {
+    public static org.bukkit.inventory.ItemStack applyHead(CacheHead head, org.bukkit.inventory.ItemStack item) {
         if (item.getType() != Material.SKULL_ITEM || item.getDurability() != 3) {
             return item;
         }
         
         ItemStack itemstack = CraftItemStack.asNMSCopy(item);
         
-        return CraftItemStack.asBukkitCopy(apply(head, itemstack));
+        return CraftItemStack.asBukkitCopy(applyNBT(head, itemstack));
     }
     
-    public static ItemStack apply(CachedHead head, ItemStack itemstack) {
+    public static ItemStack applyNBT(CacheHead head, ItemStack itemstack) {
         NBTTagCompound tag = itemstack.getTag();
         
         if (tag.getHandle() == null) {

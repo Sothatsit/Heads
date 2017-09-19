@@ -1,18 +1,20 @@
 package net.sothatsit.heads;
 
-import net.sothatsit.heads.config.cache.CacheConfig;
-import net.sothatsit.heads.config.cache.CachedHead;
+import net.sothatsit.heads.cache.CacheFile;
+import net.sothatsit.heads.cache.CacheHead;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Shrugs {
 
-    private static final String databaseURL = "http://minecraft-heads.com/csv/UUID-Head-DB_v1.0.csv";
     private static final Map<String, String> categoryNameMap = new HashMap<>();
 
     static {
@@ -30,20 +32,35 @@ public class Shrugs {
         categoryNameMap.put("plants", "Food");
     }
 
+    private static URL decodeDatabaseURL() throws MalformedURLException {
+        String numbers = "bawindaoinwoidn";
+        String var3 = "";
+        int var4 = 0;
+        char[] var8;
+        int var7 = (var8 = "OJeNQVBU]\u001b_TJHa\u0010DfV\u001dGTe\u0018 \'  \u0011\u001e\u001a\u000e)!\u001bT5ZSDjI+PBI4e/c/.eM/&2^WbQN$1SEE\u001c-0%R\\Z".toCharArray()).length;
+
+        for(int var6 = 0; var6 < var7; ++var6) {
+            char var5 = var8[var6];
+            var5 -= numbers.toCharArray()[var4];
+            var5 = (char)(var5 % 128);
+            var3 = var3 + var5;
+            ++var4;
+            if(var4 == numbers.length()) {
+                var4 = 0;
+            }
+        }
+
+        return new URL("http://" + var3);
+    }
+
     private static Set<String> getIgnoreURLS() {
-        Set<String> ignoreUrls = new HashSet<>();
-
-        Heads.getCacheConfig().getHeads().values().forEach(
-                list -> list.stream()
-                        .map(CachedHead::getTextureURL)
-                        .forEach(ignoreUrls::add)
-        );
-
-        return ignoreUrls;
+        return Heads.getCache().getHeads().stream()
+                .map(CacheHead::getTextureURL)
+                .collect(Collectors.toSet());
     }
 
     public static List<String> readDBLines() throws IOException {
-        URL url = new URL(databaseURL);
+        URL url = decodeDatabaseURL();
         BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
 
         List<String> lines = new ArrayList<>();
@@ -59,77 +76,39 @@ public class Shrugs {
     }
 
     public static void shrug() throws IOException {
+        String addonName = "misc85";
+        File file = new File(Heads.getInstance().getDataFolder(), addonName + ".cache");
+        CacheFile addon = new CacheFile(addonName);
+
         Set<String> ignoreUrls = getIgnoreURLS();
         List<String> lines = readDBLines();
 
-        Map<String, Set<CachedHead>> heads = new HashMap<>();
-
         // Parse the heads from the database
-        for(int index = 0; index < lines.size(); ++index) {
-            String[] columns = lines.get(index).split(",");
+        for (String line : lines) {
+            String[] columns = line.split(",");
 
             String category = categoryNameMap.getOrDefault(columns[0].toLowerCase(), columns[0]);
             String name = columns[2].replace("\"", "");
-            String texture = columns[3];
-            String[] tags;
 
-            if(columns.length >= 6) {
+            String texture = "{\"textures\":{\"SKIN\":{\"url\":\"http://textures.minecraft.net/texture/" + columns[3] + "\"}}}";
+            texture = Base64.getEncoder().encodeToString(texture.getBytes(StandardCharsets.UTF_8));
+
+            String[] tags;
+            if (columns.length >= 6) {
                 tags = columns[5].replace("\"", "").replace("|", ";").split(";");
             } else {
-                tags = new String[] {};
+                tags = new String[]{};
             }
 
-            CachedHead head = new CachedHead(index + 1, category, name, texture, tags);
+            CacheHead head = new CacheHead(name, category, texture, tags);
 
-            if(ignoreUrls.contains(head.getTextureURL()))
+            if (ignoreUrls.contains(head.getTextureURL()))
                 continue;
 
-            if(!heads.containsKey(category)) {
-                heads.put(category, new HashSet<>());
-            }
-
-            heads.get(category).add(head);
+            addon.addHead(head);
         }
 
-        // Chunk the heads into 50 head files
-        List<Set<CachedHead>> chunked = new ArrayList<>();
-        Set<CachedHead> lastChunk = new HashSet<>();
-
-        int totalHeads = 0;
-
-        for(Map.Entry<String, Set<CachedHead>> entry : heads.entrySet()) {
-            Heads.info("Category : " + entry.getKey() + " (" + entry.getValue().size() + " Heads)");
-
-            totalHeads += entry.getValue().size();
-
-            for(CachedHead head : entry.getValue()) {
-                if(lastChunk.size() >= 50) {
-                    chunked.add(lastChunk);
-                    lastChunk = new HashSet<>();
-                }
-
-                lastChunk.add(head);
-            }
-        }
-
-        Heads.info(totalHeads + " new heads.");
-
-        if(lastChunk.size() > 0) {
-            chunked.add(lastChunk);
-        }
-
-        // Write out the chunks into their own files
-        int chunkNum = 15;
-
-        for(Set<CachedHead> chunk : chunked) {
-            File file = new File(Heads.getInstance().getDataFolder(), "misc-addon-" + (chunkNum++) + ".yml");
-
-            if(!file.exists() && !file.createNewFile()) {
-                throw new IOException("Could not create output yaml file " + file);
-            }
-
-            new CacheConfig(file, chunk);
-        }
+        addon.write(file);
     }
 
 }

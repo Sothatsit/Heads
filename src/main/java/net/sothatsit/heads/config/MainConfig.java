@@ -64,7 +64,7 @@ public class MainConfig {
         defaultHeadCost      = loadDouble(config, "economy.default-head-cost", 0, shouldSave);
 
         if (defaultHeadCost < 0) {
-            Heads.info("\"economy.default-head-cost\" cannot be less than 0 in config.yml, defaulting to 0");
+            Heads.info("\"economy.default-head-cost\" cannot be less than 0 in legacy.yml, defaulting to 0");
             defaultHeadCost = 0;
         }
 
@@ -116,7 +116,7 @@ public class MainConfig {
         if (config.isSet(key) && config.isString(key) && !config.getString(key).isEmpty())
             return config.getString(key);
 
-        Heads.warning("\"" + key + "\" not set or invalid in config, resetting to \"" + defaultVal + "\"");
+        Heads.warning("\"" + key + "\" not set or invalid in legacy, resetting to \"" + defaultVal + "\"");
 
         config.set(key, defaultVal);
         shouldSave.set(true);
@@ -128,7 +128,7 @@ public class MainConfig {
         if(config.isSet(key) && config.isList(key))
             return config.getStringList(key).toArray(new String[0]);
 
-        Heads.warning("\"" + key + "\" not set or invalid in config, resetting to " + Arrays.toString(defaultVal));
+        Heads.warning("\"" + key + "\" not set or invalid in legacy, resetting to " + Arrays.toString(defaultVal));
 
         config.set(key, Arrays.asList(defaultVal));
         shouldSave.set(true);
@@ -140,7 +140,7 @@ public class MainConfig {
         if(config.isSet(key) && config.isBoolean(key))
             return config.getBoolean(key);
 
-        Heads.warning("\"" + key + "\" not set or invalid in config, resetting to " + defaultVal);
+        Heads.warning("\"" + key + "\" not set or invalid in legacy, resetting to " + defaultVal);
 
         config.set(key, defaultVal);
         shouldSave.set(true);
@@ -152,7 +152,7 @@ public class MainConfig {
         if(config.isSet(key) && (config.isInt(key) || config.isDouble(key)))
             return config.getDouble(key);
 
-        Heads.warning("\"" + key + "\" not set or invalid in config, resetting to " + defaultVal);
+        Heads.warning("\"" + key + "\" not set or invalid in legacy, resetting to " + defaultVal);
 
         config.set(key, defaultVal);
         shouldSave.set(true);

@@ -11,9 +11,6 @@ import net.sothatsit.heads.volatilecode.reflection.ReflectObject;
 import net.sothatsit.heads.volatilecode.reflection.ReflectionUtils;
 import net.sothatsit.heads.volatilecode.reflection.authlib.GameProfile;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
 public class TileEntitySkull extends ReflectObject {
     
     public static Class<?> TileEntitySkullClass;

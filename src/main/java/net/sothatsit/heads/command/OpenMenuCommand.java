@@ -2,6 +2,7 @@ package net.sothatsit.heads.command;
 
 import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.lang.Lang;
+import net.sothatsit.heads.menu.HeadsMenu;
 import net.sothatsit.heads.oldmenu.mode.InvModeType;
 
 import org.bukkit.command.Command;
@@ -33,6 +34,9 @@ public class OpenMenuCommand extends AbstractCommand {
         }
         
         InvModeType.GET.open((Player) sender);
+
+        // HeadsMenu.openHeadsMenu((Player) sender);
+
         return true;
     }
     

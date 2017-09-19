@@ -1,7 +1,7 @@
 package net.sothatsit.heads.oldmenu.mode;
 
 import net.sothatsit.heads.Menus;
-import net.sothatsit.heads.config.cache.CachedHead;
+import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.menu.Menu;
 import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.oldmenu.ConfirmMenu;
@@ -25,12 +25,12 @@ public class IdMode extends BaseMode {
     }
     
     @Override
-    public void onHeadSelect(InventoryClickEvent e, HeadMenu menu, CachedHead head) {
+    public void onHeadSelect(InventoryClickEvent e, HeadMenu menu, CacheHead head) {
         Lang.Menu.Id.clicked().send(e.getWhoClicked(), head.getPlaceholders());
     }
     
     @Override
-    public void onConfirm(InventoryClickEvent e, ConfirmMenu menu, CachedHead head) {
+    public void onConfirm(InventoryClickEvent e, ConfirmMenu menu, CacheHead head) {
         // should not be reached
     }
     

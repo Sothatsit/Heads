@@ -1,8 +1,8 @@
 package net.sothatsit.heads.command;
 
 import net.sothatsit.heads.Heads;
+import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.MainConfig;
-import net.sothatsit.heads.config.cache.CachedHead;
 import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.oldmenu.mode.SearchMode;
@@ -10,8 +10,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class SearchCommand extends AbstractCommand {
@@ -43,41 +41,25 @@ public class SearchCommand extends AbstractCommand {
             return true;
         }
 
-        StringBuilder builder = new StringBuilder();
+        StringBuilder queryBuilder = new StringBuilder();
 
         for(int i=1; i < args.length; i++) {
-            builder.append(args[i]);
-            builder.append(' ');
+            queryBuilder.append(args[i]);
+            queryBuilder.append(' ');
         }
 
-        String query = builder.toString().trim().toLowerCase();
+        String query = queryBuilder.toString().trim();
+        List<CacheHead> matches = Heads.getCache().searchHeads(query);
 
-        List<CachedHead> matches = new ArrayList<>();
-
-        for(List<CachedHead> list : Heads.getCacheConfig().getHeads().values()) {
-            for(CachedHead head : list) {
-                if(head.getName().toLowerCase().contains(query)) {
-                    matches.add(head);
-                    continue;
-                }
-
-                for(String tag : head.getTags()) {
-                    if(tag.toLowerCase().contains(query)) {
-                        matches.add(head);
-                        break;
-                    }
-                }
-            }
-        }
-
-        Collections.sort(matches);
+        Placeholder queryPlaceholder = new Placeholder("%query%", query);
+        Placeholder matchCountPlaceholder = new Placeholder("%heads%", matches.size());
 
         if(matches.size() == 0) {
-            Lang.Command.Search.noneFound().send(sender, new Placeholder("%query%", builder.toString().trim()), new Placeholder("%heads%", "0"));
+            Lang.Command.Search.noneFound().send(sender, queryPlaceholder, matchCountPlaceholder);
             return true;
         }
 
-        Lang.Command.Search.found().send(sender, new Placeholder("%query%", builder.toString().trim()), new Placeholder("%heads%", Integer.toString(matches.size())));
+        Lang.Command.Search.found().send(sender, queryPlaceholder, matchCountPlaceholder);
 
         new SearchMode((Player) sender, matches);
         return true;

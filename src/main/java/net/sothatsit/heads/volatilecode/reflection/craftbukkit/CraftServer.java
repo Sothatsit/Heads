@@ -2,6 +2,7 @@ package net.sothatsit.heads.volatilecode.reflection.craftbukkit;
 
 import java.lang.reflect.Field;
 
+import net.sothatsit.heads.util.Checks;
 import net.sothatsit.heads.volatilecode.reflection.ReflectObject;
 import net.sothatsit.heads.volatilecode.reflection.ReflectionUtils;
 
@@ -10,12 +11,13 @@ import org.bukkit.command.SimpleCommandMap;
 
 public class CraftServer extends ReflectObject {
     
-    private static Class<?> CraftServerClass;
-    private static Field SimpleCommandMapField;
+    public static Class<?> CraftServerClass;
+    public static Field SimpleCommandMapField;
     
     static {
         CraftServerClass = ReflectionUtils.getCraftBukkitClass("CraftServer");
-        
+        Checks.ensureNonNull(CraftServerClass, "CraftServerClass");
+
         for (Field f : CraftServerClass.getDeclaredFields()) {
             if (f.getType().equals(SimpleCommandMap.class)) {
                 SimpleCommandMapField = f;

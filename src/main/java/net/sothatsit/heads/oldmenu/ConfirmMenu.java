@@ -1,28 +1,28 @@
 package net.sothatsit.heads.oldmenu;
 
-import net.sothatsit.heads.config.cache.CachedHead;
+import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.menu.Menu;
 import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.oldmenu.mode.InvMode;
-import net.sothatsit.heads.util.Arrays;
+import net.sothatsit.heads.util.ArrayUtils;
 
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 public class ConfirmMenu extends AbstractModedInventory {
     
-    private CachedHead subject;
+    private CacheHead subject;
     private Placeholder[] placeholders;
     
-    public ConfirmMenu(InvMode mode, CachedHead subject) {
+    public ConfirmMenu(InvMode mode, CacheHead subject) {
         this(mode, subject, new Placeholder[0]);
     }
     
-    public ConfirmMenu(InvMode mode, CachedHead subject, Placeholder[] placeholders) {
-        super(InventoryType.CONFIRM, 45, Arrays.append(placeholders, subject.getPlaceholders()), mode);
+    public ConfirmMenu(InvMode mode, CacheHead subject, Placeholder[] placeholders) {
+        super(InventoryType.CONFIRM, 45, ArrayUtils.append(placeholders, subject.getPlaceholders()), mode);
         
         this.subject = subject;
-        this.placeholders = Arrays.append(placeholders, subject.getPlaceholders());
+        this.placeholders = ArrayUtils.append(placeholders, subject.getPlaceholders());
         
         recreate();
     }
@@ -34,14 +34,14 @@ public class ConfirmMenu extends AbstractModedInventory {
         
         ItemStack[] contents = new ItemStack[inv.getSize()];
         
-        contents[13] = subject.applyTo(menu.getItemStack("head", placeholders));
+        contents[13] = subject.addTexture(menu.getItemStack("head", placeholders));
         contents[29] = menu.getItemStack("accept", placeholders);
         contents[33] = menu.getItemStack("deny", placeholders);
         
         inv.setContents(contents);
     }
     
-    public CachedHead getSubject() {
+    public CacheHead getSubject() {
         return subject;
     }
     

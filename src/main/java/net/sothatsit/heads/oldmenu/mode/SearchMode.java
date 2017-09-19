@@ -2,7 +2,7 @@ package net.sothatsit.heads.oldmenu.mode;
 
 import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.Menus;
-import net.sothatsit.heads.config.cache.CachedHead;
+import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.menu.Menu;
 import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.EconomyHook;
@@ -17,7 +17,7 @@ import java.util.List;
 
 public class SearchMode extends BaseMode {
 
-    public SearchMode(Player player, List<CachedHead> heads) {
+    public SearchMode(Player player, List<CacheHead> heads) {
         super(player, InventoryType.HEADS, "Search", heads);
     }
     
@@ -26,7 +26,7 @@ public class SearchMode extends BaseMode {
         return Menus.SEARCH.heads();
     }
 
-    public String getHeadId(CachedHead head) {
+    public String getHeadId(CacheHead head) {
         if(!getPlayer().hasPermission("heads.category." + head.getCategory().toLowerCase().replace(' ', '_'))) {
             return "head-no-perms";
         } else {
@@ -35,7 +35,7 @@ public class SearchMode extends BaseMode {
     }
     
     @Override
-    public void onHeadSelect(InventoryClickEvent e, HeadMenu menu, CachedHead head) {
+    public void onHeadSelect(InventoryClickEvent e, HeadMenu menu, CacheHead head) {
         if (!getPlayer().hasPermission("heads.category." + head.getCategory().toLowerCase().replace(' ', '_'))) {
             Lang.Menu.Search.categoryPermission().send(getPlayer(), new Placeholder("%category%", head.getCategory()));
             return;
@@ -67,7 +67,7 @@ public class SearchMode extends BaseMode {
     }
     
     @Override
-    public void onConfirm(InventoryClickEvent e, ConfirmMenu menu, CachedHead head) {
+    public void onConfirm(InventoryClickEvent e, ConfirmMenu menu, CacheHead head) {
         // should not be reached
     }
     

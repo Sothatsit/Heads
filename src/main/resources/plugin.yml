@@ -1,11 +1,11 @@
 main: net.sothatsit.heads.Heads
 author: sothatsit
 name: Heads
-version: 1.9.1
+version: 1.10.0
 soft-depend: [Vault, BlockStore]
 permissions:
    heads.reload:
-      description: 'Reload the config files'
+      description: 'Reload the legacy files'
       default: op
    heads.menu:
       description: 'Open the head menu'
@@ -17,19 +17,19 @@ permissions:
       description: 'Use the /heads search <search query> command'
       default: op
    heads.add:
-      description: 'Add heads to the cache'
+      description: 'Add heads to the legacy'
       default: op
    heads.hand:
-      description: 'Add heads from your hand into the cache'
+      description: 'Add heads from your hand into the legacy'
       default: op
    heads.random:
-      description: 'Get a random head from the cache'
+      description: 'Get a random head from the legacy'
       default: op
    heads.remove:
-      description: 'Remove heads from the cache'
+      description: 'Remove heads from the legacy'
       default: op
    heads.rename:
-      description: 'Rename heads in the cache'
+      description: 'Rename heads in the legacy'
       default: op
    heads.id:
       description: 'Get a heads id'

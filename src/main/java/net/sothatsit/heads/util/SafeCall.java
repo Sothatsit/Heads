@@ -75,6 +75,12 @@ public abstract class SafeCall {
                 throw fail("Exception thrown when calling function " + name, e);
             }
         }
+
+        @Override
+        public String toString() {
+            return "Safe " + function + " (" + name + ")";
+        }
+
     }
 
     private static class NonNullSafeFunction<T, R> extends SafeFunction<T, R> {
@@ -94,6 +100,12 @@ public abstract class SafeCall {
 
             return returnValue;
         }
+
+        @Override
+        public String toString() {
+            return "NonNull " + super.toString();
+        }
+
     }
 
     private static class SafePredicate<T> extends SafeCall implements Predicate<T> {
@@ -117,6 +129,12 @@ public abstract class SafeCall {
                 throw fail("Exception thrown when calling predicate " + name, e);
             }
         }
+
+        @Override
+        public String toString() {
+            return "Safe " + predicate + " (" + name + ")";
+        }
+
     }
 
     private static class NonNullSafePredicate<T> extends SafePredicate<T> {
@@ -131,6 +149,12 @@ public abstract class SafeCall {
 
             return super.apply(t);
         }
+
+        @Override
+        public String toString() {
+            return "NonNull " + super.toString();
+        }
+
     }
 
     public static class SafeCallable<V> extends SafeCall implements Callable<V> {
@@ -154,6 +178,12 @@ public abstract class SafeCall {
                 throw fail("Exception thrown when calling callable " + name, e);
             }
         }
+
+        @Override
+        public String toString() {
+            return "Safe " + callable + " (" + name + ")";
+        }
+
     }
 
     private static class NonNullSafeCallable<V> extends SafeCallable<V> {
@@ -171,6 +201,12 @@ public abstract class SafeCall {
 
             return returnValue;
         }
+
+        @Override
+        public String toString() {
+            return "NonNull " + super.toString();
+        }
+
     }
 
     private static class SafeConsumer<T> extends SafeCall implements Consumer<T> {
@@ -194,6 +230,12 @@ public abstract class SafeCall {
                 throw fail("Exception thrown when calling predicate " + name, e);
             }
         }
+
+        @Override
+        public String toString() {
+            return "Safe " + consumer + " (" + name + ")";
+        }
+
     }
 
     private static class NonNullSafeConsumer<T> extends SafeConsumer<T> {
@@ -208,6 +250,12 @@ public abstract class SafeCall {
 
             super.accept(t);
         }
+
+        @Override
+        public String toString() {
+            return "NonNull " + super.toString();
+        }
+
     }
 
 }

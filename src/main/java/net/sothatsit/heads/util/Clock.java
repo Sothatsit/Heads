@@ -18,11 +18,12 @@ public class Clock {
         return end >= 0;
     }
 
-    public void stop() {
-        if(hasEnded())
-            throw new IllegalStateException("Timer has already been stopped.");
+    public String stop() {
+        Checks.ensureTrue(!hasEnded(), "Timer has already been stopped.");
 
         this.end = System.nanoTime();
+
+        return toString();
     }
 
     public double getDuration() {

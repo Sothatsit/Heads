@@ -56,20 +56,22 @@ public class Menu {
     }
 
     public HeadsMenu.Template toHeadsMenuTemplate() {
-        HorizontalScrollbar.Template categories = createScrollbarTemplate("categories-left", "categories-right", "categories-filler");
-
         HorizontalScrollbar.Template pages = createScrollbarTemplate("pages-left", "pages-right", "pages-filler");
-        PagedBox.Template heads = new PagedBox.Template(pages, createPageItemFunction());
+        PagedBox.Template heads = new PagedBox.Template(pages, createUnselectedItemsFn(), createSelectedItemsFn());
 
-        return new HeadsMenu.Template(categories, heads);
+        return new HeadsMenu.Template(heads);
     }
 
     private HorizontalScrollbar.Template createScrollbarTemplate(String leftKey, String rightKey, String fillerKey) {
         return new HorizontalScrollbar.Template(getItemStack(leftKey), getItemStack(rightKey), getItemStack(fillerKey));
     }
 
-    private Function<Integer, ItemStack> createPageItemFunction() {
-        return page -> getItem("page").amount(page + 1).build(Placeholder.page(page + 1));
+    private Function<Integer, ItemStack> createSelectedItemsFn() {
+        return page -> getItem("selected-page").amount(page + 1).build(Placeholder.page(page + 1));
+    }
+
+    private Function<Integer, ItemStack> createUnselectedItemsFn() {
+        return page -> getItem("unselected-page").amount(page + 1).build(Placeholder.page(page + 1));
     }
 
     public void load(ConfigurationSection section) {
@@ -105,7 +107,7 @@ public class Menu {
         }
 
         int typeId = section.getInt("type");
-        Material type = Material.getMaterial(typeId);
+        Material type = Item.getMaterialById(typeId);
 
         if(type == null) {
             Heads.warning("Invalid \"type\" of item \"" + section.getCurrentPath() + "\", " +

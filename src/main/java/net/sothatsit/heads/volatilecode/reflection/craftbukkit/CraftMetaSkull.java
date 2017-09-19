@@ -2,6 +2,7 @@ package net.sothatsit.heads.volatilecode.reflection.craftbukkit;
 
 import java.lang.reflect.Field;
 
+import net.sothatsit.heads.util.Checks;
 import net.sothatsit.heads.volatilecode.reflection.ReflectObject;
 import net.sothatsit.heads.volatilecode.reflection.ReflectionUtils;
 import net.sothatsit.heads.volatilecode.reflection.authlib.GameProfile;
@@ -13,7 +14,8 @@ public class CraftMetaSkull extends ReflectObject {
     
     static {
         CraftMetaSkullClass = ReflectionUtils.getCraftBukkitClass("inventory.CraftMetaSkull");
-        
+        Checks.ensureNonNull(CraftMetaSkullClass, "CraftMetaSkullClass");
+
         try {
             profileField = CraftMetaSkullClass.getDeclaredField("profile");
             profileField.setAccessible(true);

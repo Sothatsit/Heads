@@ -4,8 +4,9 @@ import net.sothatsit.heads.menu.ui.Bounds;
 import net.sothatsit.heads.util.Item;
 import net.sothatsit.heads.menu.ui.item.MenuItem;
 import net.sothatsit.heads.menu.ui.MenuResponse;
-import net.sothatsit.heads.menu.ui.item.button.Button;
+import net.sothatsit.heads.menu.ui.item.Button;
 import net.sothatsit.heads.util.Checks;
+import net.sothatsit.heads.util.Stringify;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
@@ -35,7 +36,7 @@ public class HorizontalScrollbar extends Element {
         super(container, bounds);
 
         Checks.ensureTrue(bounds.width >= 3, "The width of bounds must be at least 3");
-        Checks.ensureTrue(bounds.height != 1, "The height of bounds must be 1");
+        Checks.ensureTrue(bounds.height == 1, "The height of bounds must be 1");
 
         this.items = new MenuItem[0];
         this.index = 0;
@@ -70,7 +71,7 @@ public class HorizontalScrollbar extends Element {
 
         index--;
 
-        updateElement();
+        updateInContainer();
 
         return MenuResponse.NONE;
     }
@@ -81,12 +82,12 @@ public class HorizontalScrollbar extends Element {
 
         index++;
 
-        updateElement();
+        updateInContainer();
 
         return MenuResponse.NONE;
     }
 
-    private static final int clamp(int num, int min, int max) {
+    private static int clamp(int num, int min, int max) {
         return (num < min ? min : (num > max ? max : num));
     }
 
@@ -103,7 +104,7 @@ public class HorizontalScrollbar extends Element {
             return;
         }
 
-        updateElement();
+        updateInContainer();
     }
 
     public MenuItem[] getItems() {
@@ -121,7 +122,7 @@ public class HorizontalScrollbar extends Element {
             System.arraycopy(items, index, scrollbar, 1, bounds.width - 2);
         } else {
             System.arraycopy(items, 0, scrollbar, 0, items.length);
-            Arrays.fill(items, items.length, bounds.width, template.constructFillerItem());
+            Arrays.fill(scrollbar, items.length, bounds.width, template.constructFillerItem());
         }
 
         return scrollbar;
@@ -148,7 +149,14 @@ public class HorizontalScrollbar extends Element {
         this.items = items;
         this.index = 0;
 
-        updateElement();
+        updateInContainer();
+    }
+
+    @Override
+    public String toString() {
+        return Stringify.builder()
+                .entry("template", template)
+                .entry("index", index).toString();
     }
 
     public static final class Template {
@@ -181,6 +189,14 @@ public class HorizontalScrollbar extends Element {
 
         private MenuItem constructFillerItem() {
             return new MenuItem(fillerItem);
+        }
+
+        @Override
+        public String toString() {
+            return Stringify.builder()
+                    .entry("leftItem", leftItem)
+                    .entry("rightItem", rightItem)
+                    .entry("fillerItem", fillerItem).toString();
         }
 
     }

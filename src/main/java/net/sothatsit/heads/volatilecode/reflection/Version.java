@@ -5,6 +5,7 @@ public class Version {
     
     private static final char[] allowed = "0123456789_".toCharArray();
     public static final Version v1_8 = Version.getVersion("v1_8");
+    public static final Version v1_10 = Version.getVersion("v1_10");
     
     private int major;
     private int minor;

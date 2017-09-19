@@ -28,7 +28,7 @@ public class FileConfigFile implements ConfigFile {
     public void save() {
         try {
             if(!file.exists() && !file.createNewFile())
-                throw new IOException("Unable to create config file " + file);
+                throw new IOException("Unable to create legacy file " + file);
 
             config.save(file);
         } catch (IOException e) {
