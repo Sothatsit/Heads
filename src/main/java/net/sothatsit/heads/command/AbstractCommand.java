@@ -2,7 +2,6 @@ package net.sothatsit.heads.command;
 
 import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.lang.Lang;
-import net.sothatsit.heads.config.lang.Placeholder;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
@@ -15,7 +14,7 @@ public abstract class AbstractCommand implements CommandExecutor {
     public abstract Lang.HelpSection getHelp();
 
     public void sendInvalidArgs(CommandSender sender) {
-        Lang.Command.Errors.invalidArgs().send(sender, Placeholder.valid(getHelp().command()));
+        Lang.Command.Errors.invalidArgs(getHelp()).send(sender);
     }
     
 }

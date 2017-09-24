@@ -1,7 +1,6 @@
 package net.sothatsit.heads.command;
 
 import net.sothatsit.heads.config.MainConfig;
-import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.config.lang.Lang.HelpSection;
 
@@ -12,7 +11,7 @@ public class HelpCommand extends AbstractCommand {
 
     @Override
     public String getCommandLabel(MainConfig config) {
-        return null;
+        return config.getHelpCommand();
     }
 
     @Override
@@ -27,6 +26,10 @@ public class HelpCommand extends AbstractCommand {
 
     @Override
     public boolean onCommand(CommandSender sender, Command bukkitCommand, String label, String[] args) {
+        return onCommand(sender, args, 10);
+    }
+
+    public boolean onCommand(CommandSender sender, String[] args, int screenSpace) {
         if(args.length > 2) {
             sendInvalidArgs(sender);
             return true;
@@ -38,27 +41,22 @@ public class HelpCommand extends AbstractCommand {
             try {
                 page = Integer.valueOf(args[1]);
             } catch(NumberFormatException e) {
-                Lang.Command.Errors.integer().send(sender, Placeholder.number(args[1]));
+                Lang.Command.Errors.integer(args[1]).send(sender);
                 return true;
             }
         }
 
-        int lineLength = Lang.Command.Help.line().getRaw().length;
-        int linesPerPage = (lineLength >= 1 && lineLength <= 8 ? 8 / lineLength : 1);
+        int lineLength = Lang.Command.Help.getLineCountPerLine();
+        int linesPerPage = (lineLength >= 1 && lineLength <= (screenSpace - 2) ? (screenSpace - 2) / lineLength : 1);
         int pages = (linesPerPage + HeadsCommand.commands.length - 1) / linesPerPage;
-
-        Placeholder[] pagePlaceholders = {
-                new Placeholder("%page%", page),
-                new Placeholder("%next-page%", (page >= pages ? 1 : page + 1)),
-                new Placeholder("%pages%", pages)
-        };
+        int nextPage = (page >= pages ? 1 : page + 1);
 
         if(page < 1 || page > pages) {
-            Lang.Command.Help.unknownPage().send(sender, pagePlaceholders);
+            Lang.Command.Help.unknownPage(page, pages).send(sender);
             return true;
         }
 
-        Lang.Command.Help.header().send(sender, pagePlaceholders);
+        Lang.Command.Help.header(page, pages, nextPage).send(sender);
 
         int startIndex = (page - 1) * linesPerPage;
         int endIndex = page * linesPerPage;
@@ -70,15 +68,10 @@ public class HelpCommand extends AbstractCommand {
         for(int index = startIndex; index < endIndex; ++index) {
             HelpSection helpSection = HeadsCommand.commands[index].getHelp();
 
-            Placeholder[] placeholders = {
-                    Placeholder.command(helpSection.command()),
-                    Placeholder.description(helpSection.description())
-            };
-
-            Lang.Command.Help.line().send(sender, placeholders);
+            Lang.Command.Help.line(helpSection).send(sender);
         }
 
-        Lang.Command.Help.footer().send(sender, pagePlaceholders);
+        Lang.Command.Help.footer(page, pages, nextPage).send(sender);
         return true;
     }
 }

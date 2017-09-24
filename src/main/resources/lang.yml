@@ -32,6 +32,7 @@ menu:
       open: '&7Click a head to get its id'
       clicked: '&7The head &6%name% &7has the id &6%id%'
 command:
+   unknown-command: '&cUnknown command &4/heads %command%'
    errors:
       must-be-player: '&cYou must be a player to run this command.'
       no-permission: '&cYou do not have permission to run this command.'
@@ -54,7 +55,7 @@ command:
       reloaded: '&7Config Reloaded'
       help:
          command: '/heads reload'
-         description: 'Reload the Heads legacy files'
+         description: 'Reload the Heads config files'
    get:
       head-name: '&7%name%s head'
       old-method: '&cGetting head textures is not supported by spigot before 1.8, using old method'
@@ -62,7 +63,7 @@ command:
       fetching: '&7Fetching textures, please wait...'
       cant-find:
       - '&cUnable to find texture of player &4%name%'
-      - '&4The authentication servers may be down, or the player does not exist.'
+      - '&cThe authentication servers may be down, or the player does not exist.'
       help:
          command: '/heads get <player name>'
          description: 'Get a players head'
@@ -73,8 +74,8 @@ command:
          command: '/heads search <search query>'
          description: 'Find useful heads'
    random:
-      no-heads: '&cThere are no heads in the legacy'
-      giving: '&7You have been given the head &6%name% &7from the category &6%category%'
+      no-heads: '&cThere are no heads in the cache'
+      giving: '&7Randomly found the head &6%name%'
       help:
          command: '/heads random'
          description: 'Get a random head'

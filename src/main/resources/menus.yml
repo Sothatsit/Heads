@@ -35,7 +35,7 @@ search-heads:
       name: '&7Forwards a Page'
    backwards:
       type: 262
-      name: '&7Backwards a Page'
+      name: '&7Previous Page'
 get-categories:
    title: 'Categories'
    head:
@@ -61,10 +61,10 @@ get-heads:
       name: '&cBack to Main Menu'
    forwards:
       type: 262
-      name: '&7Forwards a Page'
+      name: '&7Next Page'
    backwards:
       type: 262
-      name: '&7Backwards a Page'
+      name: '&7Previous Page'
 get-confirm:
    title: 'Purchase Head'
    head:
@@ -104,10 +104,10 @@ id-heads:
       name: '&cBack to Main Menu'
    forwards:
       type: 262
-      name: '&7Forwards a Page'
+      name: '&7Next Page'
    backwards:
       type: 262
-      name: '&7Backwards a Page'
+      name: '&7Previous Page'
 remove-categories:
    title: 'Categories'
    head:
@@ -131,10 +131,10 @@ remove-heads:
       name: '&cBack to Main Menu'
    forwards:
       type: 262
-      name: '&7Forwards a Page'
+      name: '&7Next Page'
    backwards:
       type: 262
-      name: '&7Backwards a Page'
+      name: '&7Previous Page'
 remove-confirm:
    title: 'Remove Head'
    head:
@@ -172,10 +172,10 @@ rename-heads:
       name: '&cBack to Main Menu'
    forwards:
       type: 262
-      name: '&7Forwards a Page'
+      name: '&7Next Page'
    backwards:
       type: 262
-      name: '&7Backwards a Page'
+      name: '&7Previous Page'
 rename-confirm:
    title: 'Rename Head'
    head:
@@ -213,10 +213,10 @@ cost-heads:
       name: '&cBack to Main Menu'
    forwards:
       type: 262
-      name: '&7Forwards a Page'
+      name: '&7Next Page'
    backwards:
       type: 262
-      name: '&7Backwards a Page'
+      name: '&7Previous Page'
 cost-confirm:
    title: 'Set cost of Head'
    head:

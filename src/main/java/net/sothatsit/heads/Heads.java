@@ -1,7 +1,7 @@
 package net.sothatsit.heads;
 
-import net.sothatsit.heads.cache.AddonsFile;
-import net.sothatsit.heads.cache.AddonsFileHeader;
+import net.sothatsit.heads.cache.ModsFile;
+import net.sothatsit.heads.cache.ModsFileHeader;
 import net.sothatsit.heads.cache.CacheFile;
 import net.sothatsit.heads.cache.legacy.CacheFileConverter;
 import net.sothatsit.heads.command.HeadsCommand;
@@ -22,12 +22,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.SimpleCommandMap;
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
@@ -79,7 +77,7 @@ public class Heads extends JavaPlugin implements Listener {
         unregisterCommands();
     }
 
-    private File getCacheFile() {
+    public File getCacheFile() {
         if(!getDataFolder().exists() && !getDataFolder().mkdirs())
             throw new RuntimeException("Unable to create the data folder to save plugin files");
 
@@ -148,37 +146,42 @@ public class Heads extends JavaPlugin implements Listener {
         }
     }
 
-    private AddonsFileHeader readAddonsFileHeader() {
+    private ModsFileHeader readModsFileHeader() {
         try {
-            return AddonsFileHeader.readResource("addons.caches");
+            return ModsFileHeader.readResource("cache.mods");
         } catch (IOException e) {
-            severe("Unable to read header of addons.cache");
-            throw new RuntimeException("Unable to read header of addons.caches", e);
+            severe("Unable to read header of cache.mods");
+            throw new RuntimeException("Unable to read header of cache.mods", e);
         }
     }
 
-    private AddonsFile readAddonsFile() {
+    private ModsFile readModsFile() {
         try {
-            return AddonsFile.readResource("addons.caches");
+            return ModsFile.readResource("cache.mods");
         } catch (IOException e) {
-            severe("Unable to read addons from addons.cache");
-            throw new RuntimeException("Unable to read addons from addons.cache", e);
+            severe("Unable to read mods from cache.mods");
+            throw new RuntimeException("Unable to read mods from cache.mods", e);
         }
     }
 
     private boolean installAddons() {
         Clock timer = Clock.start();
 
-        AddonsFileHeader header = readAddonsFileHeader();
-        int newAddons = header.getUninstalledAddons(cache);
+        ModsFileHeader header = readModsFileHeader();
+        int newMods = header.getUninstalledMods(cache);
 
-        if(newAddons <= 0)
+        if(newMods == 0)
             return false;
 
-        AddonsFile addons = readAddonsFile();
-        int newHeads = addons.installAddons(cache);
+        ModsFile mods = readModsFile();
 
-        info("Added " + newHeads + " new heads from " + newAddons + " addons " + timer);
+        int newHeads = mods.installMods(cache);
+
+        if(newHeads > 0) {
+            info("Added " + newHeads + " new heads from " + newMods + " addons " + timer);
+        } else {
+            info("Installed " + newMods + " addons " + timer);
+        }
 
         return true;
     }
@@ -251,18 +254,6 @@ public class Heads extends JavaPlugin implements Listener {
         Inventory inventory = e.getInventory();
         ItemStack item = e.getCurrentItem();
 
-        if(e.getSlotType() == InventoryType.SlotType.ARMOR && isHatMode() && isHeadsItem(item)) {
-            e.setCancelled(true);
-
-            if(e.getWhoClicked() instanceof Player) {
-                Player player = (Player) e.getWhoClicked();
-
-                Bukkit.getScheduler().scheduleSyncDelayedTask(this, player::updateInventory, 1);
-            }
-
-            return;
-        }
-
         if(inventory == null)
             return;
 
@@ -294,10 +285,6 @@ public class Heads extends JavaPlugin implements Listener {
     
     public static MainConfig getMainConfig() {
         return instance.mainConfig;
-    }
-    
-    public static boolean isHatMode() {
-        return instance.mainConfig.isHatMode();
     }
     
     public static CacheFile getCache() {

@@ -67,11 +67,11 @@ public class Menu {
     }
 
     private Function<Integer, ItemStack> createSelectedItemsFn() {
-        return page -> getItem("selected-page").amount(page + 1).build(Placeholder.page(page + 1));
+        return page -> getItem("selected-page").amount(page + 1).build(new Placeholder("%page%", page + 1));
     }
 
     private Function<Integer, ItemStack> createUnselectedItemsFn() {
-        return page -> getItem("unselected-page").amount(page + 1).build(Placeholder.page(page + 1));
+        return page -> getItem("unselected-page").amount(page + 1).build(new Placeholder("%page%", page + 1));
     }
 
     public void load(ConfigurationSection section) {

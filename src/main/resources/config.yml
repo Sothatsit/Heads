@@ -17,11 +17,10 @@ commands:
          cost: 'cost'
          category-cost: 'categorycost'
          id: 'id'
+         help: 'help'
          # open menu is when no arguments are supplied
-         # help is shown whenever arguments are supplied but are not recognised
 economy:
    enabled: false
    # Use 0 for no cost
    default-head-cost: 0
-hat-mode: false
 hide-no-perm-categories: true

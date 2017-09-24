@@ -1,10 +1,16 @@
 package net.sothatsit.heads.util;
 
+import java.util.Arrays;
+
 public class ArrayUtils {
     
     @SafeVarargs
     public static <T> T[] create(T... values) {
         return values;
+    }
+
+    public static <T> T[] copy(T[] array) {
+        return Arrays.copyOf(array, array.length);
     }
     
     @SafeVarargs

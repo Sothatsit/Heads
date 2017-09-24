@@ -1,6 +1,5 @@
 package net.sothatsit.heads.cache.legacy;
 
-import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.cache.CacheFile;
 import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.DefaultsConfigFile;
@@ -21,7 +20,7 @@ public class CacheFileConverter {
                 .map(CacheFileConverter::convertToCacheHead)
                 .collect(Collectors.toList());
 
-        return new CacheFile(name, addons, Collections.emptySet(), heads);
+        return new CacheFile(name, addons, heads);
     }
 
     public static CacheHead convertToCacheHead(LegacyCachedHead head) {

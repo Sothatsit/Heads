@@ -2,55 +2,67 @@ package net.sothatsit.heads.config.lang;
 
 import java.util.Arrays;
 
-import org.bukkit.ChatColor;
+import net.sothatsit.heads.util.ArrayUtils;
 
 import org.bukkit.command.CommandSender;
 
-public class LangMessage {
+public final class LangMessage {
     
-    private String[] messages;
-    
+    private final String[] messages;
+    private final Placeholder[] placeholders;
+
     public LangMessage(String... messages) {
+        this(messages, new Placeholder[0]);
+    }
+
+    private LangMessage(String[] messages, Placeholder[] placeholders) {
         this.messages = messages;
+        this.placeholders = placeholders;
+    }
+
+    public LangMessage with(Placeholder... placeholders) {
+        return new LangMessage(messages, ArrayUtils.append(this.placeholders, placeholders));
+    }
+
+    public LangMessage with(String key, Object value) {
+        return with(new Placeholder(key, value));
+    }
+
+    public int getLineCount() {
+        return messages.length;
+    }
+
+    public boolean isEmpty() {
+        return getLineCount() == 0;
+    }
+
+    @Override
+    public String toString() {
+        return getSingle();
+    }
+
+    public String getSingle() {
+        return (isEmpty() ? "" : get()[0]);
     }
     
-    public void send(CommandSender sender, Placeholder... placeholders) {
-        if (messages.length > 0) {
-            for (String message : get(placeholders)) {
-                sender.sendMessage(message);
-            }
+    public String[] get() {
+        return Placeholder.applyAll(Placeholder.colourAll(messages), placeholders);
+    }
+
+    public void send(CommandSender sender) {
+        for (String message : get()) {
+            sender.sendMessage(message);
         }
     }
-    
-    public String getSingle(Placeholder... placeholders) {
-        String[] list = get(placeholders);
-        return (list.length == 0 ? "" : list[0]);
-    }
-    
-    public String getSingleRaw() {
-        return (messages.length > 0 ? messages[0] : "");
-    }
-    
-    public String[] getRaw() {
-        return messages;
-    }
-    
-    public Object getConfigValue() {
-        return (messages.length == 0 ? "" : (messages.length == 1 ? messages[0] : Arrays.asList(messages)));
-    }
-    
-    public String[] get(Placeholder... placeholders) {
-        String[] list = new String[messages.length];
-        
-        for (int i = 0; i < list.length; i++) {
-            list[i] = ChatColor.translateAlternateColorCodes('&', messages[i]);
-            
-            for (Placeholder placeholder : placeholders) {
-                list[i] = placeholder.apply(list[i]);
-            }
-        }
-        
-        return list;
+
+    public Object getConfigSaveValue() {
+        if(isEmpty())
+            return "";
+
+        if(getLineCount() == 1)
+            return messages[0];
+
+        return Arrays.asList(messages);
     }
     
 }

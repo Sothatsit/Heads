@@ -18,14 +18,12 @@ import java.util.List;
 
 public class CategoryCostRemoveMode extends BaseMode {
 
-    private String costString;
+    private final double newCost = Heads.getMainConfig().getDefaultHeadCost();
 
     public CategoryCostRemoveMode(Player player) {
         super(player);
 
-        this.costString = CacheHead.getCostString(Heads.getMainConfig().getDefaultHeadCost());
-
-        Lang.Menu.CategoryCost.openRemove().send(getPlayer(), new Placeholder("%newcost%", this.costString));
+        Lang.Menu.CategoryCost.openRemove(newCost).send(getPlayer());
     }
 
     @Override
@@ -50,16 +48,12 @@ public class CategoryCostRemoveMode extends BaseMode {
 
         openInventory(InventoryType.CONFIRM,
                 head,
-                ArrayUtils.create(new Placeholder("%newcost%", this.costString)));
+                ArrayUtils.create(new Placeholder("%newcost%", Lang.Currency.format(newCost))));
     }
 
     @Override
     public void onConfirm(InventoryClickEvent e, ConfirmMenu menu, CacheHead head) {
-        Placeholder[] placeholders = ArrayUtils.append(
-                head.getPlaceholders(),
-                new Placeholder("%newcost%", this.costString));
-
-        Lang.Menu.CategoryCost.removeCost().send(e.getWhoClicked(), placeholders);
+        Lang.Menu.CategoryCost.removeCost(head.getCategory(), newCost).send(e.getWhoClicked());
 
         Heads.getMainConfig().removeCategoryCost(head.getCategory());
     }

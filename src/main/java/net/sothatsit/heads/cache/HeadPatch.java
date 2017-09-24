@@ -21,12 +21,12 @@ public final class HeadPatch {
     private List<String> fromTags = null;
     private List<String> toTags = null;
 
-    public HeadPatch(UUID uniqueId) {
-        this.uniqueId = uniqueId;
+    public HeadPatch(CacheHead head) {
+        this(head.getUniqueId());
     }
 
-    public UUID getUniqueId() {
-        return uniqueId;
+    public HeadPatch(UUID uniqueId) {
+        this.uniqueId = uniqueId;
     }
 
     public HeadPatch withCategory(String from, String to) {
@@ -51,11 +51,19 @@ public final class HeadPatch {
         return this;
     }
 
-    public void applyPatch(CacheHead head) {
+    public void applyPatch(CacheFile cache) {
+        for(CacheHead head : cache.findHeads(uniqueId)) {
+            applyPatch(cache, head);
+        }
+    }
+
+    public void applyPatch(CacheFile cache, CacheHead head) {
         if(category && head.getCategory().equalsIgnoreCase(fromCategory)) {
-            // TODO
-            // head.setCategory(toCategory);
-            throw new UnsupportedOperationException("Patching category not yet implemented");
+            cache.removeHead(head);
+
+            head = head.copyWithCategory(toCategory);
+
+            cache.addHead(head);
         }
 
         if(tags && head.getTags().equals(fromTags)) {
@@ -64,7 +72,7 @@ public final class HeadPatch {
     }
 
     public void write(ObjectOutputStream stream) throws IOException {
-        stream.writeObject(uniqueId);
+        IOUtils.writeUUID(stream, uniqueId);
 
         stream.writeBoolean(category);
         if(category) {
@@ -79,10 +87,10 @@ public final class HeadPatch {
         }
     }
 
-    public static HeadPatch read(ObjectInputStream stream) throws IOException, ClassNotFoundException {
-        UUID uniqueId = (UUID) stream.readObject();
+    public static HeadPatch read(ObjectInputStream stream) throws IOException {
+        UUID uniqueId = IOUtils.readUUID(stream);
 
-        HeadPatch patch = create(uniqueId);
+        HeadPatch patch = new HeadPatch(uniqueId);
 
         boolean category = stream.readBoolean();
         if(category) {
@@ -101,14 +109,6 @@ public final class HeadPatch {
         }
 
         return patch;
-    }
-
-    public static HeadPatch create(UUID uniqueId) {
-        return new HeadPatch(uniqueId);
-    }
-
-    public static HeadPatch create(CacheHead head) {
-        return create(head.getUniqueId());
     }
 
 }

@@ -1,38 +1,74 @@
 package net.sothatsit.heads.cache;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import net.sothatsit.heads.Heads;
 
-public class PatchFile {
+import java.io.*;
+import java.util.*;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.GZIPOutputStream;
+
+public class PatchFile implements Mod {
 
     private final String name;
     private final List<HeadPatch> patches = new ArrayList<>();
+
+    public PatchFile(String name) {
+        this(name, Collections.emptyList());
+    }
 
     public PatchFile(String name, List<HeadPatch> patches) {
         this.name = name;
         this.patches.addAll(patches);
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
-    public void applyPatches(Map<UUID, CacheHead> heads) {
+    @Override
+    public Mod.ModType getType() {
+        return ModType.PATCH;
+    }
+
+    public int getPatchCount() {
+        return patches.size();
+    }
+
+    public void addPatch(HeadPatch patch) {
+        patches.add(patch);
+    }
+
+    @Override
+    public void applyMod(CacheFile cache) {
         for(HeadPatch patch : patches) {
-            CacheHead head = heads.get(patch.getUniqueId());
-
-            if(head == null)
-                continue;
-
-            patch.applyPatch(head);
+            patch.applyPatch(cache);
         }
     }
 
+    public void write(File file) throws IOException {
+        if(file.isDirectory())
+            throw new IOException("File " + file + " is a directory");
+
+        if (!file.exists() && !file.createNewFile())
+            throw new IOException("Unable to create file " + file);
+
+        try(FileOutputStream stream = new FileOutputStream(file)) {
+            writeCompressed(stream);
+        }
+    }
+
+    public void writeCompressed(OutputStream os) throws IOException {
+        try(GZIPOutputStream zos = new GZIPOutputStream(os);
+            ObjectOutputStream stream = new ObjectOutputStream(zos)) {
+
+            write(stream);
+
+            stream.flush();
+        }
+    }
+
+    @Override
     public void write(ObjectOutputStream stream) throws IOException {
         stream.writeInt(1);
         stream.writeUTF(name);
@@ -43,7 +79,33 @@ public class PatchFile {
         }
     }
 
-    public static PatchFile read(ObjectInputStream stream) throws IOException, ClassNotFoundException {
+    public static PatchFile read(File file) throws IOException {
+        if(file.isDirectory())
+            throw new IOException("File " + file + " is a directory");
+
+        if(!file.exists())
+            throw new IOException("File " + file + " does not exist");
+
+        try(FileInputStream stream = new FileInputStream(file)) {
+            return readCompressed(stream);
+        }
+    }
+
+    public static PatchFile readResource(String resource) throws IOException {
+        try(InputStream stream = Heads.getInstance().getResource(resource)) {
+            return readCompressed(stream);
+        }
+    }
+
+    public static PatchFile readCompressed(InputStream is) throws IOException {
+        try(GZIPInputStream zis = new GZIPInputStream(is);
+            ObjectInputStream stream = new ObjectInputStream(zis)) {
+
+            return read(stream);
+        }
+    }
+
+    public static PatchFile read(ObjectInputStream stream) throws IOException {
         stream.readInt();
 
         String name = stream.readUTF();

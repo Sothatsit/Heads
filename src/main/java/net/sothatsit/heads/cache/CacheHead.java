@@ -23,6 +23,8 @@ public final class CacheHead implements Comparable<CacheHead> {
     private String name;
     private final String category;
     private final String texture;
+    private String textureURL;
+    private UUID uniqueId;
     private final List<String> tags = new ArrayList<>();
     private double cost;
 
@@ -44,11 +46,13 @@ public final class CacheHead implements Comparable<CacheHead> {
         this.name = name;
         this.category = category;
         this.texture = texture;
+        this.textureURL = null;
+        this.uniqueId = null;
         this.tags.addAll(tags);
         this.cost = cost;
     }
 
-    public CacheHead copy() {
+    public CacheHead copyWithCategory(String category) {
         return new CacheHead(id, name, category, texture, tags, cost);
     }
 
@@ -73,17 +77,11 @@ public final class CacheHead implements Comparable<CacheHead> {
     }
 
     public String getTextureURL() {
-        String decoded = this.texture;
-
-        try {
-            decoded = new String(Base64.getDecoder().decode(this.texture));
-            JsonObject json = new JsonParser().parse(decoded).getAsJsonObject();
-            JsonObject textures = json.getAsJsonObject("textures");
-            JsonObject skin = textures.getAsJsonObject("SKIN");
-            return skin.get("url").getAsString();
-        } catch(Exception e) {
-            throw new RuntimeException("Unable to get the texture URL of texture " + texture, e);
+        if(textureURL == null) {
+            textureURL = extractTextureURL(texture);
         }
+
+        return textureURL;
     }
 
     public List<String> getTags() {
@@ -98,27 +96,18 @@ public final class CacheHead implements Comparable<CacheHead> {
         return (hasCost() ? cost : Heads.getMainConfig().getCategoryCost(category));
     }
 
-    public String getCostString() {
-        return getCostString(getCost());
-    }
-
-    public static String getCostString(double cost) {
-        Placeholder amountPlaceholder = new Placeholder("%amount%", cost);
-
-        if(cost <= 0)
-            return Lang.Currency.zero().getSingle(amountPlaceholder);
-
-        return Lang.Currency.nonZero().getSingle(amountPlaceholder);
-    }
-
     public UUID getUniqueId() {
-        return UUID.nameUUIDFromBytes(texture.getBytes(StandardCharsets.UTF_8));
+        if(uniqueId == null) {
+            uniqueId = UUID.nameUUIDFromBytes(getTextureURL().getBytes(StandardCharsets.UTF_8));
+        }
+
+        return uniqueId;
     }
 
     public Placeholder[] getPlaceholders() {
         return new Placeholder[] {
                 new Placeholder("%name%", name),
-                new Placeholder("%cost%", getCostString()),
+                new Placeholder("%cost%", Lang.Currency.format(getCost())),
                 new Placeholder("%category%", category),
                 new Placeholder("%id%", Integer.toString(id))
         };
@@ -195,11 +184,15 @@ public final class CacheHead implements Comparable<CacheHead> {
     public int compareTo(@Nonnull CacheHead otherHead) {
         String otherName = otherHead.getName();
 
+        if(name.length() > 1 && otherName.length() <= 1)
+            return 1;
+
         if(name.length() <= 1 && otherName.length() > 1)
             return -1;
 
         if(name.length() == 1 && otherName.length() == 1) {
             List<String> otherTags = otherHead.getTags();
+
             int length = Math.min(tags.size(), otherTags.size());
 
             for(int index = 0; index < length; ++index) {
@@ -208,9 +201,27 @@ public final class CacheHead implements Comparable<CacheHead> {
                 if(compare != 0)
                     return compare;
             }
+
+            if(tags.size() > 0 && otherTags.size() == 0)
+                return -1;
+
+            if(tags.size() == 0 && otherTags.size() > 0)
+                return 1;
         }
 
         return name.compareTo(otherName);
+    }
+
+    public static String extractTextureURL(String texture) {
+        try {
+            String decoded = new String(Base64.getDecoder().decode(texture));
+            JsonObject json = new JsonParser().parse(decoded).getAsJsonObject();
+            JsonObject textures = json.getAsJsonObject("textures");
+            JsonObject skin = textures.getAsJsonObject("SKIN");
+            return skin.get("url").getAsString();
+        } catch(Exception e) {
+            throw new RuntimeException("Unable to get the texture URL of texture " + texture, e);
+        }
     }
 
 }

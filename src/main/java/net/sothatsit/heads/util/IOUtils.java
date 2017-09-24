@@ -53,4 +53,16 @@ public class IOUtils {
         return new ArrayList<>(Arrays.asList(array));
     }
 
+    public static void writeUUID(ObjectOutputStream stream, UUID uuid) throws IOException {
+        stream.writeLong(uuid.getMostSignificantBits());
+        stream.writeLong(uuid.getLeastSignificantBits());
+    }
+
+    public static UUID readUUID(ObjectInputStream stream) throws IOException {
+        long mostSignificantBits = stream.readLong();
+        long leastSignificantBits = stream.readLong();
+
+        return new UUID(mostSignificantBits, leastSignificantBits);
+    }
+
 }

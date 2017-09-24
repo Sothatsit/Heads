@@ -44,7 +44,7 @@ public class LangConfig {
             if (!this.messages.containsKey(def.getKey())) {
                 Heads.warning("\"lang.yml\" is missing key \"" + def.getKey() + "\", adding it");
                 
-                config.set(def.getKey(), def.getValue().getConfigValue());
+                config.set(def.getKey(), def.getValue().getConfigSaveValue());
                 this.messages.put(def.getKey(), def.getValue());
                 save = true;
             }

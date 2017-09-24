@@ -9,35 +9,37 @@ import java.util.*;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
-public final class CacheFile {
+public final class CacheFile implements Mod {
 
     private final String name;
-    private final Set<String> addons = new HashSet<>();
-    private final Set<String> patches = new HashSet<>();
+    private final Set<String> mods = new HashSet<>();
     private final List<CacheHead> heads = new ArrayList<>();
     private final Map<Integer, CacheHead> headsById = new HashMap<>();
-    private final Map<UUID, CacheHead> headsByUniqueId = new HashMap<>();
     private final Map<String, List<CacheHead>> categories = new HashMap<>();
 
     public CacheFile(String name) {
-        this(name, Collections.emptySet(), Collections.emptySet(), Collections.emptySet());
+        this(name, Collections.emptySet(), Collections.emptyList());
     }
 
-    public CacheFile(String name, Set<String> addons, Set<String> patches, Iterable<CacheHead> heads) {
+    public CacheFile(String name, Set<String> mods, Iterable<CacheHead> heads) {
         Checks.ensureNonNull(name, "name");
-        Checks.ensureNonNull(addons, "addons");
-        Checks.ensureNonNull(patches, "patches");
+        Checks.ensureNonNull(mods, "mods");
         Checks.ensureNonNull(heads, "heads");
 
         this.name = name;
-        this.addons.addAll(addons);
-        this.patches.addAll(patches);
+        this.mods.addAll(mods);
 
         addHeads(heads);
     }
 
+    @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public ModType getType() {
+        return ModType.ADDON;
     }
 
     public int getHeadCount() {
@@ -48,12 +50,23 @@ public final class CacheFile {
         return Collections.unmodifiableList(heads);
     }
 
+    public String resolveCategoryName(String category) {
+        for(String name : categories.keySet()) {
+            if(name.equalsIgnoreCase(category))
+                return name;
+        }
+
+        return category;
+    }
+
     public Set<String> getCategories() {
         return Collections.unmodifiableSet(categories.keySet());
     }
 
     public List<CacheHead> getCategoryHeads(String category) {
-        List<CacheHead> list = categories.getOrDefault(category.toLowerCase(), Collections.emptyList());
+        category = resolveCategoryName(category);
+
+        List<CacheHead> list = categories.getOrDefault(category, Collections.emptyList());
 
         Collections.sort(list);
 
@@ -77,8 +90,17 @@ public final class CacheFile {
         return headsById.get(id);
     }
 
-    public CacheHead findHead(UUID uniqueId) {
-        return headsByUniqueId.get(uniqueId);
+    public List<CacheHead> findHeads(UUID uniqueId) {
+        List<CacheHead> matches = new ArrayList<>();
+
+        for(CacheHead head : heads) {
+            if(!head.getUniqueId().equals(uniqueId))
+                continue;
+
+            matches.add(head);
+        }
+
+        return matches;
     }
 
     public CacheHead getRandomHead(Random random) {
@@ -102,54 +124,46 @@ public final class CacheFile {
     }
 
     public void addHead(CacheHead head) {
-        head = head.copy();
-        head.setId(getMaxId() + 1);
+        String category = resolveCategoryName(head.getCategory());
 
-        String category = head.getCategory().toLowerCase();
+        head = head.copyWithCategory(category);
+        head.setId(getMaxId() + 1);
 
         heads.add(head);
         headsById.put(head.getId(), head);
-        headsByUniqueId.put(head.getUniqueId(), head);
         categories.computeIfAbsent(category, c -> new ArrayList<>()).add(head);
     }
 
     public void removeHead(CacheHead head) {
+        String category = resolveCategoryName(head.getCategory());
+
         heads.remove(head);
         headsById.remove(head.getId(), head);
-        headsByUniqueId.remove(head.getUniqueId(), head);
-        categories.compute(head.getCategory(), (key, category) -> {
-            if(category == null)
+        categories.compute(category, (key, categoryHeads) -> {
+            if(categoryHeads == null)
                 return null;
 
-            category.remove(head);
+            categoryHeads.remove(head);
 
-            return (category.size() > 0 ? category : null);
+            return (categoryHeads.size() > 0 ? categoryHeads : null);
         });
     }
 
-    public boolean hasAddon(String addon) {
-        return addons.contains(addon);
+    @Override
+    public void applyMod(CacheFile cache) {
+        cache.addHeads(heads);
     }
 
-    public void installAddons(AddonsFile addons) {
-
+    public boolean hasMod(String mod) {
+        return mods.contains(mod);
     }
 
-    public void installAddon(CacheFile addon) {
-        if(hasAddon(addon.getName()))
+    public void installMod(Mod mod) {
+        if(hasMod(mod.getName()))
             return;
 
-        addons.add(addon.getName());
-        addHeads(addon.heads);
-    }
-
-    public boolean hasPatch(String patch) {
-        return patches.contains(patch);
-    }
-
-    public void installPatch(PatchFile patch) {
-        patches.add(patch.getName());
-        patch.applyPatches(headsByUniqueId);
+        mods.add(mod.getName());
+        mod.applyMod(this);
     }
 
     public void write(File file) throws IOException {
@@ -174,12 +188,12 @@ public final class CacheFile {
         }
     }
 
+    @Override
     public void write(ObjectOutputStream stream) throws IOException {
-        stream.writeInt(1);
+        stream.writeInt(2);
         stream.writeUTF(name);
 
-        IOUtils.writeStringSet(stream, addons);
-        IOUtils.writeStringSet(stream, patches);
+        IOUtils.writeStringSet(stream, mods);
 
         stream.writeInt(heads.size());
         for(CacheHead head : heads) {
@@ -214,11 +228,22 @@ public final class CacheFile {
     }
 
     public static CacheFile read(ObjectInputStream stream) throws IOException {
-        stream.readInt();
+        int version = stream.readInt();
+
+        switch(version) {
+            case 2:
+                return readVersion2(stream);
+            case 1:
+                return readVersion1(stream);
+            default:
+                throw new UnsupportedOperationException("Unknown cache file version " + version);
+        }
+    }
+
+    private static CacheFile readVersion2(ObjectInputStream stream) throws IOException {
         String name = stream.readUTF();
 
-        Set<String> addons = IOUtils.readStringSet(stream);
-        Set<String> patches = IOUtils.readStringSet(stream);
+        Set<String> mods = IOUtils.readStringSet(stream);
 
         int headCount = stream.readInt();
         List<CacheHead> heads = new ArrayList<>(headCount);
@@ -226,7 +251,24 @@ public final class CacheFile {
             heads.add(CacheHead.read(stream));
         }
 
-        return new CacheFile(name, addons, patches, heads);
+        return new CacheFile(name, mods, heads);
+    }
+
+    private static CacheFile readVersion1(ObjectInputStream stream) throws IOException {
+        String name = stream.readUTF();
+
+        Set<String> mods = new HashSet<>();
+
+        mods.addAll(IOUtils.readStringSet(stream));
+        mods.addAll(IOUtils.readStringSet(stream));
+
+        int headCount = stream.readInt();
+        List<CacheHead> heads = new ArrayList<>(headCount);
+        for(int index = 0; index < headCount; ++index) {
+            heads.add(CacheHead.read(stream));
+        }
+
+        return new CacheFile(name, mods, heads);
     }
 
 }

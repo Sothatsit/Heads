@@ -8,6 +8,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import net.sothatsit.heads.Heads;
 
 import net.sothatsit.heads.util.Clock;
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 
@@ -17,7 +18,6 @@ public class MainConfig {
 
     private double defaultHeadCost;
     private boolean economyEnabled;
-    private boolean hatMode;
     private boolean hideNoPermCategories;
 
     private Map<String, Double> categoryCosts;
@@ -38,6 +38,7 @@ public class MainConfig {
     private String categoryCostLabel;
     private String idLabel;
     private String searchLabel;
+    private String helpLabel;
     
     public MainConfig(ConfigFile configFile) {
         this.configFile = configFile;
@@ -58,8 +59,25 @@ public class MainConfig {
         loadCommandInfo(config, shouldSave);
         loadCategoryCosts(config, shouldSave);
 
+        if(config.isSet("hat-mode") && config.isBoolean("hat-mode") && config.getBoolean("hat-mode")) {
+            Heads.severe("--------------------------------------------------");
+            Heads.severe("Until further notice, hat mode is no longer supported");
+            Heads.severe("in Heads past version 1.10.0, please downgrade or");
+            Heads.severe("switch the plugin out of hat-mode in your config.yml");
+            Heads.severe("--------------------------------------------------");
+
+            Bukkit.getScheduler().scheduleSyncDelayedTask(Heads.getInstance(), () -> {
+                Heads.severe("--------------------------------------------------");
+                Heads.severe("Until further notice, hat mode is no longer supported");
+                Heads.severe("in Heads past version 1.10.0, please downgrade or");
+                Heads.severe("switch the plugin out of hat-mode in your config.yml");
+                Heads.severe("--------------------------------------------------");
+
+                Bukkit.getPluginManager().disablePlugin(Heads.getInstance());
+            });
+        }
+
         economyEnabled       = loadBoolean(config, "economy.enabled", false, shouldSave);
-        hatMode              = loadBoolean(config, "hat-mode", false, shouldSave);
         hideNoPermCategories = loadBoolean(config, "hide-no-perm-categories", true, shouldSave);
         defaultHeadCost      = loadDouble(config, "economy.default-head-cost", 0, shouldSave);
 
@@ -88,6 +106,7 @@ public class MainConfig {
         categoryCostLabel = loadString(config, "commands.heads.sub-commands.category-cost", "categorycost", shouldSave);
         idLabel           = loadString(config, "commands.heads.sub-commands.id", "id", shouldSave);
         searchLabel       = loadString(config, "commands.heads.sub-commands.search", "search", shouldSave);
+        helpLabel         = loadString(config, "commands.heads.sub-commands.help", "help", shouldSave);
 
         headLabel         = loadString(config, "commands.heads.label", "heads", shouldSave);
         headDescription   = loadString(config, "commands.heads.description", "Get a cool head", shouldSave);
@@ -211,10 +230,6 @@ public class MainConfig {
     public double getDefaultHeadCost() {
         return this.defaultHeadCost;
     }
-    
-    public boolean isHatMode() {
-        return this.hatMode;
-    }
 
     public boolean shouldHideNoPermCategories() {
         return this.hideNoPermCategories;
@@ -278,5 +293,9 @@ public class MainConfig {
 
     public String getSearchCommand() {
         return this.searchLabel;
+    }
+
+    public String getHelpCommand() {
+        return this.helpLabel;
     }
 }

@@ -3,7 +3,6 @@ package net.sothatsit.heads.command;
 import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.MainConfig;
-import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.config.lang.Lang;
 
 import org.bukkit.Bukkit;
@@ -37,45 +36,37 @@ public class GiveCommand extends AbstractCommand {
             return true;
         }
         
-        String idStr = args[1];
-        
-        int id = -1;
-        
+        int id;
         try {
-            id = Integer.valueOf(idStr);
+            id = Integer.valueOf(args[1]);
         } catch (NumberFormatException e) {
-            Lang.Command.Errors.integer().send(sender, Placeholder.number(idStr));
+            Lang.Command.Errors.integer(args[1]).send(sender);
             return true;
         }
         
-        String amountStr = args[3];
-        
-        int amount = -1;
-        
+        int amount;
         try {
-            amount = Integer.valueOf(amountStr);
+            amount = Integer.valueOf(args[3]);
         } catch (NumberFormatException e) {
-            Lang.Command.Give.invalidAmount().send(sender, Placeholder.number(amountStr));
+            Lang.Command.Give.invalidAmount(args[3]).send(sender);
             return true;
         }
         
         if (amount <= 0) {
-            Lang.Command.Give.invalidAmount().send(sender, Placeholder.number(amountStr));
+            Lang.Command.Give.invalidAmount(args[3]).send(sender);
         }
         
-        String playerStr = args[2];
-        
-        Player player = Bukkit.getPlayer(playerStr);
+        Player player = Bukkit.getPlayer(args[2]);
         
         if (player == null || !player.isOnline()) {
-            Lang.Command.Give.cantFindPlayer().send(sender, Placeholder.name(playerStr));
+            Lang.Command.Give.cantFindPlayer(args[2]).send(sender);
             return true;
         }
 
         CacheHead head = Heads.getCache().findHead(id);
 
         if (head == null) {
-            Lang.Command.Give.cantFindHead().send(sender, Placeholder.id(idStr));
+            Lang.Command.Give.cantFindHead(id).send(sender);
             return true;
         }
         
@@ -89,7 +80,7 @@ public class GiveCommand extends AbstractCommand {
             }
         }
         
-        Lang.Command.Give.give().send(sender, Placeholder.amount(amountStr), Placeholder.head(head.getName()), Placeholder.name(player.getName()));
+        Lang.Command.Give.give(amount, head.getName(), player.getName()).send(sender);
         return true;
     }
 }

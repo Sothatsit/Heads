@@ -2,7 +2,6 @@ package net.sothatsit.heads.config.lang;
 
 import net.sothatsit.heads.Heads;
 
-// TODO: Accept arguments for messages in methods for natural documentation and ease of use
 public class Lang {
     
     public static LangMessage get(String key) {
@@ -37,12 +36,17 @@ public class Lang {
             return "currency";
         }
 
-        public static LangMessage zero() {
-            return Lang.get(key() + ".zero");
+        public static LangMessage format(double amount) {
+            return (amount <= 0 ? zero() : nonZero(amount));
         }
 
-        public static LangMessage nonZero() {
-            return Lang.get(key() + ".non-zero");
+        public static LangMessage zero() {
+            return get(key() + ".zero");
+        }
+
+        public static LangMessage nonZero(double amount) {
+            return get(key() + ".non-zero")
+                    .with("%amount%", amount);
         }
 
     }
@@ -60,27 +64,35 @@ public class Lang {
             }
             
             public static LangMessage open() {
-                return Lang.get(key() + ".open");
+                return get(key() + ".open");
             }
             
-            public static LangMessage added() {
-                return Lang.get(key() + ".added");
+            public static LangMessage added(String name) {
+                return get(key() + ".added")
+                        .with("%name%", name);
             }
 
-            public static LangMessage purchased() {
-                return Lang.get(key() + ".purchased");
+            public static LangMessage purchased(String name, double cost) {
+                return get(key() + ".purchased")
+                        .with("%name%", name)
+                        .with("%cost%", Currency.format(cost));
             }
 
-            public static LangMessage notEnoughMoney() {
-                return Lang.get(key() + ".not-enough-money");
+            public static LangMessage notEnoughMoney(String name, double cost) {
+                return get(key() + ".not-enough-money")
+                        .with("%name%", name)
+                        .with("%cost%", cost);
             }
             
-            public static LangMessage transactionError() {
-                return Lang.get(key() + ".transaction-error");
+            public static LangMessage transactionError(String name, double cost) {
+                return get(key() + ".transaction-error")
+                        .with("%name%", name)
+                        .with("%cost%", cost);
             }
             
-            public static LangMessage categoryPermission() {
-                return Lang.get(key() + ".category-permission");
+            public static LangMessage categoryPermission(String category) {
+                return get(key() + ".category-permission")
+                        .with("%category%", category);
             }
             
         }
@@ -91,20 +103,25 @@ public class Lang {
                 return Menu.key() + ".get";
             }
 
-            public static LangMessage added() {
-                return Lang.get(key() + ".added");
+            public static LangMessage added(String name) {
+                return get(key() + ".added")
+                        .with("%name%", name);
             }
 
-            public static LangMessage notEnoughMoney() {
-                return Lang.get(key() + ".not-enough-money");
+            public static LangMessage notEnoughMoney(String name, double cost) {
+                return get(key() + ".not-enough-money")
+                        .with("%name%", name)
+                        .with("%cost%", cost);
             }
 
-            public static LangMessage transactionError() {
-                return Lang.get(key() + ".transaction-error");
+            public static LangMessage transactionError(String name, double cost) {
+                return get(key() + ".transaction-error")
+                        .with("%name%", name)
+                        .with("%cost%", cost);
             }
 
-            public static LangMessage categoryPermission() {
-                return Lang.get(key() + ".category-permission");
+            public static LangMessage categoryPermission(String category) {
+                return get(key() + ".category-permission").with("%category%", category);
             }
 
         }
@@ -116,11 +133,12 @@ public class Lang {
             }
             
             public static LangMessage open() {
-                return Lang.get(key() + ".open");
+                return get(key() + ".open");
             }
             
-            public static LangMessage removed() {
-                return Lang.get(key() + ".removed");
+            public static LangMessage removed(String name) {
+                return get(key() + ".removed")
+                        .with("%name%", name);
             }
             
         }
@@ -131,12 +149,15 @@ public class Lang {
                 return Menu.key() + ".rename";
             }
             
-            public static LangMessage open() {
-                return Lang.get(key() + ".open");
+            public static LangMessage open(String newName) {
+                return get(key() + ".open")
+                        .with("%newname%", newName);
             }
             
-            public static LangMessage renamed() {
-                return Lang.get(key() + ".renamed");
+            public static LangMessage renamed(String oldName, String newName) {
+                return get(key() + ".renamed")
+                        .with("%name%", oldName)
+                        .with("%newname%", newName);
             }
             
         }
@@ -147,12 +168,15 @@ public class Lang {
                 return Menu.key() + ".cost";
             }
             
-            public static LangMessage open() {
-                return Lang.get(key() + ".open");
+            public static LangMessage open(double newCost) {
+                return get(key() + ".open")
+                        .with("%newcost%", Currency.format(newCost));
             }
             
-            public static LangMessage setCost() {
-                return Lang.get(key() + ".set-cost");
+            public static LangMessage setCost(String name, double newCost) {
+                return get(key() + ".set-cost")
+                        .with("%name%", name)
+                        .with("%newcost%", Currency.format(newCost));
             }
             
         }
@@ -163,20 +187,26 @@ public class Lang {
                 return Menu.key() + ".category-cost";
             }
 
-            public static LangMessage open() {
-                return Lang.get(key() + ".open");
+            public static LangMessage open(double newCost) {
+                return get(key() + ".open")
+                        .with("%newcost%", Currency.format(newCost));
             }
 
-            public static LangMessage setCost() {
-                return Lang.get(key() + ".set-cost");
+            public static LangMessage setCost(String category, double newCost) {
+                return get(key() + ".set-cost")
+                        .with("%category%", category)
+                        .with("%newcost%", Currency.format(newCost));
             }
 
-            public static LangMessage openRemove() {
-                return Lang.get(key() + ".open-remove");
+            public static LangMessage openRemove(double newCost) {
+                return get(key() + ".open-remove")
+                        .with("%newcost%", Currency.format(newCost));
             }
 
-            public static LangMessage removeCost() {
-                return Lang.get(key() + ".remove-cost");
+            public static LangMessage removeCost(String category, double newCost) {
+                return get(key() + ".remove-cost")
+                        .with("%category%", category)
+                        .with("%newcost%", Currency.format(newCost));
             }
 
         }
@@ -188,11 +218,13 @@ public class Lang {
             }
             
             public static LangMessage open() {
-                return Lang.get(key() + ".open");
+                return get(key() + ".open");
             }
             
-            public static LangMessage clicked() {
-                return Lang.get(key() + ".clicked");
+            public static LangMessage clicked(String name, int id) {
+                return get(key() + ".clicked")
+                        .with("%name%", name)
+                        .with("%id%", id);
             }
             
         }
@@ -204,35 +236,48 @@ public class Lang {
         public static String key() {
             return "command";
         }
+
+        public static LangMessage unknownCommand(String command) {
+            return get(key() + ".unknown-command")
+                    .with("%command%", command);
+        }
         
         public static class Errors {
             
             public static String key() {
                 return Command.key() + ".errors";
             }
+
+            public static LangMessage mustBePlayer() {
+                return get(key() + ".must-be-player");
+            }
             
             public static LangMessage noPermission() {
-                return Lang.get(key() + ".no-permission");
+                return get(key() + ".no-permission");
+            }
+
+            public static LangMessage invalidArgs(HelpSection commandHelp) {
+                return invalidArgs(commandHelp.command());
+            }
+
+            public static LangMessage invalidArgs(String valid) {
+                return get(key() + ".invalid-arguments")
+                        .with("%valid%", valid);
             }
             
-            public static LangMessage invalidArgs() {
-                return Lang.get(key() + ".invalid-arguments");
+            public static LangMessage integer(String number) {
+                return get(key() + ".integer")
+                        .with("%number%", number);
             }
             
-            public static LangMessage mustBePlayer() {
-                return Lang.get(key() + ".must-be-player");
+            public static LangMessage number(String number) {
+                return get(key() + ".number")
+                        .with("%number%", number);
             }
-            
-            public static LangMessage integer() {
-                return Lang.get(key() + ".integer");
-            }
-            
-            public static LangMessage number() {
-                return Lang.get(key() + ".number");
-            }
-            
-            public static LangMessage negative() {
-                return Lang.get(key() + ".negative");
+
+            public static LangMessage negative(String number) {
+                return get(key() + ".negative")
+                        .with("%number%", number);
             }
             
         }
@@ -243,20 +288,38 @@ public class Lang {
                 return Command.key() + ".help";
             }
             
-            public static LangMessage header() {
-                return Lang.get(key() + ".header");
+            public static LangMessage header(int page, int pages, int nextPage) {
+                return get(key() + ".header")
+                        .with("%page%", page)
+                        .with("%pages%", pages)
+                        .with("%next-page%", nextPage);
             }
 
-            public static LangMessage footer() {
-                return Lang.get(key() + ".footer");
+            public static int getLineCountPerLine() {
+                return get(key() + ".line").getLineCount();
             }
 
-            public static LangMessage line() {
-                return Lang.get(key() + ".line");
+            public static LangMessage line(HelpSection commandHelp) {
+                return line(commandHelp.command(), commandHelp.description());
             }
 
-            public static LangMessage unknownPage() {
-                return Lang.get(key() + ".unknown-page");
+            public static LangMessage line(String command, String description) {
+                return get(key() + ".line")
+                        .with("%command%", command)
+                        .with("%description%", description);
+            }
+
+            public static LangMessage footer(int page, int pages, int nextPage) {
+                return get(key() + ".footer")
+                        .with("%page%", page)
+                        .with("%pages%", pages)
+                        .with("%next-page%", nextPage);
+            }
+
+            public static LangMessage unknownPage(int page, int pages) {
+                return get(key() + ".unknown-page")
+                        .with("%page%", page)
+                        .with("%pages%", pages);
             }
             
             public static HelpSection help() {
@@ -272,7 +335,7 @@ public class Lang {
             }
 
             public static LangMessage reloaded() {
-                return Lang.get(key() + ".reloaded");
+                return get(key() + ".reloaded");
             }
 
             public static HelpSection help() {
@@ -287,24 +350,27 @@ public class Lang {
                 return Command.key() + ".get";
             }
             
-            public static LangMessage headName() {
-                return Lang.get(key() + ".head-name");
+            public static LangMessage headName(String name) {
+                return get(key() + ".head-name")
+                        .with("%name%", name);
             }
             
             public static LangMessage oldMethod() {
-                return Lang.get(key() + ".old-method");
+                return get(key() + ".old-method");
             }
             
-            public static LangMessage adding() {
-                return Lang.get(key() + ".adding");
+            public static LangMessage adding(String name) {
+                return get(key() + ".adding")
+                        .with("%name%", name);
             }
             
             public static LangMessage fetching() {
-                return Lang.get(key() + ".fetching");
+                return get(key() + ".fetching");
             }
             
-            public static LangMessage cantFind() {
-                return Lang.get(key() + ".cant-find");
+            public static LangMessage cantFind(String name) {
+                return get(key() + ".cant-find")
+                        .with("%name%", name);
             }
             
             public static HelpSection help() {
@@ -320,11 +386,13 @@ public class Lang {
             }
             
             public static LangMessage noHeads() {
-                return Lang.get(key() + ".no-heads");
+                return get(key() + ".no-heads");
             }
             
-            public static LangMessage giving() {
-                return Lang.get(key() + ".giving");
+            public static LangMessage giving(String name, String category) {
+                return get(key() + ".giving")
+                        .with("%name%", name)
+                        .with("%category%", category);
             }
             
             public static HelpSection help() {
@@ -340,23 +408,28 @@ public class Lang {
             }
             
             public static LangMessage notSupported() {
-                return Lang.get(key() + ".not-supported");
+                return get(key() + ".not-supported");
             }
             
-            public static LangMessage categoryLength() {
-                return Lang.get(key() + ".category-length");
+            public static LangMessage categoryLength(String category) {
+                return get(key() + ".category-length")
+                        .with("%category%", category)
+                        .with("%length%", category.length());
             }
             
-            public static LangMessage added() {
-                return Lang.get(key() + ".added");
+            public static LangMessage added(String name, String category) {
+                return get(key() + ".added")
+                        .with("%name%", name)
+                        .with("%category%", category);
             }
             
             public static LangMessage fetching() {
-                return Lang.get(key() + ".fetching");
+                return get(key() + ".fetching");
             }
             
-            public static LangMessage cantFind() {
-                return Lang.get(key() + ".cant-find");
+            public static LangMessage cantFind(String name) {
+                return get(key() + ".cant-find")
+                        .with("%name%", name);
             }
             
             public static HelpSection help() {
@@ -372,35 +445,40 @@ public class Lang {
             }
             
             public static LangMessage notSupported() {
-                return Lang.get(key() + ".not-supported");
+                return get(key() + ".not-supported");
             }
             
             public static LangMessage noTextureProperty() {
-                return Lang.get(key() + ".no-texture-property");
+                return get(key() + ".no-texture-property");
             }
             
             public static LangMessage noNameProperty() {
-                return Lang.get(key() + ".no-name-property");
+                return get(key() + ".no-name-property");
             }
             
             public static LangMessage notSkull() {
-                return Lang.get(key() + ".not-skull");
+                return get(key() + ".not-skull");
             }
             
-            public static LangMessage categoryLength() {
-                return Lang.get(key() + ".category-length");
+            public static LangMessage categoryLength(String category) {
+                return get(key() + ".category-length")
+                        .with("%category%", category)
+                        .with("%length%", category.length());
             }
             
-            public static LangMessage adding() {
-                return Lang.get(key() + ".adding");
+            public static LangMessage adding(String name, String category) {
+                return get(key() + ".adding")
+                        .with("%name%", name)
+                        .with("%category%", category);
             }
             
             public static LangMessage fetching() {
-                return Lang.get(key() + ".fetching");
+                return get(key() + ".fetching");
             }
             
-            public static LangMessage cantFind() {
-                return Lang.get(key() + ".cant-find");
+            public static LangMessage cantFind(String name) {
+                return get(key() + ".cant-find")
+                        .with("%name%", name);
             }
             
             public static HelpSection help() {
@@ -415,20 +493,26 @@ public class Lang {
                 return Command.key() + ".give";
             }
             
-            public static LangMessage cantFindPlayer() {
-                return Lang.get(key() + ".cant-find-player");
+            public static LangMessage cantFindPlayer(String name) {
+                return get(key() + ".cant-find-player")
+                        .with("%name%", name);
             }
             
-            public static LangMessage cantFindHead() {
-                return Lang.get(key() + ".cant-find-head");
+            public static LangMessage cantFindHead(int id) {
+                return get(key() + ".cant-find-head")
+                        .with("%id%", id);
             }
             
-            public static LangMessage give() {
-                return Lang.get(key() + ".give");
+            public static LangMessage give(int amount, String head, String name) {
+                return get(key() + ".give")
+                        .with("%amount%", amount)
+                        .with("%head%", head)
+                        .with("%name%", name);
             }
             
-            public static LangMessage invalidAmount() {
-                return Lang.get(key() + ".invalid-amount");
+            public static LangMessage invalidAmount(String number) {
+                return get(key() + ".invalid-amount")
+                        .with("%number%", number);
             }
             
             public static HelpSection help() {
@@ -479,12 +563,15 @@ public class Lang {
                 return Command.key() + ".search";
             }
 
-            public static LangMessage found() {
-                return Lang.get(key() + ".found");
+            public static LangMessage found(String query, int heads) {
+                return get(key() + ".found")
+                        .with("%query%", query)
+                        .with("%heads%", heads);
             }
 
-            public static LangMessage noneFound() {
-                return Lang.get(key() + ".none-found");
+            public static LangMessage noneFound(String query) {
+                return get(key() + ".none-found")
+                        .with("%query%", query);
             }
 
             public static HelpSection help() {

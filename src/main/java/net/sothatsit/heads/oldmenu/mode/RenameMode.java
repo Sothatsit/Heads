@@ -29,7 +29,7 @@ public class RenameMode extends BaseMode {
     public void setName(String name) {
         this.name = name;
         
-        Lang.Menu.Rename.open().send(getPlayer(), new Placeholder("%newname%", name));
+        Lang.Menu.Rename.open(name).send(getPlayer());
     }
     
     @Override
@@ -46,8 +46,7 @@ public class RenameMode extends BaseMode {
     
     @Override
     public void onConfirm(InventoryClickEvent e, ConfirmMenu menu, CacheHead head) {
-        Placeholder[] placeholders = ArrayUtils.append(head.getPlaceholders(), new Placeholder("%newname%", name));
-        Lang.Menu.Rename.renamed().send(e.getWhoClicked(), placeholders);
+        Lang.Menu.Rename.renamed(head.getName(), name).send(e.getWhoClicked());
         
         head.setName(name);
         Heads.getInstance().saveCache();

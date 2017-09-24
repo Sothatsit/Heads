@@ -1,6 +1,20 @@
+1.10.2
++ 167 new heads
+* Cleanup patch
+  * Add tags to 2560 heads
+  * Collapse Characters, Pokemon and LoL categories into Games
+  * Collapse Mobs category into Animals
+  * Collapse Easter, Halloween, Christmas, Mob Eggs and Color categories into Misc
+  * Collpase Devices category into Interior
+
+1.10.1
+- Remove hat mode
+
 1.10.0
 + Binary cache files for smaller files and speedier load and save times
 + Added language options for formatting currency
+* Move responsibility to assign placeholders to Lang
+* Don't treat all incorrect commands as a help command, send better help
 - YAML cache saving
 
 1.9.14

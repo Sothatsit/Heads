@@ -3,7 +3,6 @@ package net.sothatsit.heads.command;
 import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.MainConfig;
-import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.oldmenu.mode.SearchMode;
 import org.bukkit.command.Command;
@@ -51,15 +50,12 @@ public class SearchCommand extends AbstractCommand {
         String query = queryBuilder.toString().trim();
         List<CacheHead> matches = Heads.getCache().searchHeads(query);
 
-        Placeholder queryPlaceholder = new Placeholder("%query%", query);
-        Placeholder matchCountPlaceholder = new Placeholder("%heads%", matches.size());
-
         if(matches.size() == 0) {
-            Lang.Command.Search.noneFound().send(sender, queryPlaceholder, matchCountPlaceholder);
+            Lang.Command.Search.noneFound(query).send(sender);
             return true;
         }
 
-        Lang.Command.Search.found().send(sender, queryPlaceholder, matchCountPlaceholder);
+        Lang.Command.Search.found(query, matches.size()).send(sender);
 
         new SearchMode((Player) sender, matches);
         return true;

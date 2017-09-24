@@ -4,7 +4,6 @@ import java.io.InputStreamReader;
 
 import net.sothatsit.heads.Heads;
 
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 public class DefaultsConfigFile implements ConfigFile {

@@ -11,6 +11,23 @@ import java.util.List;
 
 public class Stringify {
 
+    public static String capitalise(String string) {
+        boolean capitalise = true;
+
+        char[] chars = string.toCharArray();
+
+        for(int index = 0; index < chars.length; ++index) {
+            if(Character.isSpaceChar(chars[index])) {
+                capitalise = true;
+            } else if(capitalise) {
+                chars[index] = Character.toUpperCase(chars[index]);
+                capitalise = false;
+            }
+        }
+
+        return new String(chars);
+    }
+
     public static String indent(String string) {
         StringBuilder indented = new StringBuilder("\t");
 

@@ -26,7 +26,7 @@ public class IdMode extends BaseMode {
     
     @Override
     public void onHeadSelect(InventoryClickEvent e, HeadMenu menu, CacheHead head) {
-        Lang.Menu.Id.clicked().send(e.getWhoClicked(), head.getPlaceholders());
+        Lang.Menu.Id.clicked(head.getName(), head.getId()).send(e.getWhoClicked());
     }
     
     @Override

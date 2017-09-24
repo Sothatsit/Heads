@@ -35,7 +35,7 @@ public class RemoveMode extends BaseMode {
         Heads.getCache().removeHead(head);
         Heads.getInstance().saveCache();
         
-        Lang.Menu.Remove.removed().send(e.getWhoClicked(), head.getPlaceholders());
+        Lang.Menu.Remove.removed(head.getName()).send(e.getWhoClicked());
     }
     
     @Override

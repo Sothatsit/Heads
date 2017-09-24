@@ -4,14 +4,16 @@ import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.lang.Lang;
 
+import net.sothatsit.heads.config.lang.LangMessage;
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 public class HeadsCommand implements CommandExecutor {
 
-    private static final AbstractCommand openMenu = new OpenMenuCommand();
-    private static final AbstractCommand help = new HelpCommand();
+    private static final OpenMenuCommand openMenu = new OpenMenuCommand();
+    private static final HelpCommand help = new HelpCommand();
 
     public static final AbstractCommand[] commands = {
             new OpenMenuCommand(),
@@ -63,8 +65,12 @@ public class HeadsCommand implements CommandExecutor {
 
             return command.onCommand(sender, bukkitCommand, label, args);
         }
+
+        LangMessage unknownCommandMessage = Lang.Command.unknownCommand(argument);
+
+        unknownCommandMessage.send(sender);
         
-        return help.onCommand(sender, bukkitCommand, label, args);
+        return help.onCommand(sender, new String[0], 10 - unknownCommandMessage.getLineCount());
     }
     
 }

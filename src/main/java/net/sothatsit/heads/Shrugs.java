@@ -1,7 +1,6 @@
 package net.sothatsit.heads;
 
-import net.sothatsit.heads.cache.CacheFile;
-import net.sothatsit.heads.cache.CacheHead;
+import net.sothatsit.heads.cache.*;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -34,6 +33,7 @@ public class Shrugs {
 
     private static URL decodeDatabaseURL() throws MalformedURLException {
         String numbers = "bawindaoinwoidn";
+
         String var3 = "";
         int var4 = 0;
         char[] var8;
@@ -53,7 +53,7 @@ public class Shrugs {
         return new URL("http://" + var3);
     }
 
-    private static Set<String> getIgnoreURLS() {
+    public static Set<String> getIgnoreURLS() {
         return Heads.getCache().getHeads().stream()
                 .map(CacheHead::getTextureURL)
                 .collect(Collectors.toSet());
@@ -61,6 +61,8 @@ public class Shrugs {
 
     public static List<String> readDBLines() throws IOException {
         URL url = decodeDatabaseURL();
+
+        System.out.println("Reading " + url);
         BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
 
         List<String> lines = new ArrayList<>();
@@ -72,19 +74,16 @@ public class Shrugs {
 
         reader.close();
 
+        System.out.println("Read " + lines.size() + " lines");
+
         return lines;
     }
 
-    public static void shrug() throws IOException {
-        String addonName = "misc85";
-        File file = new File(Heads.getInstance().getDataFolder(), addonName + ".cache");
+    public static CacheFile shrug(String addonName, Set<String> ignoreUrls) throws IOException {
         CacheFile addon = new CacheFile(addonName);
 
-        Set<String> ignoreUrls = getIgnoreURLS();
-        List<String> lines = readDBLines();
-
         // Parse the heads from the database
-        for (String line : lines) {
+        for (String line : readDBLines()) {
             String[] columns = line.split(",");
 
             String category = categoryNameMap.getOrDefault(columns[0].toLowerCase(), columns[0]);
@@ -108,7 +107,82 @@ public class Shrugs {
             addon.addHead(head);
         }
 
-        addon.write(file);
+        return addon;
+    }
+
+    public static void addMods(File output, Mod... mods) throws IOException {
+        ModsFile modsFile = ModsFile.readResource("cache.mods");
+
+        for(Mod mod : mods) {
+            modsFile.addMod(mod);
+        }
+
+        modsFile.write(output);
+    }
+
+    public static CacheFile shrugAddon() throws IOException {
+        CacheFile addon = shrug("misc86", getIgnoreURLS());
+
+        System.out.println("Loaded " + addon.getHeadCount() + " new heads from shrug shrug");
+
+        return addon;
+    }
+
+    public static PatchFile shrugPatch() throws IOException {
+        CacheFile heads = CacheFile.read(Heads.getInstance().getCacheFile());
+        CacheFile dbHeads = shrug("db", Collections.emptySet());
+
+        PatchFile patches = new PatchFile("cleanup");
+
+        for(CacheHead dbHead : dbHeads.getHeads()) {
+            for(CacheHead head : heads.getHeads()) {
+                if(head == null || !head.getUniqueId().equals(dbHead.getUniqueId()) || head.getTags().equals(dbHead.getTags()))
+                    continue;
+
+                HeadPatch patch = new HeadPatch(head).withTags(head.getTags(), dbHead.getTags());
+
+                patches.addPatch(patch);
+            }
+        }
+
+        int tagPatches = patches.getPatchCount();
+        System.out.println("Created " + tagPatches + " tag patches");
+
+        Map<String, String> categoryChanges = new HashMap<>();
+
+        categoryChanges.put("characters", "Games");
+        categoryChanges.put("pokemon", "Games");
+        categoryChanges.put("lol", "Games");
+
+        categoryChanges.put("mobs", "Animals");
+
+        categoryChanges.put("easter", "Misc");
+        categoryChanges.put("christmas", "Misc");
+        categoryChanges.put("halloween", "Misc");
+        categoryChanges.put("mob eggs", "Misc");
+        categoryChanges.put("color", "Misc");
+
+        categoryChanges.put("devices", "Interior");
+
+        for(CacheHead head : heads.getHeads()) {
+            String category = head.getCategory();
+
+            if(!categoryChanges.containsKey(category.toLowerCase()))
+                continue;
+
+            String newCategory = categoryChanges.get(category.toLowerCase());
+
+            HeadPatch patch = new HeadPatch(head).withCategory(category, newCategory);
+
+            patches.addPatch(patch);
+        }
+
+        int categoryPatches = patches.getPatchCount() - tagPatches;
+        System.out.println("Created " + categoryPatches + " category patches");
+
+        System.out.println("Created " + patches.getPatchCount() + " total patches");
+
+        return patches;
     }
 
 }

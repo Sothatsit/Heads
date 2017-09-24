@@ -3,7 +3,6 @@ package net.sothatsit.heads.command;
 import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.MainConfig;
-import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.volatilecode.reflection.Version;
 
@@ -49,7 +48,7 @@ public class AddCommand extends AbstractCommand {
         }
         
         if (category.length() > 32) {
-            Lang.Command.Add.categoryLength().send(sender, Placeholder.category(category), Placeholder.length(category.length()));
+            Lang.Command.Add.categoryLength(category).send(sender);
             return true;
         }
         
@@ -70,15 +69,16 @@ public class AddCommand extends AbstractCommand {
     
     public void add(CommandSender sender, String category, String name, String playerName, String texture) {
         if (texture == null || texture.isEmpty()) {
-            Lang.Command.Add.cantFind().send(sender, Placeholder.name(playerName));
+            Lang.Command.Add.cantFind(playerName).send(sender);
             return;
         }
 
         CacheHead head = new CacheHead(name, category, texture);
 
         Heads.getCache().addHead(head);
+        Heads.getInstance().saveCache();
         
-        Lang.Command.Add.added().send(sender, Placeholder.name(name), Placeholder.category(category));
+        Lang.Command.Add.added(name, category).send(sender);
     }
     
 }

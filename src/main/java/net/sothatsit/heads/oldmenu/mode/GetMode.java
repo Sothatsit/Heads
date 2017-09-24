@@ -4,7 +4,6 @@ import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.Menus;
 import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.menu.Menu;
-import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.EconomyHook;
 import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.oldmenu.ConfirmMenu;
@@ -34,26 +33,22 @@ public class GetMode extends BaseMode {
             
             if (cost > 0) {
                 if (!EconomyHook.hasBalance(getPlayer(), cost)) {
-                    Lang.Menu.Get.notEnoughMoney().send(getPlayer(), head.getPlaceholders());
+                    Lang.Menu.Get.notEnoughMoney(head.getName(), head.getCost()).send(getPlayer());
                     return;
                 }
                 
                 if (!EconomyHook.takeBalance(getPlayer(), cost)) {
-                    Lang.Menu.Get.transactionError().send(getPlayer(), head.getPlaceholders());
+                    Lang.Menu.Get.transactionError(head.getName(), head.getCost()).send(getPlayer());
                     return;
                 }
 
-                Lang.Menu.Get.purchased().send(getPlayer(), head.getPlaceholders());
+                Lang.Menu.Get.purchased(head.getName(), head.getCost()).send(getPlayer());
             }
         }
         
-        Lang.Menu.Get.added().send(getPlayer(), head.getPlaceholders());
-        
-        if (Heads.isHatMode()) {
-            e.getWhoClicked().getInventory().setHelmet(head.getItemStack());
-        } else {
-            e.getWhoClicked().getInventory().addItem(head.getItemStack());
-        }
+        Lang.Menu.Get.added(head.getName()).send(getPlayer());
+
+        e.getWhoClicked().getInventory().addItem(head.getItemStack());
     }
     
     @Override
@@ -66,7 +61,7 @@ public class GetMode extends BaseMode {
         if (getPlayer().hasPermission("heads.category." + category.toLowerCase().replace(' ', '_'))) {
             return true;
         } else {
-            Lang.Menu.Get.categoryPermission().send(getPlayer(), new Placeholder("%category%", category));
+            Lang.Menu.Get.categoryPermission(category).send(getPlayer());
             return false;
         }
     }

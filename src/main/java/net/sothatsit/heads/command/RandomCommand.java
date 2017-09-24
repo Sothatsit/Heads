@@ -5,7 +5,6 @@ import java.util.Random;
 import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.MainConfig;
-import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.config.lang.Lang;
 
 import org.bukkit.command.Command;
@@ -50,13 +49,9 @@ public class RandomCommand extends AbstractCommand {
         
         CacheHead random = Heads.getCache().getRandomHead(RANDOM);
         
-        Lang.Command.Random.giving().send(sender, Placeholder.name(random.getName()), Placeholder.category(random.getCategory()));
-        
-        if (Heads.isHatMode()) {
-            ((Player) sender).getInventory().setHelmet(random.getItemStack());
-        } else {
-            ((Player) sender).getInventory().addItem(random.getItemStack());
-        }
+        Lang.Command.Random.giving(random.getName(), random.getCategory()).send(sender);
+
+        ((Player) sender).getInventory().addItem(random.getItemStack());
         return true;
     }
 }

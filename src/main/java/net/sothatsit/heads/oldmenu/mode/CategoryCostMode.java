@@ -18,7 +18,6 @@ import java.util.List;
 
 public class CategoryCostMode extends BaseMode {
 
-    private String costString = null;
     private Double cost = null;
 
     public CategoryCostMode(Player player) {
@@ -26,10 +25,9 @@ public class CategoryCostMode extends BaseMode {
     }
 
     public void setCost(Double cost) {
-        this.costString = CacheHead.getCostString(cost);
         this.cost = cost;
         
-        Lang.Menu.CategoryCost.open().send(getPlayer(), new Placeholder("%newcost%", this.costString));
+        Lang.Menu.CategoryCost.open(cost).send(getPlayer());
     }
     
     @Override
@@ -45,27 +43,23 @@ public class CategoryCostMode extends BaseMode {
 
     @Override
     public void onCategorySelect(String category) {
-        CacheHead head = this.getCategoryHead(category);
+        CacheHead head = getCategoryHead(category);
 
         if(head == null) {
-            this.getPlayer().sendMessage(ChatColor.RED + "Invalid category");
+            getPlayer().sendMessage(ChatColor.RED + "Invalid category");
             return;
         }
 
         openInventory(InventoryType.CONFIRM,
                 head,
-                ArrayUtils.create(new Placeholder("%newcost%", this.costString)));
+                ArrayUtils.create(new Placeholder("%newcost%", Lang.Currency.format(cost))));
     }
 
     @Override
     public void onConfirm(InventoryClickEvent e, ConfirmMenu menu, CacheHead head) {
-        Placeholder[] placeholders = ArrayUtils.append(
-                head.getPlaceholders(),
-                new Placeholder("%newcost%", this.costString));
+        Lang.Menu.CategoryCost.setCost(head.getCategory(), cost).send(e.getWhoClicked());
 
-        Lang.Menu.CategoryCost.setCost().send(e.getWhoClicked(), placeholders);
-
-        Heads.getMainConfig().setCategoryCost(head.getCategory(), this.cost);
+        Heads.getMainConfig().setCategoryCost(head.getCategory(), cost);
     }
 
     @Override

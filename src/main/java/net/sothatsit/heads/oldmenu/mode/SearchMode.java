@@ -4,7 +4,6 @@ import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.Menus;
 import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.menu.Menu;
-import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.EconomyHook;
 import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.oldmenu.ConfirmMenu;
@@ -37,7 +36,7 @@ public class SearchMode extends BaseMode {
     @Override
     public void onHeadSelect(InventoryClickEvent e, HeadMenu menu, CacheHead head) {
         if (!getPlayer().hasPermission("heads.category." + head.getCategory().toLowerCase().replace(' ', '_'))) {
-            Lang.Menu.Search.categoryPermission().send(getPlayer(), new Placeholder("%category%", head.getCategory()));
+            Lang.Menu.Search.categoryPermission(head.getCategory()).send(getPlayer());
             return;
         }
 
@@ -46,24 +45,20 @@ public class SearchMode extends BaseMode {
             
             if (cost > 0) {
                 if (!EconomyHook.hasBalance(getPlayer(), cost)) {
-                    Lang.Menu.Search.notEnoughMoney().send(getPlayer(), head.getPlaceholders());
+                    Lang.Menu.Search.notEnoughMoney(head.getName(), head.getCost()).send(getPlayer());
                     return;
                 }
                 
                 if (!EconomyHook.takeBalance(getPlayer(), cost)) {
-                    Lang.Menu.Search.transactionError().send(getPlayer(), head.getPlaceholders());
+                    Lang.Menu.Search.transactionError(head.getName(), head.getCost()).send(getPlayer());
                     return;
                 }
             }
         }
         
-        Lang.Menu.Search.added().send(getPlayer(), head.getPlaceholders());
-        
-        if (Heads.isHatMode()) {
-            e.getWhoClicked().getInventory().setHelmet(head.getItemStack());
-        } else {
-            e.getWhoClicked().getInventory().addItem(head.getItemStack());
-        }
+        Lang.Menu.Search.added(head.getName()).send(getPlayer());
+
+        e.getWhoClicked().getInventory().addItem(head.getItemStack());
     }
     
     @Override

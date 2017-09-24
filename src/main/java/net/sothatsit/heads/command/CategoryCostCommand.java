@@ -1,7 +1,6 @@
 package net.sothatsit.heads.command;
 
 import net.sothatsit.heads.config.MainConfig;
-import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.oldmenu.mode.CategoryCostMode;
 import net.sothatsit.heads.oldmenu.mode.InvModeType;
@@ -48,12 +47,12 @@ public class CategoryCostCommand extends AbstractCommand {
         try {
             cost = Double.valueOf(args[1]);
         } catch (NumberFormatException e) {
-            Lang.Command.Errors.number().send(sender, Placeholder.number(args[1]));
+            Lang.Command.Errors.number(args[1]).send(sender);
             return true;
         }
         
         if (cost < 0) {
-            Lang.Command.Errors.negative().send(sender, Placeholder.number(args[1]));
+            Lang.Command.Errors.negative(args[1]).send(sender);
             return true;
         }
         

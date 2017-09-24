@@ -29,7 +29,7 @@ public class CostMode extends BaseMode {
     public void setCost(Double cost) {
         this.cost = cost;
         
-        Lang.Menu.Cost.open().send(getPlayer(), new Placeholder("%newcost%", CacheHead.getCostString(cost)));
+        Lang.Menu.Cost.open(cost).send(getPlayer());
     }
     
     @Override
@@ -41,13 +41,12 @@ public class CostMode extends BaseMode {
     public void onHeadSelect(InventoryClickEvent e, HeadMenu menu, CacheHead head) {
         openInventory(InventoryType.CONFIRM,
                 head,
-                ArrayUtils.create(new Placeholder("%newcost%", CacheHead.getCostString(cost))));
+                ArrayUtils.create(new Placeholder("%newcost%", Lang.Currency.format(cost))));
     }
     
     @Override
     public void onConfirm(InventoryClickEvent e, ConfirmMenu menu, CacheHead head) {
-        Placeholder costPlaceholder = new Placeholder("%newcost%", CacheHead.getCostString(cost));
-        Lang.Menu.Cost.setCost().send(e.getWhoClicked(), ArrayUtils.append(head.getPlaceholders(), costPlaceholder));
+        Lang.Menu.Cost.setCost(head.getName(), cost).send(e.getWhoClicked());
         
         head.setCost(cost);
         Heads.getInstance().saveCache();
