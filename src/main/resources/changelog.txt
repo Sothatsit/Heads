@@ -1,3 +1,7 @@
+1.10.3
++ Update checking
+* Checks in addMod that ensures mods with duplicate names are not added
+
 1.10.2
 + 167 new heads
 * Cleanup patch

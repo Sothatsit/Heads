@@ -19,6 +19,7 @@ public class MainConfig {
     private double defaultHeadCost;
     private boolean economyEnabled;
     private boolean hideNoPermCategories;
+    private boolean checkForUpdates;
 
     private Map<String, Double> categoryCosts;
     
@@ -79,6 +80,7 @@ public class MainConfig {
 
         economyEnabled       = loadBoolean(config, "economy.enabled", false, shouldSave);
         hideNoPermCategories = loadBoolean(config, "hide-no-perm-categories", true, shouldSave);
+        checkForUpdates      = loadBoolean(config, "check-for-updates", true, shouldSave);
         defaultHeadCost      = loadDouble(config, "economy.default-head-cost", 0, shouldSave);
 
         if (defaultHeadCost < 0) {
@@ -228,74 +230,78 @@ public class MainConfig {
     }
 
     public double getDefaultHeadCost() {
-        return this.defaultHeadCost;
+        return defaultHeadCost;
     }
 
     public boolean shouldHideNoPermCategories() {
-        return this.hideNoPermCategories;
+        return hideNoPermCategories;
     }
-    
+
+    public boolean shouldCheckForUpdates() {
+        return checkForUpdates;
+    }
+
     public String getHeadCommand() {
-        return this.headLabel;
+        return headLabel;
     }
     
     public String[] getHeadAliases() {
-        return this.headAliases;
+        return headAliases;
     }
     
     public String getHeadDescription() {
-        return this.headDescription;
+        return headDescription;
     }
 
     public String getReloadCommand() {
-        return this.reloadLabel;
+        return reloadLabel;
     }
 
     public String getAddCommand() {
-        return this.addLabel;
+        return addLabel;
     }
     
     public String getHandCommand() {
-        return this.handLabel;
+        return handLabel;
     }
     
     public String getGetCommand() {
-        return this.getLabel;
+        return getLabel;
     }
     
     public String getGiveCommand() {
-        return this.giveLabel;
+        return giveLabel;
     }
     
     public String getRandomCommand() {
-        return this.randomLabel;
+        return randomLabel;
     }
     
     public String getRemoveCommand() {
-        return this.removeLabel;
+        return removeLabel;
     }
     
     public String getRenameCommand() {
-        return this.renameLabel;
+        return renameLabel;
     }
     
     public String getCostCommand() {
-        return this.costLabel;
+        return costLabel;
     }
 
     public String getCategoryCostCommand() {
-        return this.categoryCostLabel;
+        return categoryCostLabel;
     }
     
     public String getIdCommand() {
-        return this.idLabel;
+        return idLabel;
     }
 
     public String getSearchCommand() {
-        return this.searchLabel;
+        return searchLabel;
     }
 
     public String getHelpCommand() {
-        return this.helpLabel;
+        return helpLabel;
     }
 }

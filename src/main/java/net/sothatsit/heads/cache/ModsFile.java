@@ -26,8 +26,13 @@ public final class ModsFile {
                 .collect(Collectors.toSet());
     }
 
-    public void addMod(Mod mod) {
-        mods.add(mod);
+    public void addMod(Mod newMod) {
+        for(Mod mod : mods) {
+            if(mod.getName().equalsIgnoreCase(newMod.getName()))
+                throw new IllegalArgumentException("There is already a mod with the name " + mod.getName());
+        }
+
+        mods.add(newMod);
     }
 
     public int installMods(CacheFile cache) {

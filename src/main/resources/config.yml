@@ -24,3 +24,4 @@ economy:
    # Use 0 for no cost
    default-head-cost: 0
 hide-no-perm-categories: true
+check-for-updates: true

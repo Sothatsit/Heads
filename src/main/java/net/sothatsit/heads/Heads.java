@@ -67,6 +67,8 @@ public class Heads extends JavaPlugin implements Listener {
 
         Bukkit.getPluginManager().registerEvents(this, this);
 
+        checkForUpdates();
+
         info("Heads plugin enabled with " + cache.getHeadCount() + " heads " + timer);
     }
 
@@ -75,6 +77,26 @@ public class Heads extends JavaPlugin implements Listener {
         instance = null;
 
         unregisterCommands();
+    }
+
+    private void checkForUpdates() {
+        if(!mainConfig.shouldCheckForUpdates())
+            return;
+
+        Bukkit.getScheduler().runTaskAsynchronously(this, () -> {
+            try {
+                String currentVersion = UpdateChecker.getCurrentVersion();
+                String latestVersion = UpdateChecker.getLatestVersion();
+
+                if(!UpdateChecker.isNewerVersion(latestVersion))
+                    return;
+
+                warning("A newer version of Heads, Heads v" + latestVersion + ", is available for download");
+                warning("You are currently using Heads v" + currentVersion);
+            } catch(IOException e) {
+                severe("There was an error checking for an update for Heads");
+            }
+        });
     }
 
     public File getCacheFile() {

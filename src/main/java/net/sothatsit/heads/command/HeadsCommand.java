@@ -5,10 +5,10 @@ import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.lang.Lang;
 
 import net.sothatsit.heads.config.lang.LangMessage;
-import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 public class HeadsCommand implements CommandExecutor {
 
@@ -45,6 +45,14 @@ public class HeadsCommand implements CommandExecutor {
             }
 
             return openMenu.onCommand(sender, bukkitCommand, label, args);
+        }
+
+        if(args[0].equalsIgnoreCase("api")) {
+            Player player = (Player) sender;
+
+
+
+            return true;
         }
 
         String argument = args[0];
