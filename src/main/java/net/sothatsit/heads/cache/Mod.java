@@ -1,11 +1,8 @@
 package net.sothatsit.heads.cache;
 
-import sun.security.krb5.internal.crypto.DesCbcMd5EType;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.Arrays;
 
 public interface Mod {
 

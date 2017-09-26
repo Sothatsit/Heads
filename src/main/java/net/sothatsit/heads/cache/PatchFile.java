@@ -46,6 +46,11 @@ public class PatchFile implements Mod {
         }
     }
 
+    @Override
+    public String toString() {
+        return getType() + " {name: \"" + name + "\", patchCount: " + getPatchCount() + "}";
+    }
+
     public void write(File file) throws IOException {
         if(file.isDirectory())
             throw new IOException("File " + file + " is a directory");

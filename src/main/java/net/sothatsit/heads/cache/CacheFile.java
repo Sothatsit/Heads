@@ -166,6 +166,11 @@ public final class CacheFile implements Mod {
         mod.applyMod(this);
     }
 
+    @Override
+    public String toString() {
+        return getType() + " {name: \"" + name + "\", headCount: " + getHeadCount() + "}";
+    }
+
     public void write(File file) throws IOException {
         if(file.isDirectory())
             throw new IOException("File " + file + " is a directory");
