@@ -1,80 +1,48 @@
 package net.sothatsit.heads.menu.ui.element;
 
+import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.menu.ui.Bounds;
-import net.sothatsit.heads.menu.ui.Position;
-import net.sothatsit.heads.util.Item;
+import net.sothatsit.heads.menu.ui.Item;
 import net.sothatsit.heads.menu.ui.item.MenuItem;
 import net.sothatsit.heads.menu.ui.MenuResponse;
 import net.sothatsit.heads.menu.ui.item.ButtonGroup;
 import net.sothatsit.heads.menu.ui.item.SelectableButton;
 import net.sothatsit.heads.util.Checks;
-import net.sothatsit.heads.util.SafeCall;
 import net.sothatsit.heads.util.Stringify;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.List;
-import java.util.function.Function;
+public class PagedBox extends Element {
 
-public class PagedBox extends Container {
+    public static final Template DEFAULT_TEMPLATE;
 
-    private static final Function<Integer, ItemStack> DEFAULT_UNSELECTED_ITEMS = (page) -> {
-        int humanPage = page + 1;
+    static {
+        Item unselectedPageItem = Item.create(Material.PAPER).name("&7Page %page%");
+        Item selectedPageItem = Item.create(Material.EMPTY_MAP).name("&7Page %page%");
 
-        return Item.create(Material.PAPER).name("&7Page " + humanPage).amount(humanPage).build();
-    };
-
-    private static final Function<Integer, ItemStack> DEFAULT_SELECTED_ITEMS = (page) -> {
-        int humanPage = page + 1;
-
-        return Item.create(Material.EMPTY_MAP).name("&7Page " + humanPage).amount(humanPage).build();
-    };
-
-    public static final Template DEFAULT_TEMPLATE = new Template(HorizontalScrollbar.DEFAULT_TEMPLATE,
-                                                                 DEFAULT_UNSELECTED_ITEMS, DEFAULT_SELECTED_ITEMS);
+        DEFAULT_TEMPLATE = new Template(HorizontalScrollbar.DEFAULT_TEMPLATE, unselectedPageItem, selectedPageItem);
+    }
 
     private Template template;
 
     private final HorizontalScrollbar scrollbar;
     private ButtonGroup pageButtons;
 
-    private final MenuItem leftControl;
-    private final MenuItem rightControl;
-
+    private MenuItem leftControl;
+    private MenuItem rightControl;
     private MenuItem[] items;
     private int page;
 
     public PagedBox(Bounds bounds) {
-        this(null, bounds, null, null);
-    }
-
-    public PagedBox(Container container, Bounds bounds) {
-        this(container, bounds, null, null);
-    }
-
-    public PagedBox(Bounds bounds, MenuItem leftControl, MenuItem rightControl) {
-        this(null, bounds, leftControl, rightControl);
-    }
-
-    public PagedBox(Container container, Bounds bounds, MenuItem leftControl, MenuItem rightControl) {
-        super(container, bounds);
-
-        int hasLeftControl = (leftControl != null ? 1 : 0);
-        int hasRightControl = (rightControl != null ? 1 : 0);
-        int requiredWidth = 3 + hasLeftControl + hasRightControl;
+        super(bounds);
 
         Checks.ensureTrue(bounds.height >= 2, "bounds height must be at least 2");
-        Checks.ensureTrue(bounds.width >= requiredWidth, "bounds width must be at least 3");
+        Checks.ensureTrue(bounds.width >= 5, "bounds width must be at least 3");
 
-        int scrollbarY = bounds.height - 1;
-        int scrollbarWidth = bounds.width - hasLeftControl - hasRightControl;
-        Bounds scrollbarBounds = new Bounds(hasLeftControl, scrollbarY, scrollbarWidth, 1);
+        Bounds scrollbarBounds = new Bounds(1, bounds.height - 1, bounds.width - 2, 1);
 
-        this.scrollbar = new HorizontalScrollbar(this, scrollbarBounds);
+        this.scrollbar = new HorizontalScrollbar(scrollbarBounds);
         this.pageButtons = new ButtonGroup();
-
-        this.leftControl = leftControl;
-        this.rightControl = rightControl;
 
         this.items = new MenuItem[0];
         this.page = 0;
@@ -110,29 +78,19 @@ public class PagedBox extends Container {
 
         scrollbar.scrollTo(page);
         pageButtons.select(page);
-
-        updateInContainer();
     }
 
     @Override
     public MenuItem[] getItems() {
-        clear();
+        Container container = new Container(bounds);
 
-        setItems(getPageBounds(), getPageContents());
+        container.setItems(getPageBounds(), getPageContents());
 
-        if(isScrollbarActive() || leftControl != null || rightControl != null) {
-            addElement(scrollbar);
-        }
+        container.addElement(scrollbar);
+        container.setItem(0, bounds.height - 1, leftControl);
+        container.setItem(bounds.width - 1, bounds.height - 1, rightControl);
 
-        if(leftControl != null) {
-            setItem(new Position(0, bounds.height - 1), leftControl);
-        }
-
-        if(rightControl != null) {
-            setItem(new Position(bounds.width - 1, bounds.height - 1), rightControl);
-        }
-
-        return super.getItems();
+        return container.getItems();
     }
 
     private MenuItem[] getPageContents() {
@@ -158,13 +116,18 @@ public class PagedBox extends Container {
         this.template.init(this);
 
         setupPageScrollbar();
-        updateElement();
     }
 
-    public void setItems(List<MenuItem> items) {
-        Checks.ensureNonNull(items, "items");
+    public void setLeftControl(MenuItem leftControl) {
+        Checks.ensureNonNull(leftControl, "leftControl");
 
-        setItems(items.toArray(new MenuItem[items.size()]));
+        this.leftControl = leftControl;
+    }
+
+    public void setRightControl(MenuItem rightControl) {
+        Checks.ensureNonNull(rightControl, "rightControl");
+
+        this.rightControl = rightControl;
     }
 
     public void setItems(MenuItem[] items) {
@@ -174,8 +137,6 @@ public class PagedBox extends Container {
         this.page = 0;
 
         setupPageScrollbar();
-
-        updateInContainer();
     }
 
     private void setupPageScrollbar() {
@@ -208,30 +169,48 @@ public class PagedBox extends Container {
     public static final class Template {
 
         private final HorizontalScrollbar.Template pagesTemplate;
-        private final Function<Integer, ItemStack> unselectedItemFn;
-        private final Function<Integer, ItemStack> selectedItemFn;
+        private final Item unselectedItem;
+        private final Item selectedItem;
 
-        public Template(HorizontalScrollbar.Template pagesTemplate,
-                        Function<Integer, ItemStack> unselectedItemFn,
-                        Function<Integer, ItemStack> selectedItemFn) {
-
+        public Template(HorizontalScrollbar.Template pagesTemplate, Item unselectedItem, Item selectedItem) {
             Checks.ensureNonNull(pagesTemplate, "pagesTemplate");
-            Checks.ensureNonNull(unselectedItemFn, "unselectedItemFn");
-            Checks.ensureNonNull(selectedItemFn, "selectedItemFn");
+            Checks.ensureNonNull(unselectedItem, "unselectedItem");
+            Checks.ensureNonNull(selectedItem, "selectedItem");
 
             this.pagesTemplate = pagesTemplate;
-            this.unselectedItemFn = SafeCall.nonNullFunction("unselectedItemFn", unselectedItemFn);
-            this.selectedItemFn = SafeCall.nonNullFunction("selectedItemFn", selectedItemFn);
+            this.unselectedItem = unselectedItem;
+            this.selectedItem = selectedItem;
         }
 
-        private void init(PagedBox pagedBox) {
+        public void init(PagedBox pagedBox) {
             pagedBox.scrollbar.setTemplate(pagesTemplate);
         }
 
-        private SelectableButton constructPageButton(PagedBox pagedBox, ButtonGroup group, int page) {
-            return new SelectableButton(group, unselectedItemFn.apply(page), selectedItemFn.apply(page), () -> {
+        private ItemStack constructPageItem(Item templateItem, int page) {
+            int humanPage = page + 1;
+            Placeholder pagePlaceholder = new Placeholder("%page%", humanPage);
+
+            ItemStack item = templateItem.build(pagePlaceholder);
+            item.setAmount(humanPage > 60 ? (humanPage % 10 == 0 ? 10 : humanPage % 10) : humanPage);
+
+            return item;
+        }
+
+        public ItemStack constructUnselectedPageItem(int page) {
+            return constructPageItem(unselectedItem, page);
+        }
+
+        public ItemStack constructSelectedPageItem(int page) {
+            return constructPageItem(selectedItem, page);
+        }
+
+        public SelectableButton constructPageButton(PagedBox pagedBox, ButtonGroup group, int page) {
+            ItemStack unselectedItem = constructUnselectedPageItem(page);
+            ItemStack selectedItem = constructSelectedPageItem(page);
+
+            return new SelectableButton(group, unselectedItem, selectedItem, () -> {
                 pagedBox.setPage(page);
-                return MenuResponse.NONE;
+                return MenuResponse.UPDATE;
             });
         }
 
@@ -239,8 +218,8 @@ public class PagedBox extends Container {
         public String toString() {
             return Stringify.builder()
                     .entry("pagesTemplate", pagesTemplate)
-                    .entry("unselectedItemFn", unselectedItemFn)
-                    .entry("selectedItems", selectedItemFn).toString();
+                    .entry("unselectedItem", unselectedItem)
+                    .entry("selectedItem", selectedItem).toString();
         }
 
     }

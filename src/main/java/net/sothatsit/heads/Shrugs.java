@@ -128,59 +128,22 @@ public class Shrugs {
         return addon;
     }
 
-    public static PatchFile shrugPatch() throws IOException {
+    public static PatchFile patch() throws IOException {
         CacheFile heads = CacheFile.read(Heads.getInstance().getCacheFile());
-        CacheFile dbHeads = shrug("db", Collections.emptySet());
 
-        PatchFile patches = new PatchFile("cleanup");
-
-        for(CacheHead dbHead : dbHeads.getHeads()) {
-            for(CacheHead head : heads.getHeads()) {
-                if(head == null || !head.getUniqueId().equals(dbHead.getUniqueId()) || head.getTags().equals(dbHead.getTags()))
-                    continue;
-
-                HeadPatch patch = new HeadPatch(head).withTags(head.getTags(), dbHead.getTags());
-
-                patches.addPatch(patch);
-            }
-        }
-
-        int tagPatches = patches.getPatchCount();
-        System.out.println("Created " + tagPatches + " tag patches");
-
-        Map<String, String> categoryChanges = new HashMap<>();
-
-        categoryChanges.put("characters", "Games");
-        categoryChanges.put("pokemon", "Games");
-        categoryChanges.put("lol", "Games");
-
-        categoryChanges.put("mobs", "Animals");
-
-        categoryChanges.put("easter", "Misc");
-        categoryChanges.put("christmas", "Misc");
-        categoryChanges.put("halloween", "Misc");
-        categoryChanges.put("mob eggs", "Misc");
-        categoryChanges.put("color", "Misc");
-
-        categoryChanges.put("devices", "Interior");
+        PatchFile patches = new PatchFile("cost-fix");
 
         for(CacheHead head : heads.getHeads()) {
-            String category = head.getCategory();
-
-            if(!categoryChanges.containsKey(category.toLowerCase()))
+            if(head.getRawCost() == -1)
                 continue;
 
-            String newCategory = categoryChanges.get(category.toLowerCase());
-
-            HeadPatch patch = new HeadPatch(head).withCategory(category, newCategory);
+            HeadPatch patch = new HeadPatch(head).withCost(head.getRawCost(), -1);
 
             patches.addPatch(patch);
         }
 
-        int categoryPatches = patches.getPatchCount() - tagPatches;
-        System.out.println("Created " + categoryPatches + " category patches");
-
-        System.out.println("Created " + patches.getPatchCount() + " total patches");
+        int costPatches = patches.getPatchCount();
+        System.out.println("Created " + costPatches + " cost patches");
 
         return patches;
     }

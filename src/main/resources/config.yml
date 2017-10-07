@@ -23,5 +23,10 @@ economy:
    enabled: false
    # Use 0 for no cost
    default-head-cost: 0
+breaking-head-names:
+   enabled: true
+   attempt-hook-blockstore: true
+   similar-heads-in-cache: true
+   default-name: 'Decoration Head'
 hide-no-perm-categories: true
 check-for-updates: true

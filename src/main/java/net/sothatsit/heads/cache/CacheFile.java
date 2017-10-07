@@ -15,6 +15,7 @@ public final class CacheFile implements Mod {
     private final Set<String> mods = new HashSet<>();
     private final List<CacheHead> heads = new ArrayList<>();
     private final Map<Integer, CacheHead> headsById = new HashMap<>();
+    private final Map<String, CacheHead> headsByTexture = new HashMap<>();
     private final Map<String, List<CacheHead>> categories = new HashMap<>();
 
     public CacheFile(String name) {
@@ -90,6 +91,10 @@ public final class CacheFile implements Mod {
         return headsById.get(id);
     }
 
+    public CacheHead findHeadByTexture(String texture) {
+        return headsByTexture.get(texture);
+    }
+
     public List<CacheHead> findHeads(UUID uniqueId) {
         List<CacheHead> matches = new ArrayList<>();
 
@@ -131,6 +136,7 @@ public final class CacheFile implements Mod {
 
         heads.add(head);
         headsById.put(head.getId(), head);
+        headsByTexture.put(head.getTexture(), head);
         categories.computeIfAbsent(category, c -> new ArrayList<>()).add(head);
     }
 
@@ -139,6 +145,7 @@ public final class CacheFile implements Mod {
 
         heads.remove(head);
         headsById.remove(head.getId(), head);
+        headsByTexture.remove(head.getTexture(), head);
         categories.compute(category, (key, categoryHeads) -> {
             if(categoryHeads == null)
                 return null;

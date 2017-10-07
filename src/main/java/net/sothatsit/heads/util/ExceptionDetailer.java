@@ -37,13 +37,7 @@ public abstract class ExceptionDetailer {
         Checks.ensureNonNull(exception, "exception");
         Checks.ensureNonNull(info, "info");
 
-        Throwable lastException = exception;
-
-        while(lastException.getCause() != null) {
-            lastException = lastException.getCause();
-        }
-
-        lastException.initCause(info);
+        exception.addSuppressed(info);
 
         return exception;
     }

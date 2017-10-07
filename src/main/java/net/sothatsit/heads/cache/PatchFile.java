@@ -75,7 +75,7 @@ public class PatchFile implements Mod {
 
     @Override
     public void write(ObjectOutputStream stream) throws IOException {
-        stream.writeInt(1);
+        stream.writeInt(2);
         stream.writeUTF(name);
 
         stream.writeInt(patches.size());
@@ -111,14 +111,14 @@ public class PatchFile implements Mod {
     }
 
     public static PatchFile read(ObjectInputStream stream) throws IOException {
-        stream.readInt();
+        int version = stream.readInt();
 
         String name = stream.readUTF();
 
         int patchCount = stream.readInt();
         List<HeadPatch> patches = new ArrayList<>(patchCount);
         for(int index = 0; index < patchCount; ++index) {
-            patches.add(HeadPatch.read(stream));
+            patches.add(HeadPatch.read(version, stream));
         }
 
         return new PatchFile(name, patches);

@@ -8,22 +8,18 @@ import net.sothatsit.heads.util.Checks;
 
 import java.util.Arrays;
 
-public class Container extends Element {
+public final class Container extends Element {
 
     private final MenuItem[] items;
 
     public Container(Bounds bounds) {
-        this(null, bounds);
-    }
-
-    public Container(Container container, Bounds bounds) {
-        super(container, bounds);
+        super(bounds);
 
         this.items = new MenuItem[bounds.getVolume()];
     }
 
     @Override
-    protected MenuItem[] getItems() {
+    public MenuItem[] getItems() {
         return items;
     }
 
@@ -45,18 +41,17 @@ public class Container extends Element {
                 this.items[toPos.toSerialIndex(this.bounds.width)] = items[fromPos.toSerialIndex(bounds.width)];
             }
         }
+    }
 
-        updateElement();
+    public void setItem(int x, int y, MenuItem item) {
+        setItem(new Position(x, y), item);
     }
 
     public void setItem(Position position, MenuItem item) {
         Checks.ensureNonNull(position, "position");
-        Checks.ensureNonNull(item, "item");
         Checks.ensureTrue(bounds.inBounds(position), "position is not within the bounds of the container");
 
         items[position.toSerialIndex(bounds.width)] = item;
-
-        updateElement();
     }
 
     public void clear(Bounds bounds) {
@@ -67,14 +62,10 @@ public class Container extends Element {
                 items[position.toSerialIndex(this.bounds.width)] = null;
             }
         }
-
-        updateElement();
     }
 
     public void clear() {
         Arrays.fill(items, null);
-
-        updateElement();
     }
 
     public MenuResponse handleClick(int slot) {

@@ -6,7 +6,7 @@ import java.util.function.Function;
 
 import net.sothatsit.heads.Heads;
 
-import net.sothatsit.heads.util.Item;
+import net.sothatsit.heads.menu.ui.Item;
 import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.menu.HeadsMenu;
 import net.sothatsit.heads.menu.ui.element.HorizontalScrollbar;
@@ -35,16 +35,16 @@ public class Menu {
         return title != null ? Placeholder.applyAll(title, placeholders) : "Menu";
     }
 
+    public Item getItem(String name) {
+        Item item = items.get(name.toLowerCase());
+
+        return item != null ? item : getDefaultItem(name);
+    }
+
     public ItemStack getItemStack(String name, Placeholder... placeholders) {
         Item item = getItem(name);
 
         return item != null ? item.build(getItemLoreFilter(), placeholders) : null;
-    }
-
-    private Item getItem(String name) {
-        Item item = items.get(name.toLowerCase());
-
-        return item != null ? item : getDefaultItem(name);
     }
 
     private Item getDefaultItem(String name) {
@@ -56,22 +56,23 @@ public class Menu {
     }
 
     public HeadsMenu.Template toHeadsMenuTemplate() {
-        HorizontalScrollbar.Template pages = createScrollbarTemplate("pages-left", "pages-right", "pages-filler");
-        PagedBox.Template heads = new PagedBox.Template(pages, createUnselectedItemsFn(), createSelectedItemsFn());
+        HorizontalScrollbar.Template pages = new HorizontalScrollbar.Template(
+                getItem("pages-left"), getItem("pages-right"),
+                getItem("pages-no-left"), getItem("pages-no-right"),
+                getItem("pages-filler"));
 
-        return new HeadsMenu.Template(heads);
-    }
+        PagedBox.Template headsTemplate = new PagedBox.Template(
+                pages, getItem("unselected-page"),
+                getItem("selected-page"));
 
-    private HorizontalScrollbar.Template createScrollbarTemplate(String leftKey, String rightKey, String fillerKey) {
-        return new HorizontalScrollbar.Template(getItemStack(leftKey), getItemStack(rightKey), getItemStack(fillerKey));
-    }
+        String categoriesTitle = "...";
+        String categoryTitle = "...";
 
-    private Function<Integer, ItemStack> createSelectedItemsFn() {
-        return page -> getItem("selected-page").amount(page + 1).build(new Placeholder("%page%", page + 1));
-    }
-
-    private Function<Integer, ItemStack> createUnselectedItemsFn() {
-        return page -> getItem("unselected-page").amount(page + 1).build(new Placeholder("%page%", page + 1));
+        return new HeadsMenu.Template(
+                headsTemplate, headsTemplate,
+                getItem("close"), getItem("back"),
+                getItem("search"), getItem("category"),
+                categoriesTitle, categoryTitle);
     }
 
     public void load(ConfigurationSection section) {

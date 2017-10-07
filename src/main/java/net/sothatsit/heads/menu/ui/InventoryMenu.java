@@ -2,6 +2,7 @@ package net.sothatsit.heads.menu.ui;
 
 import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.menu.ui.element.Container;
+import net.sothatsit.heads.menu.ui.element.Element;
 import net.sothatsit.heads.menu.ui.item.MenuItem;
 import net.sothatsit.heads.util.Checks;
 import net.sothatsit.heads.util.Stringify;
@@ -13,27 +14,37 @@ import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
 
-public class InventoryMenu extends Container implements InventoryHolder {
+import java.util.ArrayList;
+import java.util.List;
 
-    private final Inventory inventory;
+public class InventoryMenu implements InventoryHolder {
+
     private final Player player;
+    public final Bounds bounds;
 
-    public InventoryMenu(Player player, String name, int rows) {
-        super(new Bounds(Position.ZERO, 9, rows));
+    private final List<Element> elements = new ArrayList<>();
 
+    private Container container;
+    private Inventory inventory;
+    private Inventory newInventory;
+
+    public InventoryMenu(Player player, String title, int rows) {
         Checks.ensureNonNull(player, "player");
-        Checks.ensureNonNull(name, "name");
 
-        if(name.length() > 32) {
-            name = name.substring(0, 32);
-        }
-
-        this.inventory = Bukkit.createInventory(this, bounds.getVolume(), name);
         this.player = player;
+        this.bounds = new Bounds(Position.ZERO, 9, rows);
+        this.container = new Container(bounds);
+
+        setTitle(title);
     }
 
     public Player getPlayer() {
         return player;
+    }
+
+    @Override
+    public Inventory getInventory() {
+        return inventory;
     }
 
     public boolean hasMenuOpen() {
@@ -47,24 +58,61 @@ public class InventoryMenu extends Container implements InventoryHolder {
         return holder != null && holder.equals(this);
     }
 
-    @Override
-    public Inventory getInventory() {
-        return inventory;
+    public void removeElement(Element element) {
+        Checks.ensureNonNull(element, "element");
+
+        elements.remove(element);
+    }
+
+    public void addElement(Element element) {
+        Checks.ensureNonNull(element, "element");
+        Checks.ensureTrue(bounds.inBounds(element.bounds), "element's bounds is not within the bounds of the menu");
+
+        elements.add(element);
+    }
+
+    public List<Element> getElements() {
+        return elements;
     }
 
     public void open() {
+        updateMenu();
         player.openInventory(inventory);
     }
 
-    @Override
-    public void updateElement() {
-        super.updateElement();
+    public void setTitle(String title) {
+        Checks.ensureNonNull(title, "title");
 
-        updateMenu();
+        if(inventory != null && title.equals(inventory.getTitle()))
+            return;
+
+        title = (title.length() > 32 ? title.substring(0, 32) : title);
+
+        this.newInventory = Bukkit.createInventory(this, bounds.getVolume(), title);
     }
 
-    private void updateMenu() {
-        MenuItem[] items = getItems();
+    private boolean swapToNewInventory() {
+        if(newInventory == null)
+            return false;
+
+        inventory = newInventory;
+        newInventory = null;
+
+        return true;
+    }
+
+    public void layoutElements() {
+        container.clear();
+
+        elements.forEach(container::addElement);
+    }
+
+    public void updateMenu() {
+        boolean newInventory = swapToNewInventory();
+
+        layoutElements();
+
+        MenuItem[] items = container.getItems();
         ItemStack[] contents = new ItemStack[items.length];
 
         for(int index = 0; index < contents.length; index++) {
@@ -76,6 +124,10 @@ public class InventoryMenu extends Container implements InventoryHolder {
         }
 
         inventory.setContents(contents);
+
+        if(newInventory && hasMenuOpen()) {
+            player.openInventory(inventory);
+        }
     }
 
     public void onClick(InventoryClickEvent event) {
@@ -86,11 +138,14 @@ public class InventoryMenu extends Container implements InventoryHolder {
 
         int slot = event.getRawSlot();
 
-        MenuResponse response = handleClick(slot);
+        MenuResponse response = container.handleClick(slot);
 
         switch (response) {
             case CLOSE:
                 player.closeInventory();
+                break;
+            case UPDATE:
+                updateMenu();
                 break;
             case NONE:
                 break;

@@ -96,6 +96,10 @@ public final class CacheHead implements Comparable<CacheHead> {
         return (hasCost() ? cost : Heads.getMainConfig().getCategoryCost(category));
     }
 
+    public double getRawCost() {
+        return cost;
+    }
+
     public UUID getUniqueId() {
         if(uniqueId == null) {
             uniqueId = UUID.nameUUIDFromBytes(getTextureURL().getBytes(StandardCharsets.UTF_8));

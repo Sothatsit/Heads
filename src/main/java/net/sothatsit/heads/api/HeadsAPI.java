@@ -4,10 +4,12 @@ import com.google.common.collect.ImmutableList;
 import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.util.Checks;
+import org.bukkit.Bukkit;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.List;
 import java.util.Set;
+import java.util.function.Consumer;
 
 public class HeadsAPI {
 
@@ -47,6 +49,10 @@ public class HeadsAPI {
 
         private static Head fromCacheHead(CacheHead head) {
             return (head == null ? null : new Head(head));
+        }
+
+        private static Head fromNameAndTexture(String name, String texture) {
+            return (texture == null ? null : fromCacheHead(new CacheHead(name, "HeadsAPI", texture)));
         }
 
         private static List<Head> fromCacheHeads(List<CacheHead> heads) {
@@ -90,6 +96,12 @@ public class HeadsAPI {
         List<CacheHead> heads = Heads.getCache().getHeads();
 
         return Head.fromCacheHeads(heads);
+    }
+
+    public static void downloadHead(String playerName, Consumer<Head> consumer) {
+        Heads.getTextureGetter().getTexture(playerName, (texture) -> {
+            consumer.accept(Head.fromNameAndTexture(playerName, texture));
+        });
     }
 
 }

@@ -3,6 +3,7 @@ package net.sothatsit.heads.volatilecode.reflection.authlib;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import net.sothatsit.heads.volatilecode.reflection.ReflectObject;
 import net.sothatsit.heads.volatilecode.reflection.ReflectionUtils;
@@ -40,11 +41,11 @@ public class PropertyMap extends ReflectObject {
         }
     }
     
-    public Collection<Property> get(String key) {
+    public List<Property> get(String key) {
         try {
             Collection<?> collection = (Collection<?>) getMethod.invoke(getHandle(), key);
-            
-            Collection<Property> list = new ArrayList<>();
+
+            List<Property> list = new ArrayList<>();
             for (Object obj : collection) {
                 list.add(new Property(obj));
             }

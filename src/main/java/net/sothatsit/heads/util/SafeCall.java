@@ -22,19 +22,23 @@ public abstract class SafeCall {
         throw exceptionDetailer.detail(new IllegalStateException(message, cause));
     }
 
-    public static <T, R> Function<T, R> function(String name, Function<T, R> function) {
+    public static Runnable runnable(String name, Runnable runnable) {
+        return new SafeRunnable(runnable, name);
+    }
+
+    public static <T, R> SafeFunction<T, R> function(String name, Function<T, R> function) {
         return new SafeFunction<>(function, name);
     }
 
-    public static <T, R> Function<T, R> nonNullFunction(String name, Function<T, R> function) {
+    public static <T, R> NonNullSafeFunction<T, R> nonNullFunction(String name, Function<T, R> function) {
         return new NonNullSafeFunction<>(function, name);
     }
 
-    public static <T> Predicate<T> predicate(String name, Predicate<T> predicate) {
+    public static <T> SafePredicate<T> predicate(String name, Predicate<T> predicate) {
         return new SafePredicate<>(predicate, name);
     }
 
-    public static <T> Predicate<T> nonNullPredicate(String name, Predicate<T> predicate) {
+    public static <T> NonNullSafePredicate<T> nonNullPredicate(String name, Predicate<T> predicate) {
         return new NonNullSafePredicate<>(predicate, name);
     }
 
@@ -42,19 +46,48 @@ public abstract class SafeCall {
         return new SafeCallable<>(callable, name);
     }
 
-    public static <V> SafeCallable<V> nonNullCallable(String name, Callable<V> callable) {
+    public static <V> NonNullSafeCallable<V> nonNullCallable(String name, Callable<V> callable) {
         return new NonNullSafeCallable<>(callable, name);
     }
 
-    public static <T> Consumer<T> consumer(String name, Consumer<T> consumer) {
+    public static <T> SafeConsumer<T> consumer(String name, Consumer<T> consumer) {
         return new SafeConsumer<>(consumer, name);
     }
 
-    public static <T> Consumer<T> nonNullConsumer(String name, Consumer<T> consumer) {
+    public static <T> NonNullSafeConsumer<T> nonNullConsumer(String name, Consumer<T> consumer) {
         return new NonNullSafeConsumer<>(consumer, name);
     }
 
-    private static class SafeFunction<T, R> extends SafeCall implements Function<T, R> {
+    public static class SafeRunnable extends SafeCall implements Runnable {
+
+        private final Runnable runnable;
+        protected final String name;
+
+        private SafeRunnable(Runnable runnable, String name) {
+            Checks.ensureNonNull(runnable, "runnable");
+            Checks.ensureNonNull(name, "name");
+
+            this.runnable = runnable;
+            this.name = name;
+        }
+
+        @Override
+        public void run() {
+            try {
+                runnable.run();
+            } catch(Exception e) {
+                throw fail("Exception thrown when calling function " + name, e);
+            }
+        }
+
+        @Override
+        public String toString() {
+            return "Safe " + runnable + " (" + name + ")";
+        }
+
+    }
+
+    public static class SafeFunction<T, R> extends SafeCall implements Function<T, R> {
 
         private final Function<T, R> function;
         protected final String name;
@@ -83,7 +116,7 @@ public abstract class SafeCall {
 
     }
 
-    private static class NonNullSafeFunction<T, R> extends SafeFunction<T, R> {
+    public static class NonNullSafeFunction<T, R> extends SafeFunction<T, R> {
 
         private NonNullSafeFunction(Function<T, R> function, String name) {
             super(function, name);
@@ -108,7 +141,7 @@ public abstract class SafeCall {
 
     }
 
-    private static class SafePredicate<T> extends SafeCall implements Predicate<T> {
+    public static class SafePredicate<T> extends SafeCall implements Predicate<T> {
 
         private final Predicate<T> predicate;
         protected final String name;
@@ -137,7 +170,7 @@ public abstract class SafeCall {
 
     }
 
-    private static class NonNullSafePredicate<T> extends SafePredicate<T> {
+    public static class NonNullSafePredicate<T> extends SafePredicate<T> {
 
         private NonNullSafePredicate(Predicate<T> predicate, String name) {
             super(predicate, name);
@@ -186,7 +219,7 @@ public abstract class SafeCall {
 
     }
 
-    private static class NonNullSafeCallable<V> extends SafeCallable<V> {
+    public static class NonNullSafeCallable<V> extends SafeCallable<V> {
 
         private NonNullSafeCallable(Callable<V> callable, String name) {
             super(callable, name);
@@ -209,7 +242,7 @@ public abstract class SafeCall {
 
     }
 
-    private static class SafeConsumer<T> extends SafeCall implements Consumer<T> {
+    public static class SafeConsumer<T> extends SafeCall implements Consumer<T> {
 
         private final Consumer<T> consumer;
         protected final String name;
@@ -238,7 +271,7 @@ public abstract class SafeCall {
 
     }
 
-    private static class NonNullSafeConsumer<T> extends SafeConsumer<T> {
+    public static class NonNullSafeConsumer<T> extends SafeConsumer<T> {
 
         private NonNullSafeConsumer(Consumer<T> consumer, String name) {
             super(consumer, name);

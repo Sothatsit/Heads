@@ -1,6 +1,8 @@
-package net.sothatsit.heads.util;
+package net.sothatsit.heads.menu.ui;
 
 import net.sothatsit.heads.config.lang.Placeholder;
+import net.sothatsit.heads.util.Checks;
+import net.sothatsit.heads.util.Stringify;
 import net.sothatsit.heads.volatilecode.ItemNBT;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;

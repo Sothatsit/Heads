@@ -21,6 +21,10 @@ public final class HeadPatch {
     private List<String> fromTags = null;
     private List<String> toTags = null;
 
+    private boolean cost = false;
+    private double fromCost = -1;
+    private double toCost = -1;
+
     public HeadPatch(CacheHead head) {
         this(head.getUniqueId());
     }
@@ -51,6 +55,14 @@ public final class HeadPatch {
         return this;
     }
 
+    public HeadPatch withCost(double from, double to) {
+        this.cost = true;
+        this.fromCost = from;
+        this.toCost = to;
+
+        return this;
+    }
+
     public void applyPatch(CacheFile cache) {
         for(CacheHead head : cache.findHeads(uniqueId)) {
             applyPatch(cache, head);
@@ -69,6 +81,10 @@ public final class HeadPatch {
         if(tags && head.getTags().equals(fromTags)) {
             head.setTags(toTags);
         }
+
+        if(cost && head.getRawCost() == fromCost) {
+            head.setCost(toCost);
+        }
     }
 
     public void write(ObjectOutputStream stream) throws IOException {
@@ -85,9 +101,40 @@ public final class HeadPatch {
             IOUtils.writeStringList(stream, fromTags);
             IOUtils.writeStringList(stream, toTags);
         }
+
+        stream.writeBoolean(cost);
+        if(cost) {
+            stream.writeDouble(fromCost);
+            stream.writeDouble(toCost);
+        }
     }
 
-    public static HeadPatch read(ObjectInputStream stream) throws IOException {
+    public static HeadPatch read(int version, ObjectInputStream stream) throws IOException {
+        switch(version) {
+            case 1:
+                return readVersion1(stream);
+            case 2:
+                return readVersion2(stream);
+            default:
+                throw new UnsupportedOperationException("Unknown patch file version " + version);
+        }
+    }
+
+    public static HeadPatch readVersion2(ObjectInputStream stream) throws IOException {
+        HeadPatch patch = readVersion1(stream);
+
+        boolean cost = stream.readBoolean();
+        if(cost) {
+            double from = stream.readDouble();
+            double to = stream.readDouble();
+
+            patch.withCost(from, to);
+        }
+
+        return patch;
+    }
+
+    public static HeadPatch readVersion1(ObjectInputStream stream) throws IOException {
         UUID uniqueId = IOUtils.readUUID(stream);
 
         HeadPatch patch = new HeadPatch(uniqueId);

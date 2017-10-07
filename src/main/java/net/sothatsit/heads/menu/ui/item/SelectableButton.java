@@ -1,7 +1,6 @@
 package net.sothatsit.heads.menu.ui.item;
 
 import net.sothatsit.heads.menu.ui.MenuResponse;
-import net.sothatsit.heads.menu.ui.element.Element;
 import net.sothatsit.heads.util.Checks;
 import net.sothatsit.heads.util.Stringify;
 import org.bukkit.inventory.ItemStack;
@@ -11,53 +10,28 @@ import java.util.concurrent.Callable;
 public class SelectableButton extends Button {
 
     private final ButtonGroup group;
-    private ItemStack selectedItem;
+    private final ItemStack unselectedItem;
+    private final ItemStack selectedItem;
     private boolean selected;
-
-    public SelectableButton(ItemStack unselectedItem,
-                            ItemStack selectedItem,
-                            Callable<MenuResponse> onClick) {
-        this(null, null, unselectedItem, selectedItem, onClick);
-    }
 
     public SelectableButton(ButtonGroup group,
                             ItemStack unselectedItem,
                             ItemStack selectedItem,
                             Callable<MenuResponse> onClick) {
-        this(null, group, unselectedItem, selectedItem, onClick);
-    }
+        super(unselectedItem, onClick);
 
-    public SelectableButton(Element parent,
-                            ItemStack unselectedItem,
-                            ItemStack selectedItem,
-                            Callable<MenuResponse> onClick) {
-        this(parent, null, unselectedItem, selectedItem, onClick);
-    }
-
-    public SelectableButton(Element parent,
-                            ButtonGroup group,
-                            ItemStack unselectedItem,
-                            ItemStack selectedItem,
-                            Callable<MenuResponse> onClick) {
-        super(parent, unselectedItem, onClick);
-
+        Checks.ensureNonNull(group, "group");
+        Checks.ensureNonNull(unselectedItem, "unselectedItem");
         Checks.ensureNonNull(selectedItem, "selectedItem");
 
         this.group = group;
+        this.unselectedItem = unselectedItem;
         this.selectedItem = selectedItem;
         this.selected = false;
 
         if(group != null) {
             group.addButton(this);
         }
-    }
-
-    public void setSelectedItem(ItemStack item) {
-        Checks.ensureNonNull(item, "item");
-
-        this.selectedItem = item;
-
-        updateItem();
     }
 
     public boolean isSelected() {
@@ -73,13 +47,7 @@ public class SelectableButton extends Button {
         }
 
         this.selected = selected;
-
-        updateItem();
-    }
-
-    @Override
-    public ItemStack getItem() {
-        return selected ? selectedItem : super.getItem();
+        this.setItem(selected ? selectedItem : unselectedItem);
     }
 
     @Override

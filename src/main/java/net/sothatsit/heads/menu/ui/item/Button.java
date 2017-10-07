@@ -1,6 +1,5 @@
 package net.sothatsit.heads.menu.ui.item;
 
-import net.sothatsit.heads.menu.ui.element.Element;
 import net.sothatsit.heads.menu.ui.MenuResponse;
 import net.sothatsit.heads.util.Checks;
 import net.sothatsit.heads.util.SafeCall;
@@ -15,11 +14,7 @@ public class Button extends MenuItem {
     private final SafeCallable<MenuResponse> onClick;
 
     public Button(ItemStack item, Callable<MenuResponse> onClick) {
-        this(null, item, onClick);
-    }
-
-    public Button(Element parent, ItemStack item, Callable<MenuResponse> onClick) {
-        super(parent, item);
+        super(item);
 
         Checks.ensureNonNull(onClick, "onClick");
 

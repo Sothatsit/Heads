@@ -16,8 +16,14 @@ public class MainConfig {
     
     private final ConfigFile configFile;
 
-    private double defaultHeadCost;
     private boolean economyEnabled;
+    private double defaultHeadCost;
+
+    private boolean headNamesEnabled;
+    private boolean useBlockStore;
+    private boolean useCacheNames;
+    private String defaultHeadName;
+
     private boolean hideNoPermCategories;
     private boolean checkForUpdates;
 
@@ -78,10 +84,16 @@ public class MainConfig {
             });
         }
 
-        economyEnabled       = loadBoolean(config, "economy.enabled", false, shouldSave);
+        economyEnabled  = loadBoolean(config, "economy.enabled", false, shouldSave);
+        defaultHeadCost = loadDouble(config, "economy.default-head-cost", 0, shouldSave);
+
+        headNamesEnabled = loadBoolean(config, "breaking-head-names.enabled", true, shouldSave);
+        useBlockStore    = loadBoolean(config, "breaking-head-names.attempt-hook-blockstore", true, shouldSave);
+        useCacheNames    = loadBoolean(config, "breaking-head-names.similar-heads-in-cache", true, shouldSave);
+        defaultHeadName  = loadString(config, "breaking-head-names.default-name", "Decoration Head", shouldSave);
+
         hideNoPermCategories = loadBoolean(config, "hide-no-perm-categories", true, shouldSave);
         checkForUpdates      = loadBoolean(config, "check-for-updates", true, shouldSave);
-        defaultHeadCost      = loadDouble(config, "economy.default-head-cost", 0, shouldSave);
 
         if (defaultHeadCost < 0) {
             Heads.info("\"economy.default-head-cost\" cannot be less than 0 in legacy.yml, defaulting to 0");
@@ -231,6 +243,22 @@ public class MainConfig {
 
     public double getDefaultHeadCost() {
         return defaultHeadCost;
+    }
+
+    public boolean isHeadNamesEnabled() {
+        return headNamesEnabled;
+    }
+
+    public boolean shouldUseBlockStore() {
+        return useBlockStore;
+    }
+
+    public boolean shouldUseCacheNames() {
+        return useCacheNames;
+    }
+
+    public String getDefaultHeadName() {
+        return defaultHeadName;
     }
 
     public boolean shouldHideNoPermCategories() {

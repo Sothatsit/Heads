@@ -19,6 +19,7 @@ import net.sothatsit.heads.volatilecode.injection.ProtocolHackFixer;
 import net.sothatsit.heads.volatilecode.reflection.craftbukkit.CommandMap;
 import net.sothatsit.heads.volatilecode.reflection.craftbukkit.CraftServer;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.SimpleCommandMap;
@@ -30,12 +31,14 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Map;
+import java.util.function.Consumer;
 
 public class Heads extends JavaPlugin implements Listener {
 
@@ -46,6 +49,7 @@ public class Heads extends JavaPlugin implements Listener {
     private LangConfig langConfig;
     private TextureGetter textureGetter;
     private boolean commandsRegistered = false;
+    private boolean blockStoreAvailable = false;
     
     @Override
     public void onEnable() {
@@ -64,6 +68,9 @@ public class Heads extends JavaPlugin implements Listener {
 
         registerCommands();
         hookPlugins();
+
+        HeadNamer headNamer = new HeadNamer();
+        headNamer.registerEvents();
 
         Bukkit.getPluginManager().registerEvents(this, this);
 
@@ -209,32 +216,43 @@ public class Heads extends JavaPlugin implements Listener {
     }
 
     private void hookPlugins() {
-        boolean ecoHooked = false;
+        if(mainConfig.isEconomyEnabled()) {
+            boolean ecoHooked = false;
 
-        try {
-            if (EconomyHook.hookEconomy()) {
-                info("Hooked Vault Economy");
-                ecoHooked = true;
-            }
-        } catch(Exception exception) {
-            warning("There was an error hooking Vault Economy");
-            exception.printStackTrace();
-        }
-
-        if (!ecoHooked && mainConfig.isEconomyEnabled()) {
-            severe("Unable to hook Vault Economy and economy is enabled in legacy");
-            severe("Users will not be able to purchase heads");
-        }
-
-        if (Bukkit.getPluginManager().getPlugin("BlockStore") != null) {
             try {
-                new BlockStoreHook();
-            } catch (Exception e) {
-                e.printStackTrace();
-                severe("Error hooking BlockStore, please report this error to the author.");
+                if (EconomyHook.hookEconomy()) {
+                    info("Hooked Vault Economy");
+                    ecoHooked = true;
+                }
+            } catch(Exception exception) {
+                warning("There was an error hooking Vault Economy");
+                exception.printStackTrace();
             }
 
-            info("Hooked BlockStore");
+            if (!ecoHooked) {
+                severe("Unable to hook Vault Economy and economy is enabled in the config.");
+                severe("Users will not be able to purchase heads.");
+            }
+        }
+
+        if (mainConfig.shouldUseBlockStore() && Bukkit.getPluginManager().getPlugin("BlockStore") != null) {
+            blockStoreAvailable = false;
+
+            try {
+                Class<?> apiClass = Class.forName("net.sothatsit.blockstore.BlockStoreApi");
+
+                apiClass.getDeclaredMethod("retrieveBlockMeta",
+                        Plugin.class, Location.class, Plugin.class, String.class, Consumer.class);
+
+                info("Hooked BlockStore");
+
+                blockStoreAvailable = true;
+
+            } catch (ClassNotFoundException | NoSuchMethodException e) {
+                severe("Unable to hook BlockStore, the version of BlockStore you are " +
+                        "using may be outdated. Heads requires BlockStore v1.5.0.");
+                severe("Please update BlockStore and report this to Sothatsit if the problem persists.");
+            }
         }
     }
     
@@ -269,6 +287,7 @@ public class Heads extends JavaPlugin implements Listener {
         mainConfig.reload();
 
         registerCommands();
+        hookPlugins();
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
@@ -304,7 +323,7 @@ public class Heads extends JavaPlugin implements Listener {
     public static Heads getInstance() {
         return instance;
     }
-    
+
     public static MainConfig getMainConfig() {
         return instance.mainConfig;
     }
@@ -323,6 +342,10 @@ public class Heads extends JavaPlugin implements Listener {
     
     public static TextureGetter getTextureGetter() {
         return instance.textureGetter;
+    }
+
+    public static boolean isBlockStoreAvailable() {
+        return instance.blockStoreAvailable;
     }
 
     public static void info(String info) {
