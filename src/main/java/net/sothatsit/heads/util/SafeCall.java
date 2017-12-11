@@ -22,39 +22,39 @@ public abstract class SafeCall {
         throw exceptionDetailer.detail(new IllegalStateException(message, cause));
     }
 
-    public static Runnable runnable(String name, Runnable runnable) {
+    public static Runnable runnable(Runnable runnable, String name) {
         return new SafeRunnable(runnable, name);
     }
 
-    public static <T, R> SafeFunction<T, R> function(String name, Function<T, R> function) {
+    public static <T, R> SafeFunction<T, R> function(Function<T, R> function, String name) {
         return new SafeFunction<>(function, name);
     }
 
-    public static <T, R> NonNullSafeFunction<T, R> nonNullFunction(String name, Function<T, R> function) {
+    public static <T, R> NonNullSafeFunction<T, R> nonNullFunction(Function<T, R> function, String name) {
         return new NonNullSafeFunction<>(function, name);
     }
 
-    public static <T> SafePredicate<T> predicate(String name, Predicate<T> predicate) {
+    public static <T> SafePredicate<T> predicate(Predicate<T> predicate, String name) {
         return new SafePredicate<>(predicate, name);
     }
 
-    public static <T> NonNullSafePredicate<T> nonNullPredicate(String name, Predicate<T> predicate) {
+    public static <T> NonNullSafePredicate<T> nonNullPredicate(Predicate<T> predicate, String name) {
         return new NonNullSafePredicate<>(predicate, name);
     }
 
-    public static <V> SafeCallable<V> callable(String name, Callable<V> callable) {
+    public static <V> SafeCallable<V> callable(Callable<V> callable, String name) {
         return new SafeCallable<>(callable, name);
     }
 
-    public static <V> NonNullSafeCallable<V> nonNullCallable(String name, Callable<V> callable) {
+    public static <V> NonNullSafeCallable<V> nonNullCallable(Callable<V> callable, String name) {
         return new NonNullSafeCallable<>(callable, name);
     }
 
-    public static <T> SafeConsumer<T> consumer(String name, Consumer<T> consumer) {
+    public static <T> SafeConsumer<T> consumer(Consumer<T> consumer, String name) {
         return new SafeConsumer<>(consumer, name);
     }
 
-    public static <T> NonNullSafeConsumer<T> nonNullConsumer(String name, Consumer<T> consumer) {
+    public static <T> NonNullSafeConsumer<T> nonNullConsumer(Consumer<T> consumer, String name) {
         return new NonNullSafeConsumer<>(consumer, name);
     }
 

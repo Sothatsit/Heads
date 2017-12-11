@@ -4,6 +4,7 @@ import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.lang.Lang;
+import net.sothatsit.heads.volatilecode.TextureGetter;
 import net.sothatsit.heads.volatilecode.reflection.Version;
 
 import org.bukkit.command.Command;
@@ -54,13 +55,13 @@ public class AddCommand extends AbstractCommand {
         
         final String name = nameBuilder.toString().substring(1);
         
-        String texture = Heads.getTextureGetter().getCachedTexture(playerName);
+        String texture = TextureGetter.getCachedTexture(playerName);
         
         if (texture != null) {
             add(sender, category, name, playerName, texture);
         } else {
             Lang.Command.Add.fetching().send(sender);
-            Heads.getTextureGetter().getTexture(playerName, (resolvedTexture) -> {
+            TextureGetter.getTexture(playerName, (resolvedTexture) -> {
                 add(sender, category, name, playerName, resolvedTexture);
             });
         }

@@ -1,0 +1,68 @@
+menu:
+  categories-title: Categories
+  category-title: '%category%'
+  close:
+    type: 152
+    name: '&cClose Menu'
+  back:
+    type: 152
+    name: '&cBack to Categories'
+  search:
+    type: 345
+    name: '&7Search Heads'
+  categories:
+    category:
+      type: 397
+      data: 3
+      name: '&7%category%'
+      lore:
+      - '&6%heads% &eheads'
+    unselected-page:
+      type: 339
+      name: '&7Page %page%'
+    selected-page:
+      type: 395
+      name: '&7Page %page%'
+    scrollbar:
+      left:
+        type: 262
+        name: '&7Left'
+      right:
+        type: 262
+        name: '&7Right'
+      no-left:
+        type: 0
+      no-right:
+        type: 0
+      filler:
+        type: 160
+        data: 15
+        name: ' '
+  heads:
+    head:
+      type: 397
+      data: 3
+      name: '&7%name%'
+      lore:
+      - '&eCost: &6%cost%'
+    unselected-page:
+      type: 339
+      name: '&7Page %page%'
+    selected-page:
+      type: 395
+      name: '&7Page %page%'
+    scrollbar:
+      left:
+        type: 262
+        name: '&7Left'
+      right:
+        type: 262
+        name: '&7Right'
+      no-left:
+        type: 0
+      no-right:
+        type: 0
+      filler:
+        type: 160
+        data: 15
+        name: ' '

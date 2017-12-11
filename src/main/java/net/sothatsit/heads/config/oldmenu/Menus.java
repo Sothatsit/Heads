@@ -1,6 +1,6 @@
-package net.sothatsit.heads;
+package net.sothatsit.heads.config.oldmenu;
 
-import net.sothatsit.heads.config.menu.Menu;
+import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.oldmenu.InventoryType;
 
 public class Menus {

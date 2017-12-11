@@ -1,9 +1,9 @@
 package net.sothatsit.heads.oldmenu.mode;
 
 import net.sothatsit.heads.Heads;
-import net.sothatsit.heads.Menus;
+import net.sothatsit.heads.config.oldmenu.Menus;
 import net.sothatsit.heads.cache.CacheHead;
-import net.sothatsit.heads.config.menu.Menu;
+import net.sothatsit.heads.config.oldmenu.Menu;
 import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.oldmenu.ConfirmMenu;

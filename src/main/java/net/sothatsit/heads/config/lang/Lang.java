@@ -1,6 +1,7 @@
 package net.sothatsit.heads.config.lang;
 
 import net.sothatsit.heads.Heads;
+import org.bukkit.command.CommandSender;
 
 public class Lang {
     
@@ -27,6 +28,10 @@ public class Lang {
         public String description() {
             return get(key() + ".description").getSingle();
         }
+
+        public void sendInvalidArgs(CommandSender sender) {
+            Lang.Command.Errors.invalidArgs(this).send(sender);
+        }
         
     }
 
@@ -46,7 +51,7 @@ public class Lang {
 
         public static LangMessage nonZero(double amount) {
             return get(key() + ".non-zero")
-                    .with("%amount%", amount);
+                    .with("%amount%", Heads.getEconomy().formatBalance(amount));
         }
 
     }
@@ -614,6 +619,82 @@ public class Lang {
                 return new HelpSection(key());
             }
             
+        }
+
+        public static class ItemEco {
+
+            public static String key() {
+                return Command.key() + ".item-eco";
+            }
+
+            public static HelpSection help() {
+                return new HelpSection(key());
+            }
+
+            public static class Set {
+
+                public static String key() {
+                    return ItemEco.key() + ".set";
+                }
+
+                public static HelpSection help() {
+                    return new HelpSection(key());
+                }
+
+                public static LangMessage set() {
+                    return get(key() + ".set");
+                }
+
+                public static LangMessage noItem() {
+                    return get(key() + ".no-item");
+                }
+
+            }
+
+            public static class Get {
+
+                public static String key() {
+                    return ItemEco.key() + ".get";
+                }
+
+                public static HelpSection help() {
+                    return new HelpSection(key());
+                }
+
+                public static LangMessage got(int amount) {
+                    return get(key() + ".got")
+                            .with("%amount%", amount);
+                }
+
+            }
+
+            public static class Give {
+
+                public static String key() {
+                    return ItemEco.key() + ".give";
+                }
+
+                public static HelpSection help() {
+                    return new HelpSection(key());
+                }
+
+                public static LangMessage got(int amount) {
+                    return get(key() + ".got")
+                            .with("%amount%", amount);
+                }
+
+                public static LangMessage given(String player, int amount) {
+                    return get(key() + ".given")
+                            .with("%player%", player)
+                            .with("%amount%", amount);
+                }
+
+                public static LangMessage unknownPlayer(String player) {
+                    return get(key() + ".unknown-player").with("%player%", player);
+                }
+
+            }
+
         }
         
     }

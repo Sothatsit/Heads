@@ -7,10 +7,12 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import net.sothatsit.heads.Heads;
 
+import net.sothatsit.heads.menu.ui.item.Item;
+import net.sothatsit.heads.util.Checks;
 import net.sothatsit.heads.util.Clock;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.configuration.file.FileConfiguration;
 
 public class MainConfig {
     
@@ -18,6 +20,10 @@ public class MainConfig {
 
     private boolean economyEnabled;
     private double defaultHeadCost;
+    private boolean vaultEcoEnabled;
+    private boolean itemEcoEnabled;
+    private Item itemEcoItem;
+    private boolean playerPointsEcoEnabled;
 
     private boolean headNamesEnabled;
     private boolean useBlockStore;
@@ -43,12 +49,13 @@ public class MainConfig {
     private String renameLabel;
     private String costLabel;
     private String categoryCostLabel;
+    private String itemEcoLabel;
     private String idLabel;
     private String searchLabel;
     private String helpLabel;
     
-    public MainConfig(ConfigFile configFile) {
-        this.configFile = configFile;
+    public MainConfig() {
+        this.configFile = new FileConfigFile("config.yml");
         
         reload();
     }
@@ -56,10 +63,10 @@ public class MainConfig {
     public void reload() {
         Clock timer = Clock.start();
 
-        configFile.saveDefaults();
+        configFile.copyDefaults();
         configFile.reload();
         
-        FileConfiguration config = configFile.getConfig();
+        ConfigurationSection config = configFile.getConfig();
 
         AtomicBoolean shouldSave = new AtomicBoolean(false);
 
@@ -86,6 +93,17 @@ public class MainConfig {
 
         economyEnabled  = loadBoolean(config, "economy.enabled", false, shouldSave);
         defaultHeadCost = loadDouble(config, "economy.default-head-cost", 0, shouldSave);
+        vaultEcoEnabled = loadBoolean(config, "economy.vault-eco.enabled", true, shouldSave);
+        itemEcoEnabled  = loadBoolean(config, "economy.item-eco.enabled", false, shouldSave);
+
+        Item defaultItemEcoItem = Item
+                .create(Material.SKULL_ITEM, (byte) 3)
+                .name("&6Player Head Token")
+                .lore("&8Use in /heads!");
+
+        itemEcoItem = loadItem(config, "economy.item-eco.item", defaultItemEcoItem, shouldSave);
+
+        playerPointsEcoEnabled = loadBoolean(config, "economy.player-points-eco.enabled", false, shouldSave);
 
         headNamesEnabled = loadBoolean(config, "breaking-head-names.enabled", true, shouldSave);
         useBlockStore    = loadBoolean(config, "breaking-head-names.attempt-hook-blockstore", true, shouldSave);
@@ -96,7 +114,7 @@ public class MainConfig {
         checkForUpdates      = loadBoolean(config, "check-for-updates", true, shouldSave);
 
         if (defaultHeadCost < 0) {
-            Heads.info("\"economy.default-head-cost\" cannot be less than 0 in legacy.yml, defaulting to 0");
+            Heads.info("\"economy.default-head-cost\" cannot be less than 0 in config.yml, defaulting to 0");
             defaultHeadCost = 0;
         }
 
@@ -107,7 +125,7 @@ public class MainConfig {
         Heads.info("Loaded Main Config " + timer);
     }
 
-    private void loadCommandInfo(FileConfiguration config, AtomicBoolean shouldSave) {
+    private void loadCommandInfo(ConfigurationSection config, AtomicBoolean shouldSave) {
         reloadLabel       = loadString(config, "commands.heads.sub-commands.reload", "reload", shouldSave);
         addLabel          = loadString(config, "commands.heads.sub-commands.add", "add", shouldSave);
         handLabel         = loadString(config, "commands.heads.sub-commands.hand", "hand", shouldSave);
@@ -118,6 +136,7 @@ public class MainConfig {
         renameLabel       = loadString(config, "commands.heads.sub-commands.rename", "rename", shouldSave);
         costLabel         = loadString(config, "commands.heads.sub-commands.cost", "cost", shouldSave);
         categoryCostLabel = loadString(config, "commands.heads.sub-commands.category-cost", "categorycost", shouldSave);
+        itemEcoLabel      = loadString(config, "commands.heads.sub-commands.item-eco", "itemeco", shouldSave);
         idLabel           = loadString(config, "commands.heads.sub-commands.id", "id", shouldSave);
         searchLabel       = loadString(config, "commands.heads.sub-commands.search", "search", shouldSave);
         helpLabel         = loadString(config, "commands.heads.sub-commands.help", "help", shouldSave);
@@ -127,7 +146,7 @@ public class MainConfig {
         headAliases       = loadStringArray(config, "commands.heads.aliases", new String[] {"head"}, shouldSave);
     }
 
-    private void loadCategoryCosts(FileConfiguration config, AtomicBoolean shouldSave) {
+    private void loadCategoryCosts(ConfigurationSection config, AtomicBoolean shouldSave) {
         categoryCosts = new HashMap<>();
 
         if(!config.isSet("economy.categories") || !config.isConfigurationSection("economy.categories"))
@@ -145,11 +164,11 @@ public class MainConfig {
         }
     }
     
-    private String loadString(FileConfiguration config, String key, String defaultVal, AtomicBoolean shouldSave) {
+    private String loadString(ConfigurationSection config, String key, String defaultVal, AtomicBoolean shouldSave) {
         if (config.isSet(key) && config.isString(key) && !config.getString(key).isEmpty())
             return config.getString(key);
 
-        Heads.warning("\"" + key + "\" not set or invalid in legacy, resetting to \"" + defaultVal + "\"");
+        Heads.warning("\"" + key + "\" not set or invalid in config.yml, resetting to \"" + defaultVal + "\"");
 
         config.set(key, defaultVal);
         shouldSave.set(true);
@@ -157,11 +176,11 @@ public class MainConfig {
         return defaultVal;
     }
 
-    private String[] loadStringArray(FileConfiguration config, String key, String[] defaultVal, AtomicBoolean shouldSave) {
+    private String[] loadStringArray(ConfigurationSection config, String key, String[] defaultVal, AtomicBoolean shouldSave) {
         if(config.isSet(key) && config.isList(key))
             return config.getStringList(key).toArray(new String[0]);
 
-        Heads.warning("\"" + key + "\" not set or invalid in legacy, resetting to " + Arrays.toString(defaultVal));
+        Heads.warning("\"" + key + "\" not set or invalid in config.yml, resetting to " + Arrays.toString(defaultVal));
 
         config.set(key, Arrays.asList(defaultVal));
         shouldSave.set(true);
@@ -169,11 +188,11 @@ public class MainConfig {
         return defaultVal;
     }
 
-    private boolean loadBoolean(FileConfiguration config, String key, boolean defaultVal, AtomicBoolean shouldSave) {
+    private boolean loadBoolean(ConfigurationSection config, String key, boolean defaultVal, AtomicBoolean shouldSave) {
         if(config.isSet(key) && config.isBoolean(key))
             return config.getBoolean(key);
 
-        Heads.warning("\"" + key + "\" not set or invalid in legacy, resetting to " + defaultVal);
+        Heads.warning("\"" + key + "\" not set or invalid in config.yml, resetting to " + defaultVal);
 
         config.set(key, defaultVal);
         shouldSave.set(true);
@@ -181,20 +200,33 @@ public class MainConfig {
         return defaultVal;
     }
 
-    private double loadDouble(FileConfiguration config, String key, double defaultVal, AtomicBoolean shouldSave) {
+    private double loadDouble(ConfigurationSection config, String key, double defaultVal, AtomicBoolean shouldSave) {
         if(config.isSet(key) && (config.isInt(key) || config.isDouble(key)))
             return config.getDouble(key);
 
-        Heads.warning("\"" + key + "\" not set or invalid in legacy, resetting to " + defaultVal);
+        Heads.warning("\"" + key + "\" not set or invalid in config.yml, resetting to " + defaultVal);
 
         config.set(key, defaultVal);
         shouldSave.set(true);
 
         return defaultVal;
     }
-    
-    public boolean isEconomyEnabled() {
-        return economyEnabled;
+
+    private Item loadItem(ConfigurationSection config, String key, Item defaultItem, AtomicBoolean shouldSave) {
+        if(config.isSet(key) && config.isConfigurationSection(key)) {
+            Item item = Item.load("config.yml", config.getConfigurationSection(key), shouldSave);
+
+            if(item != null)
+                return item;
+        }
+
+        Heads.warning(key + " not set or invalid in config.yml, resetting to " + defaultItem);
+
+        config.set(key, null);
+        defaultItem.save(config.createSection(key));
+        shouldSave.set(true);
+
+        return defaultItem;
     }
 
     private String getPlainCategoryName(String category) {
@@ -224,7 +256,7 @@ public class MainConfig {
     private void saveCategoryCosts() {
         Clock timer = Clock.start();
 
-        FileConfiguration config = this.configFile.getConfig();
+        ConfigurationSection config = configFile.getConfig();
 
         config.set("economy.categories", null);
 
@@ -241,8 +273,49 @@ public class MainConfig {
         Heads.info("Saved Main Config " + timer);
     }
 
+    public void setItemEcoItem(Item item) {
+        Checks.ensureNonNull(item, "item");
+
+        this.itemEcoItem = item;
+
+        saveItemEcoItem();
+    }
+
+    private void saveItemEcoItem() {
+        Clock timer = Clock.start();
+
+        ConfigurationSection config = this.configFile.getConfig();
+
+        config.set("economy.item-eco.item", null);
+        itemEcoItem.save(config.createSection("economy.item-eco.item"));
+
+        configFile.save();
+
+        Heads.info("Saved Main Config " + timer);
+    }
+
+    public boolean isEconomyEnabled() {
+        return economyEnabled;
+    }
+
     public double getDefaultHeadCost() {
         return defaultHeadCost;
+    }
+
+    public boolean isVaultEconomyEnabled() {
+        return vaultEcoEnabled;
+    }
+
+    public boolean isItemEconomyEnabled() {
+        return itemEcoEnabled;
+    }
+
+    public Item getItemEconomyItem() {
+        return itemEcoItem;
+    }
+
+    public boolean isPlayerPointsEconomyEnabled() {
+        return playerPointsEcoEnabled;
     }
 
     public boolean isHeadNamesEnabled() {
@@ -319,6 +392,10 @@ public class MainConfig {
 
     public String getCategoryCostCommand() {
         return categoryCostLabel;
+    }
+
+    public String getItemEcoCommand() {
+        return itemEcoLabel;
     }
     
     public String getIdCommand() {

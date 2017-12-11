@@ -1,8 +1,7 @@
 package net.sothatsit.heads.menu.ui.element;
 
 import net.sothatsit.heads.menu.ui.Bounds;
-import net.sothatsit.heads.menu.ui.Item;
-import net.sothatsit.heads.menu.ui.item.MenuItem;
+import net.sothatsit.heads.menu.ui.item.Item;
 import net.sothatsit.heads.menu.ui.MenuResponse;
 import net.sothatsit.heads.menu.ui.item.Button;
 import net.sothatsit.heads.util.Checks;
@@ -10,37 +9,36 @@ import net.sothatsit.heads.util.Stringify;
 import org.bukkit.Material;
 
 import java.util.Arrays;
-import java.util.List;
 
-public class HorizontalScrollbar extends Element {
+public class Scrollbar extends Element {
 
-    public static final Template DEFAULT_TEMPLATE;
+    public static final Item defaultLeft = Item.create(Material.ARROW).name("&7Left");
+    public static final Item defaultRight = Item.create(Material.ARROW).name("&7Right");
+    public static final Item defaultNoLeft = Item.create(Material.AIR);
+    public static final Item defaultNoRight = Item.create(Material.AIR);
+    public static final Item defaultFiller = Item.create(Material.STAINED_GLASS_PANE).data(15).name(" ");
 
-    static {
-        Item leftItem = Item.create(Material.ARROW).name("&7Left");
-        Item rightItem = Item.create(Material.ARROW).name("&7Right");
-        Item noLeftItem = Item.create(Material.STAINED_GLASS_PANE).data(15).name(" ");
-        Item noRightItem = Item.create(Material.STAINED_GLASS_PANE).data(15).name(" ");
-        Item fillerItem = Item.create(Material.STAINED_GLASS_PANE).data(15).name(" ");
-
-        DEFAULT_TEMPLATE = new Template(leftItem, rightItem, noLeftItem, noRightItem, fillerItem);
-    }
+    public static final Template defaultTemplate = new Template(
+            defaultLeft, defaultRight,
+            defaultNoLeft, defaultNoRight,
+            defaultFiller
+    );
 
     private Template template;
 
-    private MenuItem[] items;
+    private Button[] items;
     private int index;
 
-    public HorizontalScrollbar(Bounds bounds) {
+    public Scrollbar(Bounds bounds) {
         super(bounds);
 
         Checks.ensureTrue(bounds.width >= 3, "The width of bounds must be at least 3");
         Checks.ensureTrue(bounds.height == 1, "The height of bounds must be 1");
 
-        this.items = new MenuItem[0];
+        this.items = new Button[0];
         this.index = 0;
 
-        setTemplate(DEFAULT_TEMPLATE);
+        setTemplate(defaultTemplate);
     }
 
     public boolean isScrollActive() {
@@ -98,8 +96,8 @@ public class HorizontalScrollbar extends Element {
     }
 
     @Override
-    public MenuItem[] getItems() {
-        MenuItem[] scrollbar = new MenuItem[bounds.getVolume()];
+    public Button[] getItems() {
+        Button[] scrollbar = new Button[bounds.getVolume()];
 
         if(isScrollActive()) {
             if(isLeftScrollActive()) {
@@ -123,24 +121,13 @@ public class HorizontalScrollbar extends Element {
         return scrollbar;
     }
 
-    public Template getTemplate() {
-        return template;
-    }
-
     public void setTemplate(Template template) {
         Checks.ensureNonNull(template, "template");
 
         this.template = template;
-        this.template.init(this);
     }
 
-    public void setItems(List<MenuItem> items) {
-        Checks.ensureNonNull(items, "items");
-
-        setItems(items.toArray(new MenuItem[items.size()]));
-    }
-
-    public void setItems(MenuItem[] items) {
+    public void setItems(Button[] items) {
         Checks.ensureNonNull(items, "items");
 
         this.items = items;
@@ -151,66 +138,60 @@ public class HorizontalScrollbar extends Element {
     public String toString() {
         return Stringify.builder()
                 .entry("template", template)
+                .entry("items", items)
                 .entry("index", index).toString();
     }
 
     public static final class Template {
 
-        private final Item leftItem;
-        private final Item rightItem;
-        private final Item noLeftItem;
-        private final Item noRightItem;
-        private final Item fillerItem;
+        private final Item left;
+        private final Item right;
+        private final Item noLeft;
+        private final Item noRight;
+        private final Item filler;
 
-        public Template(Item leftItem, Item rightItem,
-                        Item noLeftItem, Item noRightItem,
-                        Item fillerItem) {
+        public Template(Item left, Item right, Item noLeft, Item noRight, Item filler) {
+            Checks.ensureNonNull(left, "left");
+            Checks.ensureNonNull(right, "right");
+            Checks.ensureNonNull(noLeft, "noLeft");
+            Checks.ensureNonNull(noRight, "noRight");
+            Checks.ensureNonNull(filler, "filler");
 
-            Checks.ensureNonNull(leftItem, "leftItem");
-            Checks.ensureNonNull(rightItem, "rightItem");
-            Checks.ensureNonNull(noLeftItem, "noLeftItem");
-            Checks.ensureNonNull(noRightItem, "noRightItem");
-            Checks.ensureNonNull(fillerItem, "fillerItem");
-
-            this.leftItem = leftItem;
-            this.rightItem = rightItem;
-            this.noLeftItem = noLeftItem;
-            this.noRightItem = noRightItem;
-            this.fillerItem = fillerItem;
+            this.left = left;
+            this.right = right;
+            this.noLeft = noLeft;
+            this.noRight = noRight;
+            this.filler = filler;
         }
 
-        public void init(HorizontalScrollbar scrollbar) {
-
+        public Button constructScrollLeftButton(Scrollbar scrollbar) {
+            return left.buildButton(scrollbar::scrollLeft);
         }
 
-        public Button constructScrollLeftButton(HorizontalScrollbar scrollbar) {
-            return new Button(leftItem.build(), scrollbar::scrollLeft);
+        public Button constructScrollRightButton(Scrollbar scrollbar) {
+            return right.buildButton(scrollbar::scrollRight);
         }
 
-        public Button constructScrollRightButton(HorizontalScrollbar scrollbar) {
-            return new Button(rightItem.build(), scrollbar::scrollRight);
+        public Button constructNoScrollLeftItem() {
+            return noLeft.buildButton();
         }
 
-        public MenuItem constructNoScrollLeftItem() {
-            return new MenuItem(noLeftItem.build());
+        public Button constructNoScrollRightItem() {
+            return noRight.buildButton();
         }
 
-        public MenuItem constructNoScrollRightItem() {
-            return new MenuItem(noRightItem.build());
-        }
-
-        public MenuItem constructFillerItem() {
-            return new MenuItem(fillerItem.build());
+        public Button constructFillerItem() {
+            return filler.buildButton();
         }
 
         @Override
         public String toString() {
             return Stringify.builder()
-                    .entry("leftItem", leftItem)
-                    .entry("rightItem", rightItem)
-                    .entry("noLeftItem", noLeftItem)
-                    .entry("noRightItem", noRightItem)
-                    .entry("fillerItem", fillerItem).toString();
+                    .entry("left", left)
+                    .entry("right", right)
+                    .entry("noLeft", noLeft)
+                    .entry("noRight", noRight)
+                    .entry("filler", filler).toString();
         }
 
     }

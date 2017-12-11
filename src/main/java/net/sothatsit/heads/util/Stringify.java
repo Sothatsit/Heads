@@ -8,6 +8,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Stringify {
 
@@ -65,6 +66,9 @@ public class Stringify {
 
         if(clazz.isArray())
             return arrayToString(object);
+
+        if(object instanceof Iterable<?>)
+            return iterableToString((Iterable<?>) object);
 
         return object.toString();
     }
@@ -172,10 +176,17 @@ public class Stringify {
 
         }
 
+        public Builder previous(Object previous) {
+            Checks.ensureNonNull(previous, "previous");
+
+            return previous(Objects.toString(previous));
+        }
+
         public Builder previous(String previous) {
+            Checks.ensureNonNull(previous, "previous");
+
             // Remove curly brackets
-            if(previous != null
-                    && previous.length() >= 2
+            if(previous.length() >= 2
                     && previous.charAt(0) == '{'
                     && previous.charAt(previous.length() - 1) == '}') {
 

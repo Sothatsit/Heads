@@ -28,6 +28,7 @@ public class HeadsCommand implements CommandExecutor {
             new GiveCommand(),
             new CostCommand(),
             new CategoryCostCommand(),
+            new ItemEcoCommand(),
 
             new ReloadCommand(),
             new HelpCommand()

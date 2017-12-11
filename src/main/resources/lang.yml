@@ -140,3 +140,25 @@ command:
       help:
          command: '/heads id'
          description: 'Open a menu to get a heads id'
+   item-eco:
+      help:
+         command: '/heads itemeco <get:set:give>'
+         description: 'Manage the item economy'
+      set:
+         set: '&7Economy item set to the item in your hand'
+         no-item: '&cYou must be holding the item you wish to set as the economy item'
+         help:
+            command: '/heads itemeco set'
+            description: 'Set the economy item'
+      get:
+         got: '&7You have been given &6%amount% &7Heads token items'
+         help:
+            command: '/heads itemeco get [amount]'
+            description: 'Get the economy item'
+      give:
+         given: '&6%amount% &7Heads token items given to &6%player%'
+         got: '&7You have been given &6%amount% &7Heads token items'
+         unknown-player: '&cUnable to find the player &4%player%'
+         help:
+            command: '/heads itemeco give <player> [amount]'
+            description: 'Give the economy item to a player'

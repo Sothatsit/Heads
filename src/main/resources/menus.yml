@@ -1,289 +1,289 @@
 search-heads:
-   title: 'Head Search'
-   head:
-      type: 397
-      data: 3
-      name: '&7%name%'
-      lore:
-      - '&8%category%'
-   head-cost:
-      type: 397
-      data: 3
-      name: '&7%name%'
-      lore:
-      - '&8%category%'
-      - ''
-      - '&6Cost: &e%cost%'
-   head-no-perms:
-      type: 397
-      data: 3
-      name: '&7%name%'
-      lore:
-      - '&8%category%'
-      - ''
-      - '&cYou do not have permission'
-      - '&cto use this head'
-   filler:
-      type: 160
-      data: 15
-      name: ' '
-   back:
-      type: 152
-      name: '&cBack to Main Menu'
-   forwards:
-      type: 262
-      name: '&7Forwards a Page'
-   backwards:
-      type: 262
-      name: '&7Previous Page'
+  title: Head Search
+  head:
+    type: skull_item
+    data: 3
+    name: '&7%name%'
+    lore:
+    - '&8%category%'
+  head-cost:
+    type: skull_item
+    data: 3
+    name: '&7%name%'
+    lore:
+    - '&8%category%'
+    - ''
+    - '&6Cost: &e%cost%'
+  head-no-perms:
+    type: skull_item
+    data: 3
+    name: '&7%name%'
+    lore:
+    - '&8%category%'
+    - ''
+    - '&cYou do not have permission'
+    - '&cto use this head'
+  filler:
+    type: stained_glass_pane
+    data: 15
+    name: ' '
+  back:
+    type: redstone_block
+    name: '&cBack to Main Menu'
+  forwards:
+    type: arrow
+    name: '&7Forwards a Page'
+  backwards:
+    type: arrow
+    name: '&7Previous Page'
 get-categories:
-   title: 'Categories'
-   head:
-      type: 397
-      data: 3
-      name: '&6%category%'
-      lore:
-      - '&e%heads% heads'
+  title: Categories
+  head:
+    type: skull_item
+    data: 3
+    name: '&6%category%'
+    lore:
+    - '&e%heads% heads'
 get-heads:
-   title: '%category%'
-   head:
-      type: 397
-      data: 3
-      name: '&7%name%'
-      lore:
-      - '&6Cost: &e%cost%'
-   filler:
-      type: 160
-      data: 15
-      name: ' '
-   back:
-      type: 152
-      name: '&cBack to Main Menu'
-   forwards:
-      type: 262
-      name: '&7Next Page'
-   backwards:
-      type: 262
-      name: '&7Previous Page'
+  title: '%category%'
+  head:
+    type: skull_item
+    data: 3
+    name: '&7%name%'
+    lore:
+    - '&6Cost: &e%cost%'
+  filler:
+    type: stained_glass_pane
+    data: 15
+    name: ' '
+  back:
+    type: redstone_block
+    name: '&cBack to Main Menu'
+  forwards:
+    type: arrow
+    name: '&7Next Page'
+  backwards:
+    type: arrow
+    name: '&7Previous Page'
 get-confirm:
-   title: 'Purchase Head'
-   head:
-      type: 397
-      data: 3
-      name: '&aPurchase %name% for $%cost%'
-   accept:
-      type: 159
-      data: 5
-      name: '&aPurchase %name% for $%cost%'
-   deny:
-      type: 159
-      data: 14
-      name: '&cCancel Purchase'
+  title: Purchase Head
+  head:
+    type: skull_item
+    data: 3
+    name: '&aPurchase %name% for $%cost%'
+  accept:
+    type: stained_clay
+    data: 5
+    name: '&aPurchase %name% for $%cost%'
+  deny:
+    type: stained_clay
+    data: 14
+    name: '&cCancel Purchase'
 id-categories:
-   title: 'Categories'
-   head:
-      type: 397
-      data: 3
-      name: '&6%category%'
-      lore:
-      - '&e%heads% heads'
+  title: Categories
+  head:
+    type: skull_item
+    data: 3
+    name: '&6%category%'
+    lore:
+    - '&e%heads% heads'
 id-heads:
-   title: '%category%'
-   head:
-      type: 397
-      data: 3
-      name: '&7%name%'
-      lore:
-      - '&6Id&8: &a%id%'
-   filler:
-      type: 160
-      data: 15
-      name: ' '
-   back:
-      type: 152
-      name: '&cBack to Main Menu'
-   forwards:
-      type: 262
-      name: '&7Next Page'
-   backwards:
-      type: 262
-      name: '&7Previous Page'
+  title: '%category%'
+  head:
+    type: skull_item
+    data: 3
+    name: '&7%name%'
+    lore:
+    - '&6Id&8: &a%id%'
+  filler:
+    type: stained_glass_pane
+    data: 15
+    name: ' '
+  back:
+    type: redstone_block
+    name: '&cBack to Main Menu'
+  forwards:
+    type: arrow
+    name: '&7Next Page'
+  backwards:
+    type: arrow
+    name: '&7Previous Page'
 remove-categories:
-   title: 'Categories'
-   head:
-      type: 397
-      data: 3
-      name: '&6%category%'
-      lore:
-      - '&e%heads% heads'
+  title: Categories
+  head:
+    type: skull_item
+    data: 3
+    name: '&6%category%'
+    lore:
+    - '&e%heads% heads'
 remove-heads:
-   title: '%category%'
-   head:
-      type: 397
-      data: 3
-      name: '&cRemove %name%'
-   filler:
-      type: 160
-      data: 15
-      name: ' '
-   back:
-      type: 152
-      name: '&cBack to Main Menu'
-   forwards:
-      type: 262
-      name: '&7Next Page'
-   backwards:
-      type: 262
-      name: '&7Previous Page'
+  title: '%category%'
+  head:
+    type: skull_item
+    data: 3
+    name: '&cRemove %name%'
+  filler:
+    type: stained_glass_pane
+    data: 15
+    name: ' '
+  back:
+    type: redstone_block
+    name: '&cBack to Main Menu'
+  forwards:
+    type: arrow
+    name: '&7Next Page'
+  backwards:
+    type: arrow
+    name: '&7Previous Page'
 remove-confirm:
-   title: 'Remove Head'
-   head:
-      type: 397
-      data: 3
-      name: '&cRemove %name%'
-   accept:
-      type: 159
-      data: 5
-      name: '&cRemove %name%'
-   deny:
-      type: 159
-      data: 14
-      name: '&aDont remove %name%'
+  title: Remove Head
+  head:
+    type: skull_item
+    data: 3
+    name: '&cRemove %name%'
+  accept:
+    type: stained_clay
+    data: 5
+    name: '&cRemove %name%'
+  deny:
+    type: stained_clay
+    data: 14
+    name: '&aDont remove %name%'
 rename-categories:
-   title: 'Categories'
-   head:
-      type: 397
-      data: 3
-      name: '&6%category%'
-      lore:
-      - '&e%heads% heads'
+  title: Categories
+  head:
+    type: skull_item
+    data: 3
+    name: '&6%category%'
+    lore:
+    - '&e%heads% heads'
 rename-heads:
-   title: '%category%'
-   head:
-      type: 397
-      data: 3
-      name: '&aRename %name%'
-   filler:
-      type: 160
-      data: 15
-      name: ' '
-   back:
-      type: 152
-      name: '&cBack to Main Menu'
-   forwards:
-      type: 262
-      name: '&7Next Page'
-   backwards:
-      type: 262
-      name: '&7Previous Page'
+  title: '%category%'
+  head:
+    type: skull_item
+    data: 3
+    name: '&aRename %name%'
+  filler:
+    type: stained_glass_pane
+    data: 15
+    name: ' '
+  back:
+    type: redstone_block
+    name: '&cBack to Main Menu'
+  forwards:
+    type: arrow
+    name: '&7Next Page'
+  backwards:
+    type: arrow
+    name: '&7Previous Page'
 rename-confirm:
-   title: 'Rename Head'
-   head:
-      type: 397
-      data: 3
-      name: '&aRename %name% to %newname%'
-   accept:
-      type: 159
-      data: 5
-      name: '&aRename %name% to %newname%'
-   deny:
-      type: 159
-      data: 14
-      name: '&aDont rename %name%'
+  title: Rename Head
+  head:
+    type: skull_item
+    data: 3
+    name: '&aRename %name% to %newname%'
+  accept:
+    type: stained_clay
+    data: 5
+    name: '&aRename %name% to %newname%'
+  deny:
+    type: stained_clay
+    data: 14
+    name: '&aDont rename %name%'
 cost-categories:
-   title: 'Categories'
-   head:
-      type: 397
-      data: 3
-      name: '&6%category%'
-      lore:
-      - '&e%heads% heads'
+  title: Categories
+  head:
+    type: skull_item
+    data: 3
+    name: '&6%category%'
+    lore:
+    - '&e%heads% heads'
 cost-heads:
-   title: '%category%'
-   head:
-      type: 397
-      data: 3
-      name: '&aSet cost of %name%'
-   filler:
-      type: 160
-      data: 15
-      name: ' '
-   back:
-      type: 152
-      name: '&cBack to Main Menu'
-   forwards:
-      type: 262
-      name: '&7Next Page'
-   backwards:
-      type: 262
-      name: '&7Previous Page'
+  title: '%category%'
+  head:
+    type: skull_item
+    data: 3
+    name: '&aSet cost of %name%'
+  filler:
+    type: stained_glass_pane
+    data: 15
+    name: ' '
+  back:
+    type: redstone_block
+    name: '&cBack to Main Menu'
+  forwards:
+    type: arrow
+    name: '&7Next Page'
+  backwards:
+    type: arrow
+    name: '&7Previous Page'
 cost-confirm:
-   title: 'Set cost of Head'
-   head:
-      type: 397
-      data: 3
-      name: '&aSet cost of %name%'
-      lore:
-      - '&7to &6%newcost%'
-   accept:
-      type: 159
-      data: 5
-      name: '&aSet cost of %name%'
-      lore:
-      - '&7to &6%newcost%'
-   deny:
-      type: 159
-      data: 14
-      name: '&aDont set cost of %name%'
+  title: Set cost of Head
+  head:
+    type: skull_item
+    data: 3
+    name: '&aSet cost of %name%'
+    lore:
+    - '&7to &6%newcost%'
+  accept:
+    type: stained_clay
+    data: 5
+    name: '&aSet cost of %name%'
+    lore:
+    - '&7to &6%newcost%'
+  deny:
+    type: stained_clay
+    data: 14
+    name: '&aDont set cost of %name%'
 category-cost-categories:
-   title: 'Categories'
-   head:
-      type: 397
-      data: 3
-      name: '&7Set cost of &6%category%'
-      lore:
-      - '&e%heads% heads'
+  title: Categories
+  head:
+    type: skull_item
+    data: 3
+    name: '&7Set cost of &6%category%'
+    lore:
+    - '&e%heads% heads'
 category-cost-confirm:
-   title: 'Set cost for Category'
-   head:
-      type: 397
-      data: 3
-      name: '&aSet cost of %category%'
-      lore:
-      - '&7to &6%newcost%'
-   accept:
-      type: 159
-      data: 5
-      name: '&aSet cost of %category%'
-      lore:
-      - '&7to &6%newcost%'
-   deny:
-      type: 159
-      data: 14
-      name: '&aDont set cost of %category%'
+  title: Set cost for Category
+  head:
+    type: skull_item
+    data: 3
+    name: '&aSet cost of %category%'
+    lore:
+    - '&7to &6%newcost%'
+  accept:
+    type: stained_clay
+    data: 5
+    name: '&aSet cost of %category%'
+    lore:
+    - '&7to &6%newcost%'
+  deny:
+    type: stained_clay
+    data: 14
+    name: '&aDont set cost of %category%'
 category-cost-remove-categories:
-   title: 'Categories'
-   head:
-      type: 397
-      data: 3
-      name: '&7Reset cost of &6%category%'
-      lore:
-      - '&e%heads% heads'
+  title: Categories
+  head:
+    type: skull_item
+    data: 3
+    name: '&7Reset cost of &6%category%'
+    lore:
+    - '&e%heads% heads'
 category-cost-remove-confirm:
-   title: 'Set cost for Category'
-   head:
-      type: 397
-      data: 3
-      name: '&aReset cost of %category%'
-      lore:
-      - '&7to &6%newcost%'
-   accept:
-      type: 159
-      data: 5
-      name: '&aReset cost of %category%'
-      lore:
-      - '&7to &6%newcost%'
-   deny:
-      type: 159
-      data: 14
-      name: '&aDont reset cost of %category%'
+  title: Set cost for Category
+  head:
+    type: skull_item
+    data: 3
+    name: '&aReset cost of %category%'
+    lore:
+    - '&7to &6%newcost%'
+  accept:
+    type: stained_clay
+    data: 5
+    name: '&aReset cost of %category%'
+    lore:
+    - '&7to &6%newcost%'
+  deny:
+    type: stained_clay
+    data: 14
+    name: '&aDont reset cost of %category%'

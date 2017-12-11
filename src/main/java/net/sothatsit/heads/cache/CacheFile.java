@@ -1,11 +1,13 @@
 package net.sothatsit.heads.cache;
 
 import net.sothatsit.heads.Heads;
+import net.sothatsit.heads.Search;
 import net.sothatsit.heads.util.Checks;
 import net.sothatsit.heads.util.IOUtils;
 
 import java.io.*;
 import java.util.*;
+import java.util.function.Consumer;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
@@ -74,17 +76,18 @@ public final class CacheFile implements Mod {
         return Collections.unmodifiableList(list);
     }
 
-    public List<CacheHead> searchHeads(String search) {
-        List<CacheHead> matches = new ArrayList<>();
+    public List<CacheHead> searchHeads(String query) {
+        return Search.searchHeads(query, heads, 0.4d);
+    }
 
-        for(CacheHead head : heads) {
-            if(!head.matches(search))
-                continue;
+    public void searchHeadsAsync(String query, Consumer<List<CacheHead>> onResult) {
+        List<CacheHead> headsCopy = new ArrayList<>(heads);
 
-            matches.add(head);
-        }
+        Heads.async(() -> {
+            List<CacheHead> matches = Search.searchHeads(query, headsCopy, 0.4d);
 
-        return matches;
+            Heads.sync(() -> onResult.accept(matches));
+        });
     }
 
     public CacheHead findHead(int id) {

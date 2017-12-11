@@ -16,13 +16,25 @@ commands:
          search: 'search'
          cost: 'cost'
          category-cost: 'categorycost'
+         item-eco: 'itemeco'
          id: 'id'
          help: 'help'
          # open menu is when no arguments are supplied
 economy:
    enabled: false
-   # Use 0 for no cost
    default-head-cost: 0
+   vault-eco:
+      enabled: true
+   item-eco:
+      enabled: false
+      item:
+         type: skull_item
+         data: 3
+         name: '&6Player Head Token'
+         lore:
+         - '&8Use in /heads!'
+   player-points-eco:
+      enabled: false
 breaking-head-names:
    enabled: true
    attempt-hook-blockstore: true

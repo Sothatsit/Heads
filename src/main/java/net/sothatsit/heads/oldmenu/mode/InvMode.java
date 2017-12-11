@@ -1,6 +1,6 @@
 package net.sothatsit.heads.oldmenu.mode;
 
-import net.sothatsit.heads.config.menu.Menu;
+import net.sothatsit.heads.config.oldmenu.Menu;
 import net.sothatsit.heads.oldmenu.AbstractModedInventory;
 import net.sothatsit.heads.oldmenu.InventoryType;
 

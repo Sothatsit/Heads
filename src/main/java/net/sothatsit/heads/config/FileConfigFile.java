@@ -2,33 +2,39 @@ package net.sothatsit.heads.config;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 
 import net.sothatsit.heads.Heads;
 
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 
-public class FileConfigFile implements ConfigFile {
-    
-    private File file;
+public class FileConfigFile extends ConfigFile {
+
     private YamlConfiguration config;
-    private long lastModified;
+    private ConfigurationSection defaults;
     
-    public FileConfigFile(File file) {
-        this.file = file;
-        this.lastModified = -1;
+    public FileConfigFile(String name) {
+        super(name);
+    }
+
+    public File getFile() {
+        return new File(Heads.getInstance().getDataFolder(), getName());
     }
 
     @Override
-    public YamlConfiguration getConfig() {
+    public ConfigurationSection getConfig() {
         return config;
     }
 
     @Override
     public void save() {
+        File file = getFile();
+
         try {
             if(!file.exists() && !file.createNewFile())
-                throw new IOException("Unable to create legacy file " + file);
+                throw new IOException("Unable to create config file " + file);
 
             config.save(file);
         } catch (IOException e) {
@@ -38,33 +44,26 @@ public class FileConfigFile implements ConfigFile {
 
     @Override
     public void reload() {
-        config = YamlConfiguration.loadConfiguration(file);
-        lastModified = file.lastModified();
+        config = YamlConfiguration.loadConfiguration(getFile());
     }
 
     @Override
-    public void clear() {
-        config = new YamlConfiguration();
-    }
-
-    @Override
-    public boolean shouldReload() {
-        return !file.exists() || lastModified == -1 || file.lastModified() != lastModified;
-    }
-
-    @Override
-    public void saveDefaults() {
-        if(file.exists())
+    public void copyDefaults() {
+        if(getFile().exists())
             return;
 
-        Heads.getInstance().saveResource(file.getName(), false);
+        Heads.getInstance().saveResource(getName(), false);
     }
 
     @Override
-    public YamlConfiguration loadDefaults() {
-        InputStreamReader defaultsStream = new InputStreamReader(Heads.getInstance().getResource(file.getName()));
+    public ConfigurationSection getDefaults() {
+        if(defaults == null) {
+            InputStream resource = Heads.getInstance().getResource(getName());
+            InputStreamReader reader = new InputStreamReader(resource);
+            defaults = YamlConfiguration.loadConfiguration(reader);
+        }
 
-        return YamlConfiguration.loadConfiguration(defaultsStream);
+        return defaults;
     }
     
 }

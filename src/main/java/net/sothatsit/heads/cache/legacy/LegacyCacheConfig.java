@@ -1,7 +1,7 @@
 package net.sothatsit.heads.cache.legacy;
 
 import net.sothatsit.heads.config.ConfigFile;
-import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.ConfigurationSection;
 
 import java.util.*;
 
@@ -27,10 +27,10 @@ public class LegacyCacheConfig {
     }
 
     public void reload() {
-        this.configFile.saveDefaults();
+        this.configFile.copyDefaults();
         this.configFile.reload();
 
-        FileConfiguration config = this.configFile.getConfig();
+        ConfigurationSection config = this.configFile.getConfig();
 
         this.addons = new HashSet<>(config.getStringList("addons"));
 

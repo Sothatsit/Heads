@@ -34,7 +34,7 @@ public class OpenMenuCommand extends AbstractCommand {
         
         InvModeType.GET.open((Player) sender);
 
-        // HeadsMenu.openHeadsMenu((Player) sender);
+        // CacheHeadsMenu.openHeadsMenu((Player) sender);
 
         return true;
     }

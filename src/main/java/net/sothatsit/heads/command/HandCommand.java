@@ -5,6 +5,7 @@ import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.volatilecode.ItemNBT;
+import net.sothatsit.heads.volatilecode.TextureGetter;
 import net.sothatsit.heads.volatilecode.reflection.Version;
 
 import org.bukkit.Material;
@@ -85,11 +86,11 @@ public class HandCommand extends AbstractCommand {
                 return true;
             }
 
-            texture = Heads.getTextureGetter().getCachedTexture(owner);
+            texture = TextureGetter.getCachedTexture(owner);
 
             if (texture == null || texture.isEmpty()) {
                 Lang.Command.Hand.fetching().send(sender);
-                Heads.getTextureGetter().getTexture(owner, (resolvedTexture) -> {
+                TextureGetter.getTexture(owner, (resolvedTexture) -> {
                     if (resolvedTexture == null || resolvedTexture.isEmpty()) {
                         Lang.Command.Hand.cantFind(owner).send(sender);
                         return;

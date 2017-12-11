@@ -38,7 +38,7 @@ public class HeadNamer implements Listener {
     }
 
     private boolean isHead(ItemStack item) {
-        if(item == null || item.getType() != Material.SKULL_ITEM)
+        if(item == null || item.getType() != Material.SKULL_ITEM || !(item.getItemMeta() instanceof SkullMeta))
             return false;
 
         SkullMeta meta = (SkullMeta) item.getItemMeta();
@@ -48,7 +48,7 @@ public class HeadNamer implements Listener {
 
     @SuppressWarnings("deprecation")
     private boolean isHead(Block block) {
-        if(block == null || block.getType() != Material.SKULL)
+        if(block == null || block.getType() != Material.SKULL || block.getState() == null)
             return false;
 
         Skull state = (Skull) block.getState();

@@ -9,19 +9,33 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.concurrent.Callable;
 
-public class Button extends MenuItem {
+public class Button {
 
+    private ItemStack item;
     private final SafeCallable<MenuResponse> onClick;
 
-    public Button(ItemStack item, Callable<MenuResponse> onClick) {
-        super(item);
-
-        Checks.ensureNonNull(onClick, "onClick");
-
-        this.onClick = SafeCall.nonNullCallable("onClick", onClick);
+    public Button(ItemStack item) {
+        this(item, () -> MenuResponse.NONE);
     }
 
-    @Override
+    public Button(ItemStack item, Callable<MenuResponse> onClick) {
+        Checks.ensureNonNull(item, "item");
+        Checks.ensureNonNull(onClick, "onClick");
+
+        this.item = item;
+        this.onClick = SafeCall.nonNullCallable(onClick, "onClick");
+    }
+
+    public ItemStack getItem() {
+        return item;
+    }
+
+    public void setItem(ItemStack item) {
+        Checks.ensureNonNull(item, "item");
+
+        this.item = item;
+    }
+
     public MenuResponse handleClick() {
         return onClick.call();
     }
@@ -29,7 +43,7 @@ public class Button extends MenuItem {
     @Override
     public String toString() {
         return Stringify.builder()
-                .previous(super.toString())
+                .entry("item", item)
                 .entry("onClick", onClick).toString();
     }
 

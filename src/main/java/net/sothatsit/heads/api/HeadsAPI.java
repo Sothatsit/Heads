@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableList;
 import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.util.Checks;
-import org.bukkit.Bukkit;
+import net.sothatsit.heads.volatilecode.TextureGetter;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.List;
@@ -76,10 +76,17 @@ public class HeadsAPI {
         return new Head(head);
     }
 
+    @Deprecated
     public static List<Head> searchHeads(String query) {
         List<CacheHead> search = Heads.getCache().searchHeads(query);
 
         return Head.fromCacheHeads(search);
+    }
+
+    public static void searchHeads(String query, Consumer<List<Head>> onResult) {
+        Heads.getCache().searchHeadsAsync(query, heads -> {
+            onResult.accept(Head.fromCacheHeads(heads));
+        });
     }
 
     public static Set<String> getCategories() {
@@ -99,7 +106,7 @@ public class HeadsAPI {
     }
 
     public static void downloadHead(String playerName, Consumer<Head> consumer) {
-        Heads.getTextureGetter().getTexture(playerName, (texture) -> {
+        TextureGetter.getTexture(playerName, (texture) -> {
             consumer.accept(Head.fromNameAndTexture(playerName, texture));
         });
     }

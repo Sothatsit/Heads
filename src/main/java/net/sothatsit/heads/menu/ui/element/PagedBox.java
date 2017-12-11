@@ -2,11 +2,8 @@ package net.sothatsit.heads.menu.ui.element;
 
 import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.menu.ui.Bounds;
-import net.sothatsit.heads.menu.ui.Item;
-import net.sothatsit.heads.menu.ui.item.MenuItem;
+import net.sothatsit.heads.menu.ui.item.*;
 import net.sothatsit.heads.menu.ui.MenuResponse;
-import net.sothatsit.heads.menu.ui.item.ButtonGroup;
-import net.sothatsit.heads.menu.ui.item.SelectableButton;
 import net.sothatsit.heads.util.Checks;
 import net.sothatsit.heads.util.Stringify;
 import org.bukkit.Material;
@@ -14,23 +11,24 @@ import org.bukkit.inventory.ItemStack;
 
 public class PagedBox extends Element {
 
-    public static final Template DEFAULT_TEMPLATE;
+    public static final Item defaultUnselected = Item.create(Material.PAPER).name("&7Page %page%");
+    public static final Item defaultSelected = Item.create(Material.EMPTY_MAP).name("&7Page %page%");
+    public static final Button defaultLeftControl = Item.create(Material.REDSTONE_BLOCK).name("&cNo left control").buildButton();
+    public static final Button defaultRightControl = Item.create(Material.REDSTONE_BLOCK).name("&cNo right control").buildButton();
 
-    static {
-        Item unselectedPageItem = Item.create(Material.PAPER).name("&7Page %page%");
-        Item selectedPageItem = Item.create(Material.EMPTY_MAP).name("&7Page %page%");
-
-        DEFAULT_TEMPLATE = new Template(HorizontalScrollbar.DEFAULT_TEMPLATE, unselectedPageItem, selectedPageItem);
-    }
+    public static final Template defaultTemplate = new Template(
+            Scrollbar.defaultTemplate, defaultUnselected, defaultSelected
+    );
 
     private Template template;
 
-    private final HorizontalScrollbar scrollbar;
+    private final Scrollbar scrollbar;
     private ButtonGroup pageButtons;
 
-    private MenuItem leftControl;
-    private MenuItem rightControl;
-    private MenuItem[] items;
+    private Button leftControl;
+    private Button rightControl;
+
+    private Button[] items;
     private int page;
 
     public PagedBox(Bounds bounds) {
@@ -41,14 +39,13 @@ public class PagedBox extends Element {
 
         Bounds scrollbarBounds = new Bounds(1, bounds.height - 1, bounds.width - 2, 1);
 
-        this.scrollbar = new HorizontalScrollbar(scrollbarBounds);
+        this.scrollbar = new Scrollbar(scrollbarBounds);
         this.pageButtons = new ButtonGroup();
 
-        this.items = new MenuItem[0];
+        this.items = new Button[0];
         this.page = 0;
 
-        this.template = DEFAULT_TEMPLATE;
-        this.template.init(this);
+        setTemplate(defaultTemplate, defaultLeftControl, defaultRightControl);
     }
 
     public boolean isScrollbarActive() {
@@ -81,7 +78,7 @@ public class PagedBox extends Element {
     }
 
     @Override
-    public MenuItem[] getItems() {
+    public Button[] getItems() {
         Container container = new Container(bounds);
 
         container.setItems(getPageBounds(), getPageContents());
@@ -93,44 +90,34 @@ public class PagedBox extends Element {
         return container.getItems();
     }
 
-    private MenuItem[] getPageContents() {
+    private Button[] getPageContents() {
         int pageSize = getPageSize();
 
         int from = page * pageSize;
         int to = Math.min((page + 1) * pageSize, items.length);
 
         if(to <= from)
-            return new MenuItem[pageSize];
+            return new Button[pageSize];
 
-        MenuItem[] pageContents = new MenuItem[pageSize];
+        Button[] pageContents = new Button[pageSize];
 
         System.arraycopy(items, from, pageContents, 0, to - from);
 
         return pageContents;
     }
 
-    public void setTemplate(Template template) {
+    public void setTemplate(Template template, Button leftControl, Button rightControl) {
         Checks.ensureNonNull(template, "template");
 
         this.template = template;
+        this.leftControl = leftControl;
+        this.rightControl = rightControl;
         this.template.init(this);
 
         setupPageScrollbar();
     }
 
-    public void setLeftControl(MenuItem leftControl) {
-        Checks.ensureNonNull(leftControl, "leftControl");
-
-        this.leftControl = leftControl;
-    }
-
-    public void setRightControl(MenuItem rightControl) {
-        Checks.ensureNonNull(rightControl, "rightControl");
-
-        this.rightControl = rightControl;
-    }
-
-    public void setItems(MenuItem[] items) {
+    public void setItems(Button[] items) {
         Checks.ensureNonNull(items, "items");
 
         this.items = items;
@@ -142,7 +129,7 @@ public class PagedBox extends Element {
     private void setupPageScrollbar() {
         int pages = getPages();
 
-        MenuItem[] pageItems = new MenuItem[pages];
+        Button[] pageItems = new Button[pages];
 
         pageButtons = new ButtonGroup();
 
@@ -163,27 +150,30 @@ public class PagedBox extends Element {
                 .entry("template", template)
                 .entry("scrollbar", scrollbar)
                 .entry("pageButtons", pageButtons)
+                .entry("leftControl", leftControl)
+                .entry("rightControl", rightControl)
                 .entry("page", page).toString();
     }
 
     public static final class Template {
 
-        private final HorizontalScrollbar.Template pagesTemplate;
-        private final Item unselectedItem;
-        private final Item selectedItem;
+        private final Scrollbar.Template scrollbar;
+        private final Item unselected;
+        private final Item selected;
 
-        public Template(HorizontalScrollbar.Template pagesTemplate, Item unselectedItem, Item selectedItem) {
-            Checks.ensureNonNull(pagesTemplate, "pagesTemplate");
-            Checks.ensureNonNull(unselectedItem, "unselectedItem");
-            Checks.ensureNonNull(selectedItem, "selectedItem");
+        public Template(Scrollbar.Template scrollbar, Item unselected, Item selected) {
 
-            this.pagesTemplate = pagesTemplate;
-            this.unselectedItem = unselectedItem;
-            this.selectedItem = selectedItem;
+            Checks.ensureNonNull(scrollbar, "scrollbar");
+            Checks.ensureNonNull(unselected, "unselected");
+            Checks.ensureNonNull(selected, "selected");
+
+            this.scrollbar = scrollbar;
+            this.unselected = unselected;
+            this.selected = selected;
         }
 
         public void init(PagedBox pagedBox) {
-            pagedBox.scrollbar.setTemplate(pagesTemplate);
+            pagedBox.scrollbar.setTemplate(scrollbar);
         }
 
         private ItemStack constructPageItem(Item templateItem, int page) {
@@ -197,11 +187,11 @@ public class PagedBox extends Element {
         }
 
         public ItemStack constructUnselectedPageItem(int page) {
-            return constructPageItem(unselectedItem, page);
+            return constructPageItem(unselected, page);
         }
 
         public ItemStack constructSelectedPageItem(int page) {
-            return constructPageItem(selectedItem, page);
+            return constructPageItem(selected, page);
         }
 
         public SelectableButton constructPageButton(PagedBox pagedBox, ButtonGroup group, int page) {
@@ -217,9 +207,9 @@ public class PagedBox extends Element {
         @Override
         public String toString() {
             return Stringify.builder()
-                    .entry("pagesTemplate", pagesTemplate)
-                    .entry("unselectedItem", unselectedItem)
-                    .entry("selectedItem", selectedItem).toString();
+                    .entry("scrollbar", scrollbar)
+                    .entry("unselected", unselected)
+                    .entry("selected", selected).toString();
         }
 
     }

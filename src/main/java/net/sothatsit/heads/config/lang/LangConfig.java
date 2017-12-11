@@ -8,18 +8,18 @@ import java.util.Map.Entry;
 import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.config.ConfigFile;
 
+import net.sothatsit.heads.config.FileConfigFile;
 import net.sothatsit.heads.util.Clock;
-import org.bukkit.configuration.MemorySection;
-import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.ConfigurationSection;
 
 public class LangConfig {
-    
-    private ConfigFile configFile;
+
+    private final ConfigFile configFile;
     private Map<String, LangMessage> defaults;
     private Map<String, LangMessage> messages;
     
-    public LangConfig(ConfigFile configFile) {
-        this.configFile = configFile;
+    public LangConfig() {
+        this.configFile = new FileConfigFile("lang.yml");
         
         reload();
     }
@@ -27,14 +27,14 @@ public class LangConfig {
     public void reload() {
         Clock timer = Clock.start();
         
-        this.configFile.saveDefaults();
+        this.configFile.copyDefaults();
         this.configFile.reload();
         
-        FileConfiguration defaultConfig = this.configFile.loadDefaults();
+        ConfigurationSection defaultConfig = this.configFile.getDefaults();
         
         this.defaults = load(defaultConfig);
-        
-        FileConfiguration config = this.configFile.getConfig();
+
+        ConfigurationSection config = this.configFile.getConfig();
         
         this.messages = load(config);
         
@@ -57,12 +57,12 @@ public class LangConfig {
         Heads.info("Loaded Lang File with " + this.messages.size() + " messages " + timer);
     }
     
-    private Map<String, LangMessage> load(MemorySection sec) {
+    private Map<String, LangMessage> load(ConfigurationSection sec) {
         Map<String, LangMessage> map = new HashMap<>();
         
         for (String key : sec.getKeys(false)) {
             if (sec.isConfigurationSection(key)) {
-                map.putAll(load((MemorySection) sec.getConfigurationSection(key)));
+                map.putAll(load(sec.getConfigurationSection(key)));
                 continue;
             }
 

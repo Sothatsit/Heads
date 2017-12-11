@@ -3,6 +3,7 @@ package net.sothatsit.heads.cache;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import net.sothatsit.heads.Heads;
+import net.sothatsit.heads.Search;
 import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.util.Checks;
@@ -16,6 +17,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicReference;
 
 public final class CacheHead implements Comparable<CacheHead> {
 
@@ -127,20 +129,6 @@ public final class CacheHead implements Comparable<CacheHead> {
 
     public ItemStack addTexture(ItemStack itemStack) {
         return ItemNBT.applyHead(this, itemStack);
-    }
-
-    public boolean matches(String search) {
-        search = search.toLowerCase();
-
-        if(name.toLowerCase().contains(search))
-            return true;
-
-        for(String tag : tags) {
-            if(tag.toLowerCase().contains(search))
-                return true;
-        }
-
-        return false;
     }
 
     protected void setId(int id) {

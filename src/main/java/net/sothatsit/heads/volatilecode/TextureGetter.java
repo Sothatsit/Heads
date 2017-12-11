@@ -31,7 +31,7 @@ public class TextureGetter {
         Checks.ensureNonNull(name, "name");
         Checks.ensureNonNull(callback, "callback");
 
-        Consumer<String> safeCallback = SafeCall.consumer("callback", callback);
+        Consumer<String> safeCallback = SafeCall.consumer(callback, "callback");
 
         GameProfile existingProfile = MinecraftServer.getServer().getUserCache().getProfile(name);
         

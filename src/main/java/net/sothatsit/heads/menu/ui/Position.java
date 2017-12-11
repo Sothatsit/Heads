@@ -26,10 +26,6 @@ public final class Position {
         return new Position(this.x + x, this.y + y);
     }
 
-    public boolean within(Bounds bounds) {
-        return bounds.inBounds(this);
-    }
-
     public int toSerialIndex(int width) {
         return x + y * width;
     }

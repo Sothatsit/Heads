@@ -1,3 +1,31 @@
+1.13.3
+* Check skull's block state or item metadata exists before using it
+
+1.13.2
++ Convert all block ids in configs to type names
+
+1.13.1
+- Stop displaying debug head tags in menus
+
+1.13.0
+* Edit-distance and word based search
+
+1.12.2
+* Fix loading of the economy item if it has no lore
+
+1.12.1
+* Fix saving of the economy item through /heads itemeco set
+
+1.12.0
++ Added option to use an item economy
++ Added option to use PlayerPoints as the economy
+
+1.11.0
++ Add option to disable use of BlockStore for finding names of broken heads
++ Add option to look for similar heads in the cache to find the names of broken heads
++ Add option to use a default name for broken heads
+* Update to BlockStore 1.5.0
+
 1.10.3
 + Update checking
 * Checks in addMod that ensures mods with duplicate names are not added

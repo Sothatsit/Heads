@@ -1,15 +1,12 @@
 package net.sothatsit.heads.command;
 
 import net.sothatsit.heads.Heads;
-import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.oldmenu.mode.SearchMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-
-import java.util.List;
 
 public class SearchCommand extends AbstractCommand {
 
@@ -48,16 +45,18 @@ public class SearchCommand extends AbstractCommand {
         }
 
         String query = queryBuilder.toString().trim();
-        List<CacheHead> matches = Heads.getCache().searchHeads(query);
 
-        if(matches.size() == 0) {
-            Lang.Command.Search.noneFound(query).send(sender);
-            return true;
-        }
+        Heads.getCache().searchHeadsAsync(query, matches -> {
+            if(matches.size() == 0) {
+                Lang.Command.Search.noneFound(query).send(sender);
+                return;
+            }
 
-        Lang.Command.Search.found(query, matches.size()).send(sender);
+            Lang.Command.Search.found(query, matches.size()).send(sender);
 
-        new SearchMode((Player) sender, matches);
+            new SearchMode((Player) sender, matches);
+        });
+
         return true;
     }
 }

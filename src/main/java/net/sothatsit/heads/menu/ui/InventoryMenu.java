@@ -3,7 +3,7 @@ package net.sothatsit.heads.menu.ui;
 import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.menu.ui.element.Container;
 import net.sothatsit.heads.menu.ui.element.Element;
-import net.sothatsit.heads.menu.ui.item.MenuItem;
+import net.sothatsit.heads.menu.ui.item.Button;
 import net.sothatsit.heads.util.Checks;
 import net.sothatsit.heads.util.Stringify;
 import org.bukkit.Bukkit;
@@ -112,11 +112,11 @@ public class InventoryMenu implements InventoryHolder {
 
         layoutElements();
 
-        MenuItem[] items = container.getItems();
+        Button[] items = container.getItems();
         ItemStack[] contents = new ItemStack[items.length];
 
         for(int index = 0; index < contents.length; index++) {
-            MenuItem item = items[index];
+            Button item = items[index];
 
             if(item != null) {
                 contents[index] = item.getItem();

@@ -1,7 +1,7 @@
 package net.sothatsit.heads.oldmenu;
 
 import net.sothatsit.heads.cache.CacheHead;
-import net.sothatsit.heads.config.menu.Menu;
+import net.sothatsit.heads.config.oldmenu.Menu;
 import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.oldmenu.mode.InvMode;
 import net.sothatsit.heads.util.ArrayUtils;

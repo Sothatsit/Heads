@@ -10,17 +10,17 @@ import net.sothatsit.heads.config.FileConfigFile;
 import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.cache.legacy.LegacyCacheConfig;
 import net.sothatsit.heads.config.lang.LangConfig;
-import net.sothatsit.heads.config.menu.MenuConfig;
+import net.sothatsit.heads.config.menu.Menus;
+import net.sothatsit.heads.config.oldmenu.MenuConfig;
+import net.sothatsit.heads.economy.*;
 import net.sothatsit.heads.menu.ui.InventoryMenu;
 import net.sothatsit.heads.oldmenu.ClickInventory;
 import net.sothatsit.heads.util.Clock;
-import net.sothatsit.heads.volatilecode.TextureGetter;
 import net.sothatsit.heads.volatilecode.injection.ProtocolHackFixer;
 import net.sothatsit.heads.volatilecode.reflection.craftbukkit.CommandMap;
 import net.sothatsit.heads.volatilecode.reflection.craftbukkit.CraftServer;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.SimpleCommandMap;
 import org.bukkit.event.EventHandler;
@@ -29,8 +29,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -44,10 +42,11 @@ public class Heads extends JavaPlugin implements Listener {
 
     private static Heads instance;
     private CacheFile cache;
-    private MenuConfig menuConfig;
+    private MenuConfig oldMenuConfig;
+    private Menus menus;
     private MainConfig mainConfig;
     private LangConfig langConfig;
-    private TextureGetter textureGetter;
+    private Economy economy;
     private boolean commandsRegistered = false;
     private boolean blockStoreAvailable = false;
     
@@ -59,22 +58,26 @@ public class Heads extends JavaPlugin implements Listener {
 
         loadCache();
 
-        this.menuConfig = new MenuConfig(new FileConfigFile(new File(getDataFolder(), "menus.yml")));
-        this.langConfig = new LangConfig(new FileConfigFile(new File(getDataFolder(), "lang.yml")));
-        this.mainConfig = new MainConfig(new FileConfigFile(new File(getDataFolder(), "config.yml")));
-        this.textureGetter = new TextureGetter();
+        this.menus = new Menus();
+        this.menus.reload();
+
+        this.oldMenuConfig = new MenuConfig(new FileConfigFile("menus.yml"));
+        this.langConfig = new LangConfig();
+        this.mainConfig = new MainConfig();
+        this.economy = hookEconomy();
 
         ProtocolHackFixer.fix();
 
         registerCommands();
-        hookPlugins();
+        tryHookBlockStore();
 
-        HeadNamer headNamer = new HeadNamer();
-        headNamer.registerEvents();
+        new HeadNamer().registerEvents();
 
         Bukkit.getPluginManager().registerEvents(this, this);
 
-        checkForUpdates();
+        if(mainConfig.shouldCheckForUpdates()) {
+            checkForUpdates();
+        }
 
         info("Heads plugin enabled with " + cache.getHeadCount() + " heads " + timer);
     }
@@ -87,10 +90,7 @@ public class Heads extends JavaPlugin implements Listener {
     }
 
     private void checkForUpdates() {
-        if(!mainConfig.shouldCheckForUpdates())
-            return;
-
-        Bukkit.getScheduler().runTaskAsynchronously(this, () -> {
+        async(() -> {
             try {
                 String currentVersion = UpdateChecker.getCurrentVersion();
                 String latestVersion = UpdateChecker.getLatestVersion();
@@ -106,6 +106,45 @@ public class Heads extends JavaPlugin implements Listener {
         });
     }
 
+    private void registerCommands() {
+        if (commandsRegistered) {
+            unregisterCommands();
+        }
+
+        SimpleCommandMap commandMap = CraftServer.get().getCommandMap();
+
+        RuntimeCommand heads = new RuntimeCommand(mainConfig.getHeadCommand());
+        heads.setExecutor(new HeadsCommand());
+        heads.setDescription(mainConfig.getHeadDescription());
+        heads.setAliases(Arrays.asList(mainConfig.getHeadAliases()));
+
+        commandMap.register("heads", heads);
+
+        commandsRegistered = true;
+    }
+
+    private void unregisterCommands() {
+        SimpleCommandMap commandMap = CraftServer.get().getCommandMap();
+        Map<String, Command> map = CommandMap.getCommandMap(commandMap);
+
+        map.values().removeIf(command -> command instanceof RuntimeCommand);
+
+        commandsRegistered = false;
+    }
+
+    public void reloadConfigs() {
+        oldMenuConfig.reload();
+        menus.reload();
+        langConfig.reload();
+        mainConfig.reload();
+
+        registerCommands();
+
+        economy = hookEconomy();
+
+        tryHookBlockStore();
+    }
+
     public File getCacheFile() {
         if(!getDataFolder().exists() && !getDataFolder().mkdirs())
             throw new RuntimeException("Unable to create the data folder to save plugin files");
@@ -118,18 +157,17 @@ public class Heads extends JavaPlugin implements Listener {
 
     private CacheFile loadCache() {
         File file = getCacheFile();
-        File legacyConfigFile = new File(getDataFolder(), "cache.yml");
+        FileConfigFile legacyConfig = new FileConfigFile("cache.yml");
 
         boolean requiresWrite = false;
 
         if(!file.exists()) {
             requiresWrite = true;
 
-            if(legacyConfigFile.exists()) {
+            if(legacyConfig.getFile().exists()) {
                 Clock timer = Clock.start();
 
-                FileConfigFile config = new FileConfigFile(legacyConfigFile);
-                LegacyCacheConfig legacy = new LegacyCacheConfig(config);
+                LegacyCacheConfig legacy = new LegacyCacheConfig(legacyConfig);
                 cache = CacheFileConverter.convertToCacheFile("main-cache", legacy);
 
                 info("Converted legacy yaml cache file to new binary file " + timer);
@@ -153,7 +191,7 @@ public class Heads extends JavaPlugin implements Listener {
             saveCache();
         }
 
-        if(legacyConfigFile.exists() && !legacyConfigFile.delete()) {
+        if(legacyConfig.getFile().exists() && !legacyConfig.getFile().delete()) {
             severe("Unable to delete legacy yaml cache file");
         }
 
@@ -171,7 +209,7 @@ public class Heads extends JavaPlugin implements Listener {
             info("Saved cache file " + timer);
         } catch (IOException e) {
             severe("Unable to save the cache to heads.cache");
-            throw new RuntimeException("There was an exception saving the legacy", e);
+            throw new RuntimeException("There was an exception saving the cache", e);
         }
     }
 
@@ -215,26 +253,52 @@ public class Heads extends JavaPlugin implements Listener {
         return true;
     }
 
-    private void hookPlugins() {
-        if(mainConfig.isEconomyEnabled()) {
-            boolean ecoHooked = false;
+    private Economy hookEconomy() {
+        if(!mainConfig.isEconomyEnabled())
+            return new NoEconomy();
 
-            try {
-                if (EconomyHook.hookEconomy()) {
-                    info("Hooked Vault Economy");
-                    ecoHooked = true;
-                }
-            } catch(Exception exception) {
-                warning("There was an error hooking Vault Economy");
-                exception.printStackTrace();
-            }
+        Economy economy = null;
 
-            if (!ecoHooked) {
-                severe("Unable to hook Vault Economy and economy is enabled in the config.");
-                severe("Users will not be able to purchase heads.");
-            }
+        if(mainConfig.isVaultEconomyEnabled()) {
+            economy = tryHookEconomy(null, new VaultEconomy());
         }
 
+        if(mainConfig.isItemEconomyEnabled()) {
+            economy = tryHookEconomy(economy, new ItemEconomy());
+        }
+
+        if(mainConfig.isPlayerPointsEconomyEnabled()) {
+            economy = tryHookEconomy(economy, new PlayerPointsEconomy());
+        }
+
+        if(economy == null || economy instanceof NoEconomy) {
+            severe("Economy enabled in config.yml yet Vault, PlayerPoints and Item economies disabled. " +
+                    "Player's will not be able to purchase heads.");
+
+            economy = (economy != null ? economy : new NoEconomy());
+        }
+
+        return economy;
+    }
+
+    private Economy tryHookEconomy(Economy currentlyHooked, Economy toHook) {
+        if(currentlyHooked != null) {
+            warning(toHook.getName() + " economy is not the only economy enabled in the config.yml.");
+
+            if(!(currentlyHooked instanceof NoEconomy))
+                return currentlyHooked;
+        }
+
+        if(!toHook.tryHook()) {
+            severe(toHook.getName() + " enabled in config.yml, yet Heads was unable to hook into it.");
+            return new NoEconomy();
+        }
+
+        info("Loaded " + toHook.getName() + " economy");
+        return toHook;
+    }
+
+    private void tryHookBlockStore() {
         if (mainConfig.shouldUseBlockStore() && Bukkit.getPluginManager().getPlugin("BlockStore") != null) {
             blockStoreAvailable = false;
 
@@ -255,45 +319,10 @@ public class Heads extends JavaPlugin implements Listener {
             }
         }
     }
-    
-    private void registerCommands() {
-        if (commandsRegistered) {
-            unregisterCommands();
-        }
-
-        SimpleCommandMap commandMap = CraftServer.get().getCommandMap();
-        
-        RuntimeCommand heads = new RuntimeCommand(mainConfig.getHeadCommand());
-        heads.setExecutor(new HeadsCommand());
-        heads.setDescription(mainConfig.getHeadDescription());
-        heads.setAliases(Arrays.asList(mainConfig.getHeadAliases()));
-        
-        commandMap.register("heads", heads);
-        
-        commandsRegistered = true;
-    }
-    
-    private void unregisterCommands() {
-        SimpleCommandMap commandMap = CraftServer.get().getCommandMap();
-        Map<String, Command> map = CommandMap.getCommandMap(commandMap);
-
-        map.values().removeIf(command -> command instanceof RuntimeCommand);
-        
-        commandsRegistered = false;
-    }
-
-    public void reloadConfigs() {
-        langConfig.reload();
-        mainConfig.reload();
-
-        registerCommands();
-        hookPlugins();
-    }
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onInventoryClick(InventoryClickEvent e) {
         Inventory inventory = e.getInventory();
-        ItemStack item = e.getCurrentItem();
 
         if(inventory == null)
             return;
@@ -305,15 +334,6 @@ public class Heads extends JavaPlugin implements Listener {
         } else if (holder instanceof InventoryMenu) {
             ((InventoryMenu) holder).onClick(e);
         }
-    }
-
-    public static boolean isHeadsItem(ItemStack item) {
-        if(item == null || item.getType() != Material.SKULL_ITEM)
-            return false;
-
-        SkullMeta meta = (SkullMeta) item.getItemMeta();
-
-        return meta.hasOwner() && meta.getOwner().equals("SpigotHeadPlugin");
     }
 
     public static String getCategoryPermission(String category) {
@@ -331,17 +351,21 @@ public class Heads extends JavaPlugin implements Listener {
     public static CacheFile getCache() {
         return instance.cache;
     }
-    
+
+    public static Menus getMenus() {
+        return instance.menus;
+    }
+
     public static MenuConfig getMenuConfig() {
-        return instance.menuConfig;
+        return instance.oldMenuConfig;
     }
     
     public static LangConfig getLangConfig() {
         return instance.langConfig;
     }
-    
-    public static TextureGetter getTextureGetter() {
-        return instance.textureGetter;
+
+    public static Economy getEconomy() {
+        return instance.economy;
     }
 
     public static boolean isBlockStoreAvailable() {
@@ -362,10 +386,6 @@ public class Heads extends JavaPlugin implements Listener {
 
     public static void sync(Runnable task) {
         Bukkit.getScheduler().runTask(instance, task);
-    }
-
-    public static void sync(Runnable task, int delay) {
-        Bukkit.getScheduler().runTaskLater(instance, task, delay);
     }
 
     public static void async(Runnable task) {
