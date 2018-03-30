@@ -1,6 +1,7 @@
 package net.sothatsit.heads.volatilecode.reflection;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
@@ -108,5 +109,4 @@ public final class ReflectionUtils {
         }
         return null;
     }
-    
 }

@@ -19,10 +19,12 @@ public class ConfirmMenu extends AbstractModedInventory {
     }
     
     public ConfirmMenu(InvMode mode, CacheHead subject, Placeholder[] placeholders) {
-        super(InventoryType.CONFIRM, 45, ArrayUtils.append(placeholders, subject.getPlaceholders()), mode);
+        super(InventoryType.CONFIRM, 45,
+                ArrayUtils.append(placeholders, subject.getPlaceholders(mode.getPlayer())),
+                mode);
         
         this.subject = subject;
-        this.placeholders = ArrayUtils.append(placeholders, subject.getPlaceholders());
+        this.placeholders = ArrayUtils.append(placeholders, subject.getPlaceholders(mode.getPlayer()));
         
         recreate();
     }

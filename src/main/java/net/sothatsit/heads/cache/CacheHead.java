@@ -3,12 +3,12 @@ package net.sothatsit.heads.cache;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import net.sothatsit.heads.Heads;
-import net.sothatsit.heads.Search;
 import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.util.Checks;
 import net.sothatsit.heads.util.IOUtils;
 import net.sothatsit.heads.volatilecode.ItemNBT;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nonnull;
@@ -17,7 +17,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
-import java.util.concurrent.atomic.AtomicReference;
 
 public final class CacheHead implements Comparable<CacheHead> {
 
@@ -110,10 +109,10 @@ public final class CacheHead implements Comparable<CacheHead> {
         return uniqueId;
     }
 
-    public Placeholder[] getPlaceholders() {
+    public Placeholder[] getPlaceholders(Player player) {
         return new Placeholder[] {
                 new Placeholder("%name%", name),
-                new Placeholder("%cost%", Lang.Currency.format(getCost())),
+                new Placeholder("%cost%", Lang.Currency.format(player, getCost())),
                 new Placeholder("%category%", category),
                 new Placeholder("%id%", Integer.toString(id))
         };

@@ -53,7 +53,7 @@ public class HeadNamer implements Listener {
 
         Skull state = (Skull) block.getState();
 
-        return state.hasOwner() && state.getOwner().equals("SpigotHeadPlugin");
+        return state.getOwner() != null && state.getOwner().equals("SpigotHeadPlugin");
     }
 
     private GameProfile getGameProfile(Block block) {

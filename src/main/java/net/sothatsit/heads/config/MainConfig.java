@@ -31,6 +31,7 @@ public class MainConfig {
     private String defaultHeadName;
 
     private boolean hideNoPermCategories;
+    private boolean freeInCreative;
     private boolean checkForUpdates;
 
     private Map<String, Double> categoryCosts;
@@ -111,6 +112,7 @@ public class MainConfig {
         defaultHeadName  = loadString(config, "breaking-head-names.default-name", "Decoration Head", shouldSave);
 
         hideNoPermCategories = loadBoolean(config, "hide-no-perm-categories", true, shouldSave);
+        freeInCreative       = loadBoolean(config, "free-in-creative", false, shouldSave);
         checkForUpdates      = loadBoolean(config, "check-for-updates", true, shouldSave);
 
         if (defaultHeadCost < 0) {
@@ -336,6 +338,10 @@ public class MainConfig {
 
     public boolean shouldHideNoPermCategories() {
         return hideNoPermCategories;
+    }
+
+    public boolean isFreeInCreative() {
+        return freeInCreative;
     }
 
     public boolean shouldCheckForUpdates() {

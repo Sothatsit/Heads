@@ -1,8 +1,9 @@
-package net.sothatsit.heads.command;
+package net.sothatsit.heads.command.user;
 
 import java.util.UUID;
 
 import net.sothatsit.heads.cache.CacheHead;
+import net.sothatsit.heads.command.AbstractCommand;
 import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.volatilecode.TextureGetter;
@@ -61,25 +62,25 @@ public class GetCommand extends AbstractCommand {
             ((Player) sender).getInventory().addItem(head);
             return true;
         }
-        
+
         String texture = TextureGetter.getCachedTexture(args[1]);
-        
+
         if (texture != null) {
             giveHead((Player) sender, args[1], texture);
             return true;
         }
-        
+
         Lang.Command.Get.fetching().send(sender);
-        
+
         final UUID uuid = ((Player) sender).getUniqueId();
         final String name = args[1];
-        
+
         TextureGetter.getTexture(name, (resolvedTexture) -> {
             giveHead(Bukkit.getPlayer(uuid), name, resolvedTexture);
         });
         return true;
     }
-    
+
     public void giveHead(Player player, String name, String texture) {
         if (player != null) {
             if (texture == null || texture.isEmpty()) {

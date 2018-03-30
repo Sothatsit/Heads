@@ -30,25 +30,8 @@ public class GetMode extends BaseMode {
     public void onHeadSelect(InventoryClickEvent e, HeadMenu menu, CacheHead head) {
         Player player = getPlayer();
 
-        if (Heads.getMainConfig().isEconomyEnabled() && !player.hasPermission("heads.bypasscost")) {
-            double cost = head.getCost();
-            
-            if (cost > 0) {
-                Economy economy = Heads.getEconomy();
-
-                if(!economy.hasBalance(player, cost)) {
-                    Lang.Menu.Get.notEnoughMoney(head.getName(), head.getCost()).send(player);
-                    return;
-                }
-
-                if(!economy.takeBalance(player, cost)) {
-                    Lang.Menu.Get.transactionError(head.getName(), head.getCost()).send(player);
-                    return;
-                }
-
-                Lang.Menu.Get.purchased(head.getName(), head.getCost()).send(player);
-            }
-        }
+        if(!Heads.getInstance().chargeForHead(player, head))
+            return;
         
         Lang.Menu.Get.added(head.getName()).send(player);
 

@@ -1,6 +1,7 @@
 currency:
   zero: "Free"
   non-zero: "%amount%"
+  exempt: "Free / %cost%"
 menu:
    get:
       open: '&7Opening Menu...'
@@ -75,10 +76,13 @@ command:
          description: 'Find useful heads'
    random:
       no-heads: '&cThere are no heads in the cache'
-      giving: '&7Randomly found the head &6%name%'
+      cant-find-player: '&cCannot find the player &4%name%'
+      retrieve-own: '&7Randomly found the head &6%name%'
+      retrieve: '&7You have been randomly given the head &6%name%'
+      give: '&7Given the head &6%name% &7to &6%player%'
       help:
-         command: '/heads random'
-         description: 'Get a random head'
+         command: '/heads random [player]'
+         description: 'Get or give a random head'
    add:
       not-supported: '&cGetting head textures is not supported by spigot before 1.8'
       category-length:

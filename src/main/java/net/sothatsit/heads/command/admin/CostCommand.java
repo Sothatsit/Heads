@@ -1,28 +1,30 @@
-package net.sothatsit.heads.command;
+package net.sothatsit.heads.command.admin;
 
+import net.sothatsit.heads.command.AbstractCommand;
 import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.lang.Lang;
+import net.sothatsit.heads.oldmenu.mode.CostMode;
 import net.sothatsit.heads.oldmenu.mode.InvModeType;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class RemoveCommand extends AbstractCommand {
+public class CostCommand extends AbstractCommand {
 
     @Override
     public String getCommandLabel(MainConfig config) {
-        return config.getRemoveCommand();
+        return config.getCostCommand();
     }
 
     @Override
     public String getPermission() {
-        return "heads.remove";
+        return "heads.cost";
     }
 
     @Override
     public Lang.HelpSection getHelp() {
-        return Lang.Command.Remove.help();
+        return Lang.Command.Cost.help();
     }
 
     @Override
@@ -32,12 +34,25 @@ public class RemoveCommand extends AbstractCommand {
             return true;
         }
         
-        if (args.length != 1) {
+        if (args.length != 2) {
             sendInvalidArgs(sender);
             return true;
         }
         
-        InvModeType.REMOVE.open((Player) sender);
+        double cost;
+        try {
+            cost = Double.valueOf(args[1]);
+        } catch (NumberFormatException e) {
+            Lang.Command.Errors.number(args[1]).send(sender);
+            return true;
+        }
+        
+        if (cost < 0) {
+            Lang.Command.Errors.negative(args[1]).send(sender);
+            return true;
+        }
+        
+        InvModeType.COST.open((Player) sender).asType(CostMode.class).setCost(cost);
         return true;
     }
     

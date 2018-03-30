@@ -4,9 +4,11 @@ import java.util.Random;
 
 import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.cache.CacheHead;
+import net.sothatsit.heads.command.AbstractCommand;
 import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.lang.Lang;
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -32,12 +34,7 @@ public class RandomCommand extends AbstractCommand {
     
     @Override
     public boolean onCommand(final CommandSender sender, Command command, String label, String[] args) {
-        if (!(sender instanceof Player)) {
-            Lang.Command.Errors.mustBePlayer().send(sender);
-            return true;
-        }
-        
-        if (args.length != 1) {
+        if (args.length != 1 && args.length != 2) {
             sendInvalidArgs(sender);
             return true;
         }
@@ -48,10 +45,30 @@ public class RandomCommand extends AbstractCommand {
         }
         
         CacheHead random = Heads.getCache().getRandomHead(RANDOM);
-        
-        Lang.Command.Random.giving(random.getName(), random.getCategory()).send(sender);
 
-        ((Player) sender).getInventory().addItem(random.getItemStack());
+        if(args.length == 1) {
+            if (!(sender instanceof Player)) {
+                Lang.Command.Errors.mustBePlayer().send(sender);
+                return true;
+            }
+
+            Lang.Command.Random.retrievingOwn(random).send(sender);
+
+            ((Player) sender).getInventory().addItem(random.getItemStack());
+            return true;
+        }
+
+        Player player = Bukkit.getPlayer(args[1]);
+
+        if(player == null) {
+            Lang.Command.Random.cantFindPlayer(args[1]).send(sender);
+            return true;
+        }
+
+        Lang.Command.Random.retrieving(random).send(player);
+        Lang.Command.Random.give(player, random).send(sender);
+
+        player.getInventory().addItem(random.getItemStack());
         return true;
     }
 }

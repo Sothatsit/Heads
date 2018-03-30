@@ -1,7 +1,9 @@
 package net.sothatsit.heads.config.lang;
 
 import net.sothatsit.heads.Heads;
+import net.sothatsit.heads.cache.CacheHead;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 public class Lang {
     
@@ -41,6 +43,13 @@ public class Lang {
             return "currency";
         }
 
+        public static LangMessage format(Player player, double amount) {
+            if(amount > 0 && player != null && Heads.getInstance().isExemptFromCost(player))
+                return exempt(amount);
+
+            return format(amount);
+        }
+
         public static LangMessage format(double amount) {
             return (amount <= 0 ? zero() : nonZero(amount));
         }
@@ -50,8 +59,11 @@ public class Lang {
         }
 
         public static LangMessage nonZero(double amount) {
-            return get(key() + ".non-zero")
-                    .with("%amount%", Heads.getEconomy().formatBalance(amount));
+            return get(key() + ".non-zero").with("%amount%", Heads.getEconomy().formatBalance(amount));
+        }
+
+        public static LangMessage exempt(double amount) {
+            return get(key() + ".exempt").with("%cost%", format(amount));
         }
 
     }
@@ -389,15 +401,33 @@ public class Lang {
             public static String key() {
                 return Command.key() + ".random";
             }
-            
+
             public static LangMessage noHeads() {
                 return get(key() + ".no-heads");
             }
-            
-            public static LangMessage giving(String name, String category) {
-                return get(key() + ".giving")
-                        .with("%name%", name)
-                        .with("%category%", category);
+
+            public static LangMessage cantFindPlayer(String name) {
+                return get(key() + ".cant-find-player")
+                        .with("%name%", name);
+            }
+
+            public static LangMessage retrievingOwn(CacheHead head) {
+                return get(key() + ".retrieve-own")
+                        .with("%name%", head.getName())
+                        .with("%category%", head.getCategory());
+            }
+
+            public static LangMessage retrieving(CacheHead head) {
+                return get(key() + ".retrieve")
+                        .with("%name%", head.getName())
+                        .with("%category%", head.getCategory());
+            }
+
+            public static LangMessage give(Player player, CacheHead head) {
+                return get(key() + ".give")
+                        .with("%player%", player.getName())
+                        .with("%name%", head.getName())
+                        .with("%category%", head.getCategory());
             }
             
             public static HelpSection help() {

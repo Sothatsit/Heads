@@ -1,28 +1,30 @@
-package net.sothatsit.heads.command;
+package net.sothatsit.heads.command.admin;
 
+import net.sothatsit.heads.command.AbstractCommand;
 import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.oldmenu.mode.InvModeType;
+import net.sothatsit.heads.oldmenu.mode.RenameMode;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class IdCommand extends AbstractCommand {
+public class RenameCommand extends AbstractCommand {
 
     @Override
     public String getCommandLabel(MainConfig config) {
-        return config.getIdCommand();
+        return config.getRenameCommand();
     }
 
     @Override
     public String getPermission() {
-        return "heads.id";
+        return "heads.rename";
     }
 
     @Override
     public Lang.HelpSection getHelp() {
-        return Lang.Command.Id.help();
+        return Lang.Command.Rename.help();
     }
 
     @Override
@@ -32,12 +34,24 @@ public class IdCommand extends AbstractCommand {
             return true;
         }
         
-        if (args.length != 1) {
+        if (args.length <= 1) {
             sendInvalidArgs(sender);
             return true;
         }
         
-        InvModeType.ID.open((Player) sender);
+        StringBuilder builder = new StringBuilder();
+        
+        for (int i = 1; i < args.length; i++) {
+            if (i != 1) {
+                builder.append(' ');
+            }
+            
+            builder.append(args[i]);
+        }
+        
+        String name = builder.toString();
+        
+        InvModeType.RENAME.open((Player) sender).asType(RenameMode.class).setName(name);
         return true;
     }
     

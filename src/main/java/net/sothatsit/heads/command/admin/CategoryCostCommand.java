@@ -1,5 +1,6 @@
-package net.sothatsit.heads.command;
+package net.sothatsit.heads.command.admin;
 
+import net.sothatsit.heads.command.AbstractCommand;
 import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.oldmenu.mode.CategoryCostMode;

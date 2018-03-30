@@ -20,18 +20,29 @@ public class TileEntitySkull extends ReflectObject {
     
     static {
         TileEntitySkullClass = ReflectionUtils.getNMSClass("TileEntitySkull");
-        
-        resolveTextureMethod = ReflectionUtils.getMethod(TileEntitySkullClass, true, void.class, GameProfile.GameProfileClass, Predicate.class);
         getGameProfileMethod = ReflectionUtils.getMethod(TileEntitySkullClass, "getGameProfile");
         
-        for (Method m : TileEntitySkullClass.getMethods()) {
+        for (Method m : TileEntitySkullClass.getDeclaredMethods()) {
             Class<?>[] params = m.getParameterTypes();
-            if (Modifier.isStatic(m.getModifiers()) && params.length == 2 && params[0].equals(GameProfile.class) && params[1].equals(Predicate.class)) {
-                resolveTextureMethod = m;
-                resolveTextureMethod.setAccessible(true);
-                break;
-            }
+
+            if(!Modifier.isStatic(m.getModifiers()))
+                continue;
+
+            if(params.length != 2 && params.length != 3)
+                continue;
+
+            if(!params[0].equals(GameProfile.GameProfileClass) || !params[1].equals(Predicate.class))
+                continue;
+
+            if(params.length == 3 && !params[2].equals(boolean.class))
+                continue;
+
+            resolveTextureMethod = m;
+            resolveTextureMethod.setAccessible(true);
+            break;
         }
+
+
         
         try {
             executorField = TileEntitySkullClass.getDeclaredField("executor");
@@ -56,12 +67,27 @@ public class TileEntitySkull extends ReflectObject {
             throw new RuntimeException(e);
         }
     }
+
+    public static void resolveTexture(String name, Predicate<GameProfile> callback) {
+        GameProfile existingProfile = MinecraftServer.getServer().getUserCache().getCachedProfile(name);
+
+        if (existingProfile.isNull()) {
+            existingProfile = new GameProfile(null, name);
+        }
+
+        TileEntitySkull.resolveTexture(existingProfile, callback);
+    }
     
     public static void resolveTexture(GameProfile profile, Predicate<GameProfile> callback) {
         try {
-            resolveTextureMethod.invoke(null, profile.getHandle(), (Predicate) gameProfileHandle -> {
-                return callback.apply(new GameProfile(gameProfileHandle));
-            });
+            // Wrap the GameProfile
+            Predicate<?> predicate = (gameProfileHandle -> callback.apply(new GameProfile(gameProfileHandle)));
+
+            if(resolveTextureMethod.getParameterCount() == 2) {
+                resolveTextureMethod.invoke(null, profile.getHandle(), predicate);
+            } else {
+                resolveTextureMethod.invoke(null, profile.getHandle(), predicate, false);
+            }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

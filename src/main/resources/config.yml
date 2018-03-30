@@ -1,3 +1,26 @@
+hide-no-perm-categories: true
+free-in-creative: false
+check-for-updates: true
+economy:
+   enabled: false
+   default-head-cost: 0
+   vault-eco:
+      enabled: true
+   item-eco:
+      enabled: false
+      item:
+         type: skull_item
+         data: 3
+         name: '&6Player Head Token'
+         lore:
+         - '&8Use in /heads!'
+   player-points-eco:
+      enabled: false
+breaking-head-names:
+   enabled: true
+   attempt-hook-blockstore: true
+   similar-heads-in-cache: true
+   default-name: 'Decoration Head'
 commands:
    heads:
       label: 'heads'
@@ -20,25 +43,3 @@ commands:
          id: 'id'
          help: 'help'
          # open menu is when no arguments are supplied
-economy:
-   enabled: false
-   default-head-cost: 0
-   vault-eco:
-      enabled: true
-   item-eco:
-      enabled: false
-      item:
-         type: skull_item
-         data: 3
-         name: '&6Player Head Token'
-         lore:
-         - '&8Use in /heads!'
-   player-points-eco:
-      enabled: false
-breaking-head-names:
-   enabled: true
-   attempt-hook-blockstore: true
-   similar-heads-in-cache: true
-   default-name: 'Decoration Head'
-hide-no-perm-categories: true
-check-for-updates: true

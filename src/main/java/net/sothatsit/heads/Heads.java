@@ -1,5 +1,6 @@
 package net.sothatsit.heads;
 
+import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.cache.ModsFile;
 import net.sothatsit.heads.cache.ModsFileHeader;
 import net.sothatsit.heads.cache.CacheFile;
@@ -9,6 +10,7 @@ import net.sothatsit.heads.command.RuntimeCommand;
 import net.sothatsit.heads.config.FileConfigFile;
 import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.cache.legacy.LegacyCacheConfig;
+import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.config.lang.LangConfig;
 import net.sothatsit.heads.config.menu.Menus;
 import net.sothatsit.heads.config.oldmenu.MenuConfig;
@@ -20,9 +22,11 @@ import net.sothatsit.heads.volatilecode.injection.ProtocolHackFixer;
 import net.sothatsit.heads.volatilecode.reflection.craftbukkit.CommandMap;
 import net.sothatsit.heads.volatilecode.reflection.craftbukkit.CraftServer;
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.SimpleCommandMap;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -334,6 +338,36 @@ public class Heads extends JavaPlugin implements Listener {
         } else if (holder instanceof InventoryMenu) {
             ((InventoryMenu) holder).onClick(e);
         }
+    }
+
+    public boolean isExemptFromCost(Player player) {
+        if(!mainConfig.isEconomyEnabled() || player.hasPermission("heads.bypasscost") )
+            return true;
+
+        return mainConfig.isFreeInCreative() && player.getGameMode() == GameMode.CREATIVE;
+    }
+
+    public boolean chargeForHead(Player player, CacheHead head) {
+        if(isExemptFromCost(player))
+            return true;
+
+        double cost = head.getCost();
+
+        if(cost <= 0)
+            return true;
+
+        if(!economy.hasBalance(player, cost)) {
+            Lang.Menu.Get.notEnoughMoney(head.getName(), head.getCost()).send(player);
+            return false;
+        }
+
+        if(!economy.takeBalance(player, cost)) {
+            Lang.Menu.Get.transactionError(head.getName(), head.getCost()).send(player);
+            return false;
+        }
+
+        Lang.Menu.Get.purchased(head.getName(), head.getCost()).send(player);
+        return true;
     }
 
     public static String getCategoryPermission(String category) {

@@ -1,6 +1,11 @@
 package net.sothatsit.heads.volatilecode.reflection.nms;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 import net.sothatsit.heads.volatilecode.reflection.ReflectObject;
 import net.sothatsit.heads.volatilecode.reflection.ReflectionUtils;
@@ -8,14 +13,26 @@ import net.sothatsit.heads.volatilecode.reflection.authlib.GameProfile;
 
 public class UserCache extends ReflectObject {
     
-    public static Class<?> UserCacheClass;
-    public static Method getProfileMethod;
-    public static Method addProfileMethod;
+    public static final Class<?> UserCacheClass;
+    public static final List<Field> mapFields;
+    public static final Method addProfileMethod;
     
     static {
         UserCacheClass = ReflectionUtils.getNMSClass("UserCache");
-        
-        getProfileMethod = ReflectionUtils.getMethod(UserCacheClass, "getProfile", GameProfile.GameProfileClass, String.class);
+
+        if(UserCacheClass == null)
+            throw new IllegalStateException("Unable to find UserCache class");
+
+        mapFields = new ArrayList<>();
+        for(Field field : UserCacheClass.getDeclaredFields()) {
+            if(!Map.class.isAssignableFrom(field.getType()))
+                continue;
+
+            field.setAccessible(true);
+
+            mapFields.add(field);
+        }
+
         addProfileMethod = ReflectionUtils.getMethod(UserCacheClass, void.class, GameProfile.GameProfileClass);
     }
     
@@ -23,9 +40,31 @@ public class UserCache extends ReflectObject {
         super(handle);
     }
     
-    public GameProfile getProfile(String name) {
+    public GameProfile getCachedProfile(String name) {
         try {
-            return new GameProfile(getProfileMethod.invoke(handle, name));
+            name = name.toLowerCase(Locale.ROOT);
+
+            for(Field field : mapFields) {
+                Map<?, ?> map = (Map<?, ?>) field.get(handle);
+
+                if(map == null)
+                    continue;
+
+                Object value = map.get(name);
+
+                if(value == null || !UserCacheEntry.UserCacheEntryClass.isAssignableFrom(value.getClass()))
+                    continue;
+
+                UserCacheEntry entry = new UserCacheEntry(value);
+                GameProfile profile = entry.getProfile();
+
+                if(profile == null)
+                    continue;
+
+                return profile;
+            }
+
+            return new GameProfile(null);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

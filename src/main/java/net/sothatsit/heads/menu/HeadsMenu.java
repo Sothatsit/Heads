@@ -103,12 +103,9 @@ public class HeadsMenu extends Element {
         }
 
         public Button constructHead(HeadsMenu menu, CacheHead head) {
-            Placeholder name = new Placeholder("%name%", head.getName());
-            Placeholder id = new Placeholder("%id%", head.getId());
-            Placeholder cost = new Placeholder("%cost%", Lang.Currency.format(head.getCost()));
-            Placeholder category = new Placeholder("%category%", head.getCategory());
+            ItemStack item = headItem.build(head.getPlaceholders(null));
 
-            ItemStack item = head.addTexture(headItem.build(name, category, cost, id));
+            item = head.addTexture(item);
 
             return new Button(item, () -> menu.onSelect.apply(head));
         }

@@ -1,41 +1,44 @@
-package net.sothatsit.heads.command;
+package net.sothatsit.heads.command.admin;
 
+import net.sothatsit.heads.command.AbstractCommand;
 import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.lang.Lang;
-
 import net.sothatsit.heads.oldmenu.mode.InvModeType;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class OpenMenuCommand extends AbstractCommand {
+public class IdCommand extends AbstractCommand {
 
     @Override
     public String getCommandLabel(MainConfig config) {
-        return null;
+        return config.getIdCommand();
     }
 
     @Override
     public String getPermission() {
-        return "heads.menu";
+        return "heads.id";
     }
 
     @Override
     public Lang.HelpSection getHelp() {
-        return Lang.Command.OpenMenu.help();
+        return Lang.Command.Id.help();
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    public boolean onCommand(final CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
             Lang.Command.Errors.mustBePlayer().send(sender);
             return true;
         }
         
-        InvModeType.GET.open((Player) sender);
-
-        // CacheHeadsMenu.openHeadsMenu((Player) sender);
-
+        if (args.length != 1) {
+            sendInvalidArgs(sender);
+            return true;
+        }
+        
+        InvModeType.ID.open((Player) sender);
         return true;
     }
     

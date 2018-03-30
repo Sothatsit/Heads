@@ -4,27 +4,17 @@ import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.util.Checks;
 import net.sothatsit.heads.util.SafeCall;
 import net.sothatsit.heads.volatilecode.reflection.authlib.GameProfile;
-import net.sothatsit.heads.volatilecode.reflection.authlib.Property;
-import net.sothatsit.heads.volatilecode.reflection.authlib.PropertyMap;
 import net.sothatsit.heads.volatilecode.reflection.nms.MinecraftServer;
 import net.sothatsit.heads.volatilecode.reflection.nms.TileEntitySkull;
 
-import java.util.Iterator;
-import java.util.List;
 import java.util.function.Consumer;
 
 public class TextureGetter {
     
     public static String getCachedTexture(String name) {
-        GameProfile profile = MinecraftServer.getServer().getUserCache().getProfile(name);
-        
-        if (!profile.isNull() && profile.isComplete() && profile.getProperties() != null && profile.getProperties().containsKey("textures")) {
-            Iterator<Property> iterator = profile.getProperties().get("textures").iterator();
+        GameProfile profile = MinecraftServer.getServer().getUserCache().getCachedProfile(name);
 
-            return iterator.hasNext() ? iterator.next().getValue() : null;
-        }
-        
-        return null;
+        return (!profile.isNull() && profile.isComplete() ? profile.getTextureIfAvailable() : null);
     }
     
     public static void getTexture(String name, Consumer<String> callback) {
@@ -33,25 +23,14 @@ public class TextureGetter {
 
         Consumer<String> safeCallback = SafeCall.consumer(callback, "callback");
 
-        GameProfile existingProfile = MinecraftServer.getServer().getUserCache().getProfile(name);
-        
-        if (existingProfile.isNull()) {
-            existingProfile = new GameProfile(null, name);
-        }
+        String cachedTexture = getCachedTexture(name);
 
-        if (existingProfile.isComplete()) {
-            PropertyMap properties = existingProfile.getProperties();
-
-            if(!properties.isNull() && properties.containsKey("textures")) {
-                for (Property p : properties.get("textures")) {
-                    safeCallback.accept(p.getValue());
-                }
-
-                return;
-            }
+        if(cachedTexture != null) {
+            callback.accept(cachedTexture);
+            return;
         }
         
-        TileEntitySkull.resolveTexture(existingProfile, profile -> {
+        TileEntitySkull.resolveTexture(name, profile -> {
             Heads.sync(() -> safeCallback.accept(findTexture(profile, true)));
 
             return true;
@@ -66,18 +45,13 @@ public class TextureGetter {
         if(profile.isNull() || !profile.isComplete())
             return null;
 
-        PropertyMap properties = profile.getProperties();
+        String texture = profile.getTextureIfAvailable();
 
-        if(properties.isNull() || !properties.containsKey("textures"))
-            return null;
-
-        List<Property> textures = properties.get("textures");
-
-        if(cacheProfile && textures.size() > 0) {
+        if(cacheProfile && texture != null) {
             MinecraftServer.getServer().getUserCache().addProfile(profile);
         }
 
-        return (textures.size() > 0 ? textures.get(0).getValue() : null);
+        return texture;
     }
 
 }

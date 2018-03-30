@@ -2,13 +2,16 @@ package net.sothatsit.heads.volatilecode.reflection.authlib;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
+import java.util.Iterator;
 import java.util.UUID;
+import java.util.function.Predicate;
 
 import net.sothatsit.heads.volatilecode.reflection.ReflectObject;
 import net.sothatsit.heads.volatilecode.reflection.ReflectionUtils;
+import org.bukkit.craftbukkit.libs.jline.internal.Nullable;
 
 public class GameProfile extends ReflectObject {
-    
+
     public static Class<?> GameProfileClass;
     public static Constructor<?> GameProfileConstructor;
     public static Method isCompleteMethod;
@@ -48,7 +51,18 @@ public class GameProfile extends ReflectObject {
             throw new RuntimeException(e);
         }
     }
-    
+
+    public @Nullable String getTextureIfAvailable() {
+        PropertyMap properties = getProperties();
+
+        if(properties.isNull() || !properties.containsKey("textures"))
+            return null;
+
+        Iterator<Property> iterator = properties.get("textures").iterator();
+
+        return (iterator.hasNext() ? iterator.next().getValue() : null);
+    }
+
     public String getName() {
         try {
             return (String) getNameMethod.invoke(getHandle());

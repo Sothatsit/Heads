@@ -7,10 +7,9 @@ import net.sothatsit.heads.oldmenu.mode.InvMode;
 import net.sothatsit.heads.oldmenu.mode.SearchMode;
 import net.sothatsit.heads.util.ArrayUtils;
 
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class HeadMenu extends AbstractModedInventory {
@@ -32,6 +31,7 @@ public class HeadMenu extends AbstractModedInventory {
     @Override
     public void recreate() {
         Menu menu = getMenu();
+        Player player = getInvMode().getPlayer();
         
         int maxPage = (int) Math.ceil((double) heads.size() / 45d);
         
@@ -75,7 +75,7 @@ public class HeadMenu extends AbstractModedInventory {
                 }
 
                 placeholders[0] = new Placeholder("%category%", head.getCategory());
-                Placeholder[] holders = ArrayUtils.append(placeholders, head.getPlaceholders());
+                Placeholder[] holders = ArrayUtils.append(placeholders, head.getPlaceholders(player));
 
                 contents[index] = head.addTexture(menu.getItemStack(id, holders));
             }
