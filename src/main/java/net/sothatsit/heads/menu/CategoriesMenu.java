@@ -12,7 +12,7 @@ import net.sothatsit.heads.menu.ui.item.Button;
 import net.sothatsit.heads.util.Checks;
 import net.sothatsit.heads.util.SafeCall;
 import net.sothatsit.heads.util.Stringify;
-import org.bukkit.Material;
+import net.sothatsit.heads.volatilecode.Items;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ import java.util.function.Function;
 
 public class CategoriesMenu extends Element {
 
-    public static final Item defaultCategoryItem = Item.create(Material.SKULL_ITEM).data(3)
+    public static final Item defaultCategoryItem = Items.createSkull()
             .name("&7%category%")
             .lore("&6%heads% &eheads");
 

@@ -6,13 +6,14 @@ import net.sothatsit.heads.menu.ui.item.*;
 import net.sothatsit.heads.menu.ui.MenuResponse;
 import net.sothatsit.heads.util.Checks;
 import net.sothatsit.heads.util.Stringify;
+import net.sothatsit.heads.volatilecode.Items;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 public class PagedBox extends Element {
 
     public static final Item defaultUnselected = Item.create(Material.PAPER).name("&7Page %page%");
-    public static final Item defaultSelected = Item.create(Material.EMPTY_MAP).name("&7Page %page%");
+    public static final Item defaultSelected = Items.createEmptyMap().name("&7Page %page%");
     public static final Button defaultLeftControl = Item.create(Material.REDSTONE_BLOCK).name("&cNo left control").buildButton();
     public static final Button defaultRightControl = Item.create(Material.REDSTONE_BLOCK).name("&cNo right control").buildButton();
 

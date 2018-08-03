@@ -7,9 +7,9 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import com.mojang.authlib.GameProfile;
 import net.sothatsit.heads.volatilecode.reflection.ReflectObject;
 import net.sothatsit.heads.volatilecode.reflection.ReflectionUtils;
-import net.sothatsit.heads.volatilecode.reflection.authlib.GameProfile;
 
 public class UserCache extends ReflectObject {
     
@@ -33,7 +33,7 @@ public class UserCache extends ReflectObject {
             mapFields.add(field);
         }
 
-        addProfileMethod = ReflectionUtils.getMethod(UserCacheClass, void.class, GameProfile.GameProfileClass);
+        addProfileMethod = ReflectionUtils.getMethod(UserCacheClass, void.class, GameProfile.class);
     }
     
     public UserCache(Object handle) {
@@ -64,7 +64,7 @@ public class UserCache extends ReflectObject {
                 return profile;
             }
 
-            return new GameProfile(null);
+            return null;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -72,7 +72,7 @@ public class UserCache extends ReflectObject {
     
     public void addProfile(GameProfile profile) {
         try {
-            addProfileMethod.invoke(handle, profile.getHandle());
+            addProfileMethod.invoke(handle, profile);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

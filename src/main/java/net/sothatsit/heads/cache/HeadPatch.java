@@ -6,6 +6,7 @@ import net.sothatsit.heads.util.IOUtils;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.HashSet;
 import java.util.List;
 import java.util.UUID;
 
@@ -33,9 +34,18 @@ public final class HeadPatch {
         this.uniqueId = uniqueId;
     }
 
+    public boolean isEmpty() {
+        return !category && !tags && !cost;
+    }
+
     public HeadPatch withCategory(String from, String to) {
         Checks.ensureNonNull(from, "from");
         Checks.ensureNonNull(to, "to");
+
+        if(from.equals(to)) {
+            this.category = false;
+            return this;
+        }
 
         this.category = true;
         this.fromCategory = from;
@@ -48,6 +58,11 @@ public final class HeadPatch {
         Checks.ensureNonNull(from, "from");
         Checks.ensureNonNull(to, "to");
 
+        if(new HashSet<>(from).equals(new HashSet<>(to))) {
+            this.tags = false;
+            return this;
+        }
+
         this.tags = true;
         this.fromTags = from;
         this.toTags = to;
@@ -56,6 +71,11 @@ public final class HeadPatch {
     }
 
     public HeadPatch withCost(double from, double to) {
+        if(from == to) {
+            this.cost = false;
+            return this;
+        }
+
         this.cost = true;
         this.fromCost = from;
         this.toCost = to;
@@ -85,6 +105,16 @@ public final class HeadPatch {
         if(cost && head.getRawCost() == fromCost) {
             head.setCost(toCost);
         }
+    }
+
+    public static HeadPatch createPatch(CacheHead original, CacheHead updated) {
+        HeadPatch patch = new HeadPatch(original);
+
+        patch.withCost(original.getRawCost(), updated.getRawCost());
+        patch.withCategory(original.getCategory(), updated.getCategory());
+        patch.withTags(original.getTags(), updated.getTags());
+
+        return (!patch.isEmpty() ? patch : null);
     }
 
     public void write(ObjectOutputStream stream) throws IOException {

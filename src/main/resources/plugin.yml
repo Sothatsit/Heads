@@ -1,8 +1,10 @@
 main: net.sothatsit.heads.Heads
 author: sothatsit
 name: Heads
-version: 1.14.3
-soft-depend: [Vault, PlayerPoints, BlockStore]
+version: 1.16.2
+api-version: 1.13
+softdepend: [Vault, PlayerPoints, BlockStore]
+loadbefore: [DeluxeMenus]
 permissions:
    heads.reload:
       description: 'Reload the config files'
@@ -16,6 +18,9 @@ permissions:
    heads.search:
       description: 'Use the /heads search <search query> command'
       default: op
+   heads.hat:
+      description: 'Use the /heads hat command'
+      default: true
    heads.add:
       description: 'Add heads to the cache'
       default: op

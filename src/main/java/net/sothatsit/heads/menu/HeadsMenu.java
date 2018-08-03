@@ -1,8 +1,6 @@
 package net.sothatsit.heads.menu;
 
 import net.sothatsit.heads.cache.CacheHead;
-import net.sothatsit.heads.config.lang.Lang;
-import net.sothatsit.heads.config.lang.Placeholder;
 import net.sothatsit.heads.menu.ui.Bounds;
 import net.sothatsit.heads.menu.ui.MenuResponse;
 import net.sothatsit.heads.menu.ui.element.Element;
@@ -12,7 +10,7 @@ import net.sothatsit.heads.menu.ui.item.Item;
 import net.sothatsit.heads.util.Checks;
 import net.sothatsit.heads.util.SafeCall;
 import net.sothatsit.heads.util.Stringify;
-import org.bukkit.Material;
+import net.sothatsit.heads.volatilecode.Items;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
@@ -22,7 +20,7 @@ import java.util.function.Function;
 
 public class HeadsMenu extends Element {
 
-    public static final Item defaultHead = Item.create(Material.SKULL_ITEM).data(3).name("&7%name%").lore("&eCost: &6%cost%");
+    public static final Item defaultHead = Items.createSkull().name("&7%name%").lore("&eCost: &6%cost%");
 
     public static final Template defaultTemplate = new Template(PagedBox.defaultTemplate, defaultHead);
 

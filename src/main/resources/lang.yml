@@ -94,7 +94,7 @@ command:
       - '&4The authentication servers may be down, or the player does not exist.'
       added: '&7Added &6%name%&7 head to category &6%category%'
       help:
-         command: '/heads add <player-name> <category> <head name>'
+         command: '/heads add <player-name> <category> [head name]'
          description: 'Add a new head to the menu'
    hand:
       not-supported: '&cGetting head textures is not supported by spigot before 1.8'
@@ -143,7 +143,10 @@ command:
    id:
       help:
          command: '/heads id'
-         description: 'Open a menu to get a heads id'
+         description: 'Get the ID for a player head'
+      hold-skull: '&cPlease hold a player head'
+      unknown-head: '&7Could not find the head &7%head%'
+      found-id: "&7The head you're holding &6%name% &7has the ID &6%id%"
    item-eco:
       help:
          command: '/heads itemeco <get:set:give>'

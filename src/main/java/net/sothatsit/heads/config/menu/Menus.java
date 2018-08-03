@@ -17,7 +17,7 @@ public class Menus {
     public void reload() {
         File menusFolder = new File(Heads.getInstance().getDataFolder(), "menus");
 
-        if(!menusFolder.exists() && menusFolder.mkdirs()) {
+        if(!menusFolder.exists() && !menusFolder.mkdirs()) {
             Heads.severe("Unable to create the plugins/Heads/menus folder for Heads menu configuration");
         }
 

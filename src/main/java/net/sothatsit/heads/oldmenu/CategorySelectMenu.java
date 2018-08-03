@@ -4,9 +4,9 @@ import java.util.*;
 
 import net.sothatsit.heads.cache.CacheFile;
 import net.sothatsit.heads.cache.CacheHead;
+import net.sothatsit.heads.volatilecode.Items;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -58,8 +58,7 @@ public class CategorySelectMenu extends AbstractModedInventory {
 
             contents = new ItemStack[size];
 
-            ItemStack red = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 14);
-
+            ItemStack red = Items.createRedStainedGlassPane().build();
             ItemMeta meta = red.getItemMeta();
 
             String message = "&cYou do not have permission";

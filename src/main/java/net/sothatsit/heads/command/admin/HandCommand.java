@@ -6,6 +6,7 @@ import net.sothatsit.heads.command.AbstractCommand;
 import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.lang.Lang;
 import net.sothatsit.heads.volatilecode.ItemNBT;
+import net.sothatsit.heads.volatilecode.Items;
 import net.sothatsit.heads.volatilecode.TextureGetter;
 import net.sothatsit.heads.volatilecode.reflection.Version;
 
@@ -63,7 +64,7 @@ public class HandCommand extends AbstractCommand {
 
         ItemStack hand = player.getInventory().getItemInMainHand();
 
-        if (hand == null || hand.getType() != Material.SKULL_ITEM || hand.getDurability() != 3) {
+        if(!Items.isSkull(hand)) {
             Lang.Command.Hand.notSkull().send(sender);
             return true;
         }

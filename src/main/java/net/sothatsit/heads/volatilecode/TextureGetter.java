@@ -1,20 +1,23 @@
 package net.sothatsit.heads.volatilecode;
 
+import com.mojang.authlib.GameProfile;
+import com.mojang.authlib.properties.Property;
+import com.mojang.authlib.properties.PropertyMap;
 import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.util.Checks;
 import net.sothatsit.heads.util.SafeCall;
-import net.sothatsit.heads.volatilecode.reflection.authlib.GameProfile;
 import net.sothatsit.heads.volatilecode.reflection.nms.MinecraftServer;
 import net.sothatsit.heads.volatilecode.reflection.nms.TileEntitySkull;
 
+import java.util.Iterator;
 import java.util.function.Consumer;
 
 public class TextureGetter {
-    
+
     public static String getCachedTexture(String name) {
         GameProfile profile = MinecraftServer.getServer().getUserCache().getCachedProfile(name);
 
-        return (!profile.isNull() && profile.isComplete() ? profile.getTextureIfAvailable() : null);
+        return findTexture(profile);
     }
     
     public static void getTexture(String name, Consumer<String> callback) {
@@ -38,14 +41,20 @@ public class TextureGetter {
     }
 
     public static String findTexture(GameProfile profile) {
-        return findTexture(profile, false);
+        if(profile == null || !profile.isComplete())
+            return null;
+
+        PropertyMap properties = profile.getProperties();
+        if(properties == null || !properties.containsKey("textures"))
+            return null;
+
+        Iterator<Property> iterator = properties.get("textures").iterator();
+
+        return (iterator.hasNext() ? iterator.next().getValue() : null);
     }
 
     private static String findTexture(GameProfile profile, boolean cacheProfile) {
-        if(profile.isNull() || !profile.isComplete())
-            return null;
-
-        String texture = profile.getTextureIfAvailable();
+        String texture = findTexture(profile);
 
         if(cacheProfile && texture != null) {
             MinecraftServer.getServer().getUserCache().addProfile(profile);

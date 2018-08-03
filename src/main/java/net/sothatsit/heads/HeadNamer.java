@@ -1,15 +1,17 @@
 package net.sothatsit.heads;
 
+import com.mojang.authlib.GameProfile;
 import net.sothatsit.blockstore.BlockStoreApi;
 import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.volatilecode.ItemNBT;
+import net.sothatsit.heads.volatilecode.Items;
 import net.sothatsit.heads.volatilecode.TextureGetter;
-import net.sothatsit.heads.volatilecode.reflection.authlib.GameProfile;
 import net.sothatsit.heads.volatilecode.reflection.nms.BlockPosition;
 import net.sothatsit.heads.volatilecode.reflection.nms.TileEntitySkull;
 import net.sothatsit.heads.volatilecode.reflection.nms.World;
 import org.bukkit.*;
 import org.bukkit.block.Block;
+import org.bukkit.block.BlockState;
 import org.bukkit.block.Skull;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventException;
@@ -37,8 +39,8 @@ public class HeadNamer implements Listener {
         return Heads.getMainConfig().shouldUseBlockStore() && Heads.isBlockStoreAvailable();
     }
 
-    private boolean isHead(ItemStack item) {
-        if(item == null || item.getType() != Material.SKULL_ITEM || !(item.getItemMeta() instanceof SkullMeta))
+    private boolean isHeadsHead(ItemStack item) {
+        if(!Items.isSkull(item))
             return false;
 
         SkullMeta meta = (SkullMeta) item.getItemMeta();
@@ -46,14 +48,14 @@ public class HeadNamer implements Listener {
         return meta.hasOwner() && meta.getOwner().equals("SpigotHeadPlugin");
     }
 
-    @SuppressWarnings("deprecation")
-    private boolean isHead(Block block) {
-        if(block == null || block.getType() != Material.SKULL || block.getState() == null)
+    private boolean isHeadsHead(Block block) {
+        BlockState state = block.getState();
+        if(!(state instanceof Skull))
             return false;
 
-        Skull state = (Skull) block.getState();
+        Skull skull = (Skull) state;
 
-        return state.getOwner() != null && state.getOwner().equals("SpigotHeadPlugin");
+        return skull.getOwner() != null && skull.getOwner().equals("SpigotHeadPlugin");
     }
 
     private GameProfile getGameProfile(Block block) {
@@ -79,7 +81,7 @@ public class HeadNamer implements Listener {
 
     @EventHandler(priority = EventPriority.MONITOR)
     public void onBlockPlace(BlockPlaceEvent e) {
-        if(!Heads.getMainConfig().isHeadNamesEnabled() || !shouldUseBlockStore() || !isHead(e.getItemInHand()))
+        if(!Heads.getMainConfig().isHeadNamesEnabled() || !shouldUseBlockStore() || !isHeadsHead(e.getItemInHand()))
             return;
 
         ItemMeta meta = e.getItemInHand().getItemMeta();
@@ -97,7 +99,7 @@ public class HeadNamer implements Listener {
 
         Block block = e.getBlock();
 
-        if(e.getPlayer().getGameMode() == GameMode.CREATIVE || !isHead(block))
+        if(e.getPlayer().getGameMode() == GameMode.CREATIVE || !isHeadsHead(block))
             return;
 
         // Stop the head item being dropped by the server

@@ -7,7 +7,7 @@ import net.sothatsit.heads.volatilecode.reflection.ReflectObject;
 import net.sothatsit.heads.volatilecode.reflection.ReflectionUtils;
 
 import org.bukkit.Bukkit;
-import org.bukkit.command.SimpleCommandMap;
+import org.bukkit.command.*;
 
 public class CraftServer extends ReflectObject {
     
@@ -19,7 +19,7 @@ public class CraftServer extends ReflectObject {
         Checks.ensureNonNull(CraftServerClass, "CraftServerClass");
 
         for (Field f : CraftServerClass.getDeclaredFields()) {
-            if (f.getType().equals(SimpleCommandMap.class)) {
+            if (org.bukkit.command.CommandMap.class.isAssignableFrom(f.getType())) {
                 SimpleCommandMapField = f;
                 SimpleCommandMapField.setAccessible(true);
                 break;

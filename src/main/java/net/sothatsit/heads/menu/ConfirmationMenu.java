@@ -10,14 +10,15 @@ import net.sothatsit.heads.menu.ui.item.Item;
 import net.sothatsit.heads.util.Checks;
 import net.sothatsit.heads.util.SafeCall;
 import net.sothatsit.heads.util.Stringify;
+import net.sothatsit.heads.volatilecode.Items;
 import org.bukkit.Material;
 
 import java.util.concurrent.Callable;
 
 public class ConfirmationMenu extends Element {
 
-    public static final Item defaultAccept = Item.create(Material.STAINED_CLAY).data(5).name("&aAccept");
-    public static final Item defaultDecline = Item.create(Material.STAINED_CLAY).data(14).name("&cDecline");
+    public static final Item defaultAccept = Items.createGreenStainedClay().name("&aAccept");
+    public static final Item defaultDecline = Items.createRedStainedClay().name("&cDecline");
     public static final Button defaultSubject = Item.create(Material.AIR).buildButton();
 
     public static final Template defaultTemplate = new Template(defaultAccept, defaultDecline);

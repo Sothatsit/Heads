@@ -644,7 +644,22 @@ public class Lang {
             public static String key() {
                 return Command.key() + ".id";
             }
-            
+
+            public static LangMessage holdSkull() {
+                return get(key() + ".hold-skull");
+            }
+
+            public static LangMessage unknownHead(String name) {
+                return get(key() + ".unknown-head")
+                        .with("%name%", name);
+            }
+
+            public static LangMessage foundID(String name, int id) {
+                return get(key() + ".found-id")
+                        .with("%name%", name)
+                        .with("%id%", id);
+            }
+
             public static HelpSection help() {
                 return new HelpSection(key());
             }

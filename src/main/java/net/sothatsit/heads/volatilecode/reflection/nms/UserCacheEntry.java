@@ -1,8 +1,8 @@
 package net.sothatsit.heads.volatilecode.reflection.nms;
 
+import com.mojang.authlib.GameProfile;
 import net.sothatsit.heads.volatilecode.reflection.ReflectObject;
 import net.sothatsit.heads.volatilecode.reflection.ReflectionUtils;
-import net.sothatsit.heads.volatilecode.reflection.authlib.GameProfile;
 
 import java.lang.reflect.Field;
 
@@ -19,7 +19,7 @@ public class UserCacheEntry extends ReflectObject {
 
         Field gameProfileField = null;
         for(Field field : UserCacheEntryClass.getDeclaredFields()) {
-            if(!GameProfile.GameProfileClass.isAssignableFrom(field.getType()))
+            if(!GameProfile.class.isAssignableFrom(field.getType()))
                 continue;
 
             field.setAccessible(true);
@@ -35,7 +35,7 @@ public class UserCacheEntry extends ReflectObject {
     
     public GameProfile getProfile() {
         try {
-            return new GameProfile(profileField.get(handle));
+            return (GameProfile) profileField.get(handle);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

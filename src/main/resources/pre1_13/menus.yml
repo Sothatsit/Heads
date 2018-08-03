@@ -1,28 +1,32 @@
 search-heads:
   title: Head Search
   head:
-    type: player_head
+    type: skull_item
     name: '&7%name%'
     lore:
     - '&8%category%'
+    damage: 3
   head-cost:
-    type: player_head
+    type: skull_item
     name: '&7%name%'
     lore:
     - '&8%category%'
     - ''
     - '&6Cost: &e%cost%'
+    damage: 3
   head-no-perms:
-    type: player_head
+    type: skull_item
     name: '&7%name%'
     lore:
     - '&8%category%'
     - ''
     - '&cYou do not have permission'
     - '&cto use this head'
+    damage: 3
   filler:
-    type: black_stained_glass_pane
+    type: stained_glass_pane
     name: ' '
+    damage: 15
   back:
     type: redstone_block
     name: '&cBack to Main Menu'
@@ -35,20 +39,23 @@ search-heads:
 get-categories:
   title: Categories
   head:
-    type: player_head
+    type: skull_item
     name: '&6%category%'
     lore:
     - '&e%heads% heads'
+    damage: 3
 get-heads:
   title: '%category%'
   head:
-    type: player_head
+    type: skull_item
     name: '&7%name%'
     lore:
     - '&6Cost: &e%cost%'
+    damage: 3
   filler:
-    type: black_stained_glass_pane
+    type: stained_glass_pane
     name: ' '
+    damage: 15
   back:
     type: redstone_block
     name: '&cBack to Main Menu'
@@ -61,31 +68,37 @@ get-heads:
 get-confirm:
   title: Purchase Head
   head:
-    type: player_head
+    type: skull_item
     name: '&aPurchase %name% for $%cost%'
+    damage: 3
   accept:
-    type: lime_terracotta
+    type: stained_clay
     name: '&aPurchase %name% for $%cost%'
+    damage: 5
   deny:
-    type: red_terracotta
+    type: stained_clay
     name: '&cCancel Purchase'
+    damage: 14
 id-categories:
   title: Categories
   head:
-    type: player_head
+    type: skull_item
     name: '&6%category%'
     lore:
     - '&e%heads% heads'
+    damage: 3
 id-heads:
   title: '%category%'
   head:
-    type: player_head
+    type: skull_item
     name: '&7%name%'
     lore:
     - '&6Id&8: &a%id%'
+    damage: 3
   filler:
-    type: black_stained_glass_pane
+    type: stained_glass_pane
     name: ' '
+    damage: 15
   back:
     type: redstone_block
     name: '&cBack to Main Menu'
@@ -98,18 +111,21 @@ id-heads:
 remove-categories:
   title: Categories
   head:
-    type: player_head
+    type: skull_item
     name: '&6%category%'
     lore:
     - '&e%heads% heads'
+    damage: 3
 remove-heads:
   title: '%category%'
   head:
-    type: player_head
+    type: skull_item
     name: '&cRemove %name%'
+    damage: 3
   filler:
-    type: black_stained_glass_pane
+    type: stained_glass_pane
     name: ' '
+    damage: 15
   back:
     type: redstone_block
     name: '&cBack to Main Menu'
@@ -122,29 +138,35 @@ remove-heads:
 remove-confirm:
   title: Remove Head
   head:
-    type: player_head
+    type: skull_item
     name: '&cRemove %name%'
+    damage: 3
   accept:
-    type: lime_terracotta
+    type: stained_clay
     name: '&cRemove %name%'
+    damage: 5
   deny:
-    type: red_terracotta
+    type: stained_clay
     name: '&aDont remove %name%'
+    damage: 14
 rename-categories:
   title: Categories
   head:
-    type: player_head
+    type: skull_item
     name: '&6%category%'
     lore:
     - '&e%heads% heads'
+    damage: 3
 rename-heads:
   title: '%category%'
   head:
-    type: player_head
+    type: skull_item
     name: '&aRename %name%'
+    damage: 3
   filler:
-    type: black_stained_glass_pane
+    type: stained_glass_pane
     name: ' '
+    damage: 15
   back:
     type: redstone_block
     name: '&cBack to Main Menu'
@@ -157,29 +179,35 @@ rename-heads:
 rename-confirm:
   title: Rename Head
   head:
-    type: player_head
+    type: skull_item
     name: '&aRename %name% to %newname%'
+    damage: 3
   accept:
-    type: lime_terracotta
+    type: stained_clay
     name: '&aRename %name% to %newname%'
+    damage: 5
   deny:
-    type: red_terracotta
+    type: stained_clay
     name: '&aDont rename %name%'
+    damage: 14
 cost-categories:
   title: Categories
   head:
-    type: player_head
+    type: skull_item
     name: '&6%category%'
     lore:
     - '&e%heads% heads'
+    damage: 3
 cost-heads:
   title: '%category%'
   head:
-    type: player_head
+    type: skull_item
     name: '&aSet cost of %name%'
+    damage: 3
   filler:
-    type: black_stained_glass_pane
+    type: stained_glass_pane
     name: ' '
+    damage: 15
   back:
     type: redstone_block
     name: '&cBack to Main Menu'
@@ -192,59 +220,70 @@ cost-heads:
 cost-confirm:
   title: Set cost of Head
   head:
-    type: player_head
+    type: skull_item
     name: '&aSet cost of %name%'
     lore:
     - '&7to &6%newcost%'
+    damage: 3
   accept:
-    type: lime_terracotta
+    type: stained_clay
     name: '&aSet cost of %name%'
     lore:
     - '&7to &6%newcost%'
+    damage: 5
   deny:
-    type: red_terracotta
+    type: stained_clay
     name: '&aDont set cost of %name%'
+    damage: 14
 category-cost-categories:
   title: Categories
   head:
-    type: player_head
+    type: skull_item
     name: '&7Set cost of &6%category%'
     lore:
     - '&e%heads% heads'
+    damage: 3
 category-cost-confirm:
   title: Set cost for Category
   head:
-    type: player_head
+    type: skull_item
     name: '&aSet cost of %category%'
     lore:
     - '&7to &6%newcost%'
+    damage: 3
   accept:
-    type: lime_terracotta
+    type: stained_clay
     name: '&aSet cost of %category%'
     lore:
     - '&7to &6%newcost%'
+    damage: 5
   deny:
-    type: red_terracotta
+    type: stained_clay
     name: '&aDont set cost of %category%'
+    damage: 14
 category-cost-remove-categories:
   title: Categories
   head:
-    type: player_head
+    type: skull_item
     name: '&7Reset cost of &6%category%'
     lore:
     - '&e%heads% heads'
+    damage: 3
 category-cost-remove-confirm:
   title: Set cost for Category
   head:
-    type: player_head
+    type: skull_item
     name: '&aReset cost of %category%'
     lore:
     - '&7to &6%newcost%'
+    damage: 3
   accept:
-    type: lime_terracotta
+    type: stained_clay
     name: '&aReset cost of %category%'
     lore:
     - '&7to &6%newcost%'
+    damage: 5
   deny:
-    type: red_terracotta
+    type: stained_clay
     name: '&aDont reset cost of %category%'
+    damage: 14

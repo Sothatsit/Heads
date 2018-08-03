@@ -9,7 +9,8 @@ economy:
    item-eco:
       enabled: false
       item:
-         type: player_head
+         type: skull_item
+         damage: 3
          name: '&6Player Head Token'
          lore:
          - '&8Use in /heads!'

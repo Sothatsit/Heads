@@ -54,6 +54,7 @@ public final class ReflectionUtils {
             
             return c;
         }
+        reportNotFound("Could not find constructor in class " + clazz);
         return null;
     }
     
@@ -64,6 +65,7 @@ public final class ReflectionUtils {
                 return m;
             }
         }
+        reportNotFound("Could not find method " + name + " in class " + clazz);
         return null;
     }
     
@@ -107,6 +109,11 @@ public final class ReflectionUtils {
             
             return m;
         }
+        reportNotFound("Could not find method " + name + " in class " + clazz);
         return null;
+    }
+
+    public static void reportNotFound(String message) {
+        new Exception(message).printStackTrace();
     }
 }

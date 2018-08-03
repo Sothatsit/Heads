@@ -10,8 +10,8 @@ import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.menu.ui.item.Item;
 import net.sothatsit.heads.util.Checks;
 import net.sothatsit.heads.util.Clock;
+import net.sothatsit.heads.volatilecode.Items;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 
 public class MainConfig {
@@ -56,7 +56,7 @@ public class MainConfig {
     private String helpLabel;
     
     public MainConfig() {
-        this.configFile = new FileConfigFile("config.yml");
+        this.configFile = Heads.getVersionedConfig("config.yml");
         
         reload();
     }
@@ -97,8 +97,7 @@ public class MainConfig {
         vaultEcoEnabled = loadBoolean(config, "economy.vault-eco.enabled", true, shouldSave);
         itemEcoEnabled  = loadBoolean(config, "economy.item-eco.enabled", false, shouldSave);
 
-        Item defaultItemEcoItem = Item
-                .create(Material.SKULL_ITEM, (byte) 3)
+        Item defaultItemEcoItem = Items.createSkull()
                 .name("&6Player Head Token")
                 .lore("&8Use in /heads!");
 
@@ -371,7 +370,7 @@ public class MainConfig {
     public String getHandCommand() {
         return handLabel;
     }
-    
+
     public String getGetCommand() {
         return getLabel;
     }

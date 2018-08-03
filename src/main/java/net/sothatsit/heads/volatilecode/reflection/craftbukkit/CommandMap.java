@@ -18,6 +18,10 @@ public class CommandMap {
                 break;
             }
         }
+
+        if(MapField == null) {
+            new Exception("Could not find Map field in SimpleCommandMap").printStackTrace();
+        }
     }
     
     @SuppressWarnings("unchecked")

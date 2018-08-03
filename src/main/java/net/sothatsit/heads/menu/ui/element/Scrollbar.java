@@ -6,6 +6,7 @@ import net.sothatsit.heads.menu.ui.MenuResponse;
 import net.sothatsit.heads.menu.ui.item.Button;
 import net.sothatsit.heads.util.Checks;
 import net.sothatsit.heads.util.Stringify;
+import net.sothatsit.heads.volatilecode.Items;
 import org.bukkit.Material;
 
 import java.util.Arrays;
@@ -16,7 +17,7 @@ public class Scrollbar extends Element {
     public static final Item defaultRight = Item.create(Material.ARROW).name("&7Right");
     public static final Item defaultNoLeft = Item.create(Material.AIR);
     public static final Item defaultNoRight = Item.create(Material.AIR);
-    public static final Item defaultFiller = Item.create(Material.STAINED_GLASS_PANE).data(15).name(" ");
+    public static final Item defaultFiller = Items.createBlackStainedGlassPane().name(" ");
 
     public static final Template defaultTemplate = new Template(
             defaultLeft, defaultRight,

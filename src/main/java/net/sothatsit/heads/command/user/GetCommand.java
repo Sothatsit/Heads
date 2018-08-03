@@ -6,6 +6,7 @@ import net.sothatsit.heads.cache.CacheHead;
 import net.sothatsit.heads.command.AbstractCommand;
 import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.lang.Lang;
+import net.sothatsit.heads.volatilecode.Items;
 import net.sothatsit.heads.volatilecode.TextureGetter;
 import net.sothatsit.heads.volatilecode.reflection.Version;
 
@@ -48,9 +49,8 @@ public class GetCommand extends AbstractCommand {
         
         if (Version.v1_8.higherThan(Version.getVersion())) {
             Lang.Command.Get.oldMethod().send(sender);
-            
-            ItemStack head = new ItemStack(Material.SKULL_ITEM, 1, (short) 3);
-            
+
+            ItemStack head = Items.createSkull().build();
             SkullMeta meta = (SkullMeta) head.getItemMeta();
             
             meta.setOwner(args[1]);

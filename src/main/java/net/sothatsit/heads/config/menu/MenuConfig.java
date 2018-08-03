@@ -1,5 +1,6 @@
 package net.sothatsit.heads.config.menu;
 
+import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.config.ConfigFile;
 import net.sothatsit.heads.config.FileConfigFile;
 import net.sothatsit.heads.menu.CacheHeadsMenu;
@@ -18,7 +19,7 @@ public class MenuConfig {
     private final AtomicBoolean requiresSave;
 
     public MenuConfig(String fileName) {
-        this(new FileConfigFile(fileName));
+        this(Heads.getVersionedConfig(fileName));
     }
 
     public MenuConfig(ConfigFile config) {

@@ -2,9 +2,7 @@ package net.sothatsit.heads.command;
 
 import net.sothatsit.heads.Heads;
 import net.sothatsit.heads.command.admin.*;
-import net.sothatsit.heads.command.user.GetCommand;
-import net.sothatsit.heads.command.user.OpenMenuCommand;
-import net.sothatsit.heads.command.user.SearchCommand;
+import net.sothatsit.heads.command.user.*;
 import net.sothatsit.heads.config.MainConfig;
 import net.sothatsit.heads.config.lang.Lang;
 

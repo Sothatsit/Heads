@@ -35,26 +35,31 @@ public class AddCommand extends AbstractCommand {
             return true;
         }
         
-        if (args.length < 4) {
+        if (args.length < 3) {
             sendInvalidArgs(sender);
             return true;
         }
         
         final String playerName = args[1];
         final String category = args[2];
-        
-        StringBuilder nameBuilder = new StringBuilder();
-        for (int i = 3; i < args.length; i++) {
-            nameBuilder.append(' ');
-            nameBuilder.append(args[i]);
+
+        final String name;
+
+        if(args.length > 3) {
+            StringBuilder nameBuilder = new StringBuilder();
+            for (int i = 3; i < args.length; i++) {
+                nameBuilder.append(' ');
+                nameBuilder.append(args[i]);
+            }
+            name = nameBuilder.toString().substring(1);
+        } else {
+            name = playerName;
         }
-        
+
         if (category.length() > 32) {
             Lang.Command.Add.categoryLength(category).send(sender);
             return true;
         }
-        
-        final String name = nameBuilder.toString().substring(1);
         
         String texture = TextureGetter.getCachedTexture(playerName);
         

@@ -6,6 +6,7 @@ public class Version {
     private static final char[] allowed = "0123456789_".toCharArray();
     public static final Version v1_8 = Version.getVersion("v1_8");
     public static final Version v1_10 = Version.getVersion("v1_10");
+    public static final Version v1_13 = Version.getVersion("v1_13");
     
     private int major;
     private int minor;
@@ -62,7 +63,15 @@ public class Version {
         
         return new Version(major, minor, revision);
     }
-    
+
+    public static boolean isAbove(Version version) {
+        return getVersion().higherThan(version);
+    }
+
+    public static boolean isBelow(Version version) {
+        return version.higherThan(getVersion());
+    }
+
     private static boolean isAllowed(char c) {
         for (char ch : allowed) {
             if (ch == c) {

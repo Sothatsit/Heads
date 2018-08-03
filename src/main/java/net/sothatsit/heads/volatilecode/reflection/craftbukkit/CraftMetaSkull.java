@@ -2,10 +2,10 @@ package net.sothatsit.heads.volatilecode.reflection.craftbukkit;
 
 import java.lang.reflect.Field;
 
+import com.mojang.authlib.GameProfile;
 import net.sothatsit.heads.util.Checks;
 import net.sothatsit.heads.volatilecode.reflection.ReflectObject;
 import net.sothatsit.heads.volatilecode.reflection.ReflectionUtils;
-import net.sothatsit.heads.volatilecode.reflection.authlib.GameProfile;
 
 public class CraftMetaSkull extends ReflectObject {
     
@@ -30,7 +30,7 @@ public class CraftMetaSkull extends ReflectObject {
     
     public GameProfile getProfile() {
         try {
-            return new GameProfile(profileField.get(getHandle()));
+            return (GameProfile) profileField.get(getHandle());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

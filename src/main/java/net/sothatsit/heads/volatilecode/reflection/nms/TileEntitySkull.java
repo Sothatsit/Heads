@@ -7,9 +7,9 @@ import java.util.concurrent.Executor;
 
 import com.google.common.base.Predicate;
 
+import com.mojang.authlib.GameProfile;
 import net.sothatsit.heads.volatilecode.reflection.ReflectObject;
 import net.sothatsit.heads.volatilecode.reflection.ReflectionUtils;
-import net.sothatsit.heads.volatilecode.reflection.authlib.GameProfile;
 
 public class TileEntitySkull extends ReflectObject {
     
@@ -31,7 +31,7 @@ public class TileEntitySkull extends ReflectObject {
             if(params.length != 2 && params.length != 3)
                 continue;
 
-            if(!params[0].equals(GameProfile.GameProfileClass) || !params[1].equals(Predicate.class))
+            if(!params[0].equals(GameProfile.class) || !params[1].equals(Predicate.class))
                 continue;
 
             if(params.length == 3 && !params[2].equals(boolean.class))
@@ -62,7 +62,7 @@ public class TileEntitySkull extends ReflectObject {
     
     public GameProfile getGameProfile() {
         try {
-            return new GameProfile(getGameProfileMethod.invoke(handle));
+            return (GameProfile) getGameProfileMethod.invoke(handle);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -71,7 +71,7 @@ public class TileEntitySkull extends ReflectObject {
     public static void resolveTexture(String name, Predicate<GameProfile> callback) {
         GameProfile existingProfile = MinecraftServer.getServer().getUserCache().getCachedProfile(name);
 
-        if (existingProfile.isNull()) {
+        if (existingProfile == null) {
             existingProfile = new GameProfile(null, name);
         }
 
@@ -80,13 +80,10 @@ public class TileEntitySkull extends ReflectObject {
     
     public static void resolveTexture(GameProfile profile, Predicate<GameProfile> callback) {
         try {
-            // Wrap the GameProfile
-            Predicate<?> predicate = (gameProfileHandle -> callback.apply(new GameProfile(gameProfileHandle)));
-
             if(resolveTextureMethod.getParameterCount() == 2) {
-                resolveTextureMethod.invoke(null, profile.getHandle(), predicate);
+                resolveTextureMethod.invoke(null, profile, callback);
             } else {
-                resolveTextureMethod.invoke(null, profile.getHandle(), predicate, false);
+                resolveTextureMethod.invoke(null, profile, callback, false);
             }
         } catch (Exception e) {
             throw new RuntimeException(e);

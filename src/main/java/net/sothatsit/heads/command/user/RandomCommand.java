@@ -1,4 +1,4 @@
-package net.sothatsit.heads.command;
+package net.sothatsit.heads.command.user;
 
 import java.util.Random;
 

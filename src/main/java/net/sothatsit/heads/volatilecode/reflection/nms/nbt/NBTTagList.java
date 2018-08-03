@@ -5,6 +5,7 @@ import java.lang.reflect.Method;
 
 import net.sothatsit.heads.volatilecode.reflection.ReflectObject;
 import net.sothatsit.heads.volatilecode.reflection.ReflectionUtils;
+import net.sothatsit.heads.volatilecode.reflection.Version;
 
 public class NBTTagList extends ReflectObject {
     
@@ -16,10 +17,16 @@ public class NBTTagList extends ReflectObject {
     
     static {
         NBTTagListClass = ReflectionUtils.getNMSClass("NBTTagList");
-        
-        addMethod = ReflectionUtils.getMethod(NBTTagListClass, "add", void.class, NBTBase.NBTBaseClass);
+
+        if(Version.isBelow(Version.v1_13)) {
+            addMethod = ReflectionUtils.getMethod(NBTTagListClass, "add", void.class, NBTBase.NBTBaseClass);
+            getMethod = ReflectionUtils.getMethod(NBTTagListClass, "get", NBTTagCompound.NBTTagCompoundClass, int.class);
+        } else {
+            addMethod = ReflectionUtils.getMethod(NBTTagListClass, "add", boolean.class, NBTBase.NBTBaseClass);
+            getMethod = ReflectionUtils.getMethod(NBTTagListClass, "get", NBTBase.NBTBaseClass, int.class);
+        }
+
         sizeMethod = ReflectionUtils.getMethod(NBTTagListClass, "size", int.class);
-        getMethod = ReflectionUtils.getMethod(NBTTagListClass, "get", NBTTagCompound.NBTTagCompoundClass, int.class);
 
         for(Field field : NBTTagListClass.getDeclaredFields()) {
             if(field.getType().equals(byte.class)) {
@@ -27,6 +34,10 @@ public class NBTTagList extends ReflectObject {
                 typeField.setAccessible(true);
                 break;
             }
+        }
+
+        if(typeField == null) {
+            ReflectionUtils.reportNotFound("Could not find byte type field in NBTTagList");
         }
     }
     

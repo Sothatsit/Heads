@@ -1,9 +1,6 @@
 package net.sothatsit.heads;
 
-import net.sothatsit.heads.cache.CacheHead;
-import net.sothatsit.heads.cache.ModsFile;
-import net.sothatsit.heads.cache.ModsFileHeader;
-import net.sothatsit.heads.cache.CacheFile;
+import net.sothatsit.heads.cache.*;
 import net.sothatsit.heads.cache.legacy.CacheFileConverter;
 import net.sothatsit.heads.command.HeadsCommand;
 import net.sothatsit.heads.command.RuntimeCommand;
@@ -19,6 +16,7 @@ import net.sothatsit.heads.menu.ui.InventoryMenu;
 import net.sothatsit.heads.oldmenu.ClickInventory;
 import net.sothatsit.heads.util.Clock;
 import net.sothatsit.heads.volatilecode.injection.ProtocolHackFixer;
+import net.sothatsit.heads.volatilecode.reflection.Version;
 import net.sothatsit.heads.volatilecode.reflection.craftbukkit.CommandMap;
 import net.sothatsit.heads.volatilecode.reflection.craftbukkit.CraftServer;
 import org.bukkit.Bukkit;
@@ -51,21 +49,39 @@ public class Heads extends JavaPlugin implements Listener {
     private MainConfig mainConfig;
     private LangConfig langConfig;
     private Economy economy;
+    private LegacyIDs legacyIDs;
     private boolean commandsRegistered = false;
     private boolean blockStoreAvailable = false;
     
     @Override
     public void onEnable() {
+        if(Version.isBelow(Version.v1_8)) {
+            System.err.println("------------------------------------------------------------");
+            System.err.println("    Heads no longer supports versions below MineCraft 1.8   ");
+            System.err.println("       Please switch to Heads version 1.15.1 or before      ");
+            System.err.println("------------------------------------------------------------");
+            Bukkit.getPluginManager().disablePlugin(this);
+            return;
+        }
+
         instance = this;
 
         Clock timer = Clock.start();
 
         loadCache();
 
+        try {
+            legacyIDs = LegacyIDs.readResource("legacy-ids.txt");
+        } catch(IOException exception) {
+            legacyIDs = LegacyIDs.EMPTY;
+            severe("Unable to load legacy IDs to perform conversion from older Spigot versions");
+            exception.printStackTrace();
+        }
+
         this.menus = new Menus();
         this.menus.reload();
 
-        this.oldMenuConfig = new MenuConfig(new FileConfigFile("menus.yml"));
+        this.oldMenuConfig = new MenuConfig(getVersionedConfig("menus.yml"));
         this.langConfig = new LangConfig();
         this.mainConfig = new MainConfig();
         this.economy = hookEconomy();
@@ -378,6 +394,10 @@ public class Heads extends JavaPlugin implements Listener {
         return instance;
     }
 
+    public static LegacyIDs getLegacyIDs() {
+        return instance.legacyIDs;
+    }
+
     public static MainConfig getMainConfig() {
         return instance.mainConfig;
     }
@@ -424,6 +444,13 @@ public class Heads extends JavaPlugin implements Listener {
 
     public static void async(Runnable task) {
         Bukkit.getScheduler().runTaskAsynchronously(instance, task);
+    }
+
+    public static FileConfigFile getVersionedConfig(String resource) {
+        if(Version.isBelow(Version.v1_13))
+            return new FileConfigFile(resource, "pre1_13/" + resource);
+
+        return new FileConfigFile(resource);
     }
 
 }

@@ -20,7 +20,7 @@
 + Convert all block ids in configs to type names
 
 1.13.1
-- Stop displaying debug head tags in menus
+- Stop displaying debug head tags in pre1_13.menus
 
 1.13.0
 * Edit-distance and word based search
