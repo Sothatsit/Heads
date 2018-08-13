@@ -180,8 +180,13 @@ public class ItemNBT {
         
         return CraftItemStack.asBukkitCopy(applyNBT(head, itemstack));
     }
-    
+
+    private static ItemStack copy(ItemStack itemstack) {
+        return CraftItemStack.asNMSCopy(CraftItemStack.asBukkitCopy(itemstack));
+    }
+
     public static ItemStack applyNBT(CacheHead head, ItemStack itemstack) {
+        itemstack = copy(itemstack);
         NBTTagCompound tag = itemstack.getTag();
         
         if (tag.getHandle() == null) {
